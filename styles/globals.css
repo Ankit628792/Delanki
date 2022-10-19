@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+    font-family: 'Roboto', sans-serif;;
+}
+
+.font-fuzzy {
+    font-family: 'Fuzzy Bubbles', cursive;
+}
+.font-montez {
+    font-family: 'Montez', cursive;
+}
+
+.text-red{
+    color: #f22952;
+}
+.hover-red:hover{
+    color: #f22952;
+}
+.bg-red{
+    background-color: #f22952;
+}
+
+
+@layer {}
