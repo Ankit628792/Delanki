@@ -9,7 +9,7 @@ const products = [
     title: 'Mobile Applications',
     description: <>Exceptional user experiences feel intuitive. We get close to your customers to find out what they need. Then design for maximum adoption, engagement and enjoyment.</>,
     background: 'bg-blue-50 shadow-blue-100',
-    image: '/mobile_app.png'
+    image: '/images/mobile_app.png'
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const products = [
     title: 'Desktop Applications & Softwares',
     description: <>Your online platforms need to work for your business, showing your audience what you can do for them. Great design combined with user-friendly features creates a compelling digital experience.</>,
     background: 'bg-teal-50 shadow-teal-100',
-    image: '/desktop_app.png'
+    image: '/images/desktop_app.png'
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const products = [
     title: 'Web Applications',
     description: <>A website is a long-term investment. It needs to be maintained, updated and secured. Our dedicated team will help you stay on top of security updates and continuous improvements, so you can concentrate on growing your business.</>,
     background: 'bg-rose-50 shadow-rose-100',
-    image: '/web_app.png'
+    image: '/images/web_app.png'
   },
 ]
 

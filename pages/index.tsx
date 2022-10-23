@@ -1,8 +1,11 @@
 import type { NextPage } from 'next'
 import About from '../components/About'
+import Footer from '../components/Footer'
 import Landing from '../components/Landing'
 import Navbar from '../components/Navbar'
 import Products from '../components/Products'
+import Techs from '../components/Techs'
+import Work from '../components/Work'
 
 const Home: NextPage = () => {
   return (
@@ -12,6 +15,9 @@ const Home: NextPage = () => {
       <Landing />
       <About />
       <Products />
+      <Work />
+      <Techs />
+      <Footer />
     </main>
   )
 }
