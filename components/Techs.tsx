@@ -101,7 +101,7 @@ function Techs() {
                                     <h1 className='font-medium text-gray-800  text-4xl sm:text-5xl 2xl:max-w-xl text-center lg:max-w-md'><span className='font-montez text-red'>Technologies</span></h1>
                                 </div>
 
-                                <div className='w-full flex items-center justify-center flex-wrap gap-8'>
+                                <div className='w-full flex items-center justify-center flex-wrap gap-8 pb-10'>
                                     {
                                         data.map(({ id, title, icon }) => <div key={id} className={`w-20 h-20 relative group p-3 bg-white rounded-full shadow-lg border cursor-pointer`}>
                                             <img src={icon} className="w-full h-full object-contain" alt="" />
