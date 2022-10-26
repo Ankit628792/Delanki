@@ -85,18 +85,14 @@ function Techs() {
         setData(arr.sort(() => Math.random() - 0.5))
     }, [])
 
-
     return (
         <>{
             size.width ?
-
                 <>
-
                     <section className='sm:min-h-[80vh] max-w-7xl mx-auto w-full'>
                         {size.width! < 769 ?
                             <>
                                 <div className='mx-auto pt-10 pb-10'>
-                                    {/* <h1 className='font-medium text-gray-800  text-4xl sm:text-5xl 2xl:max-w-xl text-center lg:max-w-md mx-auto py-20'>Using the latest <span className='font-montez text-red'>Technologies</span></h1> */}
                                     <h1 className='font-medium text-gray-800  text-4xl sm:text-5xl 2xl:max-w-xl text-center lg:max-w-md'>Using the latest</h1>
                                     <h1 className='font-medium text-gray-800  text-4xl sm:text-5xl 2xl:max-w-xl text-center lg:max-w-md'><span className='font-montez text-red'>Technologies</span></h1>
                                 </div>
@@ -113,27 +109,34 @@ function Techs() {
                                     }
                                 </div>
                             </>
-                            : <div className='min-h-[75vh] p-5 w-full max-w-7xl overflow-hidden gap-5 relative'>
-                                <h1 className='font-medium text-gray-800 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full text-4xl sm:text-5xl 2xl:max-w-xl text-center lg:max-w-md mx-auto'>Using the latest <span className='font-montez text-red'>Technologies</span></h1>
-
-                                <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full'>
-                                    {
-                                        data.map(({ id, title, icon }) => <div key={id} className={`w-20 h-20 relative group tech_icon inline-block mx-auto m-4 p-3 bg-white rounded-full shadow-lg border cursor-pointer`}>
-                                            <img src={icon} className="w-full h-full object-contain" alt="" />
-                                            <div className='absolute left-1/2 -top-1/2 transform -translate-x-1/2 bg-white p-1 px-3 rounded-2xl min-w-max hidden group-hover:inline-block shadow-lg'>
-                                                <h1 className='text-red'>{title}</h1>
-                                                <div className='absolute left-1/2 -bottom-1.5 transform -translate-x-1/2 bg-white w-3 h-3 rotate-45'></div>
-                                            </div>
-                                        </div>)
-                                    }
-                                </div>
-                            </div>}
+                            : <Floating size={size} data={data} />}
                     </section>
+                </>
+                :
+                <></>}
+        </>
+    )
+}
 
-                    {/* <Script strategy='beforeInteractive' src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js' integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" crossOrigin="anonymous" referrerPolicy="no-referrer" />
-                    <Script strategy='beforeInteractive' src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></Script> */}
-                    <Script strategy='afterInteractive' dangerouslySetInnerHTML={{
-                        __html: `
+export default Techs
+
+const Floating = ({ size, data }: { size: any, data: Array<Technology> }) => {
+    return <div className='min-h-[75vh] p-5 w-full max-w-7xl overflow-hidden gap-5 relative'>
+        <h1 className='font-medium text-gray-800 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full text-4xl sm:text-5xl 2xl:max-w-xl text-center lg:max-w-md mx-auto'>Using the latest <span className='font-montez text-red'>Technologies</span></h1>
+
+        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full'>
+            {
+                data.map(({ id, title, icon }) => <div key={id} className={`w-20 h-20 relative group tech_icon inline-block mx-auto m-4 p-3 bg-white rounded-full shadow-lg border cursor-pointer`}>
+                    <img src={icon} className="w-full h-full object-contain" alt="" />
+                    <div className='absolute left-1/2 -top-1/2 transform -translate-x-1/2 bg-white p-1 px-3 rounded-2xl min-w-max hidden group-hover:inline-block shadow-lg'>
+                        <h1 className='text-red'>{title}</h1>
+                        <div className='absolute left-1/2 -bottom-1.5 transform -translate-x-1/2 bg-white w-3 h-3 rotate-45'></div>
+                    </div>
+                </div>)
+            }
+        </div>
+        <Script strategy='afterInteractive' dangerouslySetInnerHTML={{
+            __html: `
             var MR = function (X) { return Math.random() * X }, TwL = TweenLite, G = document.querySelectorAll('.tech_icon');
 
             function BTweens() {
@@ -159,14 +162,8 @@ function Techs() {
                 BTweens();
             };
             `
-                    }}>
+        }}>
 
-                    </Script>
-                </>
-                :
-                <></>}
-        </>
-    )
+        </Script>
+    </div>
 }
-
-export default Techs

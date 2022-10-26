@@ -1,0 +1,8 @@
+export { default as Navbar } from './Navbar'
+export { default as Landing } from './Landing'
+export { default as About } from './About'
+export { default as Products } from './Products'
+export { default as Work } from './Work'
+export { default as Techs } from './Techs'
+export { default as Footer } from './Footer'
+export { default as ScrollToTop } from './ScrollToTop'

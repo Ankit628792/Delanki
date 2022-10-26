@@ -5,7 +5,8 @@ function Footer() {
         <footer className=''>
             <div className='flex flex-col items-center gap-4 py-20 bg-red'>
                 <h1 className='text-4xl lg:text-5xl font-semibold text-white tracking-wide text-center'>Ready to start the project?</h1>
-                <div className='flex flex-col sm:flex-row sm:items-center gap-8 pt-10 pb-6'>
+                <p className='text-lg lg:text-xl text-gray-200 text-center'>Let's have a discussion on it</p>
+                <div className='flex flex-col sm:flex-row sm:items-center gap-8 py-6'>
                     <div className='flex items-center gap-2 bg-white py-3 px-4 rounded-lg'>
                         <img src="/images/ankit.jpg" className='w-14 h-14 object-cover rounded-full border-4 shadow-lg' alt="" />
                         <div>

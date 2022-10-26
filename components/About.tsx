@@ -19,7 +19,7 @@ function About() {
             <section className='sm:min-h-[80vh] grid place-items-center max-w-7xl mx-auto w-full'>
                 <div className={`flex flex-col gap-10 xl:gap-16 lg:flex-row-reverse items-center justify-center w-full mx-auto my-10 p-5 py-10 sm:px-10 xl:px-20 min-h-[80vh]`}>
                     <div className='flex-grow'>
-                        <h1 className='font-medium text-gray-800 text-4xl sm:text-5xl my-3 text-center lg:text-left lg:max-w-md'>Before we <span className='font-montez text-red'>jumped in</span>,<br className='inline-block sm:hidden'/> we <span className='font-montez text-red'>underwent.</span></h1>
+                        <h1 className='font-medium text-gray-800 text-4xl sm:text-5xl my-3 text-center lg:text-left lg:max-w-md'>Before we <span className='font-montez text-red'>jumped in</span>,<br className='inline-block sm:hidden' /> we <span className='font-montez text-red'>underwent.</span></h1>
                         <p className='text-gray-500 max-w-2xl lg:max-w-sm 2xl:max-w-xl 2xl:text-lg text-center lg:text-left leading-relaxed'>We focus on what we do best, and for all other matters we've developed a high quality network of partners on anything from mobile apps, to web application or even desktop application. We'll make sure it all fits</p>
                         <div className='sm:flex items-center gap-4 max-w-md mx-auto lg:mx-0 mt-4 lg:mt-2'>
                             <div className='flex items-center my-2 gap-2 max-w-[300px] mx-auto'>
@@ -41,7 +41,6 @@ function About() {
                     </div>
                 </div>
             </section>
-
         </>
     )
 }

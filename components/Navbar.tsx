@@ -4,19 +4,23 @@ import React, { useState } from 'react'
 const menuItems = [
     {
         id: 1,
-        title: 'Features'
+        title: 'About Us',
+        link: '#aboutUs'
     },
     {
         id: 2,
-        title: 'About Us'
+        title: 'Products',
+        link: '#products'
     },
     {
         id: 3,
-        title: 'Product'
+        title: 'Work',
+        link: '#work'
     },
     {
         id: 4,
-        title: 'Feedback'
+        title: 'Connect',
+        link: '#connect'
     },
 ]
 
@@ -36,11 +40,11 @@ function Navbar() {
                 </div>
 
                 <ul className='hidden lg:inline-flex items-center gap-10 2xl:gap-16 text-lg font-medium text-gray-700'>
-                    {menuItems.map(({ title, id }) => <li key={id} className={`cursor-pointer hover-red hover:border-rose-600 border-b ${id === index ? 'text-red border-rose-600' : 'border-transparent'}`} onClick={() => setIndex(id)}>{title}</li>)}
+                    {menuItems.map(({ title, id, link }) => <li key={id} className={`cursor-pointer hover-red hover:border-rose-600 border-b ${id === index ? 'text-red border-rose-600' : 'border-transparent'}`}><a href={link}>{title}</a></li>)}
                 </ul>
 
                 <div>
-                    <button className='py-2 px-4 rounded-3xl text-white font-medium bg-red'>Request a Call</button>
+                    <button className='py-2 px-4 rounded-3xl text-white font-medium bg-red'><a href='#connect'>Connect with Us</a></button>
                 </div>
             </nav>
 
@@ -50,7 +54,7 @@ function Navbar() {
                     <input type='checkbox' checked={checkedSate} onChange={handleCheckedSate} />
                     <span className='hamburger-inner'> <span className='hamburger-icon shadow-lg fixed'></span> </span>
                     <ul>
-                    {menuItems.map(({ title, id }) => <li key={id} onClick={handleCheckedSate}> <Link href="/">{title}</Link></li>)}
+                        {menuItems.map(({ title, id, link }) => <li key={id} onClick={handleCheckedSate}> <a href={link}>{title}</a></li>)}
                     </ul>
                 </label>
             </div>

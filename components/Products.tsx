@@ -53,8 +53,8 @@ function Products() {
           </div>
         </div>
       </div>
-      )
-      }
+      )}
+      <div id='work' />
     </section >
   )
 }

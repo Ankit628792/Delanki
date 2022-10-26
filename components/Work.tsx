@@ -25,7 +25,9 @@ let data = [
 
 function Work() {
     return (
-        <section className='sm:min-h-[80vh] flex flex-col items-center justify-center gap-10 max-w-7xl mx-auto w-full py-16 md:py-10'>
+        <section className='sm:min-h-[80vh] flex flex-col items-center justify-center gap-10 max-w-7xl mx-auto w-full py-16 md:py-10 relative'>
+            <img style={{ zIndex: -1 }} className='absolute rounded-lg w-full h-full m-0 object-cover filter saturate-200 overflow-hidden opacity-30' src="/images/dragon1.jpg" alt="" />
+
             <div className='mx-auto'>
                 <h1 className='font-medium text-gray-800  text-4xl sm:text-5xl 2xl:max-w-xl text-center lg:max-w-md'>Our Customized</h1>
                 <h1 className='font-medium text-gray-800  text-4xl sm:text-5xl 2xl:max-w-xl text-center lg:max-w-md'><span className='font-montez text-red'>Work Flow</span></h1>
