@@ -1,5 +1,4 @@
-import Link from 'next/link';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 
 const menuItems = [
@@ -33,8 +32,16 @@ function Navbar() {
     const handleCheckedSate = () => {
         checkedSate ? setCheckedSate(false) : setCheckedSate(true)
     }
+
+    useEffect(() => {
+        let theme = localStorage.getItem("theme");
+        if (!theme) {
+            setTheme(window.matchMedia('(prefers-color-scheme: dark)').matches == true ? 'dark' : 'light')
+        }
+    }, [])
+
     if (!theme) return <></>
-    
+
     return (
         <>
             <nav className='flex items-center  justify-between sticky top-0 w-full gap-4 py-4 px-5 md:px-10 2xl:px-16 bg-white dark:bg-slate-900 shadow-md z-50'>
