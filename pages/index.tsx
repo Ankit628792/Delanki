@@ -3,7 +3,7 @@ import { About, Footer, Landing, Navbar, Products, ScrollToTop, Techs, Work } fr
 
 const Home: NextPage = () => {
   return (
-    <main className="min-h-screen w-full">
+    <main className="min-h-screen w-full dark:bg-slate-900">
       <img style={{ zIndex: -1 }} className='absolute p-10 w-full h-full m-0 object-contain filter saturate-200 overflow-hidden' src="/ani.svg" alt="" />
       <Navbar />
       <Landing />

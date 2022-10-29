@@ -4,7 +4,6 @@ export default function Document() {
     return (
         <Html>
             <Head>
-                <title>Nian Devs</title>
                 <link rel='icon' href="/images/dragon3.jpg" />
                 <link rel="manifest" href="/manifest.json" />
                 <link rel="apple-touch-icon" href="/images/dragon3.jpg" />
@@ -12,7 +11,6 @@ export default function Document() {
                 <meta name="description" content="Nian Devs - A team of experts that are dedicated to making modern and intelligent Apps for tomorrow." />
                 <meta name="keywords" content="HTML, CSS, JavaScript, Bootstrap, Material UI, Tailwind CSS, Express JS, Node JS, React JS, React Native, Redux, NextJS, MongoDB, Firebase, angular, docker, java, hibernate, graphql, typescript, microservice, sql, postgresql,electron js, freelance, startup, tech, dev, nian," />
                 <meta name="author" content="@ankit_628792" />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <meta name='theme-color' content='#f22952' />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" cross-origin="true" />

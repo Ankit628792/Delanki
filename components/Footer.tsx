@@ -64,7 +64,7 @@ function Footer() {
                 </div>
             </div>
 
-            <div className='px-5 py-10 bg-gray-800 text-white'>
+            <div className='px-5 py-10 bg-slate-900 text-white'>
                 <div className='flex flex-col sm:flex-row items-start justify-between w-full gap-y-6 max-w-7xl mx-auto py-4'>
                     <div className="text-3xl font-semibold text-white flex-shrink-0">
                         Nian Devs

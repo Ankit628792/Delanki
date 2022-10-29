@@ -157,3 +157,23 @@
 }
 
 /* Navbar and hamburger menu End */
+
+@media (prefers-color-scheme: dark) {
+    .hamburger-menu .hamburger-inner {
+        background: #0f172a;
+    }
+
+    .hamburger-menu .hamburger-icon:after,
+    .hamburger-menu .hamburger-icon:before,
+    .hamburger-menu .hamburger-icon {
+        background: #ffffff;
+    }
+
+    .hamburger-menu input:checked+.hamburger-inner {
+        box-shadow: 0 0 0 100vw #0f172a, 0 0 0 100vh #0f172a;
+    }
+
+    .hamburger-menu label a {
+        color: #ffffff;
+    }
+}
