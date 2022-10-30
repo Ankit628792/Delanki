@@ -41,7 +41,7 @@ function Products() {
 
       {products.map(product => <div key={product.id} className='sm:min-h-screen grid place-items-center'>
         <div className={`flex flex-col gap-10 xl:gap-16 ${product.id % 2 == 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center justify-center w-full mx-auto my-10 p-5 py-10 sm:px-10 xl:px-16 rounded-2xl  dark:shadow-gray-500 min-h-[80vh] relative`}>
-          <div className={`absolute w-full h-full inset-0 filter border border-gray-500 ${product.background} dark:bg-opacity-10 rounded-lg backdrop-blur-lg z-10`}></div>
+          <div className={`absolute w-full h-full inset-0 filter border dark:border-gray-500 ${product.background} dark:bg-opacity-10 rounded-lg backdrop-blur-lg z-10`}></div>
           <div className='flex-grow z-20'>
             {/* Mobile Icon  */}
             {product.icon}

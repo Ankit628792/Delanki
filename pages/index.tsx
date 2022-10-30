@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { About, Footer, Landing, Navbar, Products, ScrollToTop, Techs, Work } from '../components'
+import { About, Footer, Landing, Navbar, Products, ScrollToTop, Techs, Work, Devs } from '../components'
 
 const Home: NextPage = () => {
   return (
@@ -14,6 +14,7 @@ const Home: NextPage = () => {
       <div id='work' />
       <Work />
       <Techs />
+      <Devs />
       <Footer />
       <div id='connect' />
       <ScrollToTop />
