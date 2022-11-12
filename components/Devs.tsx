@@ -4,10 +4,10 @@ import React, { useEffect, useState } from 'react'
 const arr = [
     {
         id: 1,
-        name: 'Ankit Kumar',
-        profilePic: '/images/ankit.jpg',
-        designation: 'Full Stack JavaScript Developer',
-        linkedin: 'https://www.linkedin.com/in/ankit628792/'
+        name: 'Nitin Baghel',
+        profilePic: '/images/nitin.jpg',
+        designation: 'Full Stack Java Developer',
+        linkedin: 'https://www.linkedin.com/in/nitin-baghel-82a81a173/'
     },
     {
         id: 2,
