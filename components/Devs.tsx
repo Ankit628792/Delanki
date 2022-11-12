@@ -30,6 +30,13 @@ const arr = [
         designation: 'Full Stack Developer',
         linkedin: 'https://www.linkedin.com/in/sahilgupta04/'
     },
+    {
+        id: 5,
+        name: 'Ankit Kumar',
+        profilePic: '/images/ankit.jpg',
+        designation: 'Full Stack JavaScript Developer',
+        linkedin: 'https://www.linkedin.com/in/ankit628792/'
+    },
 ]
 
 
@@ -45,7 +52,7 @@ interface Developer {
 function Devs() {
     const [developers, setDevelopers] = useState<Array<Developer>>([]);
     useEffect(() => {
-        setDevelopers(arr.sort(() => Math.random() - 0.5))
+        setDevelopers(arr.sort(() => Math.random() - 0.5).slice(0, 4))
     }, [])
 
     return (
