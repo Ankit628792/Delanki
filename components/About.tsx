@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 function About() {
@@ -7,11 +8,12 @@ function About() {
                 <div className={`flex flex-col gap-10 xl:gap-16 lg:flex-row items-center justify-center w-full mx-auto my-10 p-5 py-10 sm:px-10 xl:px-16 min-h-[70vh]`}>
                     <div className='flex-grow'>
                         <h1 className='font-medium text-gray-800 dark:text-gray-50 text-4xl sm:text-5xl my-3 text-center lg:text-left lg:max-w-md'>We are the <span className='font-montez text-red'>brand</span> builders for better <span className='font-montez text-red'>tomorrow.</span></h1>
-                        <p className='text-gray-500 max-w-2xl lg:max-w-sm 2xl:max-w-xl 2xl:text-lg text-center lg:text-left leading-relaxed'>It is a long established fact that an application that does not keep their users engaged, will be less chanced to be preferred to others.</p>
-                        <p className='text-gray-500 max-w-2xl lg:max-w-sm 2xl:max-w-xl 2xl:text-lg text-center lg:text-left leading-relaxed'>Advances in technology, let us make more useful products. But it's first when they connect with us emotionally they have the power to become loved digital experiences.</p>
+                        <p className='text-gray-500 max-w-2xl lg:max-w-sm 2xl:max-w-xl 2xl:text-lg text-center mx-auto lg:mx-0 lg:text-left leading-relaxed'>It is a long established fact that an application that does not keep their users engaged, will be less chanced to be preferred to others.</p>
+                        <p className='text-gray-500 max-w-2xl lg:max-w-sm 2xl:max-w-xl 2xl:text-lg text-center mx-auto lg:mx-0 lg:text-left leading-relaxed'>Advances in technology, let us make more useful products. But it's first when they connect with us emotionally they have the power to become loved digital experiences.</p>
                     </div>
-                    <div className='max-w-lg w-full rounded-2xl overflow-hidden flex-grow'>
-                        <img src="/images/team.svg" className='w-full h-full object-cover hover:scale-105 transition-transform duration-300 ease-in-out drop-shadow' alt="" />
+                    <div className='max-w-lg w-full h-[400px] sm:h-[500px] rounded-2xl overflow-hidden flex-grow relative'>
+                        {/* <img src="/images/team.svg" className='w-full h-full object-cover hover:scale-105 transition-transform duration-300 ease-in-out drop-shadow' alt="" /> */}
+                        <Image src="/images/team.svg" className='hover:scale-105 transition-transform duration-300 ease-in-out drop-shadow' alt="" layout="fill" />
                     </div>
                 </div>
             </section>
@@ -36,8 +38,9 @@ function About() {
                             </div>
                         </div>
                     </div>
-                    <div className='max-w-lg 2xl:max-w-xl w-full rounded-2xl overflow-hidden flex-grow'>
-                        <img src="/images/friends.svg" className='w-full h-full object-cover hover:scale-105 transition-transform duration-300 ease-in-out drop-shadow' alt="" />
+                    <div className='max-w-lg w-full h-72 sm:h-96 rounded-2xl overflow-hidden flex-grow relative'>
+                        {/* <img src="/images/friends.svg" className='w-full h-full object-cover hover:scale-105 transition-transform duration-300 ease-in-out drop-shadow' alt="" /> */}
+                        <Image src="/images/friends.svg" className='hover:scale-105 transition-transform duration-300 ease-in-out drop-shadow' alt="" layout="fill" />
                     </div>
                 </div>
             </section>

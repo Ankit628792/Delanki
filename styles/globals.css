@@ -95,6 +95,12 @@ body::-webkit-scrollbar {
 
 .hover-red:hover {
     color: #f22952;
+    transition: all 0.1s ease-in-out;
+}
+
+.hover-bg-red:hover {
+    background-color: #f22952;
+    transition: all 0.2s ease-in-out;
 }
 
 .bg-red {
@@ -104,12 +110,15 @@ body::-webkit-scrollbar {
 .shadow-yellow {
     box-shadow: 0 0 24px rgba(255, 251, 0, 0.6);
 }
+
 .shadow-red {
     box-shadow: 0 0 24px rgba(255, 0, 38, 0.6);
 }
+
 .shadow-blue {
     box-shadow: 0 0 24px rgba(0, 174, 255, 0.6);
 }
+
 .shadow-teal {
     box-shadow: 0 0 24px rgba(0, 255, 157, 0.6);
 }

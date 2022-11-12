@@ -23,7 +23,9 @@ function ScrollToTop() {
 
     return (
         <>
-            <button
+            <button role="button"
+                type='button'
+                aria-label="Scroll to Top"
                 className="scrollToTop bg-red p-3 fixed bottom-10 right-10 font-bold text-white border-2 border-white rounded-full"
                 onClick={scrollTop}
                 style={{ display: scrolled ? 'flex' : 'none' }}

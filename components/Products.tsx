@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const products = [
@@ -49,8 +50,9 @@ function Products() {
             <h1 className='font-medium text-gray-800 dark:text-gray-50 text-3xl lg:text-4xl 2xl:text-5xl 2xl:max-w-xl my-3 text-center lg:text-left lg:max-w-md'>{product.title}</h1>
             <p className='text-gray-500 max-w-2xl lg:max-w-sm 2xl:max-w-xl text-center lg:text-left 2xl:text-lg leading-relaxed'>{product.description}</p>
           </div>
-          <div className='max-w-lg md:max-w-xl 2xl:max-w-2xl rounded-2xl overflow-hidden z-20'>
-            <img src={product.image} className='w-full h-full object-cover hover:scale-125 transition-transform duration-500 ease-in-out' alt="" />
+          <div className='max-w-lg w-full md:max-w-xl 2xl:max-w-2xl h-80 sm:h-[450px] xl:h-[480px] rounded-2xl overflow-hidden z-20 relative'>
+            {/* <img src={product.image} className='w-full h-full object-cover hover:scale-125 transition-transform duration-500 ease-in-out' alt="" /> */}
+            <Image src={product.image} className='hover:scale-125 transition-transform duration-500 ease-in-out' alt="" layout='fill' />
           </div>
         </div>
       </div>

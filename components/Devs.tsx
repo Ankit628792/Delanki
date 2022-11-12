@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
 
 const arr = [
@@ -53,7 +54,7 @@ function Devs() {
             <p className='text-lg lg:text-xl text-gray-200 text-center'>Let's have a discussion on it</p>
             <div className='flex flex-col sm:flex-row sm:items-center gap-8 py-6 flex-wrap justify-center'>
                 {developers.map(data => <div key={data.id} className='flex items-center gap-2 bg-white py-3 px-4 rounded-lg'>
-                    <img src={data.profilePic} className='w-14 h-14 object-cover rounded-full border-4 shadow-lg' alt="" />
+                    <Image layout="responsive" width="56px" height="56px" src={data.profilePic} className='rounded-full border-4 shadow-lg' alt="" />
                     <div>
                         <a target="_blank" rel="noreferrer" className='text-lg cursor-pointer text-gray-800 hover:text-blue-500 font-medium' href={data.linkedin}>{data.name}</a>
                         <p className='text-gray-500 text-sm'>{data.designation}</p>
