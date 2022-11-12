@@ -1,3 +1,4 @@
+import Router from 'next/router'
 import React from 'react'
 
 function Footer() {
@@ -6,7 +7,7 @@ function Footer() {
         <footer>
             <div className='px-5 py-10 bg-slate-900 text-white'>
                 <div className='flex flex-col sm:flex-row items-start justify-between w-full gap-y-6 max-w-7xl mx-auto py-4'>
-                    <div className="text-3xl font-semibold text-white flex-shrink-0">
+                    <div className="text-3xl font-semibold text-white flex-shrink-0 cursor-pointer" onClick={() => Router.push("/")}>
                         Nian Devs
                     </div>
 

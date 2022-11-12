@@ -54,7 +54,7 @@ function Navbar() {
     return (
         <>
             <nav className='flex items-center  justify-between sticky top-0 w-full gap-4 py-4 px-5 md:px-10 2xl:px-16 bg-white dark:bg-slate-900 shadow-md z-50'>
-                <div className="text-3xl font-semibold text-red opacity-0 lg:opacity-100" onClick={() => Router.push("/")}>
+                <div className="text-3xl font-semibold text-red opacity-0 lg:opacity-100 cursor-pointer" onClick={() => Router.push("/")}>
                     Nian <span className='text-gray-900 dark:text-gray-50'>Devs</span>
                 </div>
 
