@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next'
-import { getProviders, signIn } from 'next-auth/react'
+import { getProviders, getSession, signIn } from 'next-auth/react'
 import { AppContext } from 'next/app'
 import { useRouter } from 'next/router'
 import { Navbar } from '../components'
@@ -30,6 +30,14 @@ function signin({ providers }: any) {
 export default signin
 
 export async function getServerSideProps(context: GetServerSideProps) {
+    const { req }: any = context;
+    const session = await getSession({ req });
+
+    if (session) {
+        return {
+            redirect: { destination: "/" },
+        };
+    }
     const providers = await getProviders()
     return {
         props: {
