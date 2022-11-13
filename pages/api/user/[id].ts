@@ -1,7 +1,7 @@
 
 import type { NextApiRequest, NextApiResponse } from 'next'
 import connectDB from '../../../db/connectDB';
-import { getUserFromUserId } from '../../../db/service/user.service';
+import { getUserFromEmail, getUserFromUserId } from '../../../db/service/user.service';
 
 
 export default async function handler(
@@ -10,7 +10,7 @@ export default async function handler(
 ) {
     await connectDB();
     try {
-        res.status(200).send(getUserFromUserId(req.query.id as string))
+        res.status(200).send(await getUserFromEmail(req.query.id as string))
     } catch (error) {
         res.status(400).send({ msg: 'Something went wrong' })
     }

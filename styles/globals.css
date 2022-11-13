@@ -312,4 +312,35 @@ body::-webkit-scrollbar {
 }
 
 
-@layer {}
+@layer components {
+    .policy{
+        @apply text-gray-800 dark:text-gray-200
+    }
+    .policy h1 {
+        @apply text-3xl lg:text-4xl font-semibold text-center text-gray-900 dark:text-gray-50
+    }
+
+    .policy h2 {
+        @apply text-2xl lg:text-3xl mt-6 sm:mt-8 font-medium
+    }
+
+    .policy h3,
+    .policy h4 {
+        @apply text-xl mt-8 font-semibold
+    }
+    .policy ul{
+        @apply my-2
+    }
+    .policy li {
+        @apply  list-decimal text-sm sm:text-base my-3
+    }
+    .policy ul li{
+        @apply list-disc list-outside ml-8 text-sm sm:text-base my-2
+    }
+    .policy p{
+        @apply my-2 text-sm sm:text-base
+    }
+    .policy a{
+        @apply text-[#f22952] hover:text-rose-700
+    }
+}
