@@ -15,7 +15,7 @@ function Footer() {
                         <p className='text-xl max-w-lg text-left sm:text-right text-gray-100'>Contact our team to connect and schedule call with your future product team</p>
                         <div className='flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 w-full justify-start sm:justify-end'>
                             <Link href="/signin" className='text-lg text-left sm:text-right text-gray-100 cursor-pointer hover-red'>Developer Portal</Link>
-                            <Link href="/privacy_policy" className='text-lg text-left sm:text-right text-gray-100 cursor-pointer hover-red'>Privacy Policy</Link>
+                            <Link href="/tnc" className='text-lg text-left sm:text-right text-gray-100 cursor-pointer hover-red'>Terms & Conditions</Link>
                             <Link href="/privacy_policy" className='text-lg text-left sm:text-right text-gray-100 cursor-pointer hover-red'>Privacy Policy</Link>
                         </div>
                     </div>
