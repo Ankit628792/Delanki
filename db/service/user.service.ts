@@ -2,11 +2,11 @@ import { DocumentDefinition, ObjectId } from "mongoose";
 import User, { UserDocument } from "../models/user"
 
 let pics = [
-    'https://res.cloudinary.com/ankit628792/image/upload/v1668868754/n1.png',
-    'https://res.cloudinary.com/ankit628792/image/upload/v1668868754/n2.png',
-    'https://res.cloudinary.com/ankit628792/image/upload/v1668868754/n3.png',
-    'https://res.cloudinary.com/ankit628792/image/upload/v1668868754/n4.png',
-    'https://res.cloudinary.com/ankit628792/image/upload/v1668868754/n5.png'
+    `https://res.cloudinary.com/${process.env.cloud_name}/image/upload/v1668868754/n1.png`,
+    `https://res.cloudinary.com/${process.env.cloud_name}/image/upload/v1668868754/n2.png`,
+    `https://res.cloudinary.com/${process.env.cloud_name}/image/upload/v1668868754/n3.png`,
+    `https://res.cloudinary.com/${process.env.cloud_name}/image/upload/v1668868754/n4.png`,
+    `https://res.cloudinary.com/${process.env.cloud_name}/image/upload/v1668868754/n5.png`
 ]
 
 export async function getUserFromEmail(email: string) {
@@ -26,7 +26,7 @@ export async function getUsers() {
 }
 
 export async function createUser(input: DocumentDefinition<UserDocument>) {
-    return await User.create({ ...input, image: pics[Math.floor(Math.random() * 5)] })
+    return await User.create({ ...input, image: pics[Math.floor(Math.random() * 5)], banner: `https://res.cloudinary.com/${process.env.cloud_name}/image/upload/v1668869214/banner.jpg` })
 }
 
 export async function updateUser(_id: ObjectId, input: DocumentDefinition<UserDocument>) {
