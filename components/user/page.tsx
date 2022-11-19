@@ -27,7 +27,6 @@ function Page({ user, projectData, owner, setUser }: any) {
     }
 
     const handleSkill = async (type: string, skill: string, callback: Function) => {
-        console.log(type, skill, callback);
         let skills = [...user.skills]
         if (type == 'add') {
             if (!skill.length) return toast.error("Please add a skill")
@@ -39,6 +38,8 @@ function Page({ user, projectData, owner, setUser }: any) {
         }
         else
             return;
+        setUser({ ...user, skills: skills });
+        callback();
         let res = await fetch(`/api/user/${user._id}`, {
             method: 'PATCH',
             headers: {
@@ -48,8 +49,6 @@ function Page({ user, projectData, owner, setUser }: any) {
         });
         if (res.status == 200) {
             res = await res.json();
-            setUser(res);
-            callback();
         } else {
             toast.error("Something went wrong", { id: "error" })
         }
