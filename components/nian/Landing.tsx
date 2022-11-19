@@ -9,7 +9,7 @@ function Landing() {
             <div className='mx-auto -mt-16 lg:-mt-28 w-full max-w-4xl h-full min-h-[400px] sm:min-h-[450px] md:min-h-[500px] xl:min-h-[550px] 2xl:min-h-[600px] relative'>
                 {/* <div className='absolute bottom-6 sm:bottom-10 md:bottom-20 lg:bottom-32 left-0 right-0 w-full h-40 bg-gradient-to-t from-white to-transparent'></div> */}
                 {/* <img src="/images/dragon-animate.svg" className='w-full object-cover drop-shadow' alt="" /> */}
-                <Image src="/images/dragon-animate.svg" className='w-full drop-shadow' alt='' layout="fill" />
+                <Image src="/images/dragon-animate.svg" priority className='w-full drop-shadow object-contain' alt='' fill={true} />
             </div>
         </header>
     )

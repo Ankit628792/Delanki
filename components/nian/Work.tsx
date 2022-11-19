@@ -28,7 +28,7 @@ function Work() {
     return (
         <section className='sm:min-h-[80vh] flex flex-col items-center justify-center gap-10 max-w-7xl mx-auto w-full py-16 md:py-10 relative'>
             <div className='absolute rounded-lg w-full h-full m-0 object-cover filter saturate-200 overflow-hidden opacity-30 dark:invert'>
-                <Image layout='fill' style={{ zIndex: -1 }} className='' src="/images/dragon1.jpg" alt="" />
+                <Image priority={false} loading="lazy" layout='fill' style={{ zIndex: -1 }} className='' src="/images/dragon1.jpg" alt="" />
             </div>
 
             <div className='mx-auto'>

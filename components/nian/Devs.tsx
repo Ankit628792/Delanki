@@ -62,7 +62,7 @@ function Devs() {
             <div className='flex flex-col sm:flex-row sm:items-center gap-8 py-6 flex-wrap justify-center'>
                 {developers.map(data => <div key={data.id} className='flex items-center gap-2 bg-white py-3 px-4 rounded-lg relative'>
                     <div className='relative flex-shrink-0 w-14 h-14 rounded-full'>
-                        <Image layout="responsive" width={56} height={56} src={data.profilePic} className='rounded-full border-4 shadow-lg' alt="" />
+                        <Image layout="responsive" priority={false} loading="lazy" width={56} height={56} src={data.profilePic} className='rounded-full object-cover border-4 shadow-lg' alt="" />
                     </div>
                     <div>
                         <a target="_blank" rel="noreferrer" className='text-lg cursor-pointer text-gray-800 hover:text-blue-500 font-medium' href={data.linkedin}>{data.name}</a>

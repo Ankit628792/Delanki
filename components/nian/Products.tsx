@@ -52,7 +52,7 @@ function Products() {
           </div>
           <div className='max-w-lg w-full md:max-w-xl 2xl:max-w-2xl h-80 sm:h-[450px] xl:h-[480px] rounded-2xl overflow-hidden z-20 relative'>
             {/* <img src={product.image} className='w-full h-full object-cover hover:scale-125 transition-transform duration-500 ease-in-out' alt="" /> */}
-            <Image src={product.image} className='hover:scale-125 transition-transform duration-500 ease-in-out' alt="" layout='fill' />
+            <Image src={product.image} priority={false} loading="lazy" className='hover:scale-125 transition-transform duration-500 ease-in-out' alt="" layout='fill' />
           </div>
         </div>
       </div>

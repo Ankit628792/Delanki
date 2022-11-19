@@ -1,27 +1,35 @@
 import { GetServerSideProps } from 'next'
-import React from 'react'
-import { Footer, Navbar } from '../../components'
+import { getSession } from 'next-auth/react';
+import React, { useState } from 'react'
+import { Footer, Navbar, UserForm } from '../../components'
+import Page from '../../components/user/page'
 
-function User({ user, verified }: { user: any, verified: boolean }) {
+function User({ userData, projectData, owner }: any) {
+  const [user, setUser] = useState(userData);
+  const [isEdit, setIsEdit] = useState(false);
   return (
     <>
       <section className='flex flex-col justify-between min-h-screen w-full '>
-        <Navbar />
         {
-          verified ?
+          Boolean(user.verified) ?
             <>
+              <Page user={user} projectData={projectData} owner={owner} setUser={setUser} />
             </>
             :
-            <div className='w-full flex-grow p-5 md:p-10'>
-              <h1 className="font-extrabold tracking-wide leading-9 text-center text-gray-800 dark:text-gray-100 text-4xl sm:leading-10 md:text-6xl md:leading-14">
-                Welcome,&nbsp;<br className='inline-block sm:hidden'/><span className='text-red'>{user.name}</span>
-              </h1>
-              <p className='text-center text-xl text-gray-800 my-3'>Submit your profile to get full access of Nian Devs</p>
-              <button aria-label='Edit Profile' role="button" type='button' className='py-2 px-5 rounded-3xl text-white font-medium bg-red block mx-auto'>Coming Soon</button>
-            </div>
+            <>
+              <Navbar />
+              <div className='w-full flex-grow p-5 md:p-10'>
+                <h1 className="font-extrabold tracking-wide leading-9 text-center text-gray-800 dark:text-gray-100 text-4xl sm:leading-10 md:text-6xl md:leading-14">
+                  Welcome,&nbsp;<br className='inline-block sm:hidden' /><span className='text-red'>{user.name}</span>
+                </h1>
+                <p className='text-center text-xl text-gray-800 my-3'>Submit your profile to get full access of Nian Devs</p>
+                {owner ? <button aria-label='Edit Profile' role="button" type='button' className='py-2 px-5 rounded-3xl text-white font-medium bg-red block mx-auto' onClick={() => setIsEdit(true)}>Add Details</button> : <></>}
+              </div>
+            </>
         }
         <Footer />
       </section>
+      {isEdit ? <UserForm user={user} setIsEdit={setIsEdit} setUser={setUser} /> : <></>}
     </>
   )
 }
@@ -29,18 +37,21 @@ function User({ user, verified }: { user: any, verified: boolean }) {
 export default User
 
 
-export const getServerSideProps: GetServerSideProps = async ({ query }) => {
-  let user = await fetch(`${process.env.HOST}/api/user/${query.id}`).then(res => res.json()).catch(e => console.log("User Not found"));
-
-  if (!user) {
+export const getServerSideProps: GetServerSideProps = async ({ req, query }) => {
+  let userData = await fetch(`${process.env.host}/api/user/${query.id}`).then(res => res.json()).catch(e => console.log("User Not found"));
+  let session = await getSession({ req })
+  if (!userData) {
     return {
       notFound: true,
     }
   }
+  let projectData = await fetch(`${process.env.host}/api/project/${userData._id}`).then(res => res.json()).catch(e => console.log("User Not found"));
   return {
     props: {
-      user,
-      verified: Boolean(user.verified)
+      userData,
+      projectData,
+      //  @ts-ignore
+      owner: Boolean(session?.user?._id == userData?._id) || Boolean(session?.user?.role == 'admin')
     }
   }
 } 

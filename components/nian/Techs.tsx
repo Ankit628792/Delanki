@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Script from 'next/script';
 import React, { useEffect, useState } from 'react'
-import useWindowSize from '../utils/useWindowSize';
+import useWindowSize from '../../utils/useWindowSize';
 
 let arr = [
     {
@@ -157,7 +157,7 @@ function Techs() {
                                     <div className='w-full flex items-center justify-center flex-wrap gap-8 pb-10'>
                                         {
                                             data.map(({ id, title, icon }) => <div key={id} className={`w-20 h-20 relative skill group p-3 bg-white rounded-full shadow-lg border cursor-pointer`}>
-                                                <Image layout="responsive" width={80} height={80} src={icon} alt="" />
+                                                <Image layout="responsive" priority={false} loading="lazy" width={80} height={80} className="object-contain" src={icon} alt="" />
                                                 <div className='absolute left-1/2 -top-1/2 transform -translate-x-1/2 bg-white p-1 px-3 rounded-2xl min-w-max hidden group-hover:inline-block shadow-lg'>
                                                     <h1 className='text-red'>{title}</h1>
                                                     <div className='absolute left-1/2 -bottom-1.5 transform -translate-x-1/2 bg-white w-3 h-3 rotate-45'></div>
@@ -184,7 +184,7 @@ const Floating = ({ size, data }: { size: any, data: Array<Technology> }) => {
         <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full'>
             {
                 data.map(({ id, title, icon }) => <div key={id} className={`w-20 h-20 relative group tech_icon skill inline-block mx-auto m-4 p-3 bg-white rounded-full shadow-lg dark:shadow-gray-500 border cursor-pointer z-50`}>
-                    <Image layout="responsive" width={80} height={80} src={icon} alt="" />
+                    <Image layout="responsive" priority={false} loading="lazy" className='object-contain' width={80} height={80} src={icon} alt="" />
                     <div className='absolute left-1/2 -top-1/2 transform -translate-x-1/2 bg-white p-1 px-3 rounded-2xl min-w-max hidden group-hover:inline-block shadow-lg'>
                         <h1 className='text-red'>{title}</h1>
                         <div className='absolute left-1/2 -bottom-1.5 transform -translate-x-1/2 bg-white w-3 h-3 rotate-45'></div>

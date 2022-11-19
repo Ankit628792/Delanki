@@ -13,7 +13,7 @@ function About() {
                     </div>
                     <div className='max-w-lg w-full h-[400px] sm:h-[500px] rounded-2xl overflow-hidden flex-grow relative'>
                         {/* <img src="/images/team.svg" className='w-full h-full object-cover hover:scale-105 transition-transform duration-300 ease-in-out drop-shadow' alt="" /> */}
-                        <Image src="/images/team.svg" className='hover:scale-105 transition-transform duration-300 ease-in-out drop-shadow' alt="" layout="fill" />
+                        <Image src="/images/team.svg" priority={false} loading="lazy" className='object-cover hover:scale-105 transition-transform duration-300 ease-in-out drop-shadow' alt="" fill={true} />
                     </div>
                 </div>
             </section>
@@ -40,7 +40,7 @@ function About() {
                     </div>
                     <div className='max-w-lg w-full h-72 sm:h-96 rounded-2xl overflow-hidden flex-grow relative'>
                         {/* <img src="/images/friends.svg" className='w-full h-full object-cover hover:scale-105 transition-transform duration-300 ease-in-out drop-shadow' alt="" /> */}
-                        <Image src="/images/friends.svg" className='hover:scale-105 transition-transform duration-300 ease-in-out drop-shadow' alt="" layout="fill" />
+                        <Image src="/images/friends.svg" priority={false} loading="lazy" className='object-cover hover:scale-105 transition-transform duration-300 ease-in-out drop-shadow' alt="" fill={true} />
                     </div>
                 </div>
             </section>

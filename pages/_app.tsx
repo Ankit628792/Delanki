@@ -5,6 +5,7 @@ import Head from 'next/head'
 import { ThemeProvider } from 'next-themes'
 import { SessionProvider } from "next-auth/react"
 import { Session } from "next-auth";
+import { Toaster } from 'react-hot-toast'
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps<{ session: Session }>) {
   return (<>
@@ -14,7 +15,10 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps<{ s
     </Head>
     <SessionProvider session={session}>
       <ThemeProvider attribute="class">
-        <Component {...pageProps} />
+        <>
+          <div><Toaster /></div>
+          <Component {...pageProps} />
+        </>
       </ThemeProvider>
     </SessionProvider>
   </>)

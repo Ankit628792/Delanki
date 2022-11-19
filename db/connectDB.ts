@@ -8,7 +8,7 @@ const connectDB = async () => {
         return 'Using current db connection'
     }
     // Use new db connection
-    await mongoose.connect(process.env.DB_URI as string);
+    await mongoose.connect(process.env.db_uri as string);
     return 'Using new db connection'
 };
 

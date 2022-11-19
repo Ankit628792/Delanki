@@ -1,7 +1,7 @@
 
 import type { NextApiRequest, NextApiResponse } from 'next'
 import connectDB from '../../../db/connectDB';
-import { getUsers } from '../../../db/service/user.service';
+import { getProjects } from '../../../db/service/project.service';
 
 
 export default async function handler(
@@ -13,7 +13,7 @@ export default async function handler(
         case "GET":
             // get code block
             try {
-                res.status(200).send(await getUsers())
+                res.status(200).send(await getProjects())
             } catch (error) {
                 res.status(400).send({ msg: 'Something went wrong' })
             }
