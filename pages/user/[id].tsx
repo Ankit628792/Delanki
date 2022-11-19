@@ -13,13 +13,13 @@ function User({ userData, projectData, owner }: any) {
         {
           Boolean(user.verified) ?
             <>
-              <Page user={user} projectData={projectData} owner={owner} setUser={setUser} />
+              <Page user={user} projectData={projectData} owner={owner} setUser={setUser} setUserEdit={setIsEdit} />
             </>
             :
             <>
               <Navbar />
-              <div className='w-full flex-grow p-5 md:p-10'>
-                <h1 className="font-extrabold tracking-wide leading-9 text-center text-gray-800 dark:text-gray-100 text-4xl sm:leading-10 md:text-6xl md:leading-14">
+              <div className='w-full flex-grow p-5 md:p-10 min-h-[50vh]'>
+                <h1 className="font-extrabold tracking-wide leading-9 text-center text-gray-800 dark:text-gray-100 text-4xl sm:leading-10 md:text-6xl md:leading-14 mt-10">
                   Welcome,&nbsp;<br className='inline-block sm:hidden' /><span className='text-red'>{user.name}</span>
                 </h1>
                 <p className='text-center text-xl text-gray-800 my-3'>Submit your profile to get full access of Nian Devs</p>

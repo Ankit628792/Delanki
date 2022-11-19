@@ -1,7 +1,7 @@
 import type { GetServerSidePropsContext, NextPage } from 'next'
 import { getSession } from 'next-auth/react'
 import { AppContext } from 'next/app'
-import { About, Footer, Landing, Navbar, Products, ScrollToTop, Work, Devs } from '../components'
+import { About, Footer, Landing, Navbar, Products, ScrollToTop, Work, Devs, Team } from '../components'
 import dynamic from 'next/dynamic';
 
 const Techs = dynamic(() => import('../components/nian/Techs'), {
@@ -21,6 +21,7 @@ const Home: NextPage = () => {
       <Work />
       <Techs />
       <Devs />
+      <Team />
       <Footer />
       <div id='connect' />
       <ScrollToTop />

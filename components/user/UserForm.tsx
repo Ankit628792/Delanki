@@ -24,6 +24,13 @@ function UserForm({ user, setIsEdit, setUser }: any) {
         return toast.error('Please enter a valid Designation', { id: 'error' })
       else if (data.mobile?.toString()?.length !== 10)
         return toast.error('Please enter a valid contact number', { id: 'error' })
+      else if (!data.linkedin?.includes('linkedin'))
+        return toast.error('Please enter a valid linkedin url', { id: 'error' })
+      else if (!data.github?.includes('github'))
+        return toast.error('Please enter a valid github url', { id: 'error' })
+      else if (data.bio?.length < 10)
+        return toast.error('Please enter proper bio over 9 words', { id: 'error' })
+
       let res = await fetch(`/api/user/${user._id}`, {
         method: 'PATCH',
         headers: {

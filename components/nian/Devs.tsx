@@ -2,13 +2,13 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
 
 const arr = [
-    {
-        id: 1,
-        name: 'Nitin Baghel',
-        profilePic: '/images/nitin.jpg',
-        designation: 'Full Stack Java Developer',
-        linkedin: 'https://www.linkedin.com/in/nitin-baghel-82a81a173/'
-    },
+    // {
+    //     id: 1,
+    //     name: 'Nitin Baghel',
+    //     profilePic: '/images/nitin.jpg',
+    //     designation: 'Full Stack Java Developer',
+    //     linkedin: 'https://www.linkedin.com/in/nitin-baghel-82a81a173/'
+    // },
     {
         id: 2,
         name: 'Nitesh Kumar',
@@ -58,7 +58,7 @@ function Devs() {
     return (
         <div className='flex flex-col items-center gap-4 py-20 bg-red'>
             <h1 className='text-4xl lg:text-5xl font-semibold text-white tracking-wide text-center'>Ready to start the project?</h1>
-            <p className='text-lg lg:text-xl text-gray-200 text-center'>Let's have a discussion on it</p>
+            <p className='text-lg lg:text-xl text-gray-200 text-center'>Contact One of us and let's have a discussion on it</p>
             <div className='flex flex-col sm:flex-row sm:items-center gap-8 py-6 flex-wrap justify-center'>
                 {developers.map(data => <div key={data.id} className='flex items-center gap-2 bg-white py-3 px-4 rounded-lg relative'>
                     <div className='relative flex-shrink-0 w-14 h-14 rounded-full'>

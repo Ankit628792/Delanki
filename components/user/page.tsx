@@ -5,7 +5,7 @@ import { uploadImage, useClickOutside } from '../../utils';
 import ProjectForm from './ProjectForm';
 import Router from 'next/router'
 
-function Page({ user, projectData, owner, setUser }: any) {
+function Page({ user, projectData, owner, setUser, setUserEdit }: any) {
     const [projects, setProjects] = useState(projectData);
     const [isEdit, setIsEdit] = useState(false);
     const fileRef = useRef(null)
@@ -111,17 +111,28 @@ function Page({ user, projectData, owner, setUser }: any) {
                         <h1 className='text-lg sm:text-xl my-1 sm:my-2'>{user.designation}</h1>
                         <h1 className='text-sm sm:text-base text-gray-500'>{user.bio}</h1>
                         <div className='flex items-center justify-center gap-6 my-4'>
-                            <div className='w-10 h-10 cursor-pointer object-contain relative'>
-                                <Image priority={false} loading="lazy" src="/icons/linkedin.png" alt='' fill={true} />
-                            </div>
-                            <div className='w-10 h-10 cursor-pointer object-contain relative'>
-                                <Image priority={false} loading="lazy" src="/icons/github.png" alt='' fill={true} />
-                            </div>
-                            <div className='w-10 h-10 cursor-pointer object-contain relative'>
-                                <Image priority={false} loading="lazy" src="/icons/link.png" alt='' fill={true} />
-                            </div>
+                            <a href={user.linkedin} target="_blank" rel="noreferrer">
+                                <div className='w-10 h-10 cursor-pointer object-contain relative'>
+                                    <Image priority={false} loading="lazy" src="/icons/linkedin.png" alt='' fill={true} />
+                                </div>
+                            </a>
+                            <a href={user.github} target="_blank" rel="noreferrer">
+                                <div className='w-10 h-10 cursor-pointer object-contain relative'>
+                                    <Image priority={false} loading="lazy" src="/icons/github.png" alt='' fill={true} />
+                                </div>
+                            </a>
+                            {user.other && <a href={user.other} target="_blank" rel="noreferrer">
+                                <div className='w-10 h-10 cursor-pointer object-contain relative'>
+                                    <Image priority={false} loading="lazy" src="/icons/link.png" alt='' fill={true} />
+                                </div>
+                            </a>}
                         </div>
-                        {owner ? <button aria-label='View Profile Preview' role="button" type='button' className='text-white text-red border border-rose-500 hover:shadow hover:bg-rose-500 transition-all duration-200 ease-out hover:text-white rounded-lg py-2 px-5 font-medium transform translate-y-4' onClick={() => Router.push(`/user/preview/${user?._id}`)}>Profile Preview</button> : <></>}
+                        {owner ?
+                            <div className='flex items-center justify-center gap-4 flex-wrap w-full transform translate-y-4'>
+                                <button aria-label='Edit Profile' role="button" type='button' className='text-blue-500 border border-blue-500 hover:shadow hover:bg-blue-500 transition-all duration-200 ease-out hover:text-white rounded-lg py-2 px-5 font-medium' onClick={() => setUserEdit(true)}>Edit Profile</button>
+                                <button aria-label='View Profile Preview' role="button" type='button' className='text-red border border-rose-500 hover:shadow hover:bg-rose-500 transition-all duration-200 ease-out hover:text-white rounded-lg py-2 px-5 font-medium' onClick={() => Router.push(`/user/preview/${user?._id}`)}>Profile Preview</button>
+                            </div>
+                            : <></>}
                     </div>
                 </header>
 

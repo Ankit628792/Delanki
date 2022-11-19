@@ -5,6 +5,7 @@ export { default as Products } from './nian/Products'
 export { default as Work } from './nian/Work'
 export { default as Techs } from './nian/Techs'
 export { default as Devs } from './nian/Devs'
+export { default as Team } from './nian/Team'
 
 export { default as ProjectForm } from './user/ProjectForm'
 export { default as UserForm } from './user/UserForm'

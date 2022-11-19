@@ -22,7 +22,7 @@ export async function getUserFromUserId(_id: ObjectId) {
 }
 
 export async function getUsers() {
-    return await User.find();
+    return await User.find({ verified: true });
 }
 
 export async function createUser(input: DocumentDefinition<UserDocument>) {
