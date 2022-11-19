@@ -76,7 +76,7 @@ function Page({ user, projectData, owner, setUser }: any) {
     return (
         <>
             <nav className='flex items-center justify-between fixed top-0 left-0 right-0 w-full gap-4 py-4 px-5 md:px-10 2xl:px-16 bg-gradient-to-b from-black to-transparent z-50'>
-                <div className="text-3xl font-semibold text-red opacity-0 lg:opacity-100 cursor-pointer" onClick={() => Router.push("/")}>
+                <div className="text-3xl font-semibold text-red cursor-pointer" onClick={() => Router.push("/")}>
                     Nian <span className='text-gray-50'>Devs</span>
                 </div>
                 <button aria-label='Go Back' role="button" type='button' className='text-white bg-red rounded-lg py-2 px-5 font-medium' onClick={() => Router.back()}>Go Back</button>
@@ -121,6 +121,7 @@ function Page({ user, projectData, owner, setUser }: any) {
                                 <Image priority={false} loading="lazy" src="/icons/link.png" alt='' fill={true} />
                             </div>
                         </div>
+                        {owner ? <button aria-label='View Profile Preview' role="button" type='button' className='text-white text-red border border-rose-500 hover:shadow hover:bg-rose-500 transition-all duration-200 ease-out hover:text-white rounded-lg py-2 px-5 font-medium transform translate-y-4' onClick={() => Router.push(`/user/preview/${user?._id}`)}>Profile Preview</button> : <></>}
                     </div>
                 </header>
 
