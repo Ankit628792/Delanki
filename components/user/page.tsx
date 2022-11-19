@@ -75,7 +75,7 @@ function Page({ user, projectData, owner, setUser, setUserEdit }: any) {
 
     return (
         <>
-            <nav className='flex items-center justify-between fixed top-0 left-0 right-0 w-full gap-4 py-4 px-5 md:px-10 2xl:px-16 bg-gradient-to-b from-black to-transparent z-50'>
+            <nav className='flex items-center justify-between fixed top-0 left-0 right-0 w-full gap-4 py-4 px-5 md:px-10 2xl:px-16 pb-10 bg-gradient-to-b from-slate-900 to-transparent z-50'>
                 <div className="text-3xl font-semibold text-red cursor-pointer" onClick={() => Router.push("/")}>
                     Nian <span className='text-gray-50'>Devs</span>
                 </div>
