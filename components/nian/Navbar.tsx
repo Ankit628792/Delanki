@@ -75,10 +75,11 @@ function Navbar() {
                             </svg>}
                     </button>}
                     {session ? <div className='flex items-center gap-2'>
-                        {session.user?.image && <img src={session.user?.image} alt="" className='w-10 h-10 border rounded-full' />}
-                        <div onClick={() => signOut()}>
+                        {/* @ts-ignore */}
+                        {session.user?.image && <img src={session.user?.image} onClick={() => Router.push(`/user/${session.user?._id}`)} alt="" className='w-10 h-10 border rounded-full cursor-pointer' />}
+                        <div>
                             <p className='text-xs'>Hello,</p>
-                            <p className='cursor-pointer text-red text-sm font-medium' title='logout'>{session.user?.name}</p>
+                            <p className='cursor-pointer text-red text-sm font-medium' title='logout' onClick={() => signOut()}>{session.user?.name}</p>
                         </div>
                     </div>
                         : <button aria-label='Connect with Us' role="button" type='button' className='py-2 px-4 rounded-3xl text-white font-medium bg-red'><a href='#connect'>Connect <span className='hidden sm:inline-block'>with Us</span></a></button>}

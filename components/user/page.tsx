@@ -156,9 +156,13 @@ function Page({ user, projectData, owner, setUser }: any) {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                         </svg> : <></>}
                     </div>
-                    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center gap-10 py-10'>
-                        {projects.map((project: any) => <Project owner={owner} key={project._id} project={project} setIsEdit={setIsEdit} deleteProject={deleteProject} />)}
-                    </div>
+                    {!projects.length ?
+                        <h1 className='flex-grow text-center text-lg lg:text-xl text-gray-600 py-10'>You've not added any project yet</h1>
+                        :
+                        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center gap-10 py-10'>
+                            {projects.map((project: any) => <Project owner={owner} key={project._id} project={project} setIsEdit={setIsEdit} deleteProject={deleteProject} />)}
+                        </div>
+                    }
                 </section>
             </section>
 
