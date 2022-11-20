@@ -70,23 +70,23 @@ function ProjectForm({ user, isEdit, setIsEdit, setProjects }: { user: User, isE
           </svg>
 
           <div className='mt-4'>
-            <label htmlFor="title" className='font-medium'>Title</label>
+            <label htmlFor="title" className='font-medium'>Title <span className='text-red mx-0.5'>*</span></label>
             <div className='w-full bg-white text-gray-800 rounded border'>
-              <input type={"text"} value={data.title} onChange={handleChange} minLength={3} id='title' className='px-2 py-1 bg-transparent w-full focus:outline-rose-400' />
+              <input type={"text"} placeholder="Project Title" value={data.title} onChange={handleChange} minLength={3} id='title' className='px-2 py-1 bg-transparent w-full focus:outline-rose-400' />
             </div>
           </div>
 
           <div className='mt-4'>
-            <label htmlFor="techs" className='font-medium'>Tech Stack</label>
+            <label htmlFor="techs" className='font-medium'>Tech Stack <span className='text-red mx-0.5'>*</span></label>
             <div className='w-full bg-white text-gray-800 rounded border'>
-              <input type={"text"} value={data.techs} onChange={handleChange} minLength={5} id='techs' className='px-2 py-1 bg-transparent w-full focus:outline-rose-400' />
+              <input type={"text"} placeholder="Separated by coma" value={data.techs} onChange={handleChange} minLength={5} id='techs' className='px-2 py-1 bg-transparent w-full focus:outline-rose-400' />
             </div>
           </div>
 
           <div className='mt-4'>
             <label htmlFor="portrait" className='font-medium'>Portrait View <span className='mx-1 text-xl text-red cursor-pointer'>+</span></label>
             <div className='w-full bg-white text-gray-800 rounded border'>
-              <input type="url" disabled readOnly value={data.portrait} placeholder="Click plus icon to add image" className='px-2 py-1.5 bg-transparent w-full focus:outline-rose-400 text-sm' />
+              <input type="url" disabled readOnly value={data.portrait} placeholder="Click plus icon to add image *" className='px-2 py-1.5 bg-transparent w-full focus:outline-rose-400 text-sm' />
               <input ref={fileRef} type="file" value={''} onChange={handleFile} id='portrait' className='hidden px-2 py-1 bg-transparent w-full focus:outline-rose-400' />
             </div>
           </div>
@@ -94,22 +94,22 @@ function ProjectForm({ user, isEdit, setIsEdit, setProjects }: { user: User, isE
           <div className='mt-4'>
             <label htmlFor="landscape" className='font-medium'>Landscape View <span className='mx-1 text-xl text-red cursor-pointer'>+</span></label>
             <div className='w-full bg-white text-gray-800 rounded border'>
-              <input type="url" disabled readOnly value={data.landscape} placeholder="Click plus icon to add image" className='px-2 py-1.5 bg-transparent w-full focus:outline-rose-400 text-sm' />
+              <input type="url" disabled readOnly value={data.landscape} placeholder="Click plus icon to add image *" className='px-2 py-1.5 bg-transparent w-full focus:outline-rose-400 text-sm' />
               <input ref={fileRef} type="file" value={''} onChange={handleFile} id='landscape' className='hidden px-2 py-1 bg-transparent w-full focus:outline-rose-400' />
             </div>
           </div>
 
           <div className='mt-4'>
-            <label htmlFor="link" className='font-medium'>Link</label>
+            <label htmlFor="link" className='font-medium'>Link <span className='text-red mx-0.5'>*</span></label>
             <div className='w-full bg-white text-gray-800 rounded border'>
-              <input type="url" value={data.link} onChange={handleChange} id='link' className='px-2 py-1 bg-transparent w-full focus:outline-rose-400' />
+              <input type="url" placeholder='application url, github, demo, etc.' value={data.link} onChange={handleChange} id='link' className='px-2 py-1 bg-transparent w-full focus:outline-rose-400' />
             </div>
           </div>
 
           <div className='mt-4'>
-            <label htmlFor="description" className='font-medium'>Description</label>
+            <label htmlFor="description" className='font-medium'>Description <span className='text-red mx-0.5'>*</span></label>
             <div className='w-full bg-white text-gray-800 rounded border h-16'>
-              <textarea id='description' value={data.description} onChange={handleChange} minLength={10} maxLength={200} className='px-2 py-1 bg-transparent w-full focus:outline-rose-400 resize-none h-16'></textarea>
+              <textarea id='description' placeholder='a little description about the project...' value={data.description} onChange={handleChange} minLength={10} maxLength={200} className='px-2 py-1 bg-transparent w-full focus:outline-rose-400 resize-none h-16'></textarea>
             </div>
           </div>
 

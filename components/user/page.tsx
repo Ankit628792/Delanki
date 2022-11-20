@@ -157,13 +157,21 @@ function Page({ user, projectData, owner, setUser, setUserEdit }: { user: User, 
                                 :
                                 <>
                                     {
+                                        user?.skills.map((skill: string, i: any) => <div key={i} className='text-lg font-medium tracking-wide border rounded-3xl flex items-center gap-2 relative'>
+                                            <span className='px-4 py-0.5 text-sm sm:text-base text-gray-800 dark:text-gray-200'>{skill}</span>
+                                            {owner ? <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 -top-2 -right-1 bg-red text-white rounded-3xl absolute cursor-pointer" onClick={() => handleSkill('remove', `${skill}`, () => { })}>
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M18 12H6" />
+                                            </svg> : <></>}
+                                        </div>)
+                                    }
+                                    {/* {
                                         user?.skills.map((skill: string, i: any) => <div key={i} className='text-lg font-medium tracking-wide border rounded-3xl flex items-center gap-2'>
                                             <span className='px-4 py-1 text-sm sm:text-base text-gray-800 dark:text-gray-200'>{skill}</span>
                                             {owner ? <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 bg-red text-white rounded-3xl cursor-pointer" onClick={() => handleSkill('remove', `${skill}`, () => { })}>
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M18 12H6" />
                                             </svg> : <></>}
                                         </div>)
-                                    }
+                                    } */}
                                 </>
                         }
                     </div>
@@ -238,7 +246,7 @@ const AddSkill = ({ handleSkill }: { handleSkill: Function }) => {
 
     return <>
         <div ref={cancelRef} className={`${active ? 'w-full border-gray-100' : 'w-10'} max-w-xs border border-transparent rounded-full flex items-center transform transition-all duration-100 ease-in-out bg-white dark:bg-gray-900`}>
-            <input value={skill} onChange={(e) => setSkill(e.target.value)} className={`flex-grow py-2 px-5 outline-none border-none bg-transparent ${active ? '' : 'hidden'}`} type="text" />
+            <input value={skill} placeholder="Skill" onChange={(e) => setSkill(e.target.value)} className={`flex-grow py-2 px-5 outline-none border-none bg-transparent ${active ? '' : 'hidden'}`} type="text" />
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" onClick={async () => active ? handleSkill('add', skill, () => setSkill('')) : setActive(!active)} className="rounded-full w-10 h-10 text-white bg-blue-500 p-1 flex-shrink-0 cursor-pointer">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6" />
             </svg>

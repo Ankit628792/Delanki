@@ -61,44 +61,44 @@ function UserForm({ user, setIsEdit, setUser }: { user: User, setIsEdit: Functio
           </svg>
 
           <div className='mt-4'>
-            <label htmlFor="designation" className='font-medium'>Designation</label>
+            <label htmlFor="designation" className='font-medium'>Designation <span className='text-red mx-0.5'>*</span></label>
             <div className='w-full bg-white text-gray-800 rounded border'>
-              <input type={"text"} value={data.designation} onChange={handleChange} minLength={3} id='designation' className='px-2 py-1 bg-transparent w-full focus:outline-rose-400' />
+              <input type={"text"} placeholder="Your designation" value={data.designation} onChange={handleChange} minLength={3} id='designation' className='px-2 py-1 bg-transparent w-full focus:outline-rose-400' />
             </div>
           </div>
 
           <div className='mt-4'>
-            <label htmlFor="mobile" className='font-medium'>Contact No</label>
+            <label htmlFor="mobile" className='font-medium'>Contact No <span className='text-red mx-0.5'>*</span></label>
             <div className='w-full bg-white text-gray-800 rounded border'>
               <input type={"number"} value={data.mobile} onChange={handleChange} minLength={10} maxLength={11} id='mobile' className='px-2 py-1 bg-transparent w-full focus:outline-rose-400' />
             </div>
           </div>
 
           <div className='mt-4'>
-            <label htmlFor="linkedin" className='font-medium'>LinkedIn</label>
+            <label htmlFor="linkedin" className='font-medium'>LinkedIn <span className='text-red mx-0.5'>*</span></label>
             <div className='w-full bg-white text-gray-800 rounded border'>
-              <input type="url" value={data.linkedin} onChange={handleChange} id='linkedin' className='px-2 py-1 bg-transparent w-full focus:outline-rose-400' />
+              <input type="url" placeholder='Linkedin URL' value={data.linkedin} onChange={handleChange} id='linkedin' className='px-2 py-1 bg-transparent w-full focus:outline-rose-400' />
             </div>
           </div>
 
           <div className='mt-4'>
-            <label htmlFor="github" className='font-medium'>Github</label>
+            <label htmlFor="github" className='font-medium'>Github <span className='text-red mx-0.5'>*</span></label>
             <div className='w-full bg-white text-gray-800 rounded border'>
-              <input type="url" value={data.github} onChange={handleChange} id='github' className='px-2 py-1 bg-transparent w-full focus:outline-rose-400' />
+              <input type="url" placeholder='Github URL' value={data.github} onChange={handleChange} id='github' className='px-2 py-1 bg-transparent w-full focus:outline-rose-400' />
             </div>
           </div>
 
           <div className='mt-4'>
             <label htmlFor="other" className='font-medium'>Other</label>
             <div className='w-full bg-white text-gray-800 rounded border'>
-              <input type="url" value={data.other} onChange={handleChange} id='other' className='px-2 py-1 bg-transparent w-full focus:outline-rose-400' />
+              <input type="url" placeholder='Any other link' value={data.other} onChange={handleChange} id='other' className='px-2 py-1 bg-transparent w-full focus:outline-rose-400' />
             </div>
           </div>
 
           <div className='mt-4'>
-            <label htmlFor="bio" className='font-medium'>Bio</label>
+            <label htmlFor="bio" className='font-medium'>Bio <span className='text-red mx-0.5'>*</span></label>
             <div className='w-full bg-white text-gray-800 rounded border h-20'>
-              <textarea id='bio' value={data.bio} onChange={handleChange} minLength={10} maxLength={300} className='px-2 py-1 bg-transparent w-full focus:outline-rose-400 resize-none h-20'></textarea>
+              <textarea id='bio' placeholder='Tell us why are you a great developer?' value={data.bio} onChange={handleChange} minLength={10} maxLength={300} className='px-2 py-1 bg-transparent w-full focus:outline-rose-400 resize-none h-20'></textarea>
             </div>
           </div>
 
