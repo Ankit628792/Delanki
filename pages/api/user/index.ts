@@ -11,9 +11,8 @@ export default async function handler(
     await connectDB();
     switch (req.method) {
         case "GET":
-            // get code block
             try {
-                res.status(200).send(await getUsers())
+                res.status(200).send(await getUsers(req.query))
             } catch (error) {
                 res.status(400).send({ msg: 'Something went wrong' })
             }

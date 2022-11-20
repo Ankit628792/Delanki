@@ -4,9 +4,9 @@ import { Footer, Navbar } from '../components'
 function privacy_policy() {
     return (
         <>
-            <section className='flex flex-col justify-between min-h-screen w-full '>
+            <section className='flex flex-col gap-10 justify-between min-h-screen w-full dark:bg-slate-900'>
                 <Navbar />
-                <div className='policy max-w-4xl rounded-lg p-5 md:p-10 xl:px-20 my-10 !m-5 lg:!mx-auto border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 filter backdrop-blur-lg'>
+                <div className='policy max-w-4xl rounded-lg p-5 md:p-10 xl:px-20 !m-5 lg:!mx-auto border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 filter backdrop-blur-lg'>
                     <h1>Privacy Policy for Nian Devs</h1>
 
                     <li>At Nian Devs, accessible from <a href='https://nian-devs.vercel.app' target="_blank" rel="noreferrer">Nian Devs</a>, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Nian Devs and how we use it.</li>

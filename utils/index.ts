@@ -1,7 +1,7 @@
-import { createRef, useEffect } from "react";
+import { createRef, RefObject, useEffect } from "react";
 import toast from "react-hot-toast"
 
-export const uploadImage = async (image) => {
+export const uploadImage = async (image: File) => {
     let data = new FormData();
     let tId = toast.loading("Uploading image...");
     data.append("file", image)
@@ -14,19 +14,19 @@ export const uploadImage = async (image) => {
     let res = await resp.json();
     toast.dismiss(tId);
     if (res.secure_url)
-        toast.success("Image Uploaded successfully")
+        toast.success("Image Uploaded successfully", { id: 'success' })
     else
-        toast.error("Unable to Upload Image")
+        toast.error("Unable to Upload Image", { id: 'error' })
     return res.secure_url
 }
 
 
 
-export const useClickOutside = (handler, ref) => {
-    const domRef = ref || createRef(null);
+export const useClickOutside = (handler: Function, ref: RefObject<any>) => {
+    const domRef = ref || createRef();
 
     useEffect(() => {
-        const localHandler = (e) => {
+        const localHandler = (e: { target: any; }) => {
             if (!domRef.current) return;
             if (!domRef.current.contains(e.target)) handler();
         };

@@ -1,7 +1,8 @@
-import mongoose, { Schema } from 'mongoose'
+import mongoose, { ObjectId, Schema } from 'mongoose'
 
 export interface ProjectDocument extends mongoose.Document {
     title: string,
+    userId: ObjectId,
     description: string,
     portrait: string,
     landscape: string,

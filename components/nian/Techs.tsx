@@ -2,129 +2,7 @@ import Image from 'next/image';
 import Script from 'next/script';
 import React, { useEffect, useState } from 'react'
 import useWindowSize from '../../utils/useWindowSize';
-
-let arr = [
-    {
-        id: 1,
-        title: 'HTML',
-        icon: '/icons/html.svg'
-    },
-    {
-        id: 2,
-        title: 'CSS',
-        icon: '/icons/css.svg'
-    },
-    {
-        id: 3,
-        title: 'JavaScript',
-        icon: '/icons/js.svg'
-    },
-    {
-        id: 4,
-        title: 'Bootstrap',
-        icon: '/icons/bootstrap.svg'
-    },
-    {
-        id: 5,
-        title: 'Material UI',
-        icon: '/icons/material.png'
-    },
-    {
-        id: 6,
-        title: 'Tailwind CSS',
-        icon: '/icons/tailwind.svg'
-    },
-    {
-        id: 7,
-        title: 'Express JS',
-        icon: '/icons/express.svg'
-    },
-    {
-        id: 8,
-        title: 'Node JS',
-        icon: '/icons/node.svg'
-    },
-    {
-        id: 9,
-        title: 'React JS',
-        icon: '/icons/react.svg'
-    },
-    {
-        id: 10,
-        title: 'Redux',
-        icon: '/icons/redux.svg'
-    },
-    {
-        id: 11,
-        title: 'Next JS',
-        icon: '/icons/next.svg'
-    },
-    {
-        id: 12,
-        title: 'MongoDB',
-        icon: '/icons/mongo.svg'
-    },
-    {
-        id: 13,
-        title: 'Firebase',
-        icon: '/icons/firebase.png'
-    },
-    {
-        id: 14,
-        title: 'Angular',
-        icon: '/icons/angular.svg'
-    },
-    {
-        id: 15,
-        title: 'Docker',
-        icon: '/icons/docker.svg'
-    },
-    {
-        id: 16,
-        title: 'GraphQL',
-        icon: '/icons/graphql.svg'
-    },
-    {
-        id: 17,
-        title: 'Hibernate',
-        icon: '/icons/hibernate.svg'
-    },
-    {
-        id: 18,
-        title: 'TypeScript',
-        icon: '/icons/typescript.svg'
-    },
-    {
-        id: 19,
-        title: 'Microservice',
-        icon: '/icons/microservice.png'
-    },
-    {
-        id: 20,
-        title: 'Java',
-        icon: '/icons/java.svg'
-    },
-    {
-        id: 21,
-        title: 'Spring Boot',
-        icon: '/icons/spring.svg'
-    },
-    {
-        id: 22,
-        title: 'Postgresql',
-        icon: '/icons/postgresql.svg'
-    },
-    {
-        id: 23,
-        title: 'MySQL',
-        icon: '/icons/mysql.svg'
-    },
-    {
-        id: 24,
-        title: 'Electron JS',
-        icon: '/icons/electron.svg'
-    },
-]
+import { programmingLanguages as arr } from '../../utils/constant'
 
 interface Technology {
     id: number,
@@ -156,8 +34,8 @@ function Techs() {
 
                                     <div className='w-full flex items-center justify-center flex-wrap gap-8 pb-10'>
                                         {
-                                            data.map(({ id, title, icon }) => <div key={id} className={`w-20 h-20 relative skill group p-3 bg-white rounded-full shadow-lg border cursor-pointer`}>
-                                                <Image layout="responsive" priority={false} loading="lazy" width={80} height={80} className="object-contain" src={icon} alt="" />
+                                            data.map(({ id, title, icon }: Technology) => <div key={id} className={`w-20 h-20 relative skill group p-3 bg-white rounded-full shadow-lg border cursor-pointer`}>
+                                                <Image placeholder="blur" blurDataURL={icon} layout="responsive" priority={false} loading="lazy" width={80} height={80} className="object-contain" src={icon} alt="" />
                                                 <div className='absolute left-1/2 -top-1/2 transform -translate-x-1/2 bg-white p-1 px-3 rounded-2xl min-w-max hidden group-hover:inline-block shadow-lg'>
                                                     <h1 className='text-red'>{title}</h1>
                                                     <div className='absolute left-1/2 -bottom-1.5 transform -translate-x-1/2 bg-white w-3 h-3 rotate-45'></div>
@@ -183,8 +61,8 @@ const Floating = ({ size, data }: { size: any, data: Array<Technology> }) => {
 
         <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full'>
             {
-                data.map(({ id, title, icon }) => <div key={id} className={`w-20 h-20 relative group tech_icon skill inline-block mx-auto m-4 p-3 bg-white rounded-full shadow-lg dark:shadow-gray-500 border cursor-pointer z-50`}>
-                    <Image layout="responsive" priority={false} loading="lazy" className='object-contain' width={80} height={80} src={icon} alt="" />
+                data.map(({ id, title, icon }: Technology) => <div key={id} className={`w-20 h-20 relative group tech_icon skill inline-block mx-auto m-4 p-3 bg-white rounded-full shadow-lg dark:shadow-gray-500 border cursor-pointer z-50`}>
+                    <Image placeholder="blur" blurDataURL={icon} layout="responsive" priority={false} loading="lazy" className='object-contain' width={80} height={80} src={icon} alt="" />
                     <div className='absolute left-1/2 -top-1/2 transform -translate-x-1/2 bg-white p-1 px-3 rounded-2xl min-w-max hidden group-hover:inline-block shadow-lg'>
                         <h1 className='text-red'>{title}</h1>
                         <div className='absolute left-1/2 -bottom-1.5 transform -translate-x-1/2 bg-white w-3 h-3 rotate-45'></div>

@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import Image from 'next/image'
-import Router from 'next/router';
+import Link from 'next/link';
+import DevCard from './DevCard';
 
 function Team() {
     const [devs, setDevs] = useState([]);
 
     const fetchDevs = async () => {
-        let res = await fetch(`/api/user`).then(res => res.json())
+        let res = await fetch(`/api/user?limit=4`).then(res => res.json())
         if (res.length)
             setDevs(res)
-        console.log(res)
     }
     useEffect(() => { fetchDevs() }, [])
 
@@ -22,39 +21,12 @@ function Team() {
 
                 <div className='flex flex-wrap items-center justify-center gap-10 2xl:gap-x-14 py-10'>
                     {
-                        devs.map((dev: any) => <div className='w-full max-w-xs rounded-lg overflow-hidden border dark:border-gray-800 group relative max-h-[25rem] bg-white dark:bg-transparent dark:bg-gradient-to-t from-black to-slate-700'>
-                            <div className='relative h-40 w-full'>
-                                <Image className='object-cover' src={dev.banner} alt="" layout="fill" loading='lazy' />
-                            </div>
-                            <div className='p-5 flex flex-col items-center justify-center gap-1 transform -translate-y-16'>
-                                <div className='w-20 h-20 border-4 shadow-lg rounded-full relative cursor-pointer' onClick={() => Router.push(`/user/${dev._id}`)}>
-                                    <Image className='object-cover rounded-full' src={dev.image} alt="" layout="fill" loading='lazy' />
-                                </div>
-                                <h1 className='text-xl font-semibold text-center cursor-pointer text-gray-800 dark:text-gray-50' onClick={() => Router.push(`/user/${dev._id}`)}>{dev.name}</h1>
-                                <p className='text-gray-500 dark:text-gray-300 font-medium text-center cursor-pointer' onClick={() => Router.push(`/user/${dev._id}`)}>{dev.designation}</p>
-                                <p className='text-gray-500 text-center text-sm line-clamp-3'>{dev.bio}</p>
-                                <div className='flex items-center justify-center gap-6 my-4'>
-                                    <a href={dev.linkedin} target="_blank" rel="noreferrer">
-                                        <div className='w-10 h-10 cursor-pointer object-contain relative'>
-                                            <Image priority={false} loading="lazy" src="/icons/linkedin.png" alt='' fill={true} />
-                                        </div>
-                                    </a>
-                                    <a href={dev.github} target="_blank" rel="noreferrer">
-                                        <div className='w-10 h-10 cursor-pointer object-contain relative'>
-                                            <Image priority={false} loading="lazy" src="/icons/github.png" alt='' fill={true} />
-                                        </div>
-                                    </a>
-                                    {dev.other && <a href={dev.other} target="_blank" rel="noreferrer">
-                                        <div className='w-10 h-10 cursor-pointer object-contain relative'>
-                                            <Image priority={false} loading="lazy" src="/icons/link.png" alt='' fill={true} />
-                                        </div>
-                                    </a>}
-                                </div>
-                            </div>
-                        </div>
-                        )
+                        devs.slice(0, 3).map((dev: Dev) => <DevCard key={dev._id} dev={dev} />)
                     }
                 </div>
+                {devs.length > 3 && <div className='grid place-items-center py-4'>
+                    <Link href="/user/team" className=' text-lg bg-red text-white py-1.5 px-6 rounded-xl hover:scale-x-105 transition-all duration-200 ease-in-out'>View All</Link>
+                </div>}
             </section>
         </>
     )

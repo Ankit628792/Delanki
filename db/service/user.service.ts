@@ -1,4 +1,4 @@
-import { DocumentDefinition, ObjectId } from "mongoose";
+import { DocumentDefinition, FilterQuery, ObjectId } from "mongoose";
 import User, { UserDocument } from "../models/user"
 
 let pics = [
@@ -21,8 +21,8 @@ export async function getUserFromUserId(_id: ObjectId) {
     return await User.findById({ _id: _id });
 }
 
-export async function getUsers() {
-    return await User.find({ verified: true });
+export async function getUsers(query: FilterQuery<any>) {
+    return await User.find({ verified: true }).limit(query.limit || 100);
 }
 
 export async function createUser(input: DocumentDefinition<UserDocument>) {

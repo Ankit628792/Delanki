@@ -12,8 +12,7 @@ function About() {
                         <p className='text-gray-500 max-w-2xl lg:max-w-sm 2xl:max-w-xl 2xl:text-lg text-center mx-auto lg:mx-0 lg:text-left leading-relaxed'>Advances in technology, let us make more useful products. But it's first when they connect with us emotionally they have the power to become loved digital experiences.</p>
                     </div>
                     <div className='max-w-lg w-full h-[400px] sm:h-[500px] rounded-2xl overflow-hidden flex-grow relative'>
-                        {/* <img src="/images/team.svg" className='w-full h-full object-cover hover:scale-105 transition-transform duration-300 ease-in-out drop-shadow' alt="" /> */}
-                        <Image src="/images/team.svg" priority={false} loading="lazy" className='object-cover hover:scale-105 transition-transform duration-300 ease-in-out drop-shadow' alt="" fill={true} />
+                        <Image placeholder="blur" blurDataURL="/images/team.svg" src="/images/team.svg" priority={false} loading="lazy" className='object-cover hover:scale-105 transition-transform duration-300 ease-in-out drop-shadow' alt="" layout="fill" objectFit="cover" />
                     </div>
                 </div>
             </section>
@@ -39,8 +38,7 @@ function About() {
                         </div>
                     </div>
                     <div className='max-w-lg w-full h-72 sm:h-96 rounded-2xl overflow-hidden flex-grow relative'>
-                        {/* <img src="/images/friends.svg" className='w-full h-full object-cover hover:scale-105 transition-transform duration-300 ease-in-out drop-shadow' alt="" /> */}
-                        <Image src="/images/friends.svg" priority={false} loading="lazy" className='object-cover hover:scale-105 transition-transform duration-300 ease-in-out drop-shadow' alt="" fill={true} />
+                        <Image placeholder="blur" blurDataURL="/images/friends.svg" src="/images/friends.svg" priority={false} loading="lazy" className='hover:scale-105 transition-transform duration-300 ease-in-out drop-shadow' alt="" layout="fill" objectFit='cover' />
                     </div>
                 </div>
             </section>

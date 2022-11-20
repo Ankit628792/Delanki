@@ -1,34 +1,12 @@
 import Image from 'next/image'
 import React from 'react'
-
-let data = [
-    {
-        id: 1,
-        title: 'Concept',
-        description: 'Build your brand with an insight-driven product developer group that believes in taking action.'
-    },
-    {
-        id: 2,
-        title: 'Budget',
-        description: 'You have enough on your plate, so let our experts handle the disbursement and reinforcement of your brand.'
-    },
-    {
-        id: 3,
-        title: 'Development',
-        description: `When it comes to developing products for business, we don't leave anything to chance. We create product that produces results by specifically.`
-    },
-    {
-        id: 4,
-        title: 'Results',
-        description: 'So let our tech experts handle the disbursement and reinforcement of your brand and reach to your target audience.'
-    },
-]
+import { workData as data } from '../../utils/constant'
 
 function Work() {
     return (
         <section className='sm:min-h-[80vh] flex flex-col items-center justify-center gap-10 max-w-7xl mx-auto w-full py-16 md:py-10 relative'>
             <div className='absolute rounded-lg w-full h-full m-0 object-cover filter saturate-200 overflow-hidden opacity-30 dark:invert'>
-                <Image priority={false} loading="lazy" layout='fill' style={{ zIndex: -1 }} className='' src="/images/dragon1.jpg" alt="" />
+                <Image placeholder="blur" blurDataURL="/images/dragon1.jpg" priority={false} loading="lazy" layout='fill' style={{ zIndex: -1 }} className='' src="/images/dragon1.jpg" alt="" />
             </div>
 
             <div className='mx-auto'>

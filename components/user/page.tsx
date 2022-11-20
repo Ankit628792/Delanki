@@ -5,17 +5,17 @@ import { uploadImage, useClickOutside } from '../../utils';
 import ProjectForm from './ProjectForm';
 import Router from 'next/router'
 
-function Page({ user, projectData, owner, setUser, setUserEdit }: any) {
-    const [projects, setProjects] = useState(projectData);
-    const [isEdit, setIsEdit] = useState(false);
+function Page({ user, projectData, owner, setUser, setUserEdit }: { user: User, projectData: Projects, owner: Boolean, setUser: Function, setUserEdit: Function | any }) {
+    const [projects, setProjects] = useState<Projects | any>(projectData);
+    const [isEdit, setIsEdit] = useState<Project | any>(false);
     const fileRef = useRef(null)
     const deleteProject = async (id: string) => {
         let res = await fetch(`/api/project/${id}`, {
             method: 'DELETE'
         })
         if (res.status == 200) {
-            toast.success("Project removed successfully!");
-            let idx = projects.findIndex((item: any) => item._id == id);
+            toast.success("Project removed successfully!", { id: 'success' });
+            let idx = projects.findIndex((item: Project) => item._id == id);
             if (idx > -1) {
                 let arr = [...projects];
                 arr.splice(idx, 1);
@@ -23,13 +23,13 @@ function Page({ user, projectData, owner, setUser, setUserEdit }: any) {
             }
         }
         else
-            toast.error('Unable to remove project')
+            toast.error('Unable to remove project', { id: 'error' })
     }
 
     const handleSkill = async (type: string, skill: string, callback: Function) => {
         let skills = [...user.skills]
         if (type == 'add') {
-            if (!skill.length) return toast.error("Please add a skill")
+            if (!skill.length) return toast.error("Please add a skill", { id: 'error' })
             skills.push(skill)
         }
         else if (type == 'remove') {
@@ -45,7 +45,7 @@ function Page({ user, projectData, owner, setUser, setUserEdit }: any) {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ skills: skills })
+            body: JSON.stringify({ skills: skills, verified: true })
         });
         if (res.status == 200) {
             res = await res.json();
@@ -83,7 +83,7 @@ function Page({ user, projectData, owner, setUser, setUserEdit }: any) {
             </nav>
             <section className='w-full pb-20'>
                 <div className='h-52 sm:h-60 w-full relative'>
-                    <Image priority src={user.banner || "https://ankit-resume.netlify.app/images/header-background.jpg"} className='w-full h-full object-cover' alt='' fill={true} />
+                    <Image placeholder="blur" blurDataURL={user.banner || "https://ankit-resume.netlify.app/images/header-background.jpg"} priority src={user.banner || "https://ankit-resume.netlify.app/images/header-background.jpg"} className='w-full h-full' alt='' layout="fill" objectFit='cover' />
                     {owner ? <label htmlFor="banner" className='p-2 w-9 h-9 rounded-full bg-white border cursor-pointer absolute bottom-2 right-2 text-blue-500 border-blue-500 z-40'>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
@@ -100,11 +100,20 @@ function Page({ user, projectData, owner, setUser, setUserEdit }: any) {
                             </svg>
                             <input ref={fileRef} type="file" value={''} onChange={handleFile} id='image' className='hidden px-2 py-1 bg-transparent w-full focus:outline-rose-400' />
                         </label> : <></>}
-                        {user.verified && <div className='p-0.5 w-9 h-9 rounded-full bg-white cursor-pointer absolute -bottom-4 right-1/2 transform translate-x-1/2 text-teal-500 shadow-lg' onClick={() => { }}>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path fillRule="evenodd" d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.49 4.49 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clipRule="evenodd" />
-                            </svg>
-                        </div>}
+                        {user.verified ?
+                            <div className='p-0.5 w-9 h-9 rounded-full bg-white cursor-pointer absolute -bottom-4 right-1/2 transform translate-x-1/2 text-teal-500 shadow-lg group'>
+                                <p className='absolute -bottom-10 right-1/2 transform translate-x-1/2 min-w-max bg-white py-1 px-4 text-teal-600 rounded-full border shadow-xl dark:shadow-gray-700 opacity-0 scale-0 -translate-y-16 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 transition-all duration-500 ease-in-out'>Verified Profile</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path fillRule="evenodd" d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.49 4.49 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clipRule="evenodd" />
+                                </svg>
+                            </div>
+                            : <div className='p-1.5 w-9 h-9 rounded-full bg-white cursor-pointer absolute -bottom-4 right-1/2 transform translate-x-1/2 text-rose-500 shadow-lg group'>
+                                <p className='absolute -bottom-10 right-1/2 transform translate-x-1/2 min-w-max bg-white py-1 px-4 text-rose-600 rounded-full text-sm sm:text-base border shadow-xl dark:shadow-gray-700 opacity-0 scale-0 -translate-y-16 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 transition-all duration-500 ease-in-out'>Complete profile to get Verification badge</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" />
+                                </svg>
+                            </div>
+                        }
                     </div>
                     <div className='text-center max-w-2xl'>
                         <h1 className='text-3xl sm:text-4xl font-medium'>{user.name}</h1>
@@ -112,25 +121,25 @@ function Page({ user, projectData, owner, setUser, setUserEdit }: any) {
                         <h1 className='text-sm sm:text-base text-gray-500'>{user.bio}</h1>
                         <div className='flex items-center justify-center gap-6 my-4'>
                             <a href={user.linkedin} target="_blank" rel="noreferrer">
-                                <div className='w-10 h-10 cursor-pointer object-contain relative'>
-                                    <Image priority={false} loading="lazy" src="/icons/linkedin.png" alt='' fill={true} />
+                                <div className='w-10 h-10 cursor-pointer relative'>
+                                    <Image placeholder="blur" blurDataURL="/icons/linkedin.png" priority={false} loading="lazy" src="/icons/linkedin.png" alt='' layout="fill" objectFit='contain' />
                                 </div>
                             </a>
                             <a href={user.github} target="_blank" rel="noreferrer">
-                                <div className='w-10 h-10 cursor-pointer object-contain relative'>
-                                    <Image priority={false} loading="lazy" src="/icons/github.png" alt='' fill={true} />
+                                <div className='w-10 h-10 cursor-pointer relative'>
+                                    <Image placeholder="blur" blurDataURL="/icons/github.png" priority={false} loading="lazy" src="/icons/github.png" alt='' layout="fill" objectFit='contain' />
                                 </div>
                             </a>
                             {user.other && <a href={user.other} target="_blank" rel="noreferrer">
-                                <div className='w-10 h-10 cursor-pointer object-contain relative'>
-                                    <Image priority={false} loading="lazy" src="/icons/link.png" alt='' fill={true} />
+                                <div className='w-10 h-10 cursor-pointer relative'>
+                                    <Image placeholder="blur" blurDataURL="/icons/link.png" priority={false} loading="lazy" src="/icons/link.png" alt='' layout="fill" objectFit='contain' />
                                 </div>
                             </a>}
                         </div>
                         {owner ?
                             <div className='flex items-center justify-center gap-4 flex-wrap w-full transform translate-y-4'>
-                                <button aria-label='Edit Profile' role="button" type='button' className='text-blue-500 border border-blue-500 hover:shadow hover:bg-blue-500 transition-all duration-200 ease-out hover:text-white rounded-lg py-2 px-5 font-medium' onClick={() => setUserEdit(true)}>Edit Profile</button>
-                                <button aria-label='View Profile Preview' role="button" type='button' className='text-red border border-rose-500 hover:shadow hover:bg-rose-500 transition-all duration-200 ease-out hover:text-white rounded-lg py-2 px-5 font-medium' onClick={() => Router.push(`/user/preview/${user?._id}`)}>Profile Preview</button>
+                                <button aria-label='Edit Profile' role="button" type='button' className='text-blue-500 border border-blue-500 hover:shadow hover:bg-blue-500 transition-all duration-200 ease-out hover:text-white rounded-lg py-2 px-5 text-sm sm:text-base font-medium' onClick={() => setUserEdit(true)}>Edit Profile</button>
+                                <button aria-label='View Profile Preview' role="button" type='button' className='text-red border border-rose-500 hover:shadow hover:bg-rose-500 transition-all duration-200 ease-out hover:text-white rounded-lg py-2 px-5 text-sm sm:text-base font-medium' onClick={() => Router.push(`/user/preview/${user?._id}`)}>Profile Preview</button>
                             </div>
                             : <></>}
                     </div>
@@ -141,7 +150,7 @@ function Page({ user, projectData, owner, setUser, setUserEdit }: any) {
                         <h1 className='text-3xl sm:text-4xl font-medium'>Skills</h1>
                         {owner ? <AddSkill handleSkill={handleSkill} /> : <></>}
                     </div>
-                    <div className='flex flex-wrap items-center gap-x-6 gap-y-8 py-5'>
+                    <div className='flex flex-wrap items-center gap-x-6 gap-y-6 py-5'>
                         {
                             !user?.skills?.length ?
                                 <h1 className='flex-grow text-center text-lg lg:text-xl text-gray-600'>You've not added any skill, add to make profile more recognizable</h1>
@@ -149,7 +158,7 @@ function Page({ user, projectData, owner, setUser, setUserEdit }: any) {
                                 <>
                                     {
                                         user?.skills.map((skill: string, i: any) => <div key={i} className='text-lg font-medium tracking-wide border rounded-3xl flex items-center gap-2'>
-                                            <span className='px-5 py-1 text-gray-800 dark:text-gray-200'>{skill}</span>
+                                            <span className='pl-5 pr-2 py-1 text-sm sm:text-base text-gray-800 dark:text-gray-200'>{skill}</span>
                                             {owner ? <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 bg-red text-white rounded-3xl cursor-pointer" onClick={() => handleSkill('remove', `${skill}`, () => { })}>
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M18 12H6" />
                                             </svg> : <></>}
@@ -163,7 +172,7 @@ function Page({ user, projectData, owner, setUser, setUserEdit }: any) {
                 <section className='p-5 max-w-7xl mx-auto sm:px-10'>
                     <div className='border-b py-2 flex items-center gap-2'>
                         <h1 className='text-3xl sm:text-4xl font-medium'>Project Showcase</h1>
-                        {owner ? <svg onClick={() => setIsEdit(true)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 cursor-pointer">
+                        {owner ? <svg onClick={() => setIsEdit(true)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 cursor-pointer hover-red">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                         </svg> : <></>}
                     </div>
@@ -171,7 +180,7 @@ function Page({ user, projectData, owner, setUser, setUserEdit }: any) {
                         <h1 className='flex-grow text-center text-lg lg:text-xl text-gray-600 py-10'>You've not added any project yet</h1>
                         :
                         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center gap-10 py-10'>
-                            {projects.map((project: any) => <Project owner={owner} key={project._id} project={project} setIsEdit={setIsEdit} deleteProject={deleteProject} />)}
+                            {projects.map((project: Project) => <Project owner={owner} key={project._id} project={project} setIsEdit={setIsEdit} deleteProject={deleteProject} />)}
                         </div>
                     }
                 </section>
@@ -184,7 +193,7 @@ function Page({ user, projectData, owner, setUser, setUserEdit }: any) {
 
 export default Page
 
-const Project = ({ owner, project, setIsEdit, deleteProject }: any) => {
+const Project = ({ owner, project, setIsEdit, deleteProject }: { owner: Boolean, project: Project, setIsEdit: Function, deleteProject: Function }) => {
 
     return <>
         <div className='w-full max-w-xs 2xl:max-w-sm relative'>
@@ -202,7 +211,7 @@ const Project = ({ owner, project, setIsEdit, deleteProject }: any) => {
             </div> : <></>}
             <div className='w-full max-w-xs 2xl:max-w-sm rounded-lg overflow-hidden border dark:border-gray-800 group relative'>
                 <div className='relative h-96 w-full'>
-                    <Image className='object-cover' src={project.portrait} alt="" layout="fill" loading='lazy' />
+                    <Image placeholder="blur" blurDataURL={project.portrait} src={project.portrait} alt="" layout="fill" objectFit='cover' loading='lazy' />
                 </div>
                 <div className='bg-gradient-to-b from-transparent to-black p-5 pt-10 absolute -bottom-0.5 right-0 left-0 group-hover:hidden hidden lg:block'>
                     <h1 className='text-2xl tracking-wide font-semibold text-white hover:hidden'>{project.title}</h1>
@@ -220,7 +229,7 @@ const Project = ({ owner, project, setIsEdit, deleteProject }: any) => {
     </>
 }
 
-const AddSkill = ({ handleSkill }: any) => {
+const AddSkill = ({ handleSkill }: { handleSkill: Function }) => {
     const [active, setActive] = useState(false);
     const [skill, setSkill] = useState('');
     const cancelRef = useRef(null);

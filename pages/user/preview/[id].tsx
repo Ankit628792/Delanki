@@ -4,16 +4,16 @@ import React, { useState } from 'react'
 import { Footer, Navbar, UserForm } from '../../../components'
 import Page from '../../../components/user/page'
 
-function User({ userData, projectData, owner }: any) {
+function User({ userData, projectData, owner }: { userData: User, projectData: Projects, owner: Boolean }) {
     const [user, setUser] = useState(userData);
     const [isEdit, setIsEdit] = useState(false);
     return (
         <>
-            <section className='flex flex-col justify-between min-h-screen w-full '>
+            <section className='flex flex-col justify-between min-h-screen w-full dark:bg-slate-900'>
                 {
                     Boolean(user.verified) ?
                         <>
-                            <Page user={user} projectData={projectData} owner={owner} setUser={setUser} />
+                            <Page user={user} projectData={projectData} owner={owner} setUser={setUser} setUserEdit={''} />
                         </>
                         :
                         <>

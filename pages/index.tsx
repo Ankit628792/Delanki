@@ -20,8 +20,8 @@ const Home: NextPage = () => {
       <div id='work' />
       <Work />
       <Techs />
-      <Devs />
       <Team />
+      <Devs />
       <Footer />
       <div id='connect' />
       <ScrollToTop />

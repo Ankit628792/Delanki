@@ -1,15 +1,14 @@
 import React, { useState } from 'react'
 import toast from 'react-hot-toast';
 
-function UserForm({ user, setIsEdit, setUser }: any) {
+function UserForm({ user, setIsEdit, setUser }: { user: User, setIsEdit: Function, setUser: Function }) {
   const [data, setData] = useState({
     designation: user.designation || '',
     mobile: user.mobile || '',
     linkedin: user.linkedin || '',
     github: user.github || '',
     other: user.other || '',
-    bio: user.bio || '',
-    verified: true
+    bio: user.bio || ''
   })
 
   const handleChange = async (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

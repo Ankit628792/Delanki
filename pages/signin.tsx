@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next'
-import { getProviders, getSession, signIn } from 'next-auth/react'
+import {  getProviders, getSession, signIn } from 'next-auth/react'
 import { useRouter } from 'next/router'
 import { Navbar } from '../components'
 

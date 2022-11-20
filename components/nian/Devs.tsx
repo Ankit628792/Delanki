@@ -1,44 +1,6 @@
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
-
-const arr = [
-    // {
-    //     id: 1,
-    //     name: 'Nitin Baghel',
-    //     profilePic: '/images/nitin.jpg',
-    //     designation: 'Full Stack Java Developer',
-    //     linkedin: 'https://www.linkedin.com/in/nitin-baghel-82a81a173/'
-    // },
-    {
-        id: 2,
-        name: 'Nitesh Kumar',
-        profilePic: '/images/nitesh.jpg',
-        designation: 'Full Stack Java Developer',
-        linkedin: 'https://www.linkedin.com/in/nitesh-kumar-4a223716b/'
-    },
-    {
-        id: 3,
-        name: 'Amit Kumar',
-        profilePic: '/images/amit.jpg',
-        designation: 'Frontend Engineer',
-        linkedin: 'https://www.linkedin.com/in/amit-kumar-97884a196/'
-    },
-    {
-        id: 4,
-        name: 'Sahil Gupta',
-        profilePic: '/images/sahil.jpg',
-        designation: 'Full Stack Developer',
-        linkedin: 'https://www.linkedin.com/in/sahilgupta04/'
-    },
-    {
-        id: 5,
-        name: 'Ankit Kumar',
-        profilePic: '/images/ankit.jpg',
-        designation: 'Full Stack JavaScript Developer',
-        linkedin: 'https://www.linkedin.com/in/ankit628792/'
-    },
-]
-
+import { DevArray as arr } from '../../utils/constant'
 
 interface Developer {
     id: number,
@@ -60,9 +22,9 @@ function Devs() {
             <h1 className='text-4xl lg:text-5xl font-semibold text-white tracking-wide text-center'>Ready to start the project?</h1>
             <p className='text-lg lg:text-xl text-gray-200 text-center'>Contact One of us and let's have a discussion on it</p>
             <div className='flex flex-col sm:flex-row sm:items-center gap-8 py-6 flex-wrap justify-center'>
-                {developers.map(data => <div key={data.id} className='flex items-center gap-2 bg-white py-3 px-4 rounded-lg relative'>
+                {developers.map((data: Developer) => <div key={data.id} className='flex items-center gap-2 bg-white py-3 px-4 rounded-lg relative'>
                     <div className='relative flex-shrink-0 w-14 h-14 rounded-full'>
-                        <Image layout="responsive" priority={false} loading="lazy" width={56} height={56} src={data.profilePic} className='rounded-full object-cover border-4 shadow-lg' alt="" />
+                        <Image placeholder="blur" blurDataURL={data.profilePic} layout="responsive" priority={false} loading="lazy" width={56} height={56} src={data.profilePic} className='rounded-full object-cover border-4 shadow-lg' alt="" />
                     </div>
                     <div>
                         <a target="_blank" rel="noreferrer" className='text-lg cursor-pointer text-gray-800 hover:text-blue-500 font-medium' href={data.linkedin}>{data.name}</a>

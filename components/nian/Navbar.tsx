@@ -2,29 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 import Router from 'next/router';
 import { useSession, signOut } from "next-auth/react"
-
-const menuItems = [
-    {
-        id: 1,
-        title: 'About Us',
-        link: '#aboutUs'
-    },
-    {
-        id: 2,
-        title: 'Products',
-        link: '#products'
-    },
-    {
-        id: 3,
-        title: 'Work',
-        link: '#work'
-    },
-    {
-        id: 4,
-        title: 'Connect',
-        link: '#connect'
-    },
-]
+import { menuItems } from '../../utils/constant'
 
 function Navbar() {
     const { data: session } = useSession()

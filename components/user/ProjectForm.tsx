@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import toast from 'react-hot-toast';
 import { uploadImage } from '../../utils'
 
-function ProjectForm({ user, isEdit, setIsEdit, setProjects }: any) {
+function ProjectForm({ user, isEdit, setIsEdit, setProjects }: { user: User, isEdit: Function | Project | any, setIsEdit: Function, setProjects: Function }) {
   const [data, setData] = useState({
     title: isEdit?.title || '',
     description: isEdit?.description || '',
@@ -32,6 +32,7 @@ function ProjectForm({ user, isEdit, setIsEdit, setProjects }: any) {
         return toast.error('Please add landscape image', { id: 'error' })
       else if (!data.portrait)
         return toast.error('Please add portrait image', { id: 'error' })
+
       let res = await fetch(`/api/project/${user._id}`, {
         method: isEdit?.title ? 'PATCH' : 'POST',
         headers: {
