@@ -1,9 +1,13 @@
+import Head from 'next/head'
 import React from 'react'
 import { Footer, Navbar } from '../components'
 
 function tnc() {
     return (
         <>
+            <Head>
+                <title>Nian Devs | Terms & Conditions</title>
+            </Head>
             <section className='flex flex-col gap-10 justify-between min-h-screen w-full dark:bg-slate-900'>
                 <Navbar />
                 <div className='policy max-w-4xl rounded-lg p-5 md:p-10 xl:px-20 !m-5 lg:!mx-auto border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 filter backdrop-blur-lg'>

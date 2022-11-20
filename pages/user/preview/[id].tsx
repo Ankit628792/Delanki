@@ -1,5 +1,6 @@
 import { GetServerSideProps } from 'next'
 import { getSession } from 'next-auth/react';
+import Head from 'next/head';
 import React, { useState } from 'react'
 import { Footer, Navbar, UserForm } from '../../../components'
 import Page from '../../../components/user/page'
@@ -9,6 +10,9 @@ function User({ userData, projectData, owner }: { userData: User, projectData: P
     const [isEdit, setIsEdit] = useState(false);
     return (
         <>
+            <Head>
+                <title>Nian Devs | {userData.name}</title>
+            </Head>
             <section className='flex flex-col justify-between min-h-screen w-full dark:bg-slate-900'>
                 {
                     Boolean(user.verified) ?

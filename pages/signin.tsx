@@ -1,5 +1,6 @@
 import { GetServerSideProps } from 'next'
 import {  getProviders, getSession, signIn } from 'next-auth/react'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { Navbar } from '../components'
 
@@ -7,7 +8,9 @@ function SignIn({ providers }: any) {
     const router = useRouter()
 
     return (
-        <>
+        <> <Head>
+        <title>Nian Devs | SignIn</title>
+      </Head>
             <Navbar />
             <div className="flex flex-col items-center justify-center p-2 sm:px-14 text-center">
                 <img onClick={() => router.push('/')} className="max-h-96 mb-4 mt-10 sm:-mt-6" src="/images/connect.svg" alt=" " />

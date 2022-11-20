@@ -158,7 +158,7 @@ function Page({ user, projectData, owner, setUser, setUserEdit }: { user: User, 
                                 <>
                                     {
                                         user?.skills.map((skill: string, i: any) => <div key={i} className='text-lg font-medium tracking-wide border rounded-3xl flex items-center gap-2'>
-                                            <span className='pl-5 pr-2 py-1 text-sm sm:text-base text-gray-800 dark:text-gray-200'>{skill}</span>
+                                            <span className='px-4 py-1 text-sm sm:text-base text-gray-800 dark:text-gray-200'>{skill}</span>
                                             {owner ? <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 bg-red text-white rounded-3xl cursor-pointer" onClick={() => handleSkill('remove', `${skill}`, () => { })}>
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M18 12H6" />
                                             </svg> : <></>}
