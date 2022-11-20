@@ -164,14 +164,6 @@ function Page({ user, projectData, owner, setUser, setUserEdit }: { user: User, 
                                             </svg> : <></>}
                                         </div>)
                                     }
-                                    {/* {
-                                        user?.skills.map((skill: string, i: any) => <div key={i} className='text-lg font-medium tracking-wide border rounded-3xl flex items-center gap-2'>
-                                            <span className='px-4 py-1 text-sm sm:text-base text-gray-800 dark:text-gray-200'>{skill}</span>
-                                            {owner ? <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 bg-red text-white rounded-3xl cursor-pointer" onClick={() => handleSkill('remove', `${skill}`, () => { })}>
-                                                <path strokeLinecap="round" strokeLinejoin="round" d="M18 12H6" />
-                                            </svg> : <></>}
-                                        </div>)
-                                    } */}
                                 </>
                         }
                     </div>
@@ -219,16 +211,17 @@ const Project = ({ owner, project, setIsEdit, deleteProject }: { owner: Boolean,
             </div> : <></>}
             <div className='w-full max-w-xs 2xl:max-w-sm rounded-lg overflow-hidden border dark:border-gray-800 group relative'>
                 <div className='relative h-96 w-full'>
-                    <Image placeholder="blur" blurDataURL={project.portrait} src={project.portrait} alt="" layout="fill" objectFit='cover' loading='lazy' />
+                    <Image placeholder="blur" blurDataURL={project.landscape} src={project.landscape} alt="" layout="fill" objectFit='cover' loading='lazy' objectPosition={"top"} />
                 </div>
-                <div className='bg-gradient-to-b from-transparent to-black p-5 pt-10 absolute -bottom-0.5 right-0 left-0 group-hover:hidden hidden lg:block'>
+                <div className='bg-gradient-to-b from-transparent to-slate-900 p-5 pt-10 absolute -bottom-0.5 right-0 left-0 group-hover:hidden hidden lg:block'>
                     <h1 className='text-2xl tracking-wide font-semibold text-white hover:hidden'>{project.title}</h1>
                 </div>
-                <div className='bg-gradient-to-b from-transparent to-black p-5 pt-10 absolute -bottom-0.5 right-0 left-0 lg:transform lg:translate-y-96 group-hover:translate-y-0 transition-all duration-300 ease-out'>
+                <div className='absolute inset-0 w-full h-full bg-slate-900 bg-opacity-10 filter backdrop-blur-sm z-10 lg:hidden group-hover:block'></div>
+                <div className='bg-gradient-to-b from-transparent to-slate-900 p-5 pt-10 absolute -bottom-0.5 right-0 left-0 z-20 lg:transform lg:translate-y-96 group-hover:translate-y-0 transition-all duration-300 ease-out'>
                     <h1 className='text-2xl tracking-wide font-semibold text-white'>{project.title}</h1>
                     <p className='line-clamp-3 text-gray-50 text-sm my-2 leading-relaxed'>{project.description}</p>
-                    <div className='flex flex-wrap items-center justify-start gap-3 pb-4'>
-                        {project.techs.map((tech: String, i: any) => <p key={i} className="text-sm py-0.5 px-2 bg-white border shadow-sm text-gray-800 rounded-lg">{tech}</p>)}
+                    <div className='flex flex-wrap items-center justify-start gap-3 mb-4 h-24 md:h-28 overflow-hidden'>
+                        {project.techs.map((tech: String, i: any) => <p key={i} className="text-xs md:text-sm py-0.5 px-2 bg-white border shadow-sm text-gray-800 rounded-lg">{tech}</p>)}
                     </div>
                     <a href={project.link} target="_blank" rel="noreferrer" className='py-1.5 px-5 text-white bg-red rounded-lg font-medium'>Visit</a>
                 </div>
