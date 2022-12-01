@@ -8,7 +8,8 @@ function UserForm({ user, setIsEdit, setUser }: { user: User, setIsEdit: Functio
     linkedin: user.linkedin || '',
     github: user.github || '',
     other: user.other || '',
-    bio: user.bio || ''
+    bio: user.bio || '',
+    verified: true
   })
 
   const handleChange = async (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
