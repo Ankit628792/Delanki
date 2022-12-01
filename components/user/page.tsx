@@ -92,7 +92,7 @@ function Page({ user, projectData, owner, setUser, setUserEdit }: { user: User, 
                     </label> : <></>}
                 </div>
                 <header className='flex flex-col items-center justify-center w-full transform -translate-y-12 sm:-translate-y-16 px-5'>
-                    <div className='w-32 h-32 sm:w-40 sm:h-40 rounded-full bottom-4 border-4 relative'>
+                    <div className='w-32 h-32 sm:w-40 sm:h-40 rounded-full bottom-4 border-4 border-gray-200 bg-gray-200 relative'>
                         <img src={user.image} className='w-full h-full object-cover rounded-full' alt='' />
                         {owner ? <label htmlFor="image" className='p-2 w-9 h-9 rounded-full bg-white border cursor-pointer absolute top-0 right-0 text-blue-500 border-blue-500'>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
