@@ -10,8 +10,9 @@ function ProjectForm({ user, isEdit, setIsEdit, setProjects }: { user: User, isE
     landscape: isEdit?.landscape || '',
     link: isEdit?.link || '',
     techs: isEdit?.techs?.join(",") || '',
-    userId: user._id
+    userId: user._id,
   })
+
   const fileRef = useRef<HTMLInputElement>(null);
 
   const handleChange = async (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -33,12 +34,16 @@ function ProjectForm({ user, isEdit, setIsEdit, setProjects }: { user: User, isE
       else if (!data.portrait)
         return toast.error('Please add portrait image', { id: 'error' })
 
+      let formData = { ...data, techs: data.techs.split(",") } as Project
+      if (isEdit?.title) {
+        formData["_id"] = isEdit._id
+      }
       let res = await fetch(`/api/project/${user._id}`, {
         method: isEdit?.title ? 'PATCH' : 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ ...data, techs: data.techs.split(",") })
+        body: JSON.stringify(formData)
       });
       if (res.status == 200) {
         res = await res.json();

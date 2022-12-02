@@ -27,7 +27,7 @@ export default async function handler(
             break;
         case "PATCH":
             try {
-                res.status(200).send(await updateProject(req.query.id as unknown as ObjectId, req.body))
+                res.status(200).send(await updateProject(req.body))
             } catch (error) {
                 res.status(400).send({ msg: 'Something went wrong' })
             }

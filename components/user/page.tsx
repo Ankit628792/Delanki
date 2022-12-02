@@ -45,7 +45,7 @@ function Page({ user, projectData, owner, setUser, setUserEdit }: { user: User, 
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ skills: skills, verified: true })
+            body: JSON.stringify({ skills: skills })
         });
         if (res.status == 200) {
             res = await res.json();
