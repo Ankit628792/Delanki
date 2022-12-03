@@ -27,6 +27,7 @@ interface User {
     role: string,
     skills: Array<string>,
     verified: boolean,
+    level: number,
     createdAt: Date,
     updatedAt: Date,
 }

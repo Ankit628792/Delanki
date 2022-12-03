@@ -16,6 +16,7 @@ export interface UserDocument extends mongoose.Document {
     role: string,
     skills: Array<string>,
     verified: boolean,
+    level: number,
     createdAt: Date,
     updatedAt: Date,
 }
@@ -35,6 +36,7 @@ const UserSchema = new mongoose.Schema({
     skills: { type: Array, default: [] },
     role: { type: String, default: 'user' },
     status: { type: String, default: '' },
+    level: { type: Number, default: 5 },
     verified: { type: Boolean, default: false }
 }, { timestamps: true })
 

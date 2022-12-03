@@ -15,7 +15,7 @@ function User({ userData, projectData, owner }: { userData: User, projectData: P
       </Head>
       <section className='flex flex-col justify-between min-h-screen w-full dark:bg-slate-900'>
         {
-          Boolean(user.verified) ?
+          Boolean(user.level != 5) ?
             <>
               <Page user={user} projectData={projectData} owner={owner} setUser={setUser} setUserEdit={setIsEdit} />
             </>

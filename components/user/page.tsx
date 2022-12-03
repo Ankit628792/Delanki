@@ -45,7 +45,7 @@ function Page({ user, projectData, owner, setUser, setUserEdit }: { user: User, 
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ skills: skills })
+            body: JSON.stringify({ skills: skills, level: [3, 4].includes(Number(user.level)) ? user.level + 1 : user.level })
         });
         if (res.status == 200) {
             res = await res.json();
@@ -62,7 +62,7 @@ function Page({ user, projectData, owner, setUser, setUserEdit }: { user: User, 
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ [e.target.id]: url })
+                body: JSON.stringify({ [e.target.id]: url, level: [3, 4].includes(Number(user.level)) ? user.level + 1 : user.level })
             });
             if (res.status == 200) {
                 res = await res.json();
