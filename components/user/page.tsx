@@ -88,7 +88,17 @@ function Page({ user, projectData, owner, setUser, setUserEdit }: { user: User, 
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
                         </svg>
-                        <input ref={fileRef} type="file" value={''} onChange={handleFile} id='banner' className='hidden px-2 py-1 bg-transparent w-full focus:outline-rose-400' />
+                        <input ref={fileRef} type="file" value={''} accept="image/*" onChange={(e: React.ChangeEvent<HTMLInputElement | any>) => {
+                            if (!e.target.files[0].type.includes("image")) {
+                                toast.error("Invalid Image Type")
+                            }
+                            else if (Number(e.target.files[0].size) > Number(10534250)) {
+                                toast.error("Image size should be less than 10MB")
+                            }
+                            else {
+                                handleFile(e);
+                            }
+                        }} id='banner' className='hidden px-2 py-1 bg-transparent w-full focus:outline-rose-400' />
                     </label> : <></>}
                 </div>
                 <header className='flex flex-col items-center justify-center w-full transform -translate-y-12 sm:-translate-y-16 px-5'>
@@ -98,7 +108,17 @@ function Page({ user, projectData, owner, setUser, setUserEdit }: { user: User, 
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
                             </svg>
-                            <input ref={fileRef} type="file" value={''} onChange={handleFile} id='image' className='hidden px-2 py-1 bg-transparent w-full focus:outline-rose-400' />
+                            <input ref={fileRef} type="file" value={''} accept="image/*" onChange={(e: React.ChangeEvent<HTMLInputElement | any>) => {
+                                if (!e.target.files[0].type.includes("image")) {
+                                    toast.error("Invalid Image Type")
+                                }
+                                else if (Number(e.target.files[0].size) > Number(10534250)) {
+                                    toast.error("Image size should be less than 10MB")
+                                }
+                                else {
+                                    handleFile(e);
+                                }
+                            }} id='image' className='hidden px-2 py-1 bg-transparent w-full focus:outline-rose-400' />
                         </label> : <></>}
                         {user.verified ?
                             <div className='p-0.5 w-9 h-9 rounded-full bg-white cursor-pointer absolute -bottom-4 right-1/2 transform translate-x-1/2 text-teal-500 shadow-lg group'>

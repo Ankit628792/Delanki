@@ -92,7 +92,17 @@ function ProjectForm({ user, isEdit, setIsEdit, setProjects }: { user: User, isE
             <label htmlFor="portrait" className='font-medium'>Portrait View <span className='mx-1 text-xl text-red cursor-pointer'>+</span></label>
             <div className='w-full bg-white text-gray-800 rounded border'>
               <input type="url" disabled readOnly value={data.portrait} placeholder="Click plus icon to add image *" className='px-2 py-1.5 bg-transparent w-full focus:outline-rose-400 text-sm' />
-              <input ref={fileRef} type="file" value={''} onChange={handleFile} id='portrait' className='hidden px-2 py-1 bg-transparent w-full focus:outline-rose-400' />
+              <input ref={fileRef} type="file" accept='image/*' value={''} onChange={(e: React.ChangeEvent<HTMLInputElement | any>) => {
+                if (!e.target.files[0].type.includes("image")) {
+                  toast.error("Invalid Image Type")
+                }
+                else if (Number(e.target.files[0].size) > Number(10534250)) {
+                  toast.error("Image size should be less than 10MB")
+                }
+                else {
+                  handleFile(e);
+                }
+              }} id='portrait' className='hidden px-2 py-1 bg-transparent w-full focus:outline-rose-400' />
             </div>
           </div>
 
@@ -100,7 +110,17 @@ function ProjectForm({ user, isEdit, setIsEdit, setProjects }: { user: User, isE
             <label htmlFor="landscape" className='font-medium'>Landscape View <span className='mx-1 text-xl text-red cursor-pointer'>+</span></label>
             <div className='w-full bg-white text-gray-800 rounded border'>
               <input type="url" disabled readOnly value={data.landscape} placeholder="Click plus icon to add image *" className='px-2 py-1.5 bg-transparent w-full focus:outline-rose-400 text-sm' />
-              <input ref={fileRef} type="file" value={''} onChange={handleFile} id='landscape' className='hidden px-2 py-1 bg-transparent w-full focus:outline-rose-400' />
+              <input ref={fileRef} type="file" value={''} accept='image/*' onChange={(e: React.ChangeEvent<HTMLInputElement | any>) => {
+                if (!e.target.files[0].type.includes("image")) {
+                  toast.error("Invalid Image Type")
+                }
+                else if (Number(e.target.files[0].size) > Number(10534250)) {
+                  toast.error("Image size should be less than 10MB")
+                }
+                else {
+                  handleFile(e);
+                }
+              }} id='landscape' className='hidden px-2 py-1 bg-transparent w-full focus:outline-rose-400' />
             </div>
           </div>
 
