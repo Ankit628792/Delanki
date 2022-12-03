@@ -9,7 +9,6 @@ function UserForm({ user, setIsEdit, setUser }: { user: User, setIsEdit: Functio
     github: user.github || '',
     other: user.other || '',
     bio: user.bio || '',
-    verified: true,
     level: user.level == 5 ? 4 : user.level
   })
 
