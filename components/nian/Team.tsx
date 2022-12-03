@@ -25,7 +25,7 @@ function Team() {
                     }
                 </div>
                 {devs.length > 3 && <div className='grid place-items-center py-4'>
-                    <Link href="/user/team" className=' text-lg bg-red text-white py-1.5 px-6 rounded-xl hover:scale-x-105 transition-all duration-200 ease-in-out'>View All</Link>
+                    <Link href="/user/team"><button type='button' role="button" aria-label="View All" className='text-lg bg-red text-white py-1.5 px-6 rounded-xl hover:scale-x-105 transition-transform duration-200 ease-in-out'>View All</button></Link>
                 </div>}
             </section>
         </>
