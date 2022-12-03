@@ -17,9 +17,9 @@ function Team({ devs }: Devs) {
                     <p className='lg:text-lg text-center max-w-3xl mx-auto my-4 text-gray-500'>
                         During office hours we're a group of hardworking and motivated developers, committed to delivering the best quality and experiences. When we're not working, things are a little different. Try unlocking our secret personalities!
                     </p>
-                    <div className='flex flex-wrap items-center justify-center gap-10 2xl:gap-x-14 py-10'>
+                    <div className='flex flex-wrap items-center justify-center gap-10 2xl:gap-14 py-10 max-w-7xl mx-auto'>
                         {
-                            devs.slice(0, 3).map((dev) => <DevCard key={dev._id} dev={dev} />)
+                            devs.map((dev) => <DevCard key={dev._id} dev={dev} />)
                         }
                     </div>
                 </div>
@@ -32,7 +32,7 @@ function Team({ devs }: Devs) {
 export default Team
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
-    let devs = await fetch(`${process.env.host}/api/user?limit=5`).then(res => res.json()).catch(e => console.log(e))
+    let devs = await fetch(`${process.env.host}/api/user?limit=50`).then(res => res.json()).catch(e => console.log(e))
     return {
         props: {
             devs

@@ -10,7 +10,7 @@ function DevCard({ dev }: { dev: Dev }) {
                     <Image placeholder="blur" blurDataURL={dev.banner} src={dev.banner} alt="" layout="fill" objectFit='cover' loading='lazy' />
                 </div>
                 <div className='p-5 flex flex-col items-center justify-center gap-1 transform -translate-y-16'>
-                    <div className='w-20 h-20 border-4 shadow-lg rounded-full relative cursor-pointer' onClick={() => Router.push(`/user/${dev._id}`)}>
+                    <div className='w-20 h-20 border-4 shadow-lg rounded-full relative cursor-pointer bg-gray-300' onClick={() => Router.push(`/user/${dev._id}`)}>
                         <Image placeholder="blur" blurDataURL={dev.image} className='rounded-full' src={dev.image} alt="" layout="fill" objectFit='cover' loading='lazy' />
                     </div>
                     <h1 className='text-xl font-semibold text-center cursor-pointer text-gray-800 dark:text-gray-50' onClick={() => Router.push(`/user/${dev._id}`)}>{dev.name}</h1>
