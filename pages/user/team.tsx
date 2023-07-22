@@ -2,13 +2,13 @@ import { GetServerSidePropsContext } from 'next'
 import Head from 'next/head'
 import React from 'react'
 import { Footer, Navbar } from '../../components'
-import DevCard from '../../components/nian/DevCard'
+import DevCard from '../../components/delanki/DevCard'
 
 function Team({ devs }: Devs) {
     return (
         <>
             <Head>
-                <title>Nian Devs | Team</title>
+                <title>Delanki | Team</title>
             </Head>
             <section className='flex flex-col justify-between min-h-screen w-full dark:bg-slate-900'>
                 <Navbar />

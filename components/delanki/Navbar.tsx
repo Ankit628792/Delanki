@@ -33,7 +33,7 @@ function Navbar() {
         <>
             <nav className='flex items-center  justify-between sticky top-0 w-full gap-4 py-4 px-5 md:px-10 2xl:px-16 bg-white bg-gradient-to-b dark:from-black dark:to-slate-900 z-50'>
                 <div className="text-3xl font-semibold text-red opacity-0 lg:opacity-100 cursor-pointer" onClick={() => Router.push("/")}>
-                    Nian <span className='text-gray-900 dark:text-gray-50'>Devs</span>
+                    Del<span className='text-gray-900 dark:text-gray-50'>anki</span>
                 </div>
 
                 <ul className='hidden lg:inline-flex items-center gap-10 2xl:gap-16 text-lg font-medium text-gray-700 dark:text-gray-300'>

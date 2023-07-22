@@ -9,7 +9,7 @@ function SignIn({ providers }: any) {
 
     return (
         <> <Head>
-        <title>Nian Devs | SignIn</title>
+        <title>Delanki Pvt Ltd | SignIn</title>
       </Head>
             <Navbar />
             <div className="flex flex-col items-center justify-center p-2 sm:px-14 text-center">

@@ -6,18 +6,18 @@ function privacy_policy() {
     return (
         <>
             <Head>
-                <title>Nian Devs | Privacy Policy</title>
+                <title>Delanki Pvt Ltd | Privacy Policy</title>
             </Head>
             <section className='flex flex-col gap-10 justify-between min-h-screen w-full dark:bg-slate-900'>
                 <Navbar />
                 <div className='policy max-w-4xl rounded-lg p-5 md:p-10 xl:px-20 !m-5 lg:!mx-auto border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 filter backdrop-blur-lg'>
-                    <h1>Privacy Policy for Nian Devs</h1>
+                    <h1>Privacy Policy for Delanki Pvt Ltd</h1>
 
-                    <li>At Nian Devs, accessible from <a href='https://nian-devs.vercel.app' target="_blank" rel="noreferrer">Nian Devs</a>, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Nian Devs and how we use it.</li>
+                    <li>At Delanki Pvt Ltd, accessible from <a href='https://delanki.vercel.app' target="_blank" rel="noreferrer">Delanki</a>, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Delanki and how we use it.</li>
 
                     <li>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</li>
 
-                    <li>This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in Nian Devs. This policy is not applicable to any information collected offline or via channels other than this website.</li>
+                    <li>This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in Delanki. This policy is not applicable to any information collected offline or via channels other than this website.</li>
 
                     <h3>Consent</h3>
 
@@ -45,25 +45,25 @@ function privacy_policy() {
 
                     <h3>Log Files</h3>
 
-                    <li>Nian Devs follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.</li>
+                    <li>Delanki follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.</li>
 
                     <h3>Cookies and Web Beacons</h3>
 
-                    <li>Like any other website, Nian Devs uses 'cookies'. These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</li>
+                    <li>Like any other website, Delanki uses 'cookies'. These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</li>
 
 
 
                     <h3>Advertising Partners Privacy Policies</h3>
 
-                    <li>You may consult this list to find the Privacy Policy for each of the advertising partners of Nian Devs.</li>
+                    <li>You may consult this list to find the Privacy Policy for each of the advertising partners of Delanki.</li>
 
-                    <li>Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on Nian Devs, which are sent directly to users' browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.</li>
+                    <li>Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on Delanki, which are sent directly to users' browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.</li>
 
-                    <li>Note that Nian Devs has no access to or control over these cookies that are used by third-party advertisers.</li>
+                    <li>Note that Delanki has no access to or control over these cookies that are used by third-party advertisers.</li>
 
                     <h3>Third Party Privacy Policies</h3>
 
-                    <li>Nian Devs's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options. </li>
+                    <li>Delanki's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options. </li>
 
                     <li>You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites.</li>
 
@@ -90,7 +90,7 @@ function privacy_policy() {
 
                     <li>Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.</li>
 
-                    <li>Nian Devs does not knowingly collect any Personal Identifiable Information from children under the age of 18. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</li>
+                    <li>Delanki does not knowingly collect any Personal Identifiable Information from children under the age of 18. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</li>
                 </div>
                 <Footer />
             </section>

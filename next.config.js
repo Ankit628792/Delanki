@@ -10,7 +10,7 @@ module.exports = withPWA({
   // next.js config
   reactStrictMode: true,
   images: {
-    domains: ['localhost', 'nain-devs.vercel.app', 'ankit-resume.netlify.app', 'res.cloudinary.com']
+    domains: ['localhost', 'nain-devs.vercel.app', 'ankit-resume.netlify.app', 'res.cloudinary.com', 'delanki.vercel.app']
   },
   i18n: {
     locales: ['en-US', 'fr', 'nl-NL'],

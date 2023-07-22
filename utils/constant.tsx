@@ -42,22 +42,22 @@ export const menuItems = [
   {
     id: 1,
     title: 'About Us',
-    link: '#aboutUs'
+    link: `${process.env.host}#aboutUs`
   },
   {
     id: 2,
     title: 'Products',
-    link: '#products'
+    link: `${process.env.host}#products`
   },
   {
     id: 3,
     title: 'Work',
-    link: '#work'
+    link: `${process.env.host}#work`
   },
   {
     id: 4,
     title: 'Connect',
-    link: '#connect'
+    link: `${process.env.host}#connect`
   },
 ]
 
