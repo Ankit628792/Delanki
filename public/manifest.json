@@ -3,25 +3,25 @@
   "name": "Delanki",
   "icons": [
     {
-      "src": "/images/icon.png",
+      "src": "/images/rounded.png",
       "type": "image/png",
       "sizes": "64x64 32x32 24x24 16x16",
       "purpose": "maskable"
     },
     {
-      "src": "/images/icon.png",
+      "src": "/images/rounded.png",
       "type": "image/png",
       "sizes": "144x144",
       "purpose": "any"
     },
     {
-      "src": "/images/icon.png",
+      "src": "/images/rounded.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "maskable"
     },
     {
-      "src": "/images/icon.png",
+      "src": "/images/rounded.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "maskable"

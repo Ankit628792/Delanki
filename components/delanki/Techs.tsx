@@ -25,11 +25,11 @@ function Techs() {
                 size.width ?
                     <>
                         <section className='sm:min-h-[80vh] max-w-7xl mx-auto w-full'>
-                            {size.width! < 769 ?
+                            {/* {size.width > 769 ? */}
                                 <>
-                                    <div className='mx-auto pt-10 pb-10'>
-                                        <h1 className='font-medium text-gray-800 dark:text-gray-50 text-4xl sm:text-5xl 2xl:max-w-xl text-center lg:max-w-md'>Using the latest</h1>
-                                        <h1 className='font-medium text-gray-800 dark:text-gray-50 text-4xl sm:text-5xl 2xl:max-w-xl text-center lg:max-w-md'><span className='font-montez text-red'>Technologies</span></h1>
+                                    <div className='mx-auto pt-10 pb-10 w-full'>
+                                        <h1 className='font-medium text-gray-800 dark:text-gray-50 text-4xl sm:text-5xl 2xl:max-w-xl text-center lg:max-w-md mx-auto'>Using the latest</h1>
+                                        <h1 className='font-medium text-gray-800 dark:text-gray-50 text-4xl sm:text-5xl 2xl:max-w-xl text-center lg:max-w-md mx-auto'><span className='font-montez text-red'>Technologies</span></h1>
                                     </div>
 
                                     <div className='w-full flex items-center justify-center flex-wrap gap-8 pb-10'>
@@ -44,7 +44,7 @@ function Techs() {
                                         }
                                     </div>
                                 </>
-                                : <Floating size={size} data={data} />}
+                                {/* : <Floating size={size} data={data} />} */}
                         </section>
                     </>
                     :
