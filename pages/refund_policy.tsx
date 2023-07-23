@@ -6,14 +6,14 @@ function refund_policy() {
     return (
         <>
             <Head>
-                <title>Delanki Pvt Ltd | Refund Policy</title>
+                <title>Delanki | Refund Policy</title>
             </Head>
             <section className='flex flex-col gap-10 justify-between min-h-screen w-full dark:bg-slate-900'>
                 <Navbar />
                 <div className='policy max-w-4xl rounded-lg p-5 md:p-10 xl:px-20 !m-5 lg:!mx-auto border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 filter backdrop-blur-lg'>
-                    <h1 className='mb-10'>Refund Policy for Delanki Pvt Ltd</h1>
+                    <h1 className='mb-10'>Refund Policy for Delanki</h1>
                     <p>Last updated: July 22, 2023</p>
-                    <p>Thank you for shopping at Delanki Pvt Ltd.</p>
+                    <p>Thank you for shopping at Delanki.</p>
                     <p>The following terms are applicable for any products that You purchased with Us.</p>
                     <h3>Interpretation and Definitions</h3>
                     <h2>Interpretation</h2>
@@ -22,7 +22,7 @@ function refund_policy() {
                     <p>For the purposes of this Return and Refund Policy:</p>
                     <ul>
                         <li>
-                            <p><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Delanki Pvt Ltd.</p>
+                            <p><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Delanki.</p>
                         </li>
                         <li>
                             <p><strong>Subscription</strong> refer to the items offered for sale on the Service.</p>
@@ -34,7 +34,7 @@ function refund_policy() {
                             <p><strong>Service</strong> refers to the Website.</p>
                         </li>
                         <li>
-                            <p><strong>Website</strong> refers to Delanki Pvt Ltd, accessible from <a href="https://delanki.vercel.app" rel="external nofollow noopener" target="_blank">https://delanki.vercel.app</a></p>
+                            <p><strong>Website</strong> refers to Delanki, accessible from <a href="https://delanki.vercel.app" rel="external nofollow noopener" target="_blank">https://delanki.vercel.app</a></p>
                         </li>
                         <li>
                             <p><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</p>

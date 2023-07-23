@@ -6,16 +6,16 @@ function tnc() {
     return (
         <>
             <Head>
-                <title>Delanki Pvt Ltd | Terms & Conditions</title>
+                <title>Delanki | Terms & Conditions</title>
             </Head>
             <section className='flex flex-col gap-10 justify-between min-h-screen w-full dark:bg-slate-900'>
                 <Navbar />
                 <div className='policy max-w-4xl rounded-lg p-5 md:p-10 xl:px-20 !m-5 lg:!mx-auto border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 filter backdrop-blur-lg'>
                     <h1>Terms and Conditions</h1>
 
-                    <h2>Welcome to Delanki Pvt Ltd!</h2>
+                    <h2>Welcome to Delanki!</h2>
 
-                    <li>These terms and conditions outline the rules and regulations for the use of Delanki Pvt Ltd Website, located at <a href='https://delanki.vercel.app' target="_blank" rel="noreferrer">Delanki</a>.</li>
+                    <li>These terms and conditions outline the rules and regulations for the use of Delanki Website, located at <a href='https://delanki.vercel.app' target="_blank" rel="noreferrer">Delanki</a>.</li>
 
                     <li>By accessing this website we assume you accept these terms and conditions. Do not continue to use Delanki if you do not agree to take all of the terms and conditions stated on this page.</li>
 

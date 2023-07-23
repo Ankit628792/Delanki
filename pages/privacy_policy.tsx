@@ -6,14 +6,14 @@ function privacy_policy() {
     return (
         <>
             <Head>
-                <title>Delanki Pvt Ltd | Privacy Policy</title>
+                <title>Delanki | Privacy Policy</title>
             </Head>
             <section className='flex flex-col gap-10 justify-between min-h-screen w-full dark:bg-slate-900'>
                 <Navbar />
                 <div className='policy max-w-4xl rounded-lg p-5 md:p-10 xl:px-20 !m-5 lg:!mx-auto border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 filter backdrop-blur-lg'>
-                    <h1>Privacy Policy for Delanki Pvt Ltd</h1>
+                    <h1>Privacy Policy for Delanki</h1>
 
-                    <li>At Delanki Pvt Ltd, accessible from <a href='https://delanki.vercel.app' target="_blank" rel="noreferrer">Delanki</a>, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Delanki and how we use it.</li>
+                    <li>At Delanki, accessible from <a href='https://delanki.vercel.app' target="_blank" rel="noreferrer">Delanki</a>, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Delanki and how we use it.</li>
 
                     <li>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</li>
 

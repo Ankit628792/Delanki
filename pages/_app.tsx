@@ -23,7 +23,7 @@ Router.events.on('routeChangeError', progress.finish)
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps<{ session: Session }>) {
   return (<>
     <Head>
-      <title>Delanki Pvt Ltd</title>
+      <title>Delanki</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </Head>
     <SessionProvider session={session}>

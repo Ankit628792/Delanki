@@ -27,7 +27,7 @@ function Footer() {
 
                 <hr className='text-gray-300 my-4 max-w-7xl mx-auto' />
 
-                <h1 className='text-center text-lg tracking-wider'>Copyright &copy; 2022, Delanki Pvt Ltd</h1>
+                <h1 className='text-center text-lg tracking-wider'>Copyright &copy; 2022, Delanki</h1>
             </div>
         </footer>
     )

@@ -6,7 +6,7 @@ function Error() {
   return (
     <>
       <Head>
-        <title>Delanki Pvt Ltd | Page Not Found</title>
+        <title>Delanki | Page Not Found</title>
       </Head>
       <section className='flex flex-col justify-between min-h-screen w-full '>
         <Navbar />

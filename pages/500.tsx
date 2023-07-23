@@ -6,7 +6,7 @@ function Error() {
   return (
     <>
       <Head>
-        <title>Delanki Pvt Ltd | Internal Server Error</title>
+        <title>Delanki | Internal Server Error</title>
       </Head>
       <section className='flex flex-col justify-between min-h-screen w-full '>
         <Navbar />
