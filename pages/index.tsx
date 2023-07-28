@@ -18,6 +18,11 @@ const Home: NextPage = () => {
         <meta property="og:image" content="/android-chrome-512x512.png" />
         <meta property="og:title" content="Delanki" />
         <meta property="og:description" content="Delanki description" />
+        <meta property="og:url" content="https://www.delanki.com" />
+        <meta property="twitter:image" content="/android-chrome-512x512.png" />
+        <meta property="twitter:title" content="Delanki" />
+        <meta property="twitter:description" content="Delanki description" />
+        <meta property="twitter:url" content="https://www.delanki.com" />
       </Head>
       <main className="min-h-screen w-full dark:bg-slate-900">
         <img style={{ zIndex: -1 }} className='absolute p-10 w-full h-full m-0 object-contain filter saturate-200 overflow-hidden' src="/ani.svg" alt="" />
