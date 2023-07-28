@@ -3,6 +3,7 @@ import { useTheme } from 'next-themes'
 import Router from 'next/router';
 import { useSession, signOut } from "next-auth/react"
 import { menuItems } from '../../utils/constant'
+import Link from 'next/link';
 
 function Navbar() {
     const { data: session } = useSession()
@@ -60,7 +61,7 @@ function Navbar() {
                             <p className='cursor-pointer text-red text-sm font-medium' title='logout' onClick={() => signOut()}>{session.user?.name}</p>
                         </div>
                     </div>
-                        : <button aria-label='Connect with Us' role="button" type='button' className='py-2 px-4 rounded-3xl text-white font-medium bg-red'><a href='#connect'>Connect <span className='hidden sm:inline-block'>with Us</span></a></button>}
+                        : <button aria-label='Contact Us' role="button" type='button' className='py-2 px-4 rounded-3xl text-white font-medium bg-red'><Link href='/contact-us'><span>Contact <span className='hidden sm:inline-block'>Us</span></span></Link></button>}
                 </div>
             </nav>
 

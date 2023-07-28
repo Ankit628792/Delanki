@@ -22,7 +22,7 @@ export async function getUserFromUserId(_id: ObjectId) {
 }
 
 export async function getUsers(query: FilterQuery<any>) {
-    return await User.find({ verified: true }).limit(query.limit || 100);
+    return await User.find({ verified: true }).sort({ level: 1 }).limit(query.limit || 100);
 }
 
 export async function createUser(input: DocumentDefinition<UserDocument>) {

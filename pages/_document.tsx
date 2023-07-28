@@ -4,13 +4,12 @@ export default function Document() {
     return (
         <Html>
             <Head>
-                <link rel='icon' href="/images/rounded.png" />
+                <link rel='icon' href="/favicon.ico" />
                 <link rel="manifest" href="/manifest.json" />
-                <link rel="apple-touch-icon" href="/images/rounded.png" />
+                <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
                 <meta charSet="UTF-8" />
-                <meta name="description" content="Delanki - A team of experts that are dedicated to making modern and intelligent Apps for tomorrow." />
-                <meta name="keywords" content="Delanki, HTML, CSS, JavaScript, Bootstrap, Material UI, Tailwind CSS, Express JS, Node JS, React JS, React Native, Redux, NextJS, MongoDB, Firebase, angular, docker, java, hibernate, graphql, typescript, microservice, sql, postgresql,electron js, freelance, startup, tech, dev, delanki," />
-                <meta name="author" content="@ankit_628792" />
+                <meta name="author" content="ankit628792" />
+            
                 <meta name='theme-color' content='#f22952' />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" cross-origin="true" />

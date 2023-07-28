@@ -25,5 +25,7 @@ module.exports = withPWA({
     db_uri: process.env.DB_URI,
     preset: process.env.PRESET,
     cloud_name: process.env.CLOUD_NAME,
+    mail_user: process.env.MAIL_USER,
+    mail_password: process.env.MAIL_PASSWORD
   }
 })

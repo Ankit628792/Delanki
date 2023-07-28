@@ -56,8 +56,8 @@ export const menuItems = [
   },
   {
     id: 4,
-    title: 'Connect',
-    link: `${process.env.host}#connect`
+    title: 'Contact Us',
+    link: `${process.env.host}/contact-us`
   },
 ]
 
