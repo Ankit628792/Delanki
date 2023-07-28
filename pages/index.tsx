@@ -15,11 +15,11 @@ const Home: NextPage = () => {
         <title>Delanki - A product development company</title>
         <meta name="description" content="Delanki - A team of experts that are dedicated to making modern and intelligent Apps for tomorrow." />
         <meta name="keywords" content="Delanki, HTML, CSS, JavaScript, Bootstrap, Material UI, Tailwind CSS, Express JS, Node JS, React JS, React Native, Redux, NextJS, MongoDB, Firebase, angular, docker, java, hibernate, graphql, typescript, microservice, sql, postgresql,electron js, freelance, startup, tech, dev, delanki," />
-        <meta property="og:image" content="/android-chrome-512x512.png" />
+        <meta property="og:image" content={process.env.host + "/android-chrome-512x512.png"} />
         <meta property="og:title" content="Delanki" />
         <meta property="og:description" content="Delanki description" />
         <meta property="og:url" content="https://www.delanki.com" />
-        <meta property="twitter:image" content="/android-chrome-512x512.png" />
+        <meta property="twitter:image" content={process.env.host + "/android-chrome-512x512.png"} />
         <meta property="twitter:title" content="Delanki" />
         <meta property="twitter:description" content="Delanki description" />
         <meta property="twitter:url" content="https://www.delanki.com" />
