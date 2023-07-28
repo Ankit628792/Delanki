@@ -7,6 +7,17 @@ function refund_policy() {
         <>
             <Head>
                 <title>Delanki | Refund Policy</title>
+                <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+                <meta name="description" content="Avail the refund within 7 days if you have any transaction with delanki or it's product in case of unsatisfied with the service and any problem with the service" />
+                <meta name="keywords" content="Delanki, contact delanki, delanki support, delanki refund policy, delanki products"></meta>
+                <meta property="og:image" content={process.env.host + "/android-chrome-512x512.png"} />
+                <meta property="og:title" content="Delanki - Refund Policy" />
+                <meta property="og:description" content="Avail the refund within 7 days if you have any transaction with delanki or it's product in case of unsatisfied with the service and any problem with the service" />
+                <meta property="og:url" content={process.env.host} />
+                <meta property="twitter:image" content={process.env.host + "/android-chrome-512x512.png"} />
+                <meta property="twitter:title" content="Delanki - Refund Policy" />
+                <meta property="twitter:description" content="Avail the refund within 7 days if you have any transaction with delanki or it's product in case of unsatisfied with the service and any problem with the service" />
+                <meta property="twitter:url" content={process.env.host} />
             </Head>
             <section className='flex flex-col gap-10 justify-between min-h-screen w-full dark:bg-slate-900'>
                 <Navbar />

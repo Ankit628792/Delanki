@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next'
-import {  getProviders, getSession, signIn } from 'next-auth/react'
+import { getProviders, getSession, signIn } from 'next-auth/react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { Navbar } from '../components'
@@ -9,8 +9,20 @@ function SignIn({ providers }: any) {
 
     return (
         <> <Head>
-        <title>Delanki | SignIn</title>
-      </Head>
+            <title>Delanki | SignIn</title>
+            <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+            <meta name="description" content="Join the team of delanki to enhance your skills and learn from our experts to create and work on the real world products. We're evolving in the product market that is going to impact the world" />
+            <meta name="keywords" content="Delanki, full stack developer service, contact delanki, join delanki, work with delanki"></meta>
+            <meta property="og:image" content={process.env.host + "/android-chrome-512x512.png"} />
+            <meta property="og:title" content="Delanki - Developer Connect" />
+            <meta property="og:description" content="Join the team of delanki to enhance your skills and learn from our experts to create and work on the real world products. We're evolving in the product market that is going to impact the world" />
+            <meta property="og:url" content={process.env.host} />
+            <meta property="twitter:image" content={process.env.host + "/android-chrome-512x512.png"} />
+            <meta property="twitter:title" content="Delanki - Developer Connect" />
+            <meta property="twitter:description" content="Join the team of delanki to enhance your skills and learn from our experts to create and work on the real world products. We're evolving in the product market that is going to impact the world" />
+            <meta property="twitter:url" content={process.env.host} />
+
+        </Head>
             <Navbar />
             <div className="flex flex-col items-center justify-center p-2 sm:px-14 text-center">
                 <img onClick={() => router.push('/')} className="max-h-96 mb-4 mt-10 sm:-mt-6" src="/images/connect.svg" alt=" " />

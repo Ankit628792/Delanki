@@ -7,6 +7,17 @@ function tnc() {
         <>
             <Head>
                 <title>Delanki | Terms & Conditions</title>
+                <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+                <meta name="description" content="Delanki is strict to follow the terms and conditions to be a better company in the market. Make sure to read the terms." />
+                <meta name="keywords" content="Delanki, terms and conditions of delanki, delanki support, terms and conditions"></meta>
+                <meta property="og:image" content={process.env.host + "/android-chrome-512x512.png"} />
+                <meta property="og:title" content="Delanki - Terms and Conditions" />
+                <meta property="og:description" content="Delanki is strict to follow the terms and conditions to be a better company in the market. Make sure to read the terms." />
+                <meta property="og:url" content={process.env.host} />
+                <meta property="twitter:image" content={process.env.host + "/android-chrome-512x512.png"} />
+                <meta property="twitter:title" content="Delanki - Terms and Conditions" />
+                <meta property="twitter:description" content="Delanki is strict to follow the terms and conditions to be a better company in the market. Make sure to read the terms." />
+                <meta property="twitter:url" content={process.env.host} />
             </Head>
             <section className='flex flex-col gap-10 justify-between min-h-screen w-full dark:bg-slate-900'>
                 <Navbar />

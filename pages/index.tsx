@@ -1,6 +1,5 @@
 import type { GetServerSidePropsContext, NextPage } from 'next'
 import { getSession } from 'next-auth/react'
-import { AppContext } from 'next/app'
 import { About, Footer, Landing, Navbar, Products, ScrollToTop, Work, Devs, Team } from '../components'
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
@@ -13,16 +12,16 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Delanki - A product development company</title>
-        <meta name="description" content="Delanki - A team of experts that are dedicated to making modern and intelligent Apps for tomorrow." />
-        <meta name="keywords" content="Delanki, HTML, CSS, JavaScript, Bootstrap, Material UI, Tailwind CSS, Express JS, Node JS, React JS, React Native, Redux, NextJS, MongoDB, Firebase, angular, docker, java, hibernate, graphql, typescript, microservice, sql, postgresql,electron js, freelance, startup, tech, dev, delanki," />
+        <meta name="description" content="Delanki - A team of experts that are dedicated to making modern and intelligent Apps for tomorrow. Hire us to convert your idea into reality, we'r always ready to hear you" />
+        <meta name="keywords" content="Delanki, delanki website development, web development company, product development company, java developers, create product, hire developers, hire developers india, hire programmers"></meta>
         <meta property="og:image" content={process.env.host + "/android-chrome-512x512.png"} />
         <meta property="og:title" content="Delanki" />
-        <meta property="og:description" content="Delanki description" />
-        <meta property="og:url" content="https://www.delanki.com" />
+        <meta property="og:description" content="Delanki - A team of experts that are dedicated to making modern and intelligent Apps for tomorrow. Hire us to convert your idea into reality, we'r always ready to hear you" />
+        <meta property="og:url" content={process.env.host} />
         <meta property="twitter:image" content={process.env.host + "/android-chrome-512x512.png"} />
         <meta property="twitter:title" content="Delanki" />
-        <meta property="twitter:description" content="Delanki description" />
-        <meta property="twitter:url" content="https://www.delanki.com" />
+        <meta property="twitter:description" content="Delanki - A team of experts that are dedicated to making modern and intelligent Apps for tomorrow. Hire us to convert your idea into reality, we'r always ready to hear you" />
+        <meta property="twitter:url" content={process.env.host} />
       </Head>
       <main className="min-h-screen w-full dark:bg-slate-900">
         <img style={{ zIndex: -1 }} className='absolute p-10 w-full h-full m-0 object-contain filter saturate-200 overflow-hidden' src="/ani.svg" alt="" />

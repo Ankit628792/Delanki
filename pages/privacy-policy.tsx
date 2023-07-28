@@ -7,6 +7,18 @@ function privacy_policy() {
         <>
             <Head>
                 <title>Delanki | Privacy Policy</title>
+                <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+                <meta name="description" content="Privacy Policy for delanki includes the safely delivery of the product to the client and customer for the use to provide a secure and efficient product" />
+                <meta name="keywords" content="Delanki, contact delanki, delanki support, delanki privacy policy, delanki policy"></meta>
+                <meta property="og:image" content={process.env.host + "/android-chrome-512x512.png"} />
+                <meta property="og:title" content="Delanki - Privacy Policy" />
+                <meta property="og:description" content="Privacy Policy for delanki includes the safely delivery of the product to the client and customer for the use to provide a secure and efficient product" />
+                <meta property="og:url" content={process.env.host} />
+                <meta property="twitter:image" content={process.env.host + "/android-chrome-512x512.png"} />
+                <meta property="twitter:title" content="Delanki - Privacy Policy" />
+                <meta property="twitter:description" content="Privacy Policy for delanki includes the safely delivery of the product to the client and customer for the use to provide a secure and efficient product" />
+                <meta property="twitter:url" content={process.env.host} />
+
             </Head>
             <section className='flex flex-col gap-10 justify-between min-h-screen w-full dark:bg-slate-900'>
                 <Navbar />

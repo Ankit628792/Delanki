@@ -7,7 +7,7 @@ function Landing() {
         <header className='lg:min-h-screen w-full p-5 lg:p-10'>
             <h1 className='font-bold text-center text-gray-800 dark:text-gray-50 text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl 2xl:max-w-2xl tracking-wider max-w-lg lg:max-w-xl mx-auto mt-16 lg:mt-4'>Build your <span className='font-montez text-red'>Product</span> with Delanki Team</h1>
             <p className='text-gray-500 text-center text-lg lg:text-xl my-4 max-w-xl lg:max-w-3xl mx-auto'>Delanki deliverers blazing fast development, striking word solutions and turns your idea into reality 🚀</p>
-            <div className='flex justify-center'>
+            <div className='flex justify-center relative z-10'>
                 <Link href="/contact-us">
                     <button className='bg-red py-2 px-6 rounded-lg text-white sm:text-lg'>
                         Get Started

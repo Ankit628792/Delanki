@@ -22,7 +22,7 @@ function Devs() {
             <h1 className='text-4xl lg:text-5xl font-semibold text-white tracking-wide text-center'>Ready to start the project?</h1>
             <p className='text-lg mb-3 lg:text-xl text-gray-200 text-center'>We convert your idea into reality, let's have a discussion on it</p>
             <Link href={'/contact-us'}>
-                <button className='bg-white py-2 px-6 rounded-lg font-medium text-lg'>
+                <button className='bg-white py-2 px-6 rounded-lg font-medium text-lg dark:text-gray-800'>
                     Contact Us
                 </button>
             </Link>
