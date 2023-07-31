@@ -85,8 +85,8 @@ const sendEMail = async (data) => {
             secure: true,
 
             auth: {
-                user: envs.MAIL_ID,
-                pass: envs.MAIL_PASSWORD,
+                user: process.env.mail_user,
+                pass: process.env.mail_password,
             },
         });
 
