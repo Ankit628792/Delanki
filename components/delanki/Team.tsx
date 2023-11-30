@@ -21,12 +21,12 @@ function Team() {
 
                 <div className='flex flex-wrap items-center justify-center gap-10 2xl:gap-x-14 py-10'>
                     {
-                        devs.slice(0, 3).map((dev: Dev) => <DevCard key={dev._id} dev={dev} />)
+                        devs.slice(0, 2).map((dev: Dev) => <DevCard key={dev._id} dev={dev} />)
                     }
                 </div>
-                {devs.length > 3 && <div className='grid place-items-center py-4'>
+                {/* {devs.length > 3 && <div className='grid place-items-center py-4'>
                     <Link href="/user/team"><button type='button' role="button" aria-label="View All" className='text-lg bg-red text-white py-1.5 px-6 rounded-xl hover:scale-x-105 transition-transform duration-200 ease-in-out'>View All</button></Link>
-                </div>}
+                </div>} */}
             </section>
         </>
     )
