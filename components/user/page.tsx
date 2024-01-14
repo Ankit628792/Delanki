@@ -231,7 +231,8 @@ const Project = ({ owner, project, setIsEdit, deleteProject }: { owner: Boolean,
             </div> : <></>}
             <div className='w-full max-w-xs 2xl:max-w-sm rounded-lg overflow-hidden border dark:border-gray-800 group relative'>
                 <div className='relative h-96 w-full'>
-                    <Image placeholder="blur" blurDataURL={project.landscape} src={project.landscape} alt="" layout="fill" objectFit='cover' loading='lazy' objectPosition={"top"} />
+                    <iframe src={project.link} className='w-full h-96'></iframe>
+                    {/* <Image placeholder="blur" blurDataURL={project.landscape} src={project.landscape} alt="" layout="fill" objectFit='cover' loading='lazy' objectPosition={"top"} /> */}
                 </div>
                 <div className='bg-gradient-to-b from-transparent to-slate-900 p-5 pt-10 absolute -bottom-0.5 right-0 left-0 group-hover:hidden hidden lg:block'>
                     <h1 className='text-2xl tracking-wide font-semibold text-white hover:hidden'>{project.title}</h1>

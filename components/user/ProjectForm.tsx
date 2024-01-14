@@ -38,7 +38,7 @@ function ProjectForm({ user, isEdit, setIsEdit, setProjects }: { user: User, isE
       if (isEdit?.title) {
         formData["_id"] = isEdit._id
       }
-      let res = await fetch(`/api/project/${user._id}`, {
+      let res: any = await fetch(`/api/project/${user._id}`, {
         method: isEdit?.title ? 'PATCH' : 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -47,7 +47,18 @@ function ProjectForm({ user, isEdit, setIsEdit, setProjects }: { user: User, isE
       });
       if (res.status == 200) {
         res = await res.json();
-        setProjects((prev: any) => [...prev, res])
+        if (isEdit?.title) {
+          setProjects((prev: any) => {
+            let arr = [...prev];
+            let i = arr.findIndex(x => x._id === res?._id);
+            if (i > -1) {
+              arr.splice(i, 1);
+              return [res, ...arr]
+            }
+          })
+        }
+        else
+          setProjects((prev: any) => [res, ...prev])
         toast.success(`Project ${isEdit?.title ? 'Updated' : 'Added'} Successfully!`, { id: 'success' });
         setIsEdit(false)
       } else {

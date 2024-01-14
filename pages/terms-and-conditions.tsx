@@ -26,7 +26,7 @@ function tnc() {
 
                     <h2>Welcome to Delanki!</h2>
 
-                    <li>These terms and conditions outline the rules and regulations for the use of Delanki Website, located at <a href='https://delanki.vercel.app' target="_blank" rel="noreferrer">Delanki</a>.</li>
+                    <li>These terms and conditions outline the rules and regulations for the use of Delanki Website, located at <a href='https://delanki.com' target="_blank" rel="noreferrer">Delanki</a>.</li>
 
                     <li>By accessing this website we assume you accept these terms and conditions. Do not continue to use Delanki if you do not agree to take all of the terms and conditions stated on this page.</li>
 

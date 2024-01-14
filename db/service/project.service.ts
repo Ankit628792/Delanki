@@ -2,11 +2,11 @@ import { DocumentDefinition, ObjectId } from "mongoose";
 import Project, { ProjectDocument } from "../models/project"
 
 export async function getProjectFromUserId(_id: ObjectId) {
-    return await Project.find({ userId: _id });
+    return await Project.find({ userId: _id }).sort({ updatedAt: -1 });
 }
 
 export async function getProjects() {
-    return await Project.find();
+    return await Project.find().sort({ updatedAt: -1 });
 }
 
 export async function createProject(input: DocumentDefinition<ProjectDocument>) {

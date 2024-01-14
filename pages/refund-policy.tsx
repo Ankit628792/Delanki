@@ -45,7 +45,7 @@ function refund_policy() {
                             <p><strong>Service</strong> refers to the Website.</p>
                         </li>
                         <li>
-                            <p><strong>Website</strong> refers to Delanki, accessible from <a href="https://delanki.vercel.app" rel="external nofollow noopener" target="_blank">https://delanki.vercel.app</a></p>
+                            <p><strong>Website</strong> refers to Delanki, accessible from <a href="https://delanki.com" rel="external nofollow noopener" target="_blank">https://delanki.com</a></p>
                         </li>
                         <li>
                             <p><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</p>
@@ -56,7 +56,7 @@ function refund_policy() {
                     <p>The deadline for cancelling a purchased Subscription is 7 days from the date on which You received the Subscription or on which a third party you have appointed, who is not the carrier, takes possession of the product delivered.</p>
                     <p>In order to exercise Your right of cancellation, You must inform Us of your decision by means of a clear statement. You can inform us of your decision by:</p>
                     <ul>
-                        <li>By visiting this page on our website: <a href="https://delanki.vercel.app/#connect" rel="external nofollow noopener" target="_blank">https://delanki.vercel.app/#connect</a></li>
+                        <li>By contacting us: <a href="https://delanki.com/contact-us" rel="external nofollow noopener" target="_blank">https://delanki.com/contact-us</a></li>
                     </ul>
                     <p>We will reimburse You no later than 14 days from the day on which We receive the returned Subscription. We will use the same means of payment as You used for the purchased Subscription, and You will not incur any fees for such reimbursement.</p>
                     <h3>Conditions for Returns</h3>
@@ -79,7 +79,7 @@ function refund_policy() {
                     {/* <h2>Contact Us</h2>
                     <p>If you have any questions about our Returns and Refunds Policy, please contact us:</p>
                     <ul>
-                        <li>By visiting this page on our website: <a href="https://delanki.vercel.app/#connect" rel="external nofollow noopener" target="_blank">https://delanki.vercel.app/#connect</a></li>
+                        <li>By visiting this page on our website: <a href="https://delanki.com/#connect" rel="external nofollow noopener" target="_blank">https://delanki.com/#connect</a></li>
                     </ul> */}
                 </div>
                 <Footer />
