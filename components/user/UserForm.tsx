@@ -54,7 +54,7 @@ function UserForm({ user, setIsEdit, setUser }: { user: User, setIsEdit: Functio
   return (
     <>
       <div className='fixed inset-0 min-h-screen overflow-hidden grid place-items-center p-5' style={{ zIndex: 100 }}>
-        <div className='absolute inset-0 w-full min-h-screen bg-black bg-opacity-50 filter backdrop-blur-sm z-40 cursor-pointer' onClick={() => setIsEdit(false)} />
+        <div className='absolute inset-0 w-full min-h-screen bg-slate-900 bg-opacity-50 filter backdrop-blur-sm z-40 cursor-pointer' onClick={() => setIsEdit(false)} />
         <form onSubmit={handleSubmit} className='w-full max-w-xl rounded-lg bg-white dark:bg-slate-900 dark:bg-opacity-75 border dark:border-gray-800 p-5 sm:p-10 lg:px-12 z-50 text-gray-800 dark:text-gray-200 relative opacAnimation'>
           <h1 className='text-3xl lg:text-4xl font-semibold text-gray-800 dark:text-gray-200 pb-2 border-b'>Add Details</h1>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" onClick={() => setIsEdit(false)} className="absolute cursor-pointer top-5 sm:top-10 right-5 sm:right-10 w-8 h-8">

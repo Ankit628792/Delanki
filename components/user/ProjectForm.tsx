@@ -78,7 +78,7 @@ function ProjectForm({ user, isEdit, setIsEdit, setProjects }: { user: User, isE
   return (
     <>
       <div className='fixed inset-0 min-h-screen overflow-hidden grid place-items-center p-5' style={{ zIndex: 100 }}>
-        <div className='absolute inset-0 w-full min-h-screen bg-black bg-opacity-50 filter backdrop-blur-sm z-40 cursor-pointer' onClick={() => setIsEdit(false)} />
+        <div className='absolute inset-0 w-full min-h-screen bg-slate-900 bg-opacity-50 filter backdrop-blur-sm z-40 cursor-pointer' onClick={() => setIsEdit(false)} />
         <form onSubmit={handleSubmit} className='w-full max-w-xl rounded-lg bg-white dark:bg-slate-900 dark:bg-opacity-75 border dark:border-gray-800 p-5 sm:p-10 lg:px-12 z-50 text-gray-800 dark:text-gray-200 relative opacAnimation'>
           <h1 className='text-3xl lg:text-4xl font-semibold text-gray-800 dark:text-gray-200 pb-2 border-b'>{isEdit.title ? 'Edit' : 'Add'} Project</h1>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" onClick={() => setIsEdit(false)} className="absolute cursor-pointer top-5 sm:top-10 right-5 sm:right-10 w-8 h-8">
@@ -99,7 +99,7 @@ function ProjectForm({ user, isEdit, setIsEdit, setProjects }: { user: User, isE
             </div>
           </div>
 
-          <div className='mt-4'>
+          {/* <div className='mt-4'>
             <label htmlFor="portrait" className='font-medium'>Portrait View <span className='mx-1 text-xl text-red cursor-pointer'>+</span></label>
             <div className='w-full bg-white text-gray-800 rounded border'>
               <input type="url" disabled readOnly value={data.portrait} placeholder="Click plus icon to add image *" className='px-2 py-1.5 bg-transparent w-full focus:outline-rose-400 text-sm' />
@@ -115,7 +115,7 @@ function ProjectForm({ user, isEdit, setIsEdit, setProjects }: { user: User, isE
                 }
               }} id='portrait' className='hidden px-2 py-1 bg-transparent w-full focus:outline-rose-400' />
             </div>
-          </div>
+          </div> */}
 
           <div className='mt-4'>
             <label htmlFor="landscape" className='font-medium'>Landscape View <span className='mx-1 text-xl text-red cursor-pointer'>+</span></label>
@@ -144,9 +144,10 @@ function ProjectForm({ user, isEdit, setIsEdit, setProjects }: { user: User, isE
 
           <div className='mt-4'>
             <label htmlFor="description" className='font-medium'>Description <span className='text-red mx-0.5'>*</span></label>
-            <div className='w-full bg-white text-gray-800 rounded border h-16'>
-              <textarea id='description' placeholder='a little description about the project...' value={data.description} onChange={handleChange} minLength={10} maxLength={500} className='px-2 py-1 bg-transparent w-full focus:outline-rose-400 resize-none h-16'></textarea>
+            <div className='w-full bg-white text-gray-800 rounded border h-24 relative'>
+              <textarea id='description' placeholder='a little description about the project...' value={data.description} onChange={handleChange} minLength={10} maxLength={500} className='px-2 py-1 bg-transparent w-full outline-none border-none resize-none h-24'></textarea>
             </div>
+            <p className='text-sm text-right mt-0.5'>{data?.description?.length || 0}/500</p>
           </div>
 
           <div className='flex flex-wrap items-center justify-start gap-8 w-full pt-8'>
