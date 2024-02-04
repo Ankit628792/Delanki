@@ -145,7 +145,7 @@ function ProjectForm({ user, isEdit, setIsEdit, setProjects }: { user: User, isE
           <div className='mt-4'>
             <label htmlFor="description" className='font-medium'>Description <span className='text-red mx-0.5'>*</span></label>
             <div className='w-full bg-white text-gray-800 rounded border h-16'>
-              <textarea id='description' placeholder='a little description about the project...' value={data.description} onChange={handleChange} minLength={10} maxLength={200} className='px-2 py-1 bg-transparent w-full focus:outline-rose-400 resize-none h-16'></textarea>
+              <textarea id='description' placeholder='a little description about the project...' value={data.description} onChange={handleChange} minLength={10} maxLength={500} className='px-2 py-1 bg-transparent w-full focus:outline-rose-400 resize-none h-16'></textarea>
             </div>
           </div>
 

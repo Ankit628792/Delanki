@@ -7,6 +7,7 @@ export const uploadImage = async (image: File) => {
     data.append("file", image)
     data.append("upload_preset", `${process.env.preset}`)
     data.append("cloud_name", `${process.env.cloud_name}`)
+    data.append("folder", 'nian-devs')
     const resp = await fetch(`https://api.cloudinary.com/v1_1/${process.env.cloud_name}/image/upload`, {
         method: "post",
         body: data
