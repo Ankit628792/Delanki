@@ -234,7 +234,13 @@ const Project = ({ owner, project, setIsEdit, deleteProject, setDetailedProject 
             </div> : <></>}
             <div className='w-full max-w-md rounded-lg overflow-hidden border dark:border-gray-800 group relative'>
                 <div className='relative h-96 w-full'>
-                    <iframe src={project.link} className='w-full h-96'></iframe>
+                    {
+                        <img
+                            src={project.landscape}
+                            alt="Default Image"
+                            className='w-full h-full object-cover rounded-lg'
+                        />
+                    }
                     {/* <Image placeholder="blur" blurDataURL={project.landscape} src={project.landscape} alt="" layout="fill" objectFit='cover' loading='lazy' objectPosition={"top"} /> */}
                 </div>
                 <div className='bg-gradient-to-b from-transparent to-slate-900 p-5 pt-20 absolute -bottom-0.5 right-0 left-0 group-hover:hidden hidden lg:block'>
@@ -248,8 +254,8 @@ const Project = ({ owner, project, setIsEdit, deleteProject, setDetailedProject 
                         {project.techs.map((tech: String, i: any) => <p key={i} className="text-xs md:text-sm py-0.5 px-2 bg-white border shadow-sm text-gray-800 rounded-3xl">{tech}</p>)}
                     </div>
                     <div className='flex items-center gap-2'>
-                    <a href={project.link} target="_blank" rel="noreferrer" className='py-1.5 px-5 text-white bg-red rounded-lg font-medium'>Open Link</a>
-                    <button onClick={() => setDetailedProject(project)} className='py-1.5 px-5 text-white bg-red rounded-lg font-medium'>View Detail</button>
+                        <a href={project.link} target="_blank" rel="noreferrer" className='py-1.5 px-5 text-white bg-red rounded-lg font-medium'>Open Link</a>
+                        <button onClick={() => setDetailedProject(project)} className='py-1.5 px-5 text-white bg-red rounded-lg font-medium'>View Detail</button>
                     </div>
                 </div>
             </div>

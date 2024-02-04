@@ -101,6 +101,10 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+iframe img{
+    width: 100%;
+}
+
 .text-red {
     color: #f22952;
 }

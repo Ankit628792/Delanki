@@ -22,6 +22,7 @@ export default async function handler(
             try {
                 res.status(200).send(await createProject(req.body))
             } catch (error) {
+                console.log(error)
                 res.status(400).send({ msg: 'Something went wrong' })
             }
             break;

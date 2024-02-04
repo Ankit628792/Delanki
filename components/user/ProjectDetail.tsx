@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function ProjectDetail({ project, onClose }: { project: Project, onClose: Function }) {
+    const [iframeError, setIframeError] = useState<any>(false);
     return (
         <section className='fixed inset-0 z-50 grid place-items-center'>
             <div onClick={() => onClose()} className='bg-slate-900 bg-opacity-50 filter backdrop-blur-sm fixed inset-0 cursor-pointer'></div>
@@ -10,7 +11,21 @@ function ProjectDetail({ project, onClose }: { project: Project, onClose: Functi
                     <a href={project.link} target="_blank" rel="noreferrer" className='py-1.5 px-5 text-white bg-red rounded-lg font-medium'>Open Link</a>
                 </div>
                 <div className='relative h-96 w-full my-3'>
-                    <iframe src={project.link} className='w-full h-96 rounded-lg overflow-hidden'></iframe>
+                    {
+                        project?.link?.includes('http')
+                            ?
+                            <iframe
+                                src={project.link}
+                                className='w-full h-96 object-cover rounded-lg overflow-hidden'
+                            >
+                            </iframe>
+                            :
+                            <img
+                                src={project.landscape}
+                                alt="Default Image"
+                                className='w-full h-full object-cover rounded-lg'
+                            />
+                    }
                 </div>
                 <p className='text-gray-800 dark:text-gray-50 text-sm md:text-base lg:text-lg font-light my-4'>{project.description}</p>
                 <div className='flex flex-wrap items-center justify-start gap-2 '>
