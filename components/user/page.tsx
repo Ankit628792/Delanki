@@ -4,10 +4,12 @@ import toast from 'react-hot-toast';
 import { uploadImage, useClickOutside } from '../../utils';
 import ProjectForm from './ProjectForm';
 import Router from 'next/router'
+import ProjectDetail from './ProjectDetail';
 
 function Page({ user, projectData, owner, setUser, setUserEdit }: { user: User, projectData: Projects, owner: Boolean, setUser: Function, setUserEdit: Function | any }) {
     const [projects, setProjects] = useState<Projects | any>(projectData);
     const [isEdit, setIsEdit] = useState<Project | any>(false);
+    const [detailedProject, setDetailedProject] = useState<Project | null>();
     const fileRef = useRef(null)
     const deleteProject = async (id: string) => {
         let res = await fetch(`/api/project/${id}`, {
@@ -165,12 +167,12 @@ function Page({ user, projectData, owner, setUser, setUserEdit }: { user: User, 
                     </div>
                 </header>
 
-                <section className='p-5 max-w-7xl mx-auto sm:px-10 -translate-y-6 sm:-translate-y-8'>
+                <section className='p-5 max-w-[90rem] mx-auto sm:px-10 -translate-y-6 sm:-translate-y-8'>
                     <div className='border-b py-2 flex items-center gap-4'>
                         <h1 className='text-3xl sm:text-4xl font-medium'>Skills</h1>
                         {owner ? <AddSkill handleSkill={handleSkill} /> : <></>}
                     </div>
-                    <div className='flex flex-wrap items-center gap-x-6 gap-y-6 py-5'>
+                    <div className='flex flex-wrap items-center gap-x-4 gap-y-4 py-5'>
                         {
                             !user?.skills?.length ?
                                 <h1 className='flex-grow text-center text-lg lg:text-xl text-gray-600'>You've not added any skill, add to make profile more recognizable</h1>
@@ -189,7 +191,7 @@ function Page({ user, projectData, owner, setUser, setUserEdit }: { user: User, 
                     </div>
                 </section>
 
-                <section className='p-5 max-w-7xl mx-auto sm:px-10'>
+                <section className='p-5 max-w-[90rem] mx-auto sm:px-10'>
                     <div className='border-b py-2 flex items-center gap-2'>
                         <h1 className='text-3xl sm:text-4xl font-medium'>Project Showcase</h1>
                         {owner ? <svg onClick={() => setIsEdit(true)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 cursor-pointer hover-red">
@@ -199,24 +201,25 @@ function Page({ user, projectData, owner, setUser, setUserEdit }: { user: User, 
                     {!projects.length ?
                         <h1 className='flex-grow text-center text-lg lg:text-xl text-gray-600 py-10'>You've not added any project yet</h1>
                         :
-                        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center gap-10 py-10'>
-                            {projects.map((project: Project) => <Project owner={owner} key={project._id} project={project} setIsEdit={setIsEdit} deleteProject={deleteProject} />)}
+                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-10 py-10'>
+                            {projects.map((project: Project) => <Project setDetailedProject={setDetailedProject} owner={owner} key={project._id} project={project} setIsEdit={setIsEdit} deleteProject={deleteProject} />)}
                         </div>
                     }
                 </section>
             </section>
 
-            {isEdit && <ProjectForm user={user} isEdit={isEdit} setIsEdit={setIsEdit} setProjects={setProjects} />}
+            {isEdit ? <ProjectForm user={user} isEdit={isEdit} setIsEdit={setIsEdit} setProjects={setProjects} /> : <></>}
+            {detailedProject ? <ProjectDetail project={detailedProject} onClose={() => setDetailedProject(null)} /> : <></>}
         </>
     )
 }
 
 export default Page
 
-const Project = ({ owner, project, setIsEdit, deleteProject }: { owner: Boolean, project: Project, setIsEdit: Function, deleteProject: Function }) => {
+const Project = ({ owner, project, setIsEdit, deleteProject, setDetailedProject }: { owner: Boolean, project: Project, setIsEdit: Function, deleteProject: Function, setDetailedProject: Function }) => {
 
     return <>
-        <div className='w-full max-w-xs 2xl:max-w-sm relative'>
+        <div className='w-full max-w-md relative'>
             {owner ? <div className='absolute -top-4 -right-2 flex items-center gap-3 z-40'>
                 <div className='p-2 w-9 h-9 rounded-full bg-white border cursor-pointer text-blue-500 border-blue-500' onClick={() => setIsEdit(project)}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className=" text-blue">
@@ -229,22 +232,25 @@ const Project = ({ owner, project, setIsEdit, deleteProject }: { owner: Boolean,
                     </svg>
                 </div>
             </div> : <></>}
-            <div className='w-full max-w-xs 2xl:max-w-sm rounded-lg overflow-hidden border dark:border-gray-800 group relative'>
+            <div className='w-full max-w-md rounded-lg overflow-hidden border dark:border-gray-800 group relative'>
                 <div className='relative h-96 w-full'>
                     <iframe src={project.link} className='w-full h-96'></iframe>
                     {/* <Image placeholder="blur" blurDataURL={project.landscape} src={project.landscape} alt="" layout="fill" objectFit='cover' loading='lazy' objectPosition={"top"} /> */}
                 </div>
-                <div className='bg-gradient-to-b from-transparent to-slate-900 p-5 pt-10 absolute -bottom-0.5 right-0 left-0 group-hover:hidden hidden lg:block'>
+                <div className='bg-gradient-to-b from-transparent to-slate-900 p-5 pt-20 absolute -bottom-0.5 right-0 left-0 group-hover:hidden hidden lg:block'>
                     <h1 className='text-2xl tracking-wide font-semibold text-white hover:hidden'>{project.title}</h1>
                 </div>
                 <div className='absolute inset-0 w-full h-full bg-slate-900 bg-opacity-10 filter backdrop-blur-sm z-10 lg:hidden group-hover:block'></div>
                 <div className='bg-gradient-to-b from-transparent to-slate-900 p-5 pt-10 absolute -bottom-0.5 right-0 left-0 z-20 lg:transform lg:translate-y-96 group-hover:translate-y-0 transition-all duration-300 ease-out'>
                     <h1 className='text-2xl tracking-wide font-semibold text-white'>{project.title}</h1>
-                    <p className='line-clamp-3 text-gray-50 text-sm my-2 leading-relaxed'>{project.description}</p>
-                    <div className='flex flex-wrap items-center justify-start gap-3 mb-4 h-24 md:h-28 overflow-hidden'>
-                        {project.techs.map((tech: String, i: any) => <p key={i} className="text-xs md:text-sm py-0.5 px-2 bg-white border shadow-sm text-gray-800 rounded-lg">{tech}</p>)}
+                    <p onClick={() => setDetailedProject(project)} className='line-clamp-3 text-gray-50 text-sm my-2 leading-relaxed cursor-pointer'>{project.description}</p>
+                    <div className='flex flex-wrap items-center justify-start gap-1.5 md:gap-2 mb-4 h-20 sm:h-auto md:h-24 overflow-hidden'>
+                        {project.techs.map((tech: String, i: any) => <p key={i} className="text-xs md:text-sm py-0.5 px-2 bg-white border shadow-sm text-gray-800 rounded-3xl">{tech}</p>)}
                     </div>
-                    <a href={project.link} target="_blank" rel="noreferrer" className='py-1.5 px-5 text-white bg-red rounded-lg font-medium'>Visit</a>
+                    <div className='flex items-center gap-2'>
+                    <a href={project.link} target="_blank" rel="noreferrer" className='py-1.5 px-5 text-white bg-red rounded-lg font-medium'>Open Link</a>
+                    <button onClick={() => setDetailedProject(project)} className='py-1.5 px-5 text-white bg-red rounded-lg font-medium'>View Detail</button>
+                    </div>
                 </div>
             </div>
         </div>
