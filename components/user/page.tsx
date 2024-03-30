@@ -47,7 +47,7 @@ function Page({ user, projectData, owner, setUser, setUserEdit }: { user: User, 
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ skills: skills, level: [3, 4].includes(Number(user.level)) ? user.level + 1 : user.level })
+            body: JSON.stringify({ skills: skills, level: [3, 4].includes(Number(user.level)) ? user.level + 1 : user.level, verified: true })
         });
         if (res.status == 200) {
             res = await res.json();
