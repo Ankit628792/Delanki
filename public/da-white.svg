@@ -1,0 +1,14 @@
+<svg width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1000" height="1000" fill="#FFFFFF"/>
+  <!-- Finger 1 (left/stem) -->
+  <rect x="430" y="115" width="75" height="520" rx="37.5" fill="#F22952" />
+  <!-- Finger 2 (middle) -->
+  <rect x="506" y="145" width="75" height="460" rx="37.5" fill="#F22952" />
+  <!-- Finger 3 (right) -->
+  <rect x="582" y="175" width="75" height="380" rx="37.5" fill="#F22952" />
+  <!-- d-loop -->
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M 440 400 C 300 400 190 500 190 620 C 190 730 290 820 420 820 C 475 820 505 770 505 710 L 505 400 Z M 430 500 L 430 700 C 350 700 290 650 290 590 C 290 530 350 490 430 500 Z" fill="#F22952" />
+  <!-- a leg black -->
+  <path d="M 370 820 L 720 460 C 745 435 780 435 800 460 C 820 485 820 520 800 545 L 450 900 C 425 925 390 925 370 900 C 350 875 350 840 370 820 Z" fill="#090909" />
+  <rect x="725" y="470" width="75" height="360" rx="37.5" fill="#090909" />
+</svg>
