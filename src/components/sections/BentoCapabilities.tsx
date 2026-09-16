@@ -26,7 +26,7 @@ export const BentoCapabilities: React.FC = () => {
     setAiResponse(null);
     setTimeout(() => {
       setAiResponse(
-        '✓ Architecture plan generated: App Router with Server Components, Drizzle ORM queries, WebSocket event stream at 12ms latency, Tailwind 2023 design tokens.'
+        '✓ Architecture plan generated: App Router with Server Components, Drizzle ORM queries, WebSocket event stream at 12ms latency, Tailwind design tokens.'
       );
       setIsGenerating(false);
     }, 600);
@@ -169,7 +169,7 @@ export const BentoCapabilities: React.FC = () => {
             </div>
           </div>
 
-          {/* Card 4: Cross-Device Precision (4-col) */}
+          {/* Card 4: Cross-Platform Precision (4-col) */}
           <div className="col-span-12 sm:col-span-6 lg:col-span-4 bg-[#121212] border border-white/15 rounded-3xl p-8 flex flex-col justify-between group hover:border-[#F22952]/40 transition-all duration-500">
             <div className="space-y-3">
               <div className="flex items-center justify-between">
@@ -177,7 +177,7 @@ export const BentoCapabilities: React.FC = () => {
                 <span className="font-mono text-[9px] px-2 py-0.5 rounded bg-[#F22952]/10 text-[#F22952] border border-[#F22952]/20">REACT NATIVE</span>
               </div>
               <h4 className="font-display font-bold text-xl text-white uppercase">
-                CROSS-DEVICE FLUIDITY
+                CROSS-PLATFORM FLUIDITY
               </h4>
               <p className="text-xs text-[#B7B7B7] leading-relaxed">
                 Adaptive layout logic ensuring your application looks intentional and tactile on 375px mobile up to 4K ultra-wide monitors.

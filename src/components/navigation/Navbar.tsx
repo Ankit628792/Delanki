@@ -152,15 +152,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenInquiry }) => {
 
           {/* Right Action: Studio Status & CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <div className="hidden xl:flex items-center gap-2 font-mono text-[11px] text-[#B7B7B7] border border-white/10 rounded-full px-3 py-1.5 bg-[#121212]/40">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span>DELANKI / 2023</span>
-              <span className="text-white/30">|</span>
-              <span className="flex items-center gap-1 text-white">
-                <Clock className="w-3 h-3 text-[#F22952]" />
-                {timeStr || '12:00:00'} IST
-              </span>
-            </div>
 
             <button
               onClick={() => onOpenInquiry('build')}
@@ -219,7 +210,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenInquiry }) => {
 
         <div className="flex flex-col gap-4 pt-6 border-t border-white/15">
           <div className="flex justify-between items-center font-mono text-xs text-[#B7B7B7]">
-            <span>DELANKI STUDIO 2023</span>
+            <span>DELANKI STUDIO</span>
             <Link
               to="/privacy-policy"
               onClick={() => setMobileMenuOpen(false)}

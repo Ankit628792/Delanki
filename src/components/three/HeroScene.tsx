@@ -166,7 +166,7 @@ export const HeroScene: React.FC = () => {
                 <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
               </div>
               <span className="font-mono text-[11px] font-bold tracking-wider text-white uppercase ml-1">
-                DEL<span className="text-[#F22952]">ANKI</span>_CORE // V3.8
+                DEL<span className="text-[#F22952]">ANKI</span>_CORE
               </span>
             </div>
 

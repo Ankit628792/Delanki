@@ -34,15 +34,15 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenInquiry }) => 
           
           <div className="lg:col-span-7 space-y-6 text-base sm:text-lg text-[#B7B7B7] leading-relaxed">
             <p className="text-xl sm:text-2xl text-white font-medium leading-snug">
-              Del<span className="text-[#F22952]">anki</span> is a technology and product development studio focused on turning ambitious ideas into useful digital products. We combine product thinking, design, and engineering to build experiences that are simple to use and difficult to ignore.
+              Del<span className="text-[#F22952]">anki</span> is a product development studio turning ideas into fast, intuitive, and reliable digital software.
             </p>
 
             <p>
-              Starting from a dedicated technical foundation, Delanki has evolved into a full-spectrum digital product studio. We partner directly with technical founders, venture-backed startups, and growing enterprises across North America, Europe, and Asia.
+              We partner directly with founders and teams to build full-stack web apps, mobile experiences, and extension ecosystems.
             </p>
 
             <p>
-              We believe great software does not come from 40-person committees or 100-page requirement specs. It comes from a small, deeply aligned unit of senior engineers and product thinkers who obsess over detail and ship iteratively.
+              We believe great software comes from small, senior engineering teams who ship fast and focus on product quality.
             </p>
 
             {/* Principles checklist */}
@@ -51,14 +51,14 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenInquiry }) => 
                 <CheckCircle2 className="w-5 h-5 text-[#F22952] shrink-0 mt-0.5" />
                 <div className="text-xs text-white/90">
                   <strong className="block font-sans text-sm text-white">Direct Access</strong>
-                  No account managers; talk directly with builders.
+                  Talk directly with senior builders.
                 </div>
               </div>
               <div className="p-4 rounded-xl bg-[#141414] border border-white/10 flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-[#F22952] shrink-0 mt-0.5" />
                 <div className="text-xs text-white/90">
                   <strong className="block font-sans text-sm text-white">Production Quality</strong>
-                  Strict TypeScript, zero shortcuts, 100% IP rights.
+                  Strict TypeScript, full IP ownership.
                 </div>
               </div>
             </div>
@@ -95,7 +95,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenInquiry }) => 
                 className="w-full py-3.5 bg-[#F22952] hover:bg-[#ff305c] text-white font-mono text-xs uppercase tracking-wider font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(242,41,82,0.3)]"
                 data-cursor="CONNECT"
               >
-                <span>START A CONVERSATION WITH US</span>
+                <span>GET IN TOUCH</span>
                 <ArrowUpRight className="w-4 h-4" />
               </button>
             </div>

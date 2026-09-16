@@ -75,7 +75,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                   </span>
                   <div className={`p-2 rounded-lg border ${isActive ? 'bg-[#F22952]/20 border-[#F22952] text-[#F22952]' : 'bg-white/5 border-white/10 text-[#B7B7B7]'}`}>
                     {srv.id === 'web-apps' && <Globe className="w-4 h-4" />}
-                    {srv.id === 'cross-device' && <Smartphone className="w-4 h-4" />}
+                    {srv.id === 'cross-platform' && <Smartphone className="w-4 h-4" />}
                     {srv.id === 'chrome-extensions' && <Puzzle className="w-4 h-4" />}
                     {srv.id === 'vscode-extensions' && <Terminal className="w-4 h-4" />}
                   </div>
@@ -237,8 +237,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
               </div>
             )}
 
-            {/* Visual 2: Cross-Device App Mockup */}
-            {currentService.id === 'cross-device' && (
+            {/* Visual 2: Cross-Platform App Mockup */}
+            {currentService.id === 'cross-platform' && (
               <div className="w-full flex flex-col items-center gap-4">
                 <div className="flex items-center gap-2 bg-[#141414] p-1.5 rounded-xl border border-white/10 font-mono text-xs">
                   <button

@@ -103,7 +103,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialMode = 'b
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                   <span>CURRENT AVAILABILITY</span>
                 </div>
-                <p>Accepting new product development builds & sprint talent for 2023.</p>
+                <p>Accepting new product development builds & sprint talent since 2023.</p>
               </div>
             </div>
           </div>

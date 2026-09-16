@@ -26,7 +26,7 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onOpenInquiry 
             </h2>
           </div>
           <p className="text-sm md:text-base text-[#B7B7B7] max-w-md font-sans leading-relaxed">
-            Delanki builds its own software alongside client engagements. Here is a curated selection of tools, extensions, and applications we have engineered.
+            A selection of tools, extensions, and applications designed and engineered by Delanki.
           </p>
         </div>
 

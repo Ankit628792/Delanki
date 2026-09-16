@@ -110,7 +110,7 @@ export const ProjectInquiryModal: React.FC<ProjectInquiryModalProps> = ({
             <div className="space-y-2 pr-8">
               <div className="flex items-center gap-2 font-mono text-xs text-[#F22952] uppercase tracking-wider">
                 <Sparkles className="w-3.5 h-3.5" />
-                <span>DEL<span className="text-[#F22952]">ANKI</span> PROJECT DESK // 2023</span>
+                <span>DEL<span className="text-[#F22952]">ANKI</span> PROJECT DESK</span>
               </div>
               <h3 className="font-display font-black text-2xl sm:text-3xl text-white uppercase">
                 LET'S BUILD SOMETHING REAL

@@ -24,7 +24,7 @@ export const HireVsBuild: React.FC<HireVsBuildProps> = ({ onSelectMode }) => {
             </h2>
           </div>
           <p className="text-sm md:text-base text-[#B7B7B7] max-w-md font-sans leading-relaxed">
-            Whether you need dedicated senior engineers to supercharge your sprint velocity or a full studio team to build your next product from zero, we adapt to your roadmap.
+            Whether you need dedicated engineers to boost velocity or a full studio team to build your product from zero, we adapt to your roadmap.
           </p>
         </div>
 
@@ -57,7 +57,7 @@ export const HireVsBuild: React.FC<HireVsBuildProps> = ({ onSelectMode }) => {
                   HIRE A TALENT
                 </h3>
                 <p className="text-base text-[#B7B7B7] leading-relaxed">
-                  Need an experienced developer for your team? Bring in focused engineering talent for a sprint, project milestone, or extended engagement.
+                  Bring in experienced engineers for a sprint, milestone, or extended project.
                 </p>
               </div>
 
@@ -69,19 +69,19 @@ export const HireVsBuild: React.FC<HireVsBuildProps> = ({ onSelectMode }) => {
                 <ul className="space-y-2.5 text-sm text-white/90">
                   <li className="flex items-center gap-2.5">
                     <Check className="w-4 h-4 text-[#F22952] shrink-0" />
-                    <span>Dedicated Senior Full-Stack or Mobile Developer</span>
+                    <span>Dedicated Full-Stack or Mobile Engineers</span>
                   </li>
                   <li className="flex items-center gap-2.5">
                     <Check className="w-4 h-4 text-[#F22952] shrink-0" />
-                    <span>Seamless integration into your Slack, GitHub & Jira</span>
+                    <span>Direct integration into your Slack & GitHub</span>
                   </li>
                   <li className="flex items-center gap-2.5">
                     <Check className="w-4 h-4 text-[#F22952] shrink-0" />
-                    <span>Zero agency overhead, direct engineer-to-engineer communication</span>
+                    <span>Direct builder communication without agency bloat</span>
                   </li>
                   <li className="flex items-center gap-2.5">
                     <Check className="w-4 h-4 text-[#F22952] shrink-0" />
-                    <span>Flexible weekly or monthly sprint commitments</span>
+                    <span>Flexible weekly or monthly commitments</span>
                   </li>
                 </ul>
               </div>
@@ -139,7 +139,7 @@ export const HireVsBuild: React.FC<HireVsBuildProps> = ({ onSelectMode }) => {
                   BUILD YOUR PRODUCT
                 </h3>
                 <p className="text-base text-[#B7B7B7] leading-relaxed">
-                  Have an idea but need a full studio to turn it into a real, shipped product? We handle discovery, UX/UI, architecture, engineering, and launch.
+                  Turn your idea into a shipped product. We handle discovery, UX/UI design, engineering, and launch.
                 </p>
               </div>
 
@@ -151,19 +151,19 @@ export const HireVsBuild: React.FC<HireVsBuildProps> = ({ onSelectMode }) => {
                 <ul className="space-y-2.5 text-sm text-white/90">
                   <li className="flex items-center gap-2.5">
                     <Check className="w-4 h-4 text-[#F22952] shrink-0" />
-                    <span>Complete Product Strategy, User Flows & High-Fi UX/UI</span>
+                    <span>Product Strategy, User Flows & High-Fi UX/UI</span>
                   </li>
                   <li className="flex items-center gap-2.5">
                     <Check className="w-4 h-4 text-[#F22952] shrink-0" />
-                    <span>Full-Stack Engineering (Web, Native Mobile, or Extensions)</span>
+                    <span>Full-Stack Codebase (Web, Mobile, or Extensions)</span>
                   </li>
                   <li className="flex items-center gap-2.5">
                     <Check className="w-4 h-4 text-[#F22952] shrink-0" />
-                    <span>Automated CI/CD, Cloud Infrastructure & Database Setup</span>
+                    <span>Automated CI/CD & Cloud Infrastructure</span>
                   </li>
                   <li className="flex items-center gap-2.5">
                     <Check className="w-4 h-4 text-[#F22952] shrink-0" />
-                    <span>Production Launch, App Store Approvals & Post-Launch Support</span>
+                    <span>Store Approvals & Post-Launch Optimization</span>
                   </li>
                 </ul>
               </div>

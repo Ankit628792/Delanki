@@ -58,7 +58,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenInquiry }) => {
             </li>
             <li>
               <a href="#services" onClick={(e) => handleSectionClick(e, '#services')} className="hover:text-white transition-colors">
-                Cross-Device Mobile
+                Cross-Platform Mobile
               </a>
             </li>
             <li>

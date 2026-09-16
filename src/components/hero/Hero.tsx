@@ -32,7 +32,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry }) => {
         <div className="flex items-center gap-4 font-mono text-xs text-[#B7B7B7]">
           <div className="flex items-center gap-1.5">
             <Layers className="w-3.5 h-3.5 text-[#F22952]" />
-            <span>2023 EDITION</span>
+            <span>SINCE 2023</span>
           </div>
           <span className="text-white/30">•</span>
           <div className="flex items-center gap-1.5">
@@ -69,7 +69,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry }) => {
 
           {/* Concise Supporting Copy */}
           <p className="text-base sm:text-lg md:text-xl text-[#B7B7B7] max-w-xl font-normal leading-relaxed">
-            Delanki is a product development studio helping ambitious founders, startups, and engineering teams design, build, launch, and evolve digital products across Web, Mobile, Chrome, and VS Code.
+            We design, build, and ship high-performance digital products across Web, Mobile, Chrome, and VS Code.
           </p>
 
           {/* Dual Action CTAs */}
@@ -130,7 +130,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry }) => {
       {/* Hero Bottom Bar & Scroll Down Indicator */}
       <div className="relative z-10 max-w-7xl mx-auto w-full flex items-center justify-between pt-6 border-t border-white/10 font-mono text-xs text-[#B7B7B7]">
         <div className="hidden sm:flex items-center gap-4">
-          <span className="text-white">EST. 2023</span>
+          <span className="text-white">SINCE 2023</span>
           <span className="text-white/20">/</span>
           <span>GLOBAL CLIENTS</span>
           <span className="text-white/20">/</span>

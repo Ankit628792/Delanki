@@ -108,7 +108,7 @@ export const PrivacyPolicyPage: React.FC = () => {
           <div className="flex items-center gap-3">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 font-mono text-[11px] text-[#B7B7B7]">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              STATUS: ACTIVE (2023)
+              STATUS: ACTIVE (SINCE 2023)
             </span>
             <Link
               to="/"
@@ -124,7 +124,7 @@ export const PrivacyPolicyPage: React.FC = () => {
         <header className="mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F22952]/10 border border-[#F22952]/30 text-[#F22952] font-mono text-xs uppercase tracking-widest font-semibold mb-4">
             <FileText className="w-3.5 h-3.5" />
-            <span>LEGAL SPECIFICATION // DOC-2023-REV4</span>
+            <span>LEGAL SPECIFICATION // DOC-REV4</span>
           </div>
           <h1 className="font-display font-black text-4xl sm:text-5xl md:text-6xl uppercase tracking-tight text-white mb-4">
             PRIVACY POLICY<span className="text-[#F22952]">.</span>
@@ -133,9 +133,9 @@ export const PrivacyPolicyPage: React.FC = () => {
             Delanki is committed to transparent data practices, rigorous client source code confidentiality, and responsible engineering across our web applications, native mobile builds, Chrome extensions, and developer tooling.
           </p>
           <div className="flex flex-wrap items-center gap-4 mt-4 font-mono text-xs text-[#B7B7B7]">
-            <span>EFFECTIVE DATE: SEPTEMBER 2023</span>
+            <span>EFFECTIVE DATE: SINCE SEPTEMBER 2023</span>
             <span className="text-white/20">•</span>
-            <span>LAST REVIEWED: 2023</span>
+            <span>LAST REVIEWED: RECENTLY UPDATED</span>
             <span className="text-white/20">•</span>
             <span>JURISDICTION: APPLICABLE GLOBAL STANDARDS (GDPR / CCPA ALIGNED)</span>
           </div>

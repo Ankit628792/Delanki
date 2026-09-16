@@ -19,7 +19,7 @@ export const FinalCta: React.FC<FinalCtaProps> = ({ onOpenInquiry }) => {
           <div className="inline-flex items-center gap-2 border border-subtle-pink bg-[#F22952]/10 rounded-full px-4 py-1.5 w-fit">
             <span className="w-2 h-2 rounded-full bg-[#F22952] animate-pulse" />
             <span className="font-mono text-xs font-bold tracking-widest text-[#F22952] uppercase">
-              READY TO SHIP // 2023
+              READY TO SHIP
             </span>
           </div>
 

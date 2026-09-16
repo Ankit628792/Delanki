@@ -1,6 +1,6 @@
 {
   "name": "Delanki — Digital Product Development Studio",
-  "description": "Delanki builds modern web apps, cross-device applications, Chrome extensions, VS Code extensions, and digital products for ambitious teams.",
+  "description": "Delanki builds modern web apps, cross-platform applications, Chrome extensions, VS Code extensions, and digital products for ambitious teams.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
