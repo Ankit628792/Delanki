@@ -9,7 +9,7 @@ export const WhyDelanki: React.FC = () => {
       icon: Users,
     },
     {
-      title: 'LESS BUREAUCRACY.',
+      title: 'DIRECT ACCESS.',
       subtitle: 'You speak directly with the engineers writing your code.',
       icon: Zap,
     },
@@ -19,7 +19,7 @@ export const WhyDelanki: React.FC = () => {
       icon: Target,
     },
     {
-      title: 'BETTER COMMUNICATION.',
+      title: "SEE WHAT'S SHIPPING.",
       subtitle: 'Daily async updates, weekly deployments, zero marketing fluff.',
       icon: MessageSquare,
     },
@@ -72,7 +72,7 @@ export const WhyDelanki: React.FC = () => {
                 </div>
 
                 <div className="mt-8 space-y-2">
-                  <h3 className="font-display font-black text-2xl sm:text-3xl text-white uppercase tracking-tight group-hover:text-[#F22952] transition-colors">
+                  <h3 className="font-display font-black text-xl sm:text-2xl text-white uppercase tracking-tight group-hover:text-[#F22952] transition-colors break-words">
                     {item.title}
                   </h3>
                   <p className="text-sm text-[#B7B7B7] leading-relaxed">

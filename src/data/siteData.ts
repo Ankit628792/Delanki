@@ -29,7 +29,7 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: 'web-apps',
     number: '01',
-    title: 'Web App Development',
+    title: 'Web Applications',
     tagline: 'Fast, resilient architectures built for scale and conversion.',
     description:
       'We engineer full-stack web applications, SaaS platforms, and data dashboards optimized for speed, accessible UI, and clean code bases.',
@@ -51,7 +51,7 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: 'cross-platform',
     number: '02',
-    title: 'Cross-Platform App Development',
+    title: 'Cross-Platform Apps',
     tagline: 'Tactile cross-platform apps for mobile, tablet, and desktop.',
     description:
       'We craft cross-platform mobile apps using React Native and Expo, featuring fluid micro-interactions, offline caching, and native hardware integrations.',
@@ -73,7 +73,7 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: 'chrome-extensions',
     number: '03',
-    title: 'Chrome Extension Development',
+    title: 'Chrome Extensions',
     tagline: 'Deep browser integrations and productivity tools inside the tab.',
     description:
       'We build secure Manifest V3 browser extensions, including AI copilot sidebars, workflow automators, web scrapers, and page-level enhancements.',
@@ -95,7 +95,7 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: 'vscode-extensions',
     number: '04',
-    title: 'VS Code Extension Development',
+    title: 'VS Code Extensions',
     tagline: 'Custom developer tools built directly inside the code editor.',
     description:
       'We build extensions for VS Code and Cursor that eliminate boilerplate, enforce code patterns, provide language servers, and streamline editor workflows.',

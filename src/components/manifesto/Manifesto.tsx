@@ -79,7 +79,7 @@ export const Manifesto: React.FC = () => {
         <div className="animate-marquee-left flex items-center gap-8 whitespace-nowrap text-xs sm:text-sm font-mono tracking-widest text-[#B7B7B7] uppercase">
           <span>WEB APPLICATIONS</span>
           <span className="text-[#F22952]">✦</span>
-          <span>CROSS-Platform APPS</span>
+          <span>CROSS-PLATFORM APPS</span>
           <span className="text-[#F22952]">✦</span>
           <span>CHROME EXTENSIONS</span>
           <span className="text-[#F22952]">✦</span>
