@@ -92,7 +92,7 @@ export const HireVsBuild: React.FC<HireVsBuildProps> = ({ onSelectMode }) => {
                   <Code className="w-3 h-3 text-[#F22952]" /> React / Next.js
                 </span>
                 <span className="font-mono text-[11px] px-2.5 py-1 rounded bg-white/5 text-white/80 border border-white/10 flex items-center gap-1">
-                  <Cpu className="w-3 h-3 text-[#F22952]" /> Kotlin / Android
+                  <Cpu className="w-3 h-3 text-[#F22952]" /> React Native / Mobile
                 </span>
                 <span className="font-mono text-[11px] px-2.5 py-1 rounded bg-white/5 text-white/80 border border-white/10 flex items-center gap-1">
                   <Laptop className="w-3 h-3 text-[#F22952]" /> Chrome / VS Code APIs

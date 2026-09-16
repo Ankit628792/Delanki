@@ -54,16 +54,16 @@ export const SERVICES_DATA: ServiceItem[] = [
     title: 'Cross-Device App Development',
     tagline: 'Cohesive, tactile native applications spanning mobile, tablet, and desktop.',
     description:
-      'We craft native and cross-platform mobile apps that feel right at home on every screen. Leveraging modern Kotlin, Jetpack Compose, and cross-platform stacks, we build fluid micro-interactions, offline-first persistence, native hardware integrations, and delightful touch mechanics.',
+      'We craft cross-platform mobile apps that feel right at home on every screen. Leveraging modern React Native, Expo, and optimized core platforms, we build fluid micro-interactions, offline-first persistence, native hardware integrations, and delightful touch mechanics.',
     capabilities: [
-      'Kotlin & Jetpack Compose Native Android',
-      'iOS & Cross-Platform Architectures',
+      'React Native Cross-Platform iOS & Android',
+      'Expo Application Development & Delivery',
       'Offline-First Local Sync & Caching',
       'Biometric, Camera & Sensor Integrations',
       'Micro-animations & 120Hz Haptic Physics',
       'App Store & Play Store Release Engineering',
     ],
-    technologies: ['Kotlin', 'Jetpack Compose', 'React Native', 'Firebase', 'SQLite', 'REST & GraphQL'],
+    technologies: ['React Native', 'Expo', 'TypeScript', 'Firebase', 'SQLite', 'REST & GraphQL'],
     visualType: 'devices',
     metrics: [
       { label: 'Frame Rate Target', value: '120 FPS' },
@@ -150,7 +150,7 @@ export const BENTO_CAPABILITIES: BentoCapability[] = [
   {
     id: 'bento-mobile-web',
     title: 'Cross-Device Precision',
-    subtitle: 'Kotlin + React Synergy',
+    subtitle: 'React Native + Web Synergy',
     description: 'Zero visual friction across iOS, Android, and desktop browsers with shared design tokens and responsive fluidity.',
     colSpan: 'col-span-12 sm:col-span-6 lg:col-span-4',
     category: 'engineering',
@@ -209,13 +209,13 @@ export const PRODUCTS_DATA: ProductItem[] = [
   {
     id: 'product-orbitmobile',
     title: 'Aura Mobile Experience',
-    tagline: 'Sensory native lifestyle & habit tracker built in modern Kotlin & Jetpack Compose.',
+    tagline: 'Sensory cross-platform lifestyle & habit tracker built in modern React Native.',
     category: 'Mobile App',
     description:
       'An intuitive mobile application with fluid haptic feedback, 120Hz gesture navigation, encrypted on-device storage, and dynamic widgets for daily productivity routines.',
     status: 'Live',
-    technologies: ['Kotlin', 'Jetpack Compose', 'Room DB', 'Material 3'],
-    highlights: ['Pure declarative Compose', '100% offline mode', 'Custom haptic engine'],
+    technologies: ['React Native', 'Expo', 'SQLite', 'Tailwind CSS'],
+    highlights: ['Pure React Native', '100% offline mode', 'Custom haptic engine'],
     year: '2024',
   },
 ];
@@ -267,9 +267,9 @@ export const TECHNOLOGIES_DATA: TechnologyItem[] = [
   { name: 'Tailwind CSS', category: 'Frontend & Web', description: 'Utility-first modern design token engine', proficiency: 95 },
   
   // Mobile & Native
-  { name: 'Kotlin', category: 'Mobile & Native', description: 'Modern expressive Android development', proficiency: 94, highlight: true },
-  { name: 'Jetpack Compose', category: 'Mobile & Native', description: 'Declarative native UI toolkit', proficiency: 92, highlight: true },
-  { name: 'React Native', category: 'Mobile & Native', description: 'Cross-platform unified mobile apps', proficiency: 90 },
+  { name: 'React Native', category: 'Mobile & Native', description: 'Cross-platform unified mobile apps', proficiency: 96, highlight: true },
+  { name: 'Expo Ecosystem', category: 'Mobile & Native', description: 'Modern framework for rapid React Native app delivery', proficiency: 94, highlight: true },
+  { name: 'iOS & Android Bridges', category: 'Mobile & Native', description: 'Native modules & system APIs integrations', proficiency: 88 },
   
   // Extensions & Tooling
   { name: 'Chrome Extension APIs', category: 'Extensions & Tooling', description: 'Manifest V3 browser automation & tools', proficiency: 96, highlight: true },
@@ -278,7 +278,6 @@ export const TECHNOLOGIES_DATA: TechnologyItem[] = [
 
   // Backend & Cloud
   { name: 'Node.js', category: 'Backend & Cloud', description: 'High-concurrency async server runtimes', proficiency: 94 },
-  { name: 'Python', category: 'Backend & Cloud', description: 'Data pipelines, scripting & AI orchestration', proficiency: 90 },
   { name: 'PostgreSQL', category: 'Backend & Cloud', description: 'Relational database with strict integrity', proficiency: 92 },
   { name: 'Firebase & Firestore', category: 'Backend & Cloud', description: 'Real-time database and managed auth', proficiency: 95 },
   { name: 'REST & GraphQL APIs', category: 'Backend & Cloud', description: 'Contract-first high-speed endpoints', proficiency: 96 },
@@ -293,8 +292,8 @@ export const TEAM_DATA: TeamMember[] = [
   {
     name: 'Ankit',
     role: 'Founder & Lead Product Engineer',
-    specialty: 'Full-Stack Architecture, Kotlin & Developer Tooling',
-    bio: 'Obsessed with building tools and products that empower developers and users. Specializes in modern Web, Android, and Extension ecosystems.',
+    specialty: 'Full-Stack Architecture, React Native & Developer Tooling',
+    bio: 'Obsessed with building tools and products that empower developers and users. Specializes in modern Web, Cross-Platform Mobile, and Extension ecosystems.',
     location: 'India → Global',
     github: 'https://github.com/Ankit628792',
     avatarSeed: 'ankit',
@@ -320,7 +319,7 @@ export const FAQ_DATA: FaqItem[] = [
   {
     question: 'What kind of projects does Delanki build?',
     answer:
-      'We build full-stack web applications, native & cross-platform mobile apps (Kotlin/Compose), Chrome Extensions (Manifest V3), and VS Code developer extensions. We also build custom internal tools, AI copilot workflows, and high-performance digital products.',
+      'We build full-stack web applications, cross-platform mobile apps (React Native & Expo), Chrome Extensions (Manifest V3), and VS Code developer extensions. We also build custom internal tools, AI copilot workflows, and high-performance digital products.',
     category: 'Development',
   },
   {
@@ -344,7 +343,7 @@ export const FAQ_DATA: FaqItem[] = [
   {
     question: 'What technologies do you work with?',
     answer:
-      'Our primary stack includes React, Next.js, TypeScript, Kotlin, Jetpack Compose, Node.js, Python, PostgreSQL, Firebase, GSAP, Three.js, and Chrome/VS Code Extension APIs.',
+      'Our primary stack includes React, Next.js, React Native, TypeScript, Expo, Node.js, PostgreSQL, Firebase, GSAP, Three.js, and Chrome/VS Code Extension APIs.',
     category: 'Development',
   },
   {

@@ -11,7 +11,7 @@ interface BuildLog {
 const MODES = [
   { id: 'web', label: 'NEXT.JS EDGE', icon: Globe, metric: '24ms TTFB', color: '#61dafb' },
   { id: 'ext', label: 'CHROME EXT MV3', icon: Chrome, metric: '42KB Bundle', color: '#F22952' },
-  { id: 'mobile', label: 'KOTLIN NATIVE', icon: Smartphone, metric: '120 FPS Target', color: '#7f52ff' },
+  { id: 'mobile', label: 'REACT NATIVE', icon: Smartphone, metric: '120 FPS Target', color: '#61dafb' },
 ];
 
 export const HeroScene: React.FC = () => {

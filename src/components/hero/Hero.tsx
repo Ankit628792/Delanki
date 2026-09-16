@@ -105,7 +105,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry }) => {
             </div>
             <div>
               <div className="font-mono text-[10px] text-[#B7B7B7] uppercase tracking-wider">CORE TECH</div>
-              <div className="font-sans text-xs font-semibold text-[#F22952] mt-0.5">Next • Kotlin • TS</div>
+              <div className="font-sans text-xs font-semibold text-[#F22952] mt-0.5">Next • RN • TS</div>
             </div>
           </div>
         </div>

@@ -52,7 +52,7 @@ export const TechnologySection: React.FC = () => {
               ORBITING STACK CONSTELLATION
             </h3>
             <p className="text-sm text-[#B7B7B7] leading-relaxed">
-              Every technology in our core stack is deeply integrated—from React frontends and Kotlin native apps to Chrome Manifest V3 APIs and GSAP motion drivers.
+              Every technology in our core stack is deeply integrated—from React frontends and React Native mobile apps to Chrome Manifest V3 APIs and GSAP motion drivers.
             </p>
             <div className="font-mono text-xs text-[#B7B7B7] pt-2">
               <span>HOVER NODES TO INSPECT // LIVE VECTOR RADAR</span>

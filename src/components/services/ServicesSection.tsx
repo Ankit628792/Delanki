@@ -247,7 +247,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                       deviceView === 'mobile' ? 'bg-[#F22952] text-white' : 'text-[#B7B7B7] hover:text-white'
                     }`}
                   >
-                    <Smartphone className="w-3.5 h-3.5" /> Mobile (Kotlin)
+                    <Smartphone className="w-3.5 h-3.5" /> Mobile (React Native)
                   </button>
                   <button
                     onClick={() => setDeviceView('tablet')}
@@ -274,10 +274,10 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                         <Smartphone className="w-6 h-6" />
                       </div>
                       <div className="font-display font-bold text-white text-base">
-                        Native Compose UI
+                        React Native UI
                       </div>
                       <p className="text-xs text-[#B7B7B7]">
-                        Hardware-accelerated rendering, offline SQLite cache & gesture engine.
+                        Cross-platform native performance, offline SQLite cache & gesture engine.
                       </p>
                     </div>
 

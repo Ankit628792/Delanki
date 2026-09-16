@@ -90,7 +90,7 @@ export const BentoCapabilities: React.FC = () => {
                 <br />
                 &nbsp;&nbsp;frontend: <span className="text-[#FFBD2E]">'Next.js 19 + TypeScript + GSAP'</span>,
                 <br />
-                &nbsp;&nbsp;mobile: <span className="text-[#FFBD2E]">'Kotlin + Jetpack Compose'</span>,
+                &nbsp;&nbsp;mobile: <span className="text-[#FFBD2E]">'React Native + Expo'</span>,
                 <br />
                 &nbsp;&nbsp;extensions: <span className="text-[#FFBD2E]">'Chrome MV3 + VS Code LSP'</span>,
                 <br />
@@ -174,7 +174,7 @@ export const BentoCapabilities: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <Smartphone className="w-5 h-5 text-white" />
-                <span className="font-mono text-[9px] px-2 py-0.5 rounded bg-white/10 text-white">KOTLIN & COMPOSE</span>
+                <span className="font-mono text-[9px] px-2 py-0.5 rounded bg-[#F22952]/10 text-[#F22952] border border-[#F22952]/20">REACT NATIVE</span>
               </div>
               <h4 className="font-display font-bold text-xl text-white uppercase">
                 CROSS-DEVICE FLUIDITY

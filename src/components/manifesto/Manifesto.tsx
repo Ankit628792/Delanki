@@ -87,7 +87,7 @@ export const Manifesto: React.FC = () => {
           <span className="text-[#F22952]">✦</span>
           <span>DEDICATED TALENT</span>
           <span className="text-[#F22952]">✦</span>
-          <span>KOTLIN & COMPOSE</span>
+          <span>REACT NATIVE & EXPO</span>
           <span className="text-[#F22952]">✦</span>
           <span>NEXT.JS & TYPESCRIPT</span>
           <span className="text-[#F22952]">✦</span>
