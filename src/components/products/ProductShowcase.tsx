@@ -45,7 +45,7 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onOpenInquiry 
               <span>05 // FEATURED SHOWCASE</span>
             </div>
             <h2 className="font-display font-extrabold text-3xl sm:text-5xl md:text-6xl text-white uppercase tracking-tight">
-              FEATURED PROJECTS<span className="text-[#F22952]">.</span>
+              FEATURED PRODUCTS<span className="text-[#F22952]">.</span>
             </h2>
           </div>
 
@@ -54,10 +54,10 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onOpenInquiry 
               Curated spotlight of our flagship web applications, mobile platforms, and developer tooling.
             </p>
             <Link
-              to="/projects"
+              to="/products"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/10 hover:bg-[#F22952] text-white font-mono text-xs font-bold uppercase transition-all shadow-lg hover:shadow-[#F22952]/30"
             >
-              <span>VIEW ALL PROJECTS</span>
+              <span>VIEW ALL PRODUCTS</span>
               <ArrowUpRight className="w-4 h-4" />
             </Link>
           </div>
@@ -468,10 +468,10 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onOpenInquiry 
             </p>
           </div>
           <Link
-            to="/projects"
+            to="/products"
             className="shrink-0 px-6 py-3 rounded-xl bg-[#F22952] hover:bg-[#ff305c] text-white font-mono text-xs font-bold uppercase transition-all shadow-lg shadow-[#F22952]/30 flex items-center gap-2"
           >
-            <span>VIEW ALL PROJECTS</span>
+            <span>VIEW ALL PRODUCTS</span>
             <ArrowUpRight className="w-4 h-4" />
           </Link>
         </div>
@@ -550,7 +550,7 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onOpenInquiry 
                 className="px-4 sm:px-6 py-2 rounded-xl bg-[#F22952] text-white font-mono text-xs font-bold uppercase shadow-lg shadow-[#F22952]/30 hover:bg-[#ff305c] transition-colors"
               >
                 <span className="sm:hidden">DISCUSS →</span>
-                <span className="hidden sm:inline">DISCUSS SIMILAR PROJECT →</span>
+                <span className="hidden sm:inline">DISCUSS SIMILAR PRODUCT →</span>
               </button>
             </div>
           </div>

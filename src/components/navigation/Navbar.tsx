@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from '@tanstack/react-router';
 import { DelankiLogo } from '../common/DelankiLogo';
 import { scrollToElement, scrollToTop } from '../../lib/lenis';
-import { Menu, X, ArrowUpRight, Sparkles, Clock, ShieldCheck } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
 
 interface NavbarProps {
   onOpenInquiry: (initialMode?: 'build' | 'hire') => void;
@@ -12,13 +12,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenInquiry }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>('hero');
-  const [timeStr, setTimeStr] = useState<string>('');
   
   const location = useLocation();
   const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
-  const isPrivacyPage = location.pathname.startsWith('/privacy-policy');
-  const isProjectsPage = location.pathname.startsWith('/projects') || location.pathname.startsWith('/products');
   const isSubPage = !isHomePage;
 
   useEffect(() => {
@@ -40,24 +37,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenInquiry }) => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      setTimeStr(
-        now.toLocaleTimeString('en-US', {
-          timeZone: 'Asia/Kolkata',
-          hour12: false,
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit',
-        })
-      );
-    };
-    updateTime();
-    const timer = setInterval(updateTime, 1000);
-    return () => clearInterval(timer);
   }, []);
 
   const navLinks = [
@@ -122,7 +101,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenInquiry }) => {
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center gap-1 bg-[#121212]/60 border border-white/10 rounded-full px-4 py-1.5 backdrop-blur-md">
             {navLinks.map((link) => {
-              const isActive = !isPrivacyPage && activeSection === link.target.replace('#', '');
+              const isActive = activeSection === link.target.replace('#', '');
               return (
                 <a
                   key={link.label}
@@ -143,23 +122,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenInquiry }) => {
               );
             })}
 
-            {isProjectsPage && (
-              <Link
-                to="/projects"
-                className="px-3.5 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider bg-[#F22952]/20 border border-[#F22952]/40 text-[#F22952] font-semibold"
-              >
-                Projects
-              </Link>
-            )}
-
-            {isPrivacyPage && (
-              <Link
-                to="/privacy-policy"
-                className="px-3.5 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider bg-[#F22952]/20 border border-[#F22952]/40 text-[#F22952] font-semibold"
-              >
-                Privacy
-              </Link>
-            )}
+           
           </nav>
 
           {/* Right Action: Studio Status & CTA */}

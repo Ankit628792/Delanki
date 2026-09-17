@@ -21,15 +21,15 @@ export const RootLayout: React.FC = () => {
     };
   }, []);
 
-  // Handle direct hash navigation like /#/projects or /#/privacy-policy
+  // Handle direct hash navigation like /#/products or /#/privacy-policy
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const hash = window.location.hash;
       if (
-        (hash === '#/projects' || hash === '#/products' || hash === '#/project' || hash.startsWith('#/projects') || hash.startsWith('#/products')) &&
-        !location.pathname.startsWith('/projects') && !location.pathname.startsWith('/products')
+        (hash === '#/products' || hash.startsWith('#/products')) &&
+        !location.pathname.startsWith('/products')
       ) {
-        navigate({ to: '/projects' });
+        navigate({ to: '/products' });
       } else if (
         (hash === '#/privacy-policy' || hash === '#privacy-policy' || hash.startsWith('#/privacy-policy')) &&
         !location.pathname.startsWith('/privacy-policy')

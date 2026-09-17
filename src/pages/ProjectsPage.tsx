@@ -603,7 +603,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenInquiry }) => 
                   : 'bg-white/5 hover:bg-white/10 text-[#B7B7B7] hover:text-white border border-white/10'
               }`}
             >
-              {cat === 'All' ? 'ALL PROJECTS' : `${cat.toUpperCase()}S`}
+              {cat === 'All' ? 'ALL PRODUCTS' : `${cat.toUpperCase()}S`}
             </button>
           ))}
         </div>
@@ -899,7 +899,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenInquiry }) => 
                   className="px-4 sm:px-6 py-2 rounded-xl bg-[#F22952] text-white font-mono text-xs font-bold uppercase shadow-lg shadow-[#F22952]/30 hover:bg-[#ff305c] transition-colors"
                 >
                   <span className="sm:hidden">DISCUSS →</span>
-                  <span className="hidden sm:inline">DISCUSS SIMILAR PROJECT →</span>
+                  <span className="hidden sm:inline">DISCUSS SIMILAR PRODUCT →</span>
                 </button>
               )}
             </div>

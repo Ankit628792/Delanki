@@ -24,22 +24,9 @@ const indexRoute = createRoute({
   component: HomePage,
 });
 
-const projectsRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/projects',
-  component: ProjectsPage,
-});
-
-// Alias routes for user intuition and direct URL access
 const productsRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/products',
-  component: ProjectsPage,
-});
-
-const projectRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/project',
   component: ProjectsPage,
 });
 
@@ -51,9 +38,7 @@ const privacyPolicyRoute = createRoute({
 
 const routeTree = rootRoute.addChildren([
   indexRoute,
-  projectsRoute,
   productsRoute,
-  projectRoute,
   privacyPolicyRoute,
 ]);
 
