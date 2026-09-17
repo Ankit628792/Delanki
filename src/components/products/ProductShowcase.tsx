@@ -15,6 +15,7 @@ import {
   Cpu,
 } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
+import { triggerPageTransition } from '../../lib/pageTransition';
 
 interface ProductShowcaseProps {
   onOpenInquiry: (initialMode?: 'build' | 'hire') => void;
@@ -55,6 +56,10 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onOpenInquiry 
             </p>
             <Link
               to="/products"
+              onClick={(e) => {
+                e.preventDefault();
+                triggerPageTransition('/products');
+              }}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/10 hover:bg-[#F22952] text-white font-mono text-xs font-bold uppercase transition-all shadow-lg hover:shadow-[#F22952]/30"
             >
               <span>VIEW ALL PRODUCTS</span>
@@ -469,6 +474,10 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onOpenInquiry 
           </div>
           <Link
             to="/products"
+            onClick={(e) => {
+              e.preventDefault();
+              triggerPageTransition('/products');
+            }}
             className="shrink-0 px-6 py-3 rounded-xl bg-[#F22952] hover:bg-[#ff305c] text-white font-mono text-xs font-bold uppercase transition-all shadow-lg shadow-[#F22952]/30 flex items-center gap-2"
           >
             <span>VIEW ALL PRODUCTS</span>

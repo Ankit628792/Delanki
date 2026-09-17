@@ -83,3 +83,10 @@ export function scrollToTop(duration: number = 1.2): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
+
+export function resetScrollImmediate(): void {
+  if (lenisInstance) {
+    lenisInstance.scrollTo(0, { immediate: true });
+  }
+  window.scrollTo(0, 0);
+}

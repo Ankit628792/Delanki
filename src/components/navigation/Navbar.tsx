@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from '@tanstack/react-router';
 import { DelankiLogo } from '../common/DelankiLogo';
 import { scrollToElement, scrollToTop } from '../../lib/lenis';
 import { Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
+import { triggerPageTransition } from '../../lib/pageTransition';
 
 interface NavbarProps {
   onOpenInquiry: (initialMode?: 'build' | 'hire') => void;
@@ -51,11 +52,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenInquiry }) => {
     setMobileMenuOpen(false);
 
     if (isSubPage) {
-      navigate({ to: '/' }).then(() => {
-        setTimeout(() => {
-          scrollToElement(target);
-        }, 150);
-      });
+      triggerPageTransition('/');
+      setTimeout(() => {
+        scrollToElement(target);
+      }, 700);
     } else {
       scrollToElement(target);
     }
@@ -66,11 +66,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenInquiry }) => {
     setMobileMenuOpen(false);
 
     if (isSubPage) {
-      navigate({ to: '/' }).then(() => {
-        setTimeout(() => {
-          scrollToTop();
-        }, 100);
-      });
+      triggerPageTransition('/');
     } else {
       scrollToTop();
     }

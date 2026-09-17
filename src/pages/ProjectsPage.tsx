@@ -26,6 +26,7 @@ import {
 } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
 import { useInquiry } from '../context/InquiryContext';
+import { triggerPageTransition } from '../lib/pageTransition';
 
 interface ProjectsPageProps {
   onOpenInquiry?: (initialMode?: 'build' | 'hire') => void;
@@ -565,6 +566,10 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenInquiry }) => 
         <div className="space-y-6 border-b border-white/10 pb-8">
           <Link
             to="/"
+            onClick={(e) => {
+              e.preventDefault();
+              triggerPageTransition('/');
+            }}
             className="inline-flex items-center gap-2 font-mono text-xs text-[#B7B7B7] hover:text-[#F22952] transition-colors uppercase py-1"
           >
             <ArrowLeft className="w-4 h-4" />

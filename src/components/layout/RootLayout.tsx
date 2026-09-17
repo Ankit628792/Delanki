@@ -3,6 +3,7 @@ import { Outlet, useNavigate, useLocation } from '@tanstack/react-router';
 import { Navbar } from '../navigation/Navbar';
 import { Footer } from '../footer/Footer';
 import { PageLoader } from '../animations/PageLoader';
+import { PageTransition } from '../animations/PageTransition';
 import { CustomCursor } from '../animations/CustomCursor';
 import { ScrollToTop } from '../navigation/ScrollToTop';
 import { ProjectInquiryModal } from '../modals/ProjectInquiryModal';
@@ -41,6 +42,9 @@ export const RootLayout: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#090909] text-white font-sans selection:bg-[#F22952] selection:text-white relative flex flex-col">
+      {/* Full Screen GSAP Page Transition (Home <-> Products) */}
+      <PageTransition />
+
       {/* Editorial Page Loader */}
       <PageLoader />
 
