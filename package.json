@@ -3,6 +3,18 @@
   "private": true,
   "version": "3.1.0",
   "description": "Delanki — Digital Product Development Studio",
+  "keywords": [
+    "delanki",
+    "product-studio",
+    "digital-agency",
+    "software-development",
+    "web-development",
+    "ui-ux-design",
+    "react",
+    "threejs",
+    "tailwindcss",
+    "vite"
+  ],
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
