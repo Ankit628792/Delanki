@@ -16,7 +16,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenInquiry }) => {
   
   const location = useLocation();
   const navigate = useNavigate();
+  const isHomePage = location.pathname === '/';
   const isPrivacyPage = location.pathname.startsWith('/privacy-policy');
+  const isProjectsPage = location.pathname.startsWith('/projects') || location.pathname.startsWith('/products');
+  const isSubPage = !isHomePage;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,7 +71,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenInquiry }) => {
     e.preventDefault();
     setMobileMenuOpen(false);
 
-    if (isPrivacyPage) {
+    if (isSubPage) {
       navigate({ to: '/' }).then(() => {
         setTimeout(() => {
           scrollToElement(target);
@@ -83,7 +86,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenInquiry }) => {
     e.preventDefault();
     setMobileMenuOpen(false);
 
-    if (isPrivacyPage) {
+    if (isSubPage) {
       navigate({ to: '/' }).then(() => {
         setTimeout(() => {
           scrollToTop();
@@ -139,6 +142,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenInquiry }) => {
                 </a>
               );
             })}
+
+            {isProjectsPage && (
+              <Link
+                to="/projects"
+                className="px-3.5 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider bg-[#F22952]/20 border border-[#F22952]/40 text-[#F22952] font-semibold"
+              >
+                Projects
+              </Link>
+            )}
 
             {isPrivacyPage && (
               <Link

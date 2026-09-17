@@ -34,6 +34,7 @@ export interface ProductItem {
   liveUrl?: string;
   highlights: string[];
   year: string;
+  featured?: boolean;
 }
 
 export interface TechnologyItem {

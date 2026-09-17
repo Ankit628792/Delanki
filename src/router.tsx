@@ -6,6 +6,7 @@ import {
 import { RootLayout } from './components/layout/RootLayout';
 import { HomePage } from './pages/HomePage';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
+import { ProjectsPage } from './pages/ProjectsPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
 const FallbackComponent = () => {
@@ -23,6 +24,25 @@ const indexRoute = createRoute({
   component: HomePage,
 });
 
+const projectsRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/projects',
+  component: ProjectsPage,
+});
+
+// Alias routes for user intuition and direct URL access
+const productsRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/products',
+  component: ProjectsPage,
+});
+
+const projectRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/project',
+  component: ProjectsPage,
+});
+
 const privacyPolicyRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/privacy-policy',
@@ -31,6 +51,9 @@ const privacyPolicyRoute = createRoute({
 
 const routeTree = rootRoute.addChildren([
   indexRoute,
+  projectsRoute,
+  productsRoute,
+  projectRoute,
   privacyPolicyRoute,
 ]);
 
@@ -38,7 +61,7 @@ export const router = createRouter({
   routeTree,
   defaultPreload: 'intent',
   scrollRestoration: true,
-  trailingSlash: 'preserve',
+  trailingSlash: 'never',
   defaultNotFoundComponent: FallbackComponent,
 });
 

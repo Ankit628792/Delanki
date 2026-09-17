@@ -170,53 +170,183 @@ export const BENTO_CAPABILITIES: BentoCapability[] = [
 ];
 
 export const PRODUCTS_DATA: ProductItem[] = [
+  // WEB APPS
   {
-    id: 'product-devflow',
-    title: 'Delanki Pulse Extension',
-    tagline: 'Developer productivity monitor & PR assistant for GitHub.',
-    category: 'Chrome Extension',
+    id: 'product-vectofi',
+    title: 'Vectofi',
+    tagline: 'Developer-first SVG icon library with interactive lab and code generators.',
+    category: 'Web App',
     description:
-      'A browser extension that analyzes pull requests, flags performance regressions, and tracks CI status directly in the toolbar.',
+      'An interactive vector icon system featuring static and animated icons, live laboratory editor, framework code generators, and clean design system tokens.',
     status: 'Live',
-    technologies: ['Manifest V3', 'TypeScript', 'GitHub REST API', 'Tailwind CSS'],
-    highlights: ['1-click PR audit', 'Local token security', 'Zero background battery drain'],
+    featured: true,
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Framer Motion'],
+    liveUrl: 'https://vectofi.vercel.app/',
+    highlights: [
+      'Interactive SVG laboratory editor',
+      'Static & animated icon suite',
+      'Multi-framework code generator',
+    ],
+    year: '2024',
+  },
+  {
+    id: 'product-kurush-yarn',
+    title: 'Kurush-Yarn',
+    tagline: 'A soft-futuristic digital gallery showcasing handcrafted textile art.',
+    category: 'Web App',
+    description:
+      'A web exhibition highlighting handcrafted textile objects built with Kurush and yarn, blending tactile art with smooth WebGL visual presentation.',
+    status: 'Live',
+    technologies: ['React', 'TypeScript', 'PWA', 'Tailwind CSS', 'WebGL'],
+    liveUrl: 'https://kurush-yarn.vercel.app/',
+    highlights: [
+      'Soft-futuristic WebGL interactive showcase',
+      'PWA offline support',
+      'Tactile digital art exhibition',
+    ],
+    year: '2024',
+  },
+  {
+    id: 'product-qrazy',
+    title: 'Qrazy (Prototype)',
+    tagline: 'Smart QR verification system to protect brands from fake products.',
+    category: 'Web App',
+    description:
+      'A smart QR application that helps consumers instantly verify product authenticity, report counterfeit goods to brand protection teams, and claim rewards.',
+    status: 'Open Source',
+    technologies: ['Next.js', 'Shadcn UI', 'TypeScript', 'Tailwind CSS', 'Mapbox GL'],
+    githubUrl: 'https://github.com/Ankit628792/qrazy',
+    highlights: [
+      'Smart QR authenticity scanner',
+      'Real-time counterfeit incident map',
+      'Brand loyalty & rewards engine',
+    ],
+    year: '2024',
+  },
+
+  // MOBILE APPS
+  {
+    id: 'product-early-learner',
+    title: 'Early Learner',
+    tagline: 'Simple learning app for kids to explore alphabets, numbers, and drawing.',
+    category: 'Mobile App',
+    description:
+      'A fun educational app that helps young kids learn Hindi Varnamala, English Alphabets, and Numbers through tracing, native audio sounds, and visual games.',
+    status: 'Open Source',
+    featured: true,
+    technologies: ['React Native', 'Android', 'Material 3', 'SQLite Database', 'Kotlin'],
+    githubUrl: 'https://github.com/Ankit628792/Early-Learner',
+    highlights: [
+      'Handwriting tracing canvas for letters',
+      'Clear audio pronunciation for words',
+      'Offline progress saved locally',
+    ],
+    year: '2024',
+  },
+  {
+    id: 'product-love-alarm',
+    title: 'Love Alarm 2.0',
+    tagline: 'Proximity alerts powered by a 10-meter accuracy location engine.',
+    category: 'Mobile App',
+    description:
+      'A location-aware app that alerts users when someone within a high-precision 10-meter radius shares mutual interest, featuring real-time Socket.IO synchronization.',
+    status: 'Live',
+    technologies: ['React Native', 'MERN Stack', 'React Query', 'Socket.IO', 'Geolocation API'],
+    liveUrl: 'https://lovealarm2.vercel.app/',
+    highlights: [
+      '10-meter high-precision radius accuracy',
+      'Real-time Socket.IO mutual-interest alerts',
+      'Optimized React Query location state',
+    ],
+    year: '2024',
+  },
+  {
+    id: 'product-airbeam-share',
+    title: 'AirBeam-Share',
+    tagline: 'Air-gapped zero-network optical file sharing via animated QR code stream.',
+    category: 'Mobile App',
+    description:
+      'A zero-network file sharing app that transfers files and photos across devices using an animated QR code stream scanned by the camera—100% offline.',
+    status: 'Open Source',
+    technologies: ['Jetpack Compose', 'Android', 'Camera API', 'Data Encoding', 'Room Database'],
+    githubUrl: 'https://github.com/Ankit628792/AirBeam-Share',
+    highlights: [
+      'Air-gapped 100% offline file transfer',
+      'Animated QR code stream encoder',
+      'Local Room Database history',
+    ],
+    year: '2024',
+  },
+  {
+    id: 'product-respira',
+    title: 'Respira',
+    tagline: 'Calming breathing assistant for daily relaxation and lung training.',
+    category: 'Mobile App',
+    description:
+      'A simple breathing app with custom timers, visual guides, and gentle feedback to help you relax, focus, and improve lung capacity.',
+    status: 'Open Source',
+    technologies: ['Android', 'Jetpack Compose', 'Room Database', 'Kotlin', 'Audio Engine'],
+    githubUrl: 'https://github.com/Ankit628792/Respira',
+    highlights: [
+      'Custom breathing timers and paces',
+      'Gentle haptic vibration cues',
+      'Calming ambient relaxation sounds',
+    ],
+    year: '2024',
+  },
+
+  // VS CODE EXTENSIONS
+  {
+    id: 'product-sticky-notes',
+    title: 'Sticky Notes for VS Code',
+    tagline: 'Manage inline sticky notes and TODO comments directly inside code editor.',
+    category: 'VS Code Extension',
+    description:
+      'A lightweight extension that parses comments into an interactive color-coded badges, line navigation, and editor gutter indicators.',
+    status: 'Live',
+    featured: true,
+    technologies: ['TypeScript', 'VS Code Extension API', 'Node.js', 'NPM'],
+    liveUrl: 'https://marketplace.visualstudio.com/items?itemName=Ankit628792.sticky-notes',
+    highlights: [
+      'Interactive sidebar panel',
+      'Editor gutter badges',
+      '2-way file navigation',
+    ],
     year: '2023',
   },
   {
-    id: 'product-syncwave',
-    title: 'Nova Dashboard Engine',
-    tagline: 'Real-time telemetry and state workspace for distributed teams.',
-    category: 'Web App',
-    description:
-      'A web application delivering real-time metrics streaming, custom query builders, and collaborative multi-user canvases.',
-    status: 'In Production',
-    technologies: ['Next.js', 'TypeScript', 'WebSockets', 'PostgreSQL', 'Tailwind CSS'],
-    highlights: ['Sub-100ms sync latency', 'Modular widget grid', 'Automated alerts'],
-    year: '2025',
-  },
-  {
-    id: 'product-codecraft',
-    title: 'Syntax Studio for VS Code',
-    tagline: 'Intelligent snippet generator and context inspector for code workflows.',
+    id: 'product-jira-github-linker',
+    title: 'Jira & GitHub Linker',
+    tagline: 'Instantly turn Jira tickets and GitHub issues/PRs into clickable links in VS Code.',
     category: 'VS Code Extension',
     description:
-      'An editor integration providing architectural suggestions, AST-based refactorings, and interactive markdown previews.',
-    status: 'Open Source',
-    technologies: ['VS Code Extension API', 'TypeScript', 'AST Parser', 'Node.js'],
-    highlights: ['Instant AST diagnostics', 'Custom command palettes', 'Zero configuration'],
-    year: '2024-2025',
+      'Automatically converts inline Jira ticket references (e.g., PROJ-123) and GitHub issues or PRs into clickable links with hover previews and keyboard commands.',
+    status: 'Live',
+    technologies: ['TypeScript', 'VS Code Extension API', 'JavaScript', 'esbuild'],
+    liveUrl: 'https://marketplace.visualstudio.com/items?itemName=Ankit628792.jira-github-linker',
+    highlights: [
+      'Clickable Jira & GitHub references',
+      'Hover & CodeLens quick actions',
+      'Keyboard-driven command workflow',
+    ],
+    year: '2023',
   },
   {
-    id: 'product-orbitmobile',
-    title: 'Aura Mobile Experience',
-    tagline: 'Cross-platform lifestyle & habit tracker built in React Native.',
-    category: 'Mobile App',
+    id: 'product-syntax-storyteller',
+    title: 'Syntax Storyteller',
+    tagline: 'Bring your code to life with creative, narrative-style comments.',
+    category: 'VS Code Extension',
     description:
-      'A mobile app featuring fluid haptics, gesture navigation, encrypted offline storage, and daily productivity widgets.',
+      'Wraps selected code snippets in creative narrative comments—turning dry functions into stories across 13+ genres including Fantasy, Sci-Fi, Noir, and Shakespeare.',
     status: 'Live',
-    technologies: ['React Native', 'Expo', 'SQLite', 'Tailwind CSS'],
-    highlights: ['Pure React Native', '100% offline mode', 'Custom haptic engine'],
-    year: '2024',
+    technologies: ['TypeScript', 'VS Code Extension API', 'Node.js', 'AST Parser'],
+    liveUrl: 'https://marketplace.visualstudio.com/items?itemName=Ankit628792.syntax-storyteller',
+    highlights: [
+      '13+ narrative writing genres',
+      'Command Palette & context menu trigger',
+      'Instant code-to-story comment generator',
+    ],
+    year: '2023',
   },
 ];
 
@@ -261,7 +391,7 @@ export const PROCESS_STEPS: ProcessStep[] = [
 
 export const TECHNOLOGIES_DATA: TechnologyItem[] = [
   // Frontend & Web
-  { name: 'React 19', category: 'Frontend & Web', description: 'Modern reactive component architecture', proficiency: 98, highlight: true },
+  { name: 'React.js', category: 'Frontend & Web', description: 'Modern reactive component architecture', proficiency: 98, highlight: true },
   { name: 'Next.js', category: 'Frontend & Web', description: 'Server-side rendering & edge deployment', proficiency: 96, highlight: true },
   { name: 'TypeScript', category: 'Frontend & Web', description: 'Strict type safety across the stack', proficiency: 98, highlight: true },
   { name: 'Tailwind CSS', category: 'Frontend & Web', description: 'Utility-first design token engine', proficiency: 95 },
