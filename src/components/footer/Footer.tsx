@@ -4,7 +4,7 @@ import { DelankiLogo } from '../common/DelankiLogo';
 import { COMPANY_DATA } from '../../data/siteData';
 import { scrollToElement, scrollToTop } from '../../lib/lenis';
 import { triggerPageTransition } from '../../lib/pageTransition';
-import { ArrowUp, Github, Mail, Globe, Sparkles, Heart } from 'lucide-react';
+import { ArrowUp, Linkedin, Mail, Globe, Sparkles, Heart } from 'lucide-react';
 
 interface FooterProps {
   onOpenInquiry: (initialMode?: 'build' | 'hire') => void;
@@ -128,13 +128,13 @@ export const Footer: React.FC<FooterProps> = ({ onOpenInquiry }) => {
           <ul className="space-y-2 text-[#B7B7B7]">
             <li>
               <a
-                href={COMPANY_DATA.github}
+                href={COMPANY_DATA.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-white transition-colors flex items-center gap-1.5"
               >
-                <Github className="w-3.5 h-3.5 text-[#F22952]" />
-                <span>GitHub Repository</span>
+                <Linkedin className="w-3.5 h-3.5 text-[#F22952]" />
+                <span>LinkedIn Profile</span>
               </a>
             </li>
             <li>
