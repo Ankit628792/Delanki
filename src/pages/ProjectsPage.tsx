@@ -678,14 +678,19 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenInquiry }) => 
 
                       {/* Bottom Action Row */}
                       <div className="pt-5 border-t border-white/10 flex items-center justify-between gap-2">
-                        <button
-                          onClick={() => setSelectedProduct(product)}
-                          className="font-mono text-xs text-white hover:text-[#F22952] flex items-center gap-1 transition-colors uppercase font-semibold py-1.5"
+                        <Link
+                          to="/product/$slug"
+                          params={{ slug: product.slug }}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            triggerPageTransition(`/product/${product.slug}`);
+                          }}
+                          className="font-mono text-xs text-white hover:text-[#F22952] flex items-center gap-1.5 transition-colors uppercase font-semibold py-1.5"
                         >
-                          <span className="sm:hidden">DETAILS</span>
-                          <span className="hidden sm:inline">VIEW DETAILS</span>
+                          <span className="sm:hidden">CASE STUDY</span>
+                          <span className="hidden sm:inline">VIEW CASE STUDY</span>
                           <ArrowUpRight className="w-4 h-4" />
-                        </button>
+                        </Link>
 
                         <div className="flex items-center gap-1.5 sm:gap-2">
                           {product.liveUrl && (
@@ -787,14 +792,19 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenInquiry }) => 
 
                 {/* Bottom Action Row: Pinned to bottom with uniform baseline */}
                 <div className="pt-5 mt-4 border-t border-white/10 flex items-center justify-between gap-2">
-                  <button
-                    onClick={() => setSelectedProduct(product)}
-                    className="font-mono text-xs text-white hover:text-[#F22952] flex items-center gap-1 transition-colors uppercase font-semibold py-1.5"
+                  <Link
+                    to="/product/$slug"
+                    params={{ slug: product.slug }}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      triggerPageTransition(`/product/${product.slug}`);
+                    }}
+                    className="font-mono text-xs text-white hover:text-[#F22952] flex items-center gap-1.5 transition-colors uppercase font-semibold py-1.5"
                   >
-                    <span className="sm:hidden">DETAILS</span>
-                    <span className="hidden sm:inline">VIEW DETAILS</span>
+                    <span className="sm:hidden">CASE STUDY</span>
+                    <span className="hidden sm:inline">VIEW CASE STUDY</span>
                     <ArrowUpRight className="w-4 h-4" />
-                  </button>
+                  </Link>
 
                   <div className="flex items-center gap-1.5 sm:gap-2">
                     {product.liveUrl && (

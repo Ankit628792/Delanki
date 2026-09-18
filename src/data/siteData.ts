@@ -173,6 +173,7 @@ export const PRODUCTS_DATA: ProductItem[] = [
   // WEB APPS
   {
     id: 'product-vectofi',
+    slug: 'vectofi',
     title: 'Vectofi',
     tagline: 'Developer-first SVG icon library with interactive lab and code generators.',
     category: 'Web App',
@@ -187,10 +188,11 @@ export const PRODUCTS_DATA: ProductItem[] = [
       'Static & animated icon suite',
       'Multi-framework code generator',
     ],
-    year: '2024',
+    year: '2026',
   },
   {
     id: 'product-kurush-yarn',
+    slug: 'kurush-yarn',
     title: 'Kurush-Yarn',
     tagline: 'A soft-futuristic digital gallery showcasing handcrafted textile art.',
     category: 'Web App',
@@ -204,10 +206,11 @@ export const PRODUCTS_DATA: ProductItem[] = [
       'PWA offline support',
       'Tactile digital art exhibition',
     ],
-    year: '2024',
+    year: '2026',
   },
   {
     id: 'product-qrazy',
+    slug: 'qrazy',
     title: 'Qrazy (Prototype)',
     tagline: 'Smart QR verification system to protect brands from fake products.',
     category: 'Web App',
@@ -227,6 +230,7 @@ export const PRODUCTS_DATA: ProductItem[] = [
   // MOBILE APPS
   {
     id: 'product-early-learner',
+    slug: 'early-learner',
     title: 'Early Learner',
     tagline: 'Simple learning app for kids to explore alphabets, numbers, and drawing.',
     category: 'Mobile App',
@@ -241,10 +245,11 @@ export const PRODUCTS_DATA: ProductItem[] = [
       'Clear audio pronunciation for words',
       'Offline progress saved locally',
     ],
-    year: '2024',
+    year: '2026',
   },
   {
     id: 'product-love-alarm',
+    slug: 'love-alarm',
     title: 'Love Alarm 2.0',
     tagline: 'Proximity alerts powered by a 10-meter accuracy location engine.',
     category: 'Mobile App',
@@ -258,10 +263,11 @@ export const PRODUCTS_DATA: ProductItem[] = [
       'Real-time Socket.IO mutual-interest alerts',
       'Optimized React Query location state',
     ],
-    year: '2024',
+    year: '2023',
   },
   {
     id: 'product-airbeam-share',
+    slug: 'airbeam-share',
     title: 'AirBeam-Share',
     tagline: 'Air-gapped zero-network optical file sharing via animated QR code stream.',
     category: 'Mobile App',
@@ -275,10 +281,11 @@ export const PRODUCTS_DATA: ProductItem[] = [
       'Animated QR code stream encoder',
       'Local Room Database history',
     ],
-    year: '2024',
+    year: '2026',
   },
   {
     id: 'product-respira',
+    slug: 'respira',
     title: 'Respira',
     tagline: 'Calming breathing assistant for daily relaxation and lung training.',
     category: 'Mobile App',
@@ -292,12 +299,13 @@ export const PRODUCTS_DATA: ProductItem[] = [
       'Gentle haptic vibration cues',
       'Calming ambient relaxation sounds',
     ],
-    year: '2024',
+    year: '2026',
   },
 
   // VS CODE EXTENSIONS
   {
     id: 'product-sticky-notes',
+    slug: 'sticky-notes',
     title: 'Sticky Notes for VS Code',
     tagline: 'Manage inline sticky notes and TODO comments directly inside code editor.',
     category: 'VS Code Extension',
@@ -312,10 +320,11 @@ export const PRODUCTS_DATA: ProductItem[] = [
       'Editor gutter badges',
       '2-way file navigation',
     ],
-    year: '2023',
+    year: '2025',
   },
   {
     id: 'product-jira-github-linker',
+    slug: 'jira-github-linker',
     title: 'Jira & GitHub Linker',
     tagline: 'Instantly turn Jira tickets and GitHub issues/PRs into clickable links in VS Code.',
     category: 'VS Code Extension',
@@ -329,10 +338,11 @@ export const PRODUCTS_DATA: ProductItem[] = [
       'Hover & CodeLens quick actions',
       'Keyboard-driven command workflow',
     ],
-    year: '2023',
+    year: '2025',
   },
   {
     id: 'product-syntax-storyteller',
+    slug: 'syntax-storyteller',
     title: 'Syntax Storyteller',
     tagline: 'Bring your code to life with creative, narrative-style comments.',
     category: 'VS Code Extension',
@@ -346,7 +356,7 @@ export const PRODUCTS_DATA: ProductItem[] = [
       'Command Palette & context menu trigger',
       'Instant code-to-story comment generator',
     ],
-    year: '2023',
+    year: '2025',
   },
 ];
 

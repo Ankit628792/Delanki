@@ -8,6 +8,7 @@ import { HomePage } from './pages/HomePage';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { ProjectsPage } from './pages/ProjectsPage';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { ProductDetailPage } from './pages/product/ProductDetailPage';
 
 const FallbackComponent = () => {
   return <NotFoundPage />;
@@ -30,6 +31,12 @@ const productsRoute = createRoute({
   component: ProjectsPage,
 });
 
+const productDetailRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/product/$slug',
+  component: ProductDetailPage,
+});
+
 const privacyPolicyRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/privacy-policy',
@@ -39,6 +46,7 @@ const privacyPolicyRoute = createRoute({
 const routeTree = rootRoute.addChildren([
   indexRoute,
   productsRoute,
+  productDetailRoute,
   privacyPolicyRoute,
 ]);
 

@@ -36,6 +36,11 @@ export const RootLayout: React.FC = () => {
         !location.pathname.startsWith('/privacy-policy')
       ) {
         navigate({ to: '/privacy-policy' });
+      } else if (hash.startsWith('#/product/')) {
+        const targetPath = hash.replace(/^#/, '');
+        if (location.pathname !== targetPath) {
+          navigate({ to: targetPath as any });
+        }
       }
     }
   }, [location.pathname, navigate]);

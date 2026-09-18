@@ -23,6 +23,7 @@ export interface BentoCapability {
 
 export interface ProductItem {
   id: string;
+  slug: string;
   title: string;
   tagline: string;
   category: 'Web App' | 'Developer Tool' | 'Chrome Extension' | 'Mobile App' | 'VS Code Extension';

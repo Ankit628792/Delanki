@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from '@tanstack/react-router';
 import { DelankiLogo } from '../common/DelankiLogo';
 import { COMPANY_DATA } from '../../data/siteData';
 import { scrollToElement, scrollToTop } from '../../lib/lenis';
+import { triggerPageTransition } from '../../lib/pageTransition';
 import { ArrowUp, Github, Mail, Globe, Sparkles, Heart } from 'lucide-react';
 
 interface FooterProps {
@@ -12,16 +13,15 @@ interface FooterProps {
 export const Footer: React.FC<FooterProps> = ({ onOpenInquiry }) => {
   const location = useLocation();
   const navigate = useNavigate();
-  const isPrivacyPage = location.pathname.startsWith('/privacy-policy');
+  const isSubPage = location.pathname !== '/';
 
   const handleSectionClick = (e: React.MouseEvent, target: string) => {
     e.preventDefault();
-    if (isPrivacyPage) {
-      navigate({ to: '/' }).then(() => {
-        setTimeout(() => {
-          scrollToElement(target);
-        }, 150);
-      });
+    if (isSubPage) {
+      triggerPageTransition('/');
+      setTimeout(() => {
+        scrollToElement(target);
+      }, 700);
     } else {
       scrollToElement(target);
     }
@@ -108,7 +108,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenInquiry }) => {
             <li>
               <Link 
                 to="/privacy-policy" 
-                onClick={() => scrollToTop()}
+                onClick={(e) => {
+                  e.preventDefault();
+                  triggerPageTransition('/privacy-policy');
+                }}
                 className="hover:text-white transition-colors"
               >
                 Privacy Policy

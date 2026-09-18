@@ -37,8 +37,6 @@ export const PageLoader: React.FC<PageLoaderProps> = ({ onComplete }) => {
     return () => cancelAnimationFrame(rafId);
   }, [onComplete]);
 
-  if (phase === 'hidden') return null;
-
   return (
     <AnimatePresence>
       {phase !== 'hidden' && (

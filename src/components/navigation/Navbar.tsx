@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from '@tanstack/react-router';
 import { DelankiLogo } from '../common/DelankiLogo';
 import { scrollToElement, scrollToTop } from '../../lib/lenis';
 import { Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
-import { triggerPageTransition } from '../../lib/pageTransition';
+import { triggerPageTransition, TRANSITION_EVENT } from '../../lib/pageTransition';
 
 interface NavbarProps {
   onOpenInquiry: (initialMode?: 'build' | 'hire') => void;
@@ -19,26 +19,88 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenInquiry }) => {
   const isHomePage = location.pathname === '/';
   const isSubPage = !isHomePage;
 
+  // 1. Immediately update activeSection when navigating across routes
   useEffect(() => {
+    const path = location.pathname;
+    const hash = window.location.hash.replace('#', '');
+
+    if (path.startsWith('/products') || path.startsWith('/product/')) {
+      setActiveSection('products');
+    } else if (path === '/') {
+      if (hash && ['services', 'products', 'about', 'contact'].includes(hash)) {
+        setActiveSection(hash);
+      } else if (window.scrollY < 200) {
+        setActiveSection('hero');
+      }
+    } else {
+      setActiveSection('');
+    }
+  }, [location.pathname]);
+
+  // 2. Listen to full-page transition events for instantaneous navbar tab response
+  useEffect(() => {
+    const handleTransition = (e: Event) => {
+      const customEvent = e as CustomEvent<{ to: string }>;
+      const to = customEvent.detail?.to || '';
+
+      if (to.startsWith('/products') || to.startsWith('/product/')) {
+        setActiveSection('products');
+      } else if (to === '/' || to === '') {
+        setActiveSection('hero');
+      } else {
+        setActiveSection('');
+      }
+    };
+
+    window.addEventListener(TRANSITION_EVENT, handleTransition);
+    return () => {
+      window.removeEventListener(TRANSITION_EVENT, handleTransition);
+    };
+  }, []);
+
+  // 3. Scroll spy logic: only active on the home page ('/')
+  useEffect(() => {
+    if (location.pathname !== '/') {
+      const handleSubpageScroll = () => {
+        setIsScrolled(window.scrollY > 40);
+      };
+      window.addEventListener('scroll', handleSubpageScroll, { passive: true });
+      handleSubpageScroll();
+      return () => window.removeEventListener('scroll', handleSubpageScroll);
+    }
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 40);
 
+      // When near top of home page, clear active tabs back to hero
+      if (window.scrollY < 200) {
+        setActiveSection('hero');
+        return;
+      }
+
       const sections = ['services', 'products', 'about', 'contact'];
+      let matched = false;
       for (const section of sections) {
         const el = document.getElementById(section);
         if (el) {
           const rect = el.getBoundingClientRect();
-          if (rect.top <= 200 && rect.bottom >= 200) {
+          if (rect.top <= 250 && rect.bottom >= 150) {
             setActiveSection(section);
+            matched = true;
             break;
           }
         }
       }
+
+      if (!matched && window.scrollY < 400) {
+        setActiveSection('hero');
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   const navLinks = [
     { label: 'Services', href: '#services', target: '#services' },
@@ -50,6 +112,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenInquiry }) => {
   const handleNavClick = (e: React.MouseEvent, target: string) => {
     e.preventDefault();
     setMobileMenuOpen(false);
+    const sectionName = target.replace('#', '');
+    setActiveSection(sectionName);
 
     if (isSubPage) {
       triggerPageTransition('/');
@@ -64,6 +128,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenInquiry }) => {
   const handleLogoClick = (e: React.MouseEvent) => {
     e.preventDefault();
     setMobileMenuOpen(false);
+    setActiveSection('hero');
 
     if (isSubPage) {
       triggerPageTransition('/');

@@ -4,9 +4,9 @@ import gsap from 'gsap';
 import {
   TransitionData,
   DEFAULT_PRODUCTS_DATA,
-  DEFAULT_STUDIO_DATA,
   TRANSITION_EVENT,
   PageTransitionEventDetail,
+  resolveTransitionData,
 } from '../../lib/pageTransition';
 import { resetScrollImmediate } from '../../lib/lenis';
 
@@ -120,14 +120,7 @@ export const PageTransition: React.FC = () => {
     const handleTransitionEvent = (e: Event) => {
       const customEvent = e as CustomEvent<PageTransitionEventDetail>;
       const { to, data } = customEvent.detail;
-      const isTargetProducts = to.startsWith('/products');
-      const baseData = isTargetProducts ? DEFAULT_PRODUCTS_DATA : DEFAULT_STUDIO_DATA;
-      const fullData: TransitionData = {
-        title: data?.title || baseData.title,
-        tag: data?.tag || baseData.tag,
-        description: data?.description || baseData.description,
-      };
-
+      const fullData = resolveTransitionData(to, data);
       runTransition.current(to, fullData);
     };
 
@@ -149,13 +142,20 @@ export const PageTransition: React.FC = () => {
     const curr = location.pathname;
     prevPathnameRef.current = curr;
 
-    const isHomeToProducts = prev === '/' && curr.startsWith('/products');
-    const isProductsToHome = prev.startsWith('/products') && curr === '/';
+    // Distinguish major route families: home ('/'), products catalogue ('/products'), product case studies ('/product/*'), or other
+    const getRouteFamily = (path: string) => {
+      if (path.startsWith('/product/')) return 'case-study';
+      if (path.startsWith('/products')) return 'products';
+      if (path === '/') return 'home';
+      return path;
+    };
 
-    // If navigation happened between home and products and not already animating
-    if ((isHomeToProducts || isProductsToHome) && !isAnimatingRef.current && overlayRef.current) {
-      const isTargetProducts = curr.startsWith('/products');
-      const targetData: TransitionData = isTargetProducts ? DEFAULT_PRODUCTS_DATA : DEFAULT_STUDIO_DATA;
+    const prevFamily = getRouteFamily(prev);
+    const currFamily = getRouteFamily(curr);
+
+    // If navigation happened between different route families and not already animating
+    if (prevFamily !== currFamily && !isAnimatingRef.current && overlayRef.current) {
+      const targetData = resolveTransitionData(curr);
       runTransition.current(null, targetData);
     }
   }, [location.pathname]);

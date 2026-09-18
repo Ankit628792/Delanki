@@ -123,14 +123,19 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onOpenInquiry 
 
                   {/* Actions - Minimal Text on Mobile */}
                   <div className="pt-6 border-t border-white/10 flex items-center justify-between gap-3">
-                    <button
-                      onClick={() => setSelectedProduct(vectofi)}
+                    <Link
+                      to="/product/$slug"
+                      params={{ slug: vectofi.slug }}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        triggerPageTransition(`/product/${vectofi.slug}`);
+                      }}
                       className="font-mono text-xs text-white hover:text-[#F22952] flex items-center gap-1.5 transition-colors uppercase font-semibold py-2"
                     >
                       <span className="sm:hidden">CASE STUDY</span>
                       <span className="hidden sm:inline">VIEW FULL CASE STUDY</span>
                       <ArrowUpRight className="w-4 h-4" />
-                    </button>
+                    </Link>
 
                     <div className="flex items-center gap-2">
                       {vectofi.liveUrl && (
@@ -304,14 +309,19 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onOpenInquiry 
 
               {/* Bottom Action Row - Minimal text on mobile */}
               <div className="pt-6 mt-6 border-t border-white/10 flex items-center justify-between gap-2">
-                <button
-                  onClick={() => setSelectedProduct(stickyNotes)}
+                <Link
+                  to="/product/$slug"
+                  params={{ slug: stickyNotes.slug }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    triggerPageTransition(`/product/${stickyNotes.slug}`);
+                  }}
                   className="font-mono text-xs text-white hover:text-[#F22952] flex items-center gap-1.5 transition-colors uppercase font-semibold py-2"
                 >
-                  <span className="sm:hidden">DETAILS</span>
-                  <span className="hidden sm:inline">VIEW DETAILS</span>
+                  <span className="sm:hidden">CASE STUDY</span>
+                  <span className="hidden sm:inline">VIEW CASE STUDY</span>
                   <ArrowUpRight className="w-4 h-4" />
-                </button>
+                </Link>
 
                 <div className="flex items-center gap-2">
                   {stickyNotes.liveUrl && (
@@ -433,14 +443,19 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onOpenInquiry 
 
               {/* Bottom Action Row - Minimal text on mobile */}
               <div className="pt-6 mt-6 border-t border-white/10 flex items-center justify-between gap-2">
-                <button
-                  onClick={() => setSelectedProduct(earlyLearner)}
+                <Link
+                  to="/product/$slug"
+                  params={{ slug: earlyLearner.slug }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    triggerPageTransition(`/product/${earlyLearner.slug}`);
+                  }}
                   className="font-mono text-xs text-white hover:text-[#F22952] flex items-center gap-1.5 transition-colors uppercase font-semibold py-2"
                 >
-                  <span className="sm:hidden">DETAILS</span>
-                  <span className="hidden sm:inline">VIEW DETAILS</span>
+                  <span className="sm:hidden">CASE STUDY</span>
+                  <span className="hidden sm:inline">VIEW CASE STUDY</span>
                   <ArrowUpRight className="w-4 h-4" />
-                </button>
+                </Link>
 
                 <div className="flex items-center gap-2">
                   {earlyLearner.githubUrl && (
