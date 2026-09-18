@@ -1,0 +1,30 @@
+{
+  "name": "Delanki — Digital Product Development Studio",
+  "short_name": "Delanki",
+  "description": "Delanki builds modern web apps, cross-platform applications, Chrome extensions, and VS Code tools for high-velocity teams.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090909",
+  "theme_color": "#090909",
+  "orientation": "portrait-primary",
+  "categories": [
+    "developer tools",
+    "productivity",
+    "business",
+    "technology"
+  ],
+  "icons": [
+    {
+      "src": "/da-black.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/da-white.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

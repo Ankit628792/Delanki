@@ -1,0 +1,116 @@
+{
+  "generator": "Delanki SEO Build Tool",
+  "updatedAt": "2026-09-18T17:31:44.746Z",
+  "siteUrl": "https://www.delanki.com",
+  "totalIndexedRoutes": 13,
+  "routes": [
+    {
+      "path": "/",
+      "priority": 1,
+      "type": "core",
+      "title": "Delanki Studio"
+    },
+    {
+      "path": "/products",
+      "priority": 0.9,
+      "type": "catalog",
+      "title": "Products Catalog"
+    },
+    {
+      "path": "/privacy-policy",
+      "priority": 0.3,
+      "type": "legal",
+      "title": "Privacy Policy"
+    },
+    {
+      "path": "/product/vectofi",
+      "slug": "vectofi",
+      "title": "Vectofi",
+      "category": "Web App",
+      "tagline": "Developer-first SVG icon library with interactive lab and code generators.",
+      "priority": 0.8,
+      "type": "product-case-study"
+    },
+    {
+      "path": "/product/kurush-yarn",
+      "slug": "kurush-yarn",
+      "title": "Kurush-Yarn",
+      "category": "Web App",
+      "tagline": "A soft-futuristic digital gallery showcasing handcrafted textile art.",
+      "priority": 0.8,
+      "type": "product-case-study"
+    },
+    {
+      "path": "/product/qrazy",
+      "slug": "qrazy",
+      "title": "Qrazy (Prototype)",
+      "category": "Web App",
+      "tagline": "Smart QR verification system to protect brands from fake products.",
+      "priority": 0.8,
+      "type": "product-case-study"
+    },
+    {
+      "path": "/product/early-learner",
+      "slug": "early-learner",
+      "title": "Early Learner",
+      "category": "Mobile App",
+      "tagline": "Simple learning app for kids to explore alphabets, numbers, and drawing.",
+      "priority": 0.8,
+      "type": "product-case-study"
+    },
+    {
+      "path": "/product/love-alarm",
+      "slug": "love-alarm",
+      "title": "Love Alarm 2.0",
+      "category": "Mobile App",
+      "tagline": "Proximity alerts powered by a 10-meter accuracy location engine.",
+      "priority": 0.8,
+      "type": "product-case-study"
+    },
+    {
+      "path": "/product/airbeam-share",
+      "slug": "airbeam-share",
+      "title": "AirBeam-Share",
+      "category": "Mobile App",
+      "tagline": "Air-gapped zero-network optical file sharing via animated QR code stream.",
+      "priority": 0.8,
+      "type": "product-case-study"
+    },
+    {
+      "path": "/product/respira",
+      "slug": "respira",
+      "title": "Respira",
+      "category": "Mobile App",
+      "tagline": "Calming breathing assistant for daily relaxation and lung training.",
+      "priority": 0.8,
+      "type": "product-case-study"
+    },
+    {
+      "path": "/product/sticky-notes",
+      "slug": "sticky-notes",
+      "title": "Sticky Notes for VS Code",
+      "category": "VS Code Extension",
+      "tagline": "Manage inline sticky notes and TODO comments directly inside code editor.",
+      "priority": 0.8,
+      "type": "product-case-study"
+    },
+    {
+      "path": "/product/jira-github-linker",
+      "slug": "jira-github-linker",
+      "title": "Jira & GitHub Linker",
+      "category": "VS Code Extension",
+      "tagline": "Instantly turn Jira tickets and GitHub issues/PRs into clickable links in VS Code.",
+      "priority": 0.8,
+      "type": "product-case-study"
+    },
+    {
+      "path": "/product/syntax-storyteller",
+      "slug": "syntax-storyteller",
+      "title": "Syntax Storyteller",
+      "category": "VS Code Extension",
+      "tagline": "Bring your code to life with creative, narrative-style comments.",
+      "priority": 0.8,
+      "type": "product-case-study"
+    }
+  ]
+}

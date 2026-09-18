@@ -4,6 +4,7 @@ import { DelankiLogo } from '../common/DelankiLogo';
 import { scrollToElement, scrollToTop } from '../../lib/lenis';
 import { Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
 import { triggerPageTransition, TRANSITION_EVENT } from '../../lib/pageTransition';
+import { NAV_LINKS } from '../../data/common';
 
 interface NavbarProps {
   onOpenInquiry: (initialMode?: 'build' | 'hire') => void;
@@ -102,12 +103,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenInquiry }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [location.pathname]);
 
-  const navLinks = [
-    { label: 'Services', href: '#services', target: '#services' },
-    { label: 'Products', href: '#products', target: '#products' },
-    { label: 'About', href: '#about', target: '#about' },
-    { label: 'Contact', href: '#contact', target: '#contact' },
-  ];
+  const navLinks = NAV_LINKS;
 
   const handleNavClick = (e: React.MouseEvent, target: string) => {
     e.preventDefault();

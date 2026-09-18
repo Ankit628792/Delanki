@@ -4,6 +4,8 @@ import { PRODUCTS_DATA } from '../../data/siteData';
 import { Link } from '@tanstack/react-router';
 import { triggerPageTransition } from '../../lib/pageTransition';
 import { ArrowLeft, AlertCircle } from 'lucide-react';
+import { SEO } from '../../components/common/SEO';
+import { getNotFoundSEO } from '../../lib/seo';
 
 // Import individual product pages from their respective product folders
 import { VectofiCaseStudyPage } from './vectofi/CaseStudyPage';
@@ -28,6 +30,7 @@ export const ProductDetailPage: React.FC = () => {
   if (!matchedProduct) {
     return (
       <div className="min-h-screen bg-[#070707] text-white flex items-center justify-center px-6 pt-24">
+        <SEO {...getNotFoundSEO()} />
         <div className="max-w-md w-full bg-[#111] border border-white/10 rounded-2xl p-8 text-center space-y-6">
           <div className="w-12 h-12 rounded-full bg-[#F22952]/10 text-[#F22952] mx-auto flex items-center justify-center">
             <AlertCircle className="w-6 h-6" />

@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { SEO } from '../components/common/SEO';
+import { getHomeSEO } from '../lib/seo';
 import { Hero } from '../components/hero/Hero';
 import { Manifesto } from '../components/manifesto/Manifesto';
 import { HireVsBuild } from '../components/sections/HireVsBuild';
@@ -42,6 +44,7 @@ export const HomePage: React.FC = () => {
 
   return (
     <main className="w-full">
+      <SEO {...getHomeSEO()} />
       {/* 01. Hero Section with Kinetic Matrix */}
       <Hero onOpenInquiry={openInquiry} />
 

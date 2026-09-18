@@ -1,0 +1,16 @@
+# ==============================================================================
+# Robots.txt — Delanki Digital Product Development Studio
+# Automated Build Generation: 2026-09-18T17:31:44.746Z
+# ==============================================================================
+
+User-agent: *
+Allow: /
+
+# Disallow private error or preview routes
+Disallow: /404
+
+# Host
+Host: https://www.delanki.com
+
+# Sitemaps
+Sitemap: https://www.delanki.com/sitemap.xml

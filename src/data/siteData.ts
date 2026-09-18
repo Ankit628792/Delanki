@@ -8,26 +8,10 @@ import {
   FaqItem,
   MetricItem,
 } from '../types';
+import { COMPANY_DATA } from './common';
 
-export const COMPANY_DATA = {
-  name: 'Delanki',
-  legalName: 'Delanki Product Studio',
-  version: '3.0.1',
-  tagline: 'We Turn Ideas Into Digital Products.',
-  statement: 'We build products people actually use.',
-  year: 'Since 2023',
-  established: 'Since 2023',
-  email: 'ankit628792@gmail.com',
-  founderName: 'Ankit',
-  founderRole: 'Founder & Lead Product Engineer',
-  founderEmail: 'ankit628792@gmail.com',
-  founderLinkedin: 'https://www.linkedin.com/in/ankit628792',
-  website: import.meta.env.VITE_APP_URL || 'https://delanki.vercel.com',
-  linkedin: 'https://www.linkedin.com/in/ankit628792',
-  location: 'Global / Remote',
-  brandColor: '#F22952',
-  status: 'Available for New Builds & Talent',
-};
+export { COMPANY_DATA };
+export * from './common';
 
 export const SERVICES_DATA: ServiceItem[] = [
   {

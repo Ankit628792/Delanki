@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { SEO } from '../components/common/SEO';
+import { getProductsCatalogSEO } from '../lib/seo';
 import { PRODUCTS_DATA } from '../data/siteData';
 import { ProductItem } from '../types';
 import {
@@ -560,6 +562,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenInquiry }) => 
 
   return (
     <div className="min-h-screen bg-[#0c0c0c] text-white pt-24 sm:pt-28 pb-24 px-4 sm:px-6 md:px-10">
+      <SEO {...getProductsCatalogSEO()} />
       <div className="max-w-7xl mx-auto space-y-10 sm:space-y-12">
         
         {/* Back Link & Header */}

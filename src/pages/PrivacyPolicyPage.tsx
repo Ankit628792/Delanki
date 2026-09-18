@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from '@tanstack/react-router';
+import { SEO } from '../components/common/SEO';
+import { getPrivacyPolicySEO } from '../lib/seo';
 import { 
   ArrowLeft, 
   ShieldCheck, 
@@ -85,6 +87,7 @@ export const PrivacyPolicyPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#090909] text-white pt-28 pb-20 px-4 sm:px-6 lg:px-8">
+      <SEO {...getPrivacyPolicySEO()} />
       {/* Decorative Grid Background */}
       <div className="fixed inset-0 bg-tech-grid opacity-30 pointer-events-none" />
 
@@ -254,7 +257,7 @@ export const PrivacyPolicyPage: React.FC = () => {
                   Delanki (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;the Studio&rdquo;) operates as a dedicated software product development studio providing full-cycle digital product engineering, high-throughput mobile development, browser extensions, developer tools, and staff augmentation.
                 </p>
                 <p>
-                  This Privacy Policy delineates how Delanki collects, secures, manages, and utilizes information across our public website (<code className="text-[#F22952] font-mono text-xs px-1.5 py-0.5 bg-white/5 rounded">delanki.vercel.com</code>), project estimator interfaces, client communication portals, open-source repositories, and digital utility extensions.
+                  This Privacy Policy delineates how Delanki collects, secures, manages, and utilizes information across our public website (<code className="text-[#F22952] font-mono text-xs px-1.5 py-0.5 bg-white/5 rounded">www.delanki.com</code>), project estimator interfaces, client communication portals, open-source repositories, and digital utility extensions.
                 </p>
                 <p>
                   By engaging with our studio, transmitting a project brief, or deploying our developer extensions, you acknowledge the terms established within this policy document.

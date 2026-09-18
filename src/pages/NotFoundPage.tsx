@@ -2,12 +2,15 @@ import React from 'react';
 import { Link, useNavigate } from '@tanstack/react-router';
 import { ArrowLeft, Home, Shield, Sparkles } from 'lucide-react';
 import { scrollToTop } from '../lib/lenis';
+import { SEO } from '../components/common/SEO';
+import { getNotFoundSEO } from '../lib/seo';
 
 export const NotFoundPage: React.FC = () => {
   const navigate = useNavigate();
 
   return (
     <main className="min-h-[80vh] flex items-center justify-center px-6 py-24 relative overflow-hidden">
+      <SEO {...getNotFoundSEO()} />
       {/* Background Decorative Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#F22952]/10 rounded-full blur-[140px] pointer-events-none" />
 
