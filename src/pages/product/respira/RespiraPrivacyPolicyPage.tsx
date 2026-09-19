@@ -14,7 +14,6 @@ import {
   Database,
   Smartphone,
   Share2,
-  Printer,
   ChevronRight,
   AlertTriangle,
   Wind,
@@ -77,12 +76,6 @@ export const RespiraPrivacyPolicyPage: React.FC = () => {
     }
   };
 
-  const handlePrint = () => {
-    if (typeof window !== 'undefined') {
-      window.print();
-    }
-  };
-
   return (
     <div className="min-h-screen bg-[#090909] text-white pt-28 pb-20 px-4 sm:px-6 lg:px-8">
       <SEO {...getRespiraPrivacyPolicySEO()} />
@@ -134,14 +127,6 @@ export const RespiraPrivacyPolicyPage: React.FC = () => {
               )}
               <span>{copiedShare ? 'LINK COPIED' : 'SHARE'}</span>
             </button>
-            <button
-              onClick={handlePrint}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#121212] border border-white/15 hover:border-white/30 text-xs font-mono text-[#B7B7B7] hover:text-white transition-all"
-              title="Print Document"
-            >
-              <Printer className="w-3 h-3" />
-              <span>PRINT</span>
-            </button>
           </div>
         </div>
 
@@ -152,9 +137,6 @@ export const RespiraPrivacyPolicyPage: React.FC = () => {
               <FileText className="w-3.5 h-3.5" />
               <span>RESPIRA // APP PRIVACY POLICY</span>
             </div>
-            <span className="font-mono text-xs px-3 py-1 rounded-full bg-white/5 text-[#B7B7B7] border border-white/10">
-              PACKAGE: COM.DELANKI.RESPIRA
-            </span>
           </div>
 
           <h1 className="font-display font-black text-3xl sm:text-5xl md:text-6xl uppercase tracking-tight text-white mb-4">
@@ -392,7 +374,7 @@ export const RespiraPrivacyPolicyPage: React.FC = () => {
                   </ul>
                 </div>
                 <p className="text-xs text-[#B7B7B7]">
-                  <strong>No Remote Replication:</strong> This database resides entirely in <code className="text-[#F22952] font-mono px-1 py-0.5 bg-white/5 rounded">/data/data/com.delanki.respira/databases/</code> on your device. It is never uploaded to any remote host, AWS, Firebase, or external cloud storage.
+                  <strong>No Remote Replication:</strong> This database resides entirely in local application sandbox storage on your device. It is never uploaded to any remote host, AWS, Firebase, or external cloud storage.
                 </p>
               </div>
             </section>

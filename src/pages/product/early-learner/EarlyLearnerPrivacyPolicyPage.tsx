@@ -16,7 +16,6 @@ import {
   Smartphone,
   WifiOff,
   Share2,
-  Printer,
   ChevronRight,
 } from 'lucide-react';
 import { COMPANY_DATA } from '../../../data/siteData';
@@ -77,12 +76,6 @@ export const EarlyLearnerPrivacyPolicyPage: React.FC = () => {
     }
   };
 
-  const handlePrint = () => {
-    if (typeof window !== 'undefined') {
-      window.print();
-    }
-  };
-
   return (
     <div className="min-h-screen bg-[#090909] text-white pt-28 pb-20 px-4 sm:px-6 lg:px-8">
       <SEO {...getEarlyLearnerPrivacyPolicySEO()} />
@@ -134,14 +127,6 @@ export const EarlyLearnerPrivacyPolicyPage: React.FC = () => {
               )}
               <span>{copiedShare ? 'LINK COPIED' : 'SHARE'}</span>
             </button>
-            <button
-              onClick={handlePrint}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#121212] border border-white/15 hover:border-white/30 text-xs font-mono text-[#B7B7B7] hover:text-white transition-all"
-              title="Print Document"
-            >
-              <Printer className="w-3 h-3" />
-              <span>PRINT</span>
-            </button>
           </div>
         </div>
 
@@ -152,9 +137,6 @@ export const EarlyLearnerPrivacyPolicyPage: React.FC = () => {
               <FileText className="w-3.5 h-3.5" />
               <span>EARLY LEARNER // APP PRIVACY POLICY</span>
             </div>
-            <span className="font-mono text-xs px-3 py-1 rounded-full bg-white/5 text-[#B7B7B7] border border-white/10">
-              PACKAGE: COM.DELANKI.EARLYLEARNER
-            </span>
           </div>
 
           <h1 className="font-display font-black text-3xl sm:text-5xl md:text-6xl uppercase tracking-tight text-white mb-4">
