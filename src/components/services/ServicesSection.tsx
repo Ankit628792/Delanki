@@ -9,11 +9,9 @@ import {
   ArrowUpRight,
   CheckCircle2,
   Play,
-  Monitor,
   Tablet,
   FileCode2,
   Sparkles,
-  Maximize2,
   Copy,
   Check,
 } from 'lucide-react';

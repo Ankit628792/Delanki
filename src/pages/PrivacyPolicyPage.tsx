@@ -7,15 +7,12 @@ import {
   ShieldCheck, 
   Lock, 
   Code2, 
-  Server, 
   CheckCircle2, 
   Mail, 
   Copy, 
   Check, 
   FileText, 
-  ExternalLink,
   Sparkles,
-  Layers,
   EyeOff
 } from 'lucide-react';
 import { COMPANY_DATA } from '../data/siteData';

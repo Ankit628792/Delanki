@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from '@tanstack/react-router';
-import { ArrowLeft, Home, Shield, Sparkles } from 'lucide-react';
+import { Home, Shield, Sparkles } from 'lucide-react';
 import { scrollToTop } from '../lib/lenis';
 import { SEO } from '../components/common/SEO';
 import { getNotFoundSEO } from '../lib/seo';

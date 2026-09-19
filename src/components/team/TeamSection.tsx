@@ -1,6 +1,6 @@
 import React from 'react';
 import { TEAM_DATA } from '../../data/siteData';
-import { Github, Linkedin, Twitter, ArrowUpRight, Terminal, Sparkles } from 'lucide-react';
+import { Github } from 'lucide-react';
 
 export const TeamSection: React.FC = () => {
   return (

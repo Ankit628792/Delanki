@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Terminal, Cpu, Zap, Activity, CheckCircle2, Layers, ShieldCheck, Sparkles, Smartphone, Globe, Chrome } from 'lucide-react';
+import { Terminal, Cpu, Activity, CheckCircle2, Sparkles, Smartphone, Globe, Chrome } from 'lucide-react';
 
 interface BuildLog {
   id: string;

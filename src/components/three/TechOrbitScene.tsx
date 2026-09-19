@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, Layers, Cpu, CheckCircle2, Zap } from 'lucide-react';
+import { CheckCircle2, Zap } from 'lucide-react';
 
 interface TechOrbitSceneProps {
   activeCategory?: string;

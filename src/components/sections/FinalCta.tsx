@@ -1,6 +1,6 @@
 import React from 'react';
 import { CtaObjectScene } from '../three/CtaObjectScene';
-import { ArrowUpRight, Sparkles, UserCheck } from 'lucide-react';
+import { ArrowUpRight, UserCheck } from 'lucide-react';
 
 interface FinalCtaProps {
   onOpenInquiry: (initialMode?: 'build' | 'hire') => void;

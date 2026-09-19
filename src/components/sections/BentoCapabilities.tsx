@@ -1,16 +1,8 @@
 import React, { useState } from 'react';
-import { BENTO_CAPABILITIES } from '../../data/siteData';
 import {
   Code2,
-  Terminal,
-  Cpu,
-  Layers,
-  Zap,
   Sparkles,
-  ArrowUpRight,
-  Shield,
   Gauge,
-  Workflow,
   Smartphone,
   Puzzle,
 } from 'lucide-react';

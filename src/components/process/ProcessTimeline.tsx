@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PROCESS_STEPS } from '../../data/siteData';
-import { CheckCircle2, Clock, Layers, ArrowRight } from 'lucide-react';
+import { CheckCircle2, Clock } from 'lucide-react';
 
 export const ProcessTimeline: React.FC = () => {
   const [activeStep, setActiveStep] = useState(0);

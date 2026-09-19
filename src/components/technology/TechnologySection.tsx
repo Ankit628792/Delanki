@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { TECHNOLOGIES_DATA } from '../../data/siteData';
 import { TechOrbitScene } from '../three/TechOrbitScene';
-import { Layers, Sparkles, Check, Terminal } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 
 export const TechnologySection: React.FC = () => {
   const categories = [

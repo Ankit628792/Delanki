@@ -10,17 +10,6 @@ export interface ServiceItem {
   metrics?: { label: string; value: string }[];
 }
 
-export interface BentoCapability {
-  id: string;
-  title: string;
-  subtitle: string;
-  description: string;
-  colSpan: string; // e.g. 'col-span-12 md:col-span-8'
-  category: 'core' | 'engineering' | 'ai' | 'tooling' | 'ux';
-  interactiveType?: 'code' | 'terminal' | 'stats' | 'extension' | 'devices' | 'api';
-  badge?: string;
-}
-
 export interface ProductItem {
   id: string;
   slug: string;

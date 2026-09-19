@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FAQ_DATA } from '../../data/siteData';
-import { ChevronDown, Plus, Minus, HelpCircle, MessageSquare } from 'lucide-react';
+import { ChevronDown, MessageSquare } from 'lucide-react';
 
 interface FaqSectionProps {
   onOpenInquiry: () => void;

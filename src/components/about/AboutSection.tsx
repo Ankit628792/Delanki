@@ -1,6 +1,6 @@
 import React from 'react';
 import { METRICS_DATA, COMPANY_DATA } from '../../data/siteData';
-import { ArrowUpRight, Sparkles, Terminal, CheckCircle2, Globe2 } from 'lucide-react';
+import { ArrowUpRight, Terminal, CheckCircle2, Globe2 } from 'lucide-react';
 
 interface AboutSectionProps {
   onOpenInquiry: (initialMode?: 'build' | 'hire') => void;

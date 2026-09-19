@@ -1,6 +1,5 @@
 import {
   ServiceItem,
-  BentoCapability,
   ProductItem,
   TechnologyItem,
   ProcessStep,
@@ -101,59 +100,6 @@ export const SERVICES_DATA: ServiceItem[] = [
       { label: 'Startup Latency', value: '< 80ms' },
       { label: 'Marketplace Ready', value: '100%' },
     ],
-  },
-];
-
-export const BENTO_CAPABILITIES: BentoCapability[] = [
-  {
-    id: 'bento-product-eng',
-    title: 'Product Engineering',
-    subtitle: 'End-to-End Execution',
-    description: 'We translate complex requirements into robust, production-tested software with clean architecture.',
-    colSpan: 'col-span-12 lg:col-span-7',
-    category: 'core',
-    interactiveType: 'code',
-    badge: 'CORE PILLAR',
-  },
-  {
-    id: 'bento-ai-integrations',
-    title: 'AI & Copilot Workflows',
-    subtitle: 'Context-Aware Intelligence',
-    description: 'Custom LLM agents, local embeddings, vector search, and automated document processing.',
-    colSpan: 'col-span-12 sm:col-span-6 lg:col-span-5',
-    category: 'ai',
-    interactiveType: 'terminal',
-    badge: 'INTELLIGENCE',
-  },
-  {
-    id: 'bento-extensions',
-    title: 'Browser & Editor Tools',
-    subtitle: 'Extensions at Scale',
-    description: 'Bespoke tools built into Chrome tabs and VS Code workspaces for daily developer productivity.',
-    colSpan: 'col-span-12 sm:col-span-6 lg:col-span-4',
-    category: 'tooling',
-    interactiveType: 'extension',
-    badge: 'ECOSYSTEM',
-  },
-  {
-    id: 'bento-mobile-web',
-    title: 'Cross-Platform Precision',
-    subtitle: 'React Native + Web Synergy',
-    description: 'Consistent user experiences across iOS, Android, and web browsers with shared design tokens.',
-    colSpan: 'col-span-12 sm:col-span-6 lg:col-span-4',
-    category: 'engineering',
-    interactiveType: 'devices',
-    badge: 'ADAPTIVE',
-  },
-  {
-    id: 'bento-performance',
-    title: 'Performance & APIs',
-    subtitle: 'Zero-Jank Reliability',
-    description: 'Edge-rendered pages, sub-millisecond database queries, optimized WebGL, and secure APIs.',
-    colSpan: 'col-span-12 sm:col-span-6 lg:col-span-4',
-    category: 'engineering',
-    interactiveType: 'api',
-    badge: 'SPEED',
   },
 ];
 

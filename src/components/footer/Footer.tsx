@@ -4,7 +4,7 @@ import { DelankiLogo } from '../common/DelankiLogo';
 import { COMPANY_DATA } from '../../data/siteData';
 import { scrollToElement, scrollToTop } from '../../lib/lenis';
 import { triggerPageTransition } from '../../lib/pageTransition';
-import { ArrowUp, Linkedin, Mail, Globe, Sparkles, Heart } from 'lucide-react';
+import { ArrowUp, Linkedin, Mail } from 'lucide-react';
 
 interface FooterProps {
   onOpenInquiry: (initialMode?: 'build' | 'hire') => void;

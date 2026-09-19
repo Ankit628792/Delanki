@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { COMPANY_DATA } from '../../data/siteData';
-import { X, Mail, Linkedin, Copy, Check, ArrowUpRight, ShieldAlert, Sparkles, UserCheck } from 'lucide-react';
+import { X, Mail, Linkedin, Copy, Check, ArrowUpRight, ShieldAlert, Sparkles } from 'lucide-react';
 
 interface ProjectInquiryModalProps {
   isOpen: boolean;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { COMPANY_DATA } from '../../data/siteData';
-import { Mail, Linkedin, ArrowUpRight, Copy, Check, ShieldAlert, Sparkles, User, Terminal, ExternalLink } from 'lucide-react';
+import { Mail, Linkedin, ArrowUpRight, Copy, Check, ShieldAlert } from 'lucide-react';
 
 interface ContactSectionProps {
   initialMode?: 'build' | 'hire';
