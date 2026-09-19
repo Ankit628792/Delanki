@@ -20,15 +20,14 @@ export const HeroScene: React.FC = () => {
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
   const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5 });
   const [isHovered, setIsHovered] = useState(false);
-  const [activeTabCode, setActiveTabCode] = useState(0);
 
-  // Rotating logs stream
-  const [logs, setLogs] = useState<BuildLog[]>([
+  // Build terminal logs stream
+  const logs: BuildLog[] = [
     { id: '1', time: '0.04s', type: 'info', message: 'delanki init --pipeline production' },
     { id: '2', time: '0.12s', type: 'build', message: 'bundling AST tree • 0 runtime overhead' },
     { id: '3', time: '0.28s', type: 'success', message: 'Lighthouse verified: 100/100 performance' },
     { id: '4', time: '0.34s', type: 'success', message: 'Zero-latency edge distribution deployed' },
-  ]);
+  ];
 
   // Handle smooth 3D tilt tracking
   useEffect(() => {

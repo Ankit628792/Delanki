@@ -1,12 +1,11 @@
 import React from 'react';
-import { Link, useNavigate } from '@tanstack/react-router';
+import { Link } from '@tanstack/react-router';
 import { Home, Shield, Sparkles } from 'lucide-react';
 import { scrollToTop } from '../lib/lenis';
 import { SEO } from '../components/common/SEO';
 import { getNotFoundSEO } from '../lib/seo';
 
 export const NotFoundPage: React.FC = () => {
-  const navigate = useNavigate();
 
   return (
     <main className="min-h-[80vh] flex items-center justify-center px-6 py-24 relative overflow-hidden">

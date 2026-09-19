@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from '@tanstack/react-router';
+import { Link, useLocation } from '@tanstack/react-router';
 import { DelankiLogo } from '../common/DelankiLogo';
 import { scrollToElement, scrollToTop } from '../../lib/lenis';
 import { Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
@@ -16,7 +16,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenInquiry }) => {
   const [activeSection, setActiveSection] = useState<string>('hero');
   
   const location = useLocation();
-  const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
   const isSubPage = !isHomePage;
 

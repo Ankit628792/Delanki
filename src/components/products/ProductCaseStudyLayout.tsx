@@ -15,6 +15,7 @@ import {
   Share2,
   Check,
   MessageSquare,
+  ShieldCheck,
 } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
 import { triggerPageTransition } from '../../lib/pageTransition';
@@ -146,6 +147,15 @@ export const ProductCaseStudyLayout: React.FC<ProductCaseStudyLayoutProps> = ({
                 <Github className="w-4 h-4" />
                 <span>GITHUB REPO</span>
               </a>
+            )}
+            {(product.slug === 'early-learner' || product.slug === 'respira') && (
+              <Link
+                to={`/products/${product.slug}/privacy-policy`}
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 font-mono text-xs font-bold uppercase transition-all border border-emerald-500/30"
+              >
+                <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                <span>PRIVACY POLICY</span>
+              </Link>
             )}
             <button
               onClick={() => openInquiry('build')}

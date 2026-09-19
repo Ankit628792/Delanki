@@ -9,6 +9,8 @@ import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { ProjectsPage } from './pages/ProjectsPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { ProductDetailPage } from './pages/product/ProductDetailPage';
+import { EarlyLearnerPrivacyPolicyPage } from './pages/product/early-learner/EarlyLearnerPrivacyPolicyPage';
+import { RespiraPrivacyPolicyPage } from './pages/product/respira/RespiraPrivacyPolicyPage';
 
 const FallbackComponent = () => {
   return <NotFoundPage />;
@@ -31,6 +33,31 @@ const productsRoute = createRoute({
   component: ProjectsPage,
 });
 
+const earlyLearnerPrivacyPolicyRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/products/early-learner/privacy-policy',
+  component: EarlyLearnerPrivacyPolicyPage,
+});
+
+const respiraPrivacyPolicyRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/products/respira/privacy-policy',
+  component: RespiraPrivacyPolicyPage,
+});
+
+// Also support singular /product/ alias
+const earlyLearnerPrivacyPolicyAliasRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/product/early-learner/privacy-policy',
+  component: EarlyLearnerPrivacyPolicyPage,
+});
+
+const respiraPrivacyPolicyAliasRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/product/respira/privacy-policy',
+  component: RespiraPrivacyPolicyPage,
+});
+
 const productDetailRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/product/$slug',
@@ -46,6 +73,10 @@ const privacyPolicyRoute = createRoute({
 const routeTree = rootRoute.addChildren([
   indexRoute,
   productsRoute,
+  earlyLearnerPrivacyPolicyRoute,
+  respiraPrivacyPolicyRoute,
+  earlyLearnerPrivacyPolicyAliasRoute,
+  respiraPrivacyPolicyAliasRoute,
   productDetailRoute,
   privacyPolicyRoute,
 ]);

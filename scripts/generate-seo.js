@@ -113,6 +113,20 @@ function generateSitemapXml(products) {
       lastmod: TODAY_ISO,
       title: 'Privacy Policy & Data Security — Delanki',
     },
+    {
+      loc: `${SITE_URL}/products/early-learner/privacy-policy`,
+      changefreq: 'monthly',
+      priority: '0.5',
+      lastmod: TODAY_ISO,
+      title: 'Early Learner Privacy Policy & COPPA Compliance — Delanki',
+    },
+    {
+      loc: `${SITE_URL}/products/respira/privacy-policy`,
+      changefreq: 'monthly',
+      priority: '0.5',
+      lastmod: TODAY_ISO,
+      title: 'Respira Privacy Policy & Health Data Standards — Delanki',
+    },
   ];
 
   const productRoutes = products.map((product) => ({
@@ -226,6 +240,8 @@ function generateSeoRoutesJson(products) {
     { path: '/', priority: 1.0, type: 'core', title: 'Delanki Studio' },
     { path: '/products', priority: 0.9, type: 'catalog', title: 'Products Catalog' },
     { path: '/privacy-policy', priority: 0.3, type: 'legal', title: 'Privacy Policy' },
+    { path: '/products/early-learner/privacy-policy', priority: 0.5, type: 'legal', title: 'Early Learner Privacy Policy' },
+    { path: '/products/respira/privacy-policy', priority: 0.5, type: 'legal', title: 'Respira Privacy Policy' },
     ...products.map((p) => ({
       path: `/product/${p.slug}`,
       slug: p.slug,

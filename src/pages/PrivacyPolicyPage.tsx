@@ -8,7 +8,6 @@ import {
   Lock, 
   Code2, 
   CheckCircle2, 
-  Mail, 
   Copy, 
   Check, 
   FileText, 
@@ -194,11 +193,11 @@ export const PrivacyPolicyPage: React.FC = () => {
 
         {/* Main Content Layout with Sticky Sidebar */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Sticky Table of Contents Sidebar */}
-          <aside className="lg:col-span-4 lg:sticky lg:top-28 p-5 rounded-2xl bg-[#121212]/90 border border-white/10 backdrop-blur-md">
+          {/* Sticky Table of Contents Sidebar - Visible only on desktop (hidden on mobile and tablet) */}
+          <aside className="hidden lg:block lg:col-span-4 lg:sticky lg:top-28 p-5 rounded-2xl bg-[#121212]/90 border border-white/10 backdrop-blur-md">
             <div className="flex items-center justify-between mb-4 pb-3 border-b border-white/10">
               <span className="font-mono text-xs uppercase tracking-widest text-[#F22952] font-bold">
-                // TABLE OF CONTENTS
+                // LEGAL OUTLINE
               </span>
               <span className="font-mono text-[10px] text-[#B7B7B7]">12 SECTIONS</span>
             </div>

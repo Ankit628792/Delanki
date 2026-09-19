@@ -175,7 +175,7 @@ export const ModernCaseStudySections: React.FC<MarkdownContentProps> = ({ markdo
         </div>
       </div>
     ),
-    code: ({ node, inline, className, children, ...props }: any) => {
+    code: ({ inline, children }: any) => {
       const codeString = String(children).replace(/\n$/, '');
       if (inline) {
         return (

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Zap, Shield, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Zap, Sparkles, CheckCircle2 } from 'lucide-react';
 
 export const CtaObjectScene: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);

@@ -310,6 +310,80 @@ export const getPrivacyPolicySEO = (): SEOConfig => {
 };
 
 /**
+ * 4a. Early Learner Privacy Policy SEO (/products/early-learner/privacy-policy)
+ */
+export const getEarlyLearnerPrivacyPolicySEO = (): SEOConfig => {
+  const origin = getSiteOrigin();
+  return {
+    title: 'Early Learner Privacy Policy — Children’s Data Safety & COPPA Compliance | Delanki',
+    description:
+      'Official privacy policy for Early Learner. 100% offline, zero data collection, zero third-party ads, and full COPPA & Google Play Families policy compliance.',
+    keywords: [
+      'Early Learner Privacy Policy',
+      'COPPA Compliance',
+      'Kids Learning App Privacy',
+      'Children Data Protection',
+      'Google Play Families Policy',
+      'Offline Educational App',
+      'Delanki Studio',
+    ],
+    canonicalPath: '/products/early-learner/privacy-policy',
+    ogType: 'article',
+    ogImage: `${origin}/da-black.svg`,
+    twitterCard: 'summary_large_image',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Early Learner Privacy Policy & COPPA Compliance',
+      url: `${origin}/products/early-learner/privacy-policy`,
+      description:
+        'Official privacy policy for Early Learner educational app. Complies with COPPA, GDPR-Kids, and Google Play Families requirements.',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Delanki',
+      },
+    },
+  };
+};
+
+/**
+ * 4b. Respira Privacy Policy SEO (/products/respira/privacy-policy)
+ */
+export const getRespiraPrivacyPolicySEO = (): SEOConfig => {
+  const origin = getSiteOrigin();
+  return {
+    title: 'Respira Privacy Policy — Mindful Breathing & Health Data Standards | Delanki',
+    description:
+      'Official privacy policy for Respira. 100% offline-first, local Room database storage, zero biometric telemetry tracking, no ads, and non-diagnostic wellness standards.',
+    keywords: [
+      'Respira Privacy Policy',
+      'Breathing App Privacy',
+      'Mindfulness Data Standards',
+      'Offline Health Privacy',
+      'Room Database Android Privacy',
+      'Non-Diagnostic Wellness',
+      'Delanki Studio',
+    ],
+    canonicalPath: '/products/respira/privacy-policy',
+    ogType: 'article',
+    ogImage: `${origin}/da-black.svg`,
+    twitterCard: 'summary_large_image',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Respira Privacy Policy & Health Wellness Data Standards',
+      url: `${origin}/products/respira/privacy-policy`,
+      description:
+        'Official privacy policy for Respira breathing assistant. Complete privacy with local Room database and zero biometric telemetry collection.',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Delanki',
+      },
+    },
+  };
+};
+
+/**
  * 5. Not Found / 404 Page SEO
  */
 export const getNotFoundSEO = (): SEOConfig => {

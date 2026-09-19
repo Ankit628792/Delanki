@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation, useNavigate } from '@tanstack/react-router';
+import { Link, useLocation } from '@tanstack/react-router';
 import { DelankiLogo } from '../common/DelankiLogo';
 import { COMPANY_DATA } from '../../data/siteData';
 import { scrollToElement, scrollToTop } from '../../lib/lenis';
@@ -12,7 +12,6 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onOpenInquiry }) => {
   const location = useLocation();
-  const navigate = useNavigate();
   const isSubPage = location.pathname !== '/';
 
   const handleSectionClick = (e: React.MouseEvent, target: string) => {
