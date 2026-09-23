@@ -646,8 +646,18 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenInquiry }) => 
                         </div>
 
                         <div className="space-y-1.5">
-                          <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-white uppercase group-hover:text-[#F22952] transition-colors">
-                            {product.title}
+                          <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-white uppercase transition-colors">
+                            <Link
+                              to="/product/$slug"
+                              params={{ slug: product.slug }}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                triggerPageTransition(`/product/${product.slug}`);
+                              }}
+                              className="hover:text-[#F22952] transition-colors"
+                            >
+                              {product.title}
+                            </Link>
                           </h3>
                           <p className="text-xs sm:text-sm text-[#B7B7B7] leading-relaxed">
                             {product.tagline}
@@ -752,8 +762,18 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenInquiry }) => 
 
                   {/* Title & Tagline: Fixed minimum container height for pixel-level desktop alignment */}
                   <div className="space-y-1 h-[78px] sm:h-[84px] flex flex-col justify-start">
-                    <h3 className="font-display font-extrabold text-xl sm:text-2xl text-white uppercase group-hover:text-[#F22952] transition-colors truncate">
-                      {product.title}
+                    <h3 className="font-display font-extrabold text-xl sm:text-2xl text-white uppercase transition-colors truncate">
+                      <Link
+                        to="/product/$slug"
+                        params={{ slug: product.slug }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          triggerPageTransition(`/product/${product.slug}`);
+                        }}
+                        className="hover:text-[#F22952] transition-colors"
+                      >
+                        {product.title}
+                      </Link>
                     </h3>
                     <p className="text-xs sm:text-sm text-[#B7B7B7] leading-relaxed line-clamp-2">
                       {product.tagline}
@@ -860,7 +880,17 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenInquiry }) => 
                 {selectedProduct.category} // {selectedProduct.year}
               </span>
               <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-white uppercase">
-                {selectedProduct.title}
+                <Link
+                  to="/product/$slug"
+                  params={{ slug: selectedProduct.slug }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    triggerPageTransition(`/product/${selectedProduct.slug}`);
+                  }}
+                  className="hover:text-[#F22952] transition-colors"
+                >
+                  {selectedProduct.title}
+                </Link>
               </h3>
               <p className="text-sm text-[#B7B7B7]">{selectedProduct.tagline}</p>
             </div>

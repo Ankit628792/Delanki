@@ -98,8 +98,18 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onOpenInquiry 
 
                     {/* Title & Tagline */}
                     <div className="space-y-2">
-                      <h3 className="font-display font-extrabold text-2xl sm:text-4xl text-white uppercase group-hover:text-[#F22952] transition-colors">
-                        {vectofi.title}
+                      <h3 className="font-display font-extrabold text-2xl sm:text-4xl text-white uppercase transition-colors">
+                        <Link
+                          to="/product/$slug"
+                          params={{ slug: vectofi.slug }}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            triggerPageTransition(`/product/${vectofi.slug}`);
+                          }}
+                          className="hover:text-[#F22952] transition-colors"
+                        >
+                          {vectofi.title}
+                        </Link>
                       </h3>
                       <p className="text-sm sm:text-base text-[#B7B7B7] leading-relaxed">
                         {vectofi.tagline}
@@ -241,8 +251,18 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onOpenInquiry 
 
                 {/* Title & Tagline */}
                 <div className="space-y-2">
-                  <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-white uppercase group-hover:text-[#F22952] transition-colors">
-                    {stickyNotes.title}
+                  <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-white uppercase transition-colors">
+                    <Link
+                      to="/product/$slug"
+                      params={{ slug: stickyNotes.slug }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        triggerPageTransition(`/product/${stickyNotes.slug}`);
+                      }}
+                      className="hover:text-[#F22952] transition-colors"
+                    >
+                      {stickyNotes.title}
+                    </Link>
                   </h3>
                   <p className="text-sm text-[#B7B7B7] leading-relaxed">
                     {stickyNotes.tagline}
@@ -364,8 +384,18 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onOpenInquiry 
 
                 {/* Title & Tagline */}
                 <div className="space-y-2">
-                  <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-white uppercase group-hover:text-[#F22952] transition-colors">
-                    {earlyLearner.title}
+                  <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-white uppercase transition-colors">
+                    <Link
+                      to="/product/$slug"
+                      params={{ slug: earlyLearner.slug }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        triggerPageTransition(`/product/${earlyLearner.slug}`);
+                      }}
+                      className="hover:text-[#F22952] transition-colors"
+                    >
+                      {earlyLearner.title}
+                    </Link>
                   </h3>
                   <p className="text-sm text-[#B7B7B7] leading-relaxed">
                     {earlyLearner.tagline}
@@ -530,7 +560,17 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onOpenInquiry 
                 {selectedProduct.category} // {selectedProduct.year}
               </span>
               <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-white uppercase">
-                {selectedProduct.title}
+                <Link
+                  to="/product/$slug"
+                  params={{ slug: selectedProduct.slug }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    triggerPageTransition(`/product/${selectedProduct.slug}`);
+                  }}
+                  className="hover:text-[#F22952] transition-colors"
+                >
+                  {selectedProduct.title}
+                </Link>
               </h3>
               <p className="text-sm text-[#B7B7B7]">{selectedProduct.tagline}</p>
             </div>

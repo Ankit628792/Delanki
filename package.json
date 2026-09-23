@@ -1,13 +1,15 @@
 {
   "name": "delanki",
   "private": true,
-  "version": "3.1.2.1",
-  "description": "Delanki — Digital Product Development Studio",
+  "version": "3.2.0",
+  "description": "Delanki — Digital Product Development Studio building web applications, mobile apps, extensions, and software products.",
+  "author": "Delanki Studio",
   "keywords": [
     "delanki",
     "product-studio",
     "digital-agency",
     "software-development",
+    "mobile-apps",
     "web-development",
     "ui-ux-design",
     "react",
