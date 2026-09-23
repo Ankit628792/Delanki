@@ -43,10 +43,7 @@ export const Manifesto: React.FC = () => {
         {/* Value Points Pill Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
           {values.map((val, idx) => (
-            <div
-              key={idx}
-              className="p-5 rounded-xl bg-[#141414] border border-white/10 hover:border-[#F22952]/40 transition-all duration-300 flex items-start gap-3.5 group"
-            >
+            <div key={idx} className="p-5 rounded-xl bg-[#141414] border border-white/10 hover:border-[#F22952]/40 transition-all duration-300 flex items-start gap-3.5 group h-full">
               <CheckCircle2 className="w-5 h-5 text-[#F22952] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
               <span className="text-sm font-medium text-white/90 leading-snug">
                 {val}
@@ -56,7 +53,7 @@ export const Manifesto: React.FC = () => {
         </div>
 
         {/* Dynamic Concept Stream: IDEA -> DESIGN -> ENGINEERING -> LAUNCH */}
-        <div className="mt-8 p-6 md:p-8 rounded-2xl bg-[#111111] border border-white/15 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="mt-8 p-6 md:p-8 rounded-2xl bg-[#111111] border border-white/15 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
           <div className="flex items-center gap-2 font-mono text-xs text-[#B7B7B7] uppercase shrink-0">
             <Sparkles className="w-4 h-4 text-[#F22952]" />
             <span>EXECUTION STREAM</span>

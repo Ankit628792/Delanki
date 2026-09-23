@@ -60,7 +60,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
               <button
                 key={srv.id}
                 onClick={() => setActiveTab(srv.id)}
-                className={`p-6 rounded-2xl text-left transition-all duration-300 flex flex-col justify-between border relative group ${
+                className={`w-full h-full p-6 rounded-2xl text-left transition-all duration-300 flex flex-col justify-between border relative group ${
                   isActive
                     ? 'bg-[#181818] border-[#F22952] shadow-[0_0_30px_rgba(242,41,82,0.2)] -translate-y-1'
                     : 'bg-[#111111] border-white/10 hover:border-white/30 hover:bg-[#141414]'
@@ -134,243 +134,236 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                 PRIMARY TECHNOLOGIES:
               </div>
               <div className="flex flex-wrap gap-2">
-                {currentService.technologies.map((t) => (
+                {currentService.technologies.map((tech, idx) => (
                   <span
-                    key={t}
-                    className="font-mono text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white font-medium"
+                    key={idx}
+                    className="font-mono text-xs px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-white hover:border-[#F22952]/40 transition-colors"
                   >
-                    {t}
+                    {tech}
                   </span>
                 ))}
               </div>
             </div>
 
-            {/* Metrics and Action */}
-            <div className="pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
-              {currentService.metrics && (
-                <div className="flex items-center gap-6">
-                  {currentService.metrics.map((m, idx) => (
-                    <div key={idx}>
-                      <div className="font-mono text-xl font-bold text-[#F22952]">{m.value}</div>
-                      <div className="font-mono text-[10px] text-[#B7B7B7] uppercase">{m.label}</div>
-                    </div>
-                  ))}
-                </div>
-              )}
-
+            {/* Service Action Button */}
+            <div className="pt-4">
               <button
                 onClick={() => onSelectService(currentService)}
-                className="group inline-flex items-center gap-2 bg-[#F22952] hover:bg-[#ff305c] text-white font-mono text-xs uppercase tracking-wider font-bold px-5 py-3 rounded-xl transition-all shadow-[0_0_20px_rgba(242,41,82,0.3)] ml-auto"
-                data-cursor="INQUIRE"
+                className="inline-flex items-center gap-3 bg-[#F22952] hover:bg-[#ff305c] text-white font-mono text-xs uppercase tracking-wider font-bold px-6 py-3.5 rounded-xl transition-all shadow-[0_0_20px_rgba(242,41,82,0.3)] hover:shadow-[0_0_30px_rgba(242,41,82,0.6)]"
+                data-cursor="DISCUSS"
               >
-                <span>INQUIRE ABOUT {currentService.title.split(' ')[0]}</span>
-                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                <span>REQUEST {currentService.title}</span>
+                <ArrowUpRight className="w-4 h-4" />
               </button>
             </div>
           </div>
 
-          {/* Right: Interactive Specialized Visual Mockup */}
+          {/* Right: Live Interactive Visual Mockup / Simulation */}
           <div className="lg:col-span-6 w-full flex items-center justify-center">
             
-            {/* Visual 1: Web App Browser Window */}
+            {/* Visual 1: Web App Browser Simulation */}
             {currentService.id === 'web-apps' && (
               <div className="w-full rounded-2xl bg-[#090909] border border-white/15 overflow-hidden shadow-2xl">
-                {/* Browser top chrome */}
-                <div className="bg-[#141414] px-4 py-3 border-b border-white/10 flex items-center justify-between">
+                {/* Browser Top Bar */}
+                <div className="bg-[#181818] px-4 py-3 border-b border-white/10 flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <span className="w-3 h-3 rounded-full bg-[#FF5F56]" />
                     <span className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
                     <span className="w-3 h-3 rounded-full bg-[#27C93F]" />
                   </div>
-                  <div className="bg-[#090909] border border-white/10 rounded-md px-4 py-1 text-[11px] font-mono text-[#B7B7B7] flex items-center gap-2">
-                    <span className="text-emerald-400">https://</span>app.delanki-client.io/analytics
+                  <div className="font-mono text-[11px] text-[#B7B7B7] bg-[#0c0c0c] px-4 py-1 rounded-md border border-white/10 flex items-center gap-1.5">
+                    <span className="text-emerald-400">https://</span>
+                    <span className="text-white">app.delanki.com/dashboard</span>
                   </div>
-                  <div className="flex items-center gap-2 text-[#B7B7B7]">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <span className="text-[10px] font-mono">LIVE</span>
-                  </div>
+                  <div className="w-12" />
                 </div>
 
-                {/* Simulated Web App UI */}
+                {/* Dashboard Screen Content */}
                 <div className="p-6 space-y-4 font-mono text-xs">
-                  <div className="flex justify-between items-center pb-3 border-b border-white/10">
+                  <div className="flex items-center justify-between pb-4 border-b border-white/10">
                     <div>
-                      <div className="text-white font-bold font-sans text-base">Workspace Dashboard</div>
-                      <div className="text-[10px] text-[#B7B7B7]">Sub-second edge data sync</div>
+                      <div className="text-[#B7B7B7] text-[10px]">REAL-TIME LATENCY</div>
+                      <div className="text-emerald-400 font-bold text-base flex items-center gap-1">
+                        <span>12ms</span>
+                        <span className="text-[10px] text-white/50">(Global Edge)</span>
+                      </div>
                     </div>
-                    <span className="px-2.5 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded text-[10px]">
-                      Latency: 14ms
-                    </span>
-                  </div>
-
-                  {/* Simulated Metrics Grid */}
-                  <div className="grid grid-cols-3 gap-3">
-                    <div className="p-3 rounded bg-white/5 border border-white/10">
-                      <div className="text-[10px] text-[#B7B7B7]">RPS THROUGHPUT</div>
-                      <div className="text-lg font-bold text-white font-sans mt-1">14.2k</div>
-                    </div>
-                    <div className="p-3 rounded bg-white/5 border border-white/10">
-                      <div className="text-[10px] text-[#B7B7B7]">CACHE HIT</div>
-                      <div className="text-lg font-bold text-[#F22952] font-sans mt-1">99.4%</div>
-                    </div>
-                    <div className="p-3 rounded bg-white/5 border border-white/10">
-                      <div className="text-[10px] text-[#B7B7B7]">UPTIME</div>
-                      <div className="text-lg font-bold text-emerald-400 font-sans mt-1">99.99%</div>
+                    <div className="text-right">
+                      <div className="text-[#B7B7B7] text-[10px]">UPTIME SLA</div>
+                      <div className="text-white font-bold text-base">99.99%</div>
                     </div>
                   </div>
 
-                  {/* Live Activity Feed simulation */}
-                  <div className="p-3 rounded bg-white/5 border border-white/10 space-y-2">
-                    <div className="flex items-center justify-between text-[11px] text-white">
-                      <span className="flex items-center gap-1.5">
-                        <Sparkles className="w-3.5 h-3.5 text-[#F22952]" /> Active Sync Pipeline
-                      </span>
-                      <span className="text-emerald-400">OPTIMAL</span>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="p-3 rounded-xl bg-white/5 border border-white/10 space-y-1">
+                      <div className="text-[#B7B7B7] text-[10px]">CONCURRENCY</div>
+                      <div className="text-white font-bold text-sm">100,000+ Req/s</div>
+                      <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                        <div className="h-full bg-[#F22952] w-3/4 rounded-full animate-pulse" />
+                      </div>
                     </div>
-                    <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
-                      <div className="h-full bg-gradient-to-r from-[#F22952] to-emerald-400 w-4/5 animate-pulse" />
+                    <div className="p-3 rounded-xl bg-white/5 border border-white/10 space-y-1">
+                      <div className="text-[#B7B7B7] text-[10px]">SSR HYDRATION</div>
+                      <div className="text-emerald-400 font-bold text-sm">0.08s (Zero CLS)</div>
+                      <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                        <div className="h-full bg-emerald-400 w-full rounded-full" />
+                      </div>
                     </div>
+                  </div>
+
+                  <div className="p-3 rounded-xl bg-[#141414] border border-white/10 text-[11px] text-white/70 space-y-1">
+                    <span className="text-[#F22952] font-semibold">// Micro-frontend Architecture</span>
+                    <p className="text-[10px] text-[#B7B7B7] font-sans">
+                      Next.js 15 App Router, React Server Components, tRPC, PostgreSQL with Prisma ORM.
+                    </p>
                   </div>
                 </div>
               </div>
             )}
 
-            {/* Visual 2: Cross-Platform App Mockup */}
+            {/* Visual 2: Cross-Platform Mobile Device Simulator */}
             {currentService.id === 'cross-platform' && (
-              <div className="w-full flex flex-col items-center gap-4">
-                <div className="flex items-center gap-2 bg-[#141414] p-1.5 rounded-xl border border-white/10 font-mono text-xs">
+              <div className="w-full max-w-sm flex flex-col items-center gap-3">
+                {/* Switcher */}
+                <div className="flex items-center gap-2 p-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono">
                   <button
                     onClick={() => setDeviceView('mobile')}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-all ${
+                    className={`px-3 py-1 rounded-full flex items-center gap-1.5 transition-all ${
                       deviceView === 'mobile' ? 'bg-[#F22952] text-white' : 'text-[#B7B7B7] hover:text-white'
                     }`}
                   >
-                    <Smartphone className="w-3.5 h-3.5" /> Mobile (React Native)
+                    <Smartphone className="w-3.5 h-3.5" />
+                    <span>iOS & Android</span>
                   </button>
                   <button
                     onClick={() => setDeviceView('tablet')}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-all ${
+                    className={`px-3 py-1 rounded-full flex items-center gap-1.5 transition-all ${
                       deviceView === 'tablet' ? 'bg-[#F22952] text-white' : 'text-[#B7B7B7] hover:text-white'
                     }`}
                   >
-                    <Tablet className="w-3.5 h-3.5" /> Tablet Adaptive
+                    <Tablet className="w-3.5 h-3.5" />
+                    <span>Tablet Adaptive</span>
                   </button>
                 </div>
 
                 {/* Device Frame */}
-                <div className={`transition-all duration-500 rounded-3xl bg-[#090909] border-4 border-[#242424] p-4 shadow-2xl ${
-                  deviceView === 'mobile' ? 'w-64 sm:w-72 h-96' : 'w-full max-w-md h-96'
-                }`}>
-                  <div className="w-full h-full rounded-2xl bg-[#141414] border border-white/10 p-4 flex flex-col justify-between">
-                    <div className="flex justify-between items-center font-mono text-[10px] text-[#B7B7B7]">
-                      <span>9:41 AM</span>
-                      <span className="text-[#F22952]">120 FPS</span>
+                <div className="w-full bg-[#050505] border-2 border-white/20 rounded-[32px] p-3 shadow-2xl relative overflow-hidden">
+                  {/* Dynamic Island Notch */}
+                  <div className="w-24 h-4 bg-black rounded-full mx-auto mb-3 flex items-center justify-end px-2">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+                  </div>
+
+                  {/* App Interface Mockup */}
+                  <div className="bg-[#141414] rounded-2xl p-4 space-y-3 font-mono text-xs">
+                    <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                      <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-[#F22952]" />
+                        <span className="font-bold text-white text-[11px]">REACT NATIVE EXPO</span>
+                      </div>
+                      <span className="text-[10px] text-emerald-400 font-semibold">60 FPS NATIVE</span>
                     </div>
 
-                    <div className="space-y-3 my-auto text-center">
-                      <div className="w-12 h-12 mx-auto rounded-2xl bg-[#F22952]/20 border border-[#F22952] flex items-center justify-center text-[#F22952]">
-                        <Smartphone className="w-6 h-6" />
+                    <div className="space-y-2">
+                      <div className="h-16 rounded-xl bg-gradient-to-r from-[#F22952]/20 to-white/5 border border-white/10 p-3 flex items-center justify-between">
+                        <div>
+                          <div className="text-[10px] text-[#B7B7B7]">SMOOTH GESTURES</div>
+                          <div className="text-white font-bold text-xs font-sans">Reanimated 3 Physics</div>
+                        </div>
+                        <Play className="w-5 h-5 text-[#F22952] fill-[#F22952]" />
                       </div>
-                      <div className="font-display font-bold text-white text-base">
-                        React Native UI
-                      </div>
-                      <p className="text-xs text-[#B7B7B7]">
-                        Cross-platform native performance, offline SQLite cache & gesture engine.
-                      </p>
-                    </div>
 
-                    <div className="h-10 w-full rounded-xl bg-[#F22952] flex items-center justify-center text-white font-mono text-xs font-bold shadow-lg shadow-[#F22952]/30">
-                      INTERACT →
+                      <div className="grid grid-cols-2 gap-2 text-[10px]">
+                        <div className="p-2.5 rounded-lg bg-white/5 border border-white/10">
+                          <div className="text-[#B7B7B7]">OFFLINE CACHE</div>
+                          <div className="text-white font-bold">WatermelonDB</div>
+                        </div>
+                        <div className="p-2.5 rounded-lg bg-white/5 border border-white/10">
+                          <div className="text-[#B7B7B7]">DEPLOYMENT</div>
+                          <div className="text-white font-bold">EAS OTA Updates</div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             )}
 
-            {/* Visual 3: Chrome Extension Simulator */}
+            {/* Visual 3: Chrome Extension Interactive Popup Simulator */}
             {currentService.id === 'chrome-extensions' && (
-              <div className="w-full max-w-md rounded-2xl bg-[#090909] border border-white/15 overflow-hidden shadow-2xl">
-                {/* Browser bar */}
-                <div className="bg-[#181818] p-3 border-b border-white/10 flex items-center justify-between">
+              <div className="w-full max-w-md rounded-2xl bg-[#0e0e0e] border border-white/15 p-5 shadow-2xl space-y-4">
+                <div className="flex items-center justify-between border-b border-white/10 pb-3">
                   <div className="flex items-center gap-2">
-                    <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                  </div>
-                  <div className="bg-[#090909] border border-white/10 rounded px-3 py-1 text-[10px] font-mono text-[#B7B7B7]">
-                    github.com/pull/482
-                  </div>
-                  <div className="flex items-center gap-1.5 p-1 bg-[#F22952]/20 border border-[#F22952] rounded">
-                    <Puzzle className="w-3.5 h-3.5 text-[#F22952]" />
-                  </div>
-                </div>
-
-                {/* Injected Extension Popup View */}
-                <div className="p-5 space-y-4">
-                  <div className="flex items-center justify-between border-b border-white/10 pb-3">
-                    <div className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#F22952] animate-ping" />
-                      <span className="font-display font-bold text-sm text-white">Del<span className="text-[#F22952]">anki</span> Browser Copilot</span>
-                    </div>
-                    <span className="font-mono text-[9px] px-2 py-0.5 rounded bg-emerald-400/10 text-emerald-400 border border-emerald-400/20">
-                      MV3 ACTIVE
+                    <Puzzle className="w-5 h-5 text-[#F22952]" />
+                    <span className="font-mono text-xs font-bold text-white uppercase">
+                      CHROME MANIFEST V3
                     </span>
                   </div>
+                  <span className="font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                    APPROVED
+                  </span>
+                </div>
 
-                  <div className="space-y-2 text-xs font-mono">
-                    <div className="p-2.5 rounded bg-white/5 border border-white/10 flex items-center justify-between">
-                      <span className="text-[#B7B7B7]">DOM Node Inspection:</span>
-                      <span className="text-white">Active (34 nodes)</span>
+                <div className="space-y-3 font-mono text-xs">
+                  <div className="bg-[#161616] p-3 rounded-xl border border-white/10 space-y-1.5">
+                    <div className="text-[#B7B7B7] text-[10px] flex items-center justify-between">
+                      <span>SERVICE WORKER LIFECYCLE</span>
+                      <span className="text-white/60">0ms IDLE MEMORY</span>
                     </div>
-                    <div className="p-2.5 rounded bg-white/5 border border-white/10 flex items-center justify-between">
-                      <span className="text-[#B7B7B7]">AI Summarizer Pipeline:</span>
-                      <span className="text-emerald-400">Hooked to Tab</span>
-                    </div>
-                    <div className="p-2.5 rounded bg-white/5 border border-white/10 flex items-center justify-between">
-                      <span className="text-[#B7B7B7]">Storage Quota:</span>
-                      <span className="text-[#F22952]">0.8 MB / 10 MB</span>
+                    <div className="text-white text-[11px] leading-tight">
+                      Zero DOM memory leaks with modern Shadow DOM content-scripts injection.
                     </div>
                   </div>
 
-                  <button className="w-full py-2.5 bg-[#F22952] hover:bg-[#ff305c] text-white font-mono text-xs font-bold rounded-lg transition-colors flex items-center justify-center gap-2">
-                    <Play className="w-3.5 h-3.5" /> Execute Workflow Automation
-                  </button>
+                  <div className="grid grid-cols-2 gap-2 text-[11px]">
+                    <div className="p-3 rounded-xl bg-white/5 border border-white/10 space-y-1">
+                      <span className="text-[#F22952] text-[10px]">STORAGE SYNC</span>
+                      <div className="text-white font-semibold">chrome.storage.local</div>
+                    </div>
+                    <div className="p-3 rounded-xl bg-white/5 border border-white/10 space-y-1">
+                      <span className="text-[#F22952] text-[10px]">AI MODEL HOOK</span>
+                      <div className="text-white font-semibold">Client-side Gemini Nano</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
 
-            {/* Visual 4: VS Code Extension Simulator */}
+            {/* Visual 4: VS Code Extension Terminal Simulator */}
             {currentService.id === 'vscode-extensions' && (
-              <div className="w-full rounded-2xl bg-[#090909] border border-white/15 overflow-hidden shadow-2xl font-mono text-xs">
-                {/* VS Code titlebar */}
-                <div className="bg-[#181818] px-4 py-2 border-b border-white/10 flex items-center justify-between">
-                  <div className="flex items-center gap-2 text-[#B7B7B7]">
-                    <FileCode2 className="w-3.5 h-3.5 text-[#F22952]" />
-                    <span className="text-[11px] text-white font-medium">extension.ts — Del<span className="text-[#F22952]">anki</span> Studio</span>
+              <div className="w-full rounded-2xl bg-[#090909] border border-white/15 overflow-hidden shadow-2xl">
+                {/* VS Code Tab Bar */}
+                <div className="bg-[#181818] px-4 py-2.5 border-b border-white/10 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <FileCode2 className="w-4 h-4 text-[#F22952]" />
+                    <span className="font-mono text-xs text-white font-medium">extension.ts</span>
                   </div>
                   <button
                     onClick={handleCopy}
-                    className="flex items-center gap-1 text-[10px] text-[#B7B7B7] hover:text-white"
+                    className="flex items-center gap-1.5 text-[11px] font-mono text-[#B7B7B7] hover:text-white px-2 py-0.5 rounded bg-white/5 hover:bg-white/10"
                   >
                     {copiedCode ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
-                    <span>{copiedCode ? 'Copied' : 'Copy'}</span>
+                    <span>{copiedCode ? 'COPIED' : 'COPY'}</span>
                   </button>
                 </div>
 
-                {/* Code Window */}
-                <div className="p-4 bg-[#0d0d0d] space-y-1.5 overflow-x-auto text-[11px] leading-relaxed">
-                  <div className="text-[#6A9955]">// Delanki Custom VS Code Language Protocol Server</div>
+                {/* Code Body */}
+                <div className="p-4 sm:p-5 font-mono text-xs sm:text-[13px] text-white/90 space-y-1 leading-relaxed bg-[#0c0c0c] overflow-x-auto">
                   <div>
-                    <span className="text-[#C586C0]">export async function</span>{' '}
-                    <span className="text-[#DCDCAA]">activate</span>(
-                    <span className="text-[#9CDCFE]">context</span>: <span className="text-[#4EC9B0]">ExtensionContext</span>
-                    ) &#123;
+                    <span className="text-[#569CD6]">import</span> *{' '}
+                    <span className="text-[#569CD6]">as</span> vscode{' '}
+                    <span className="text-[#569CD6]">from</span>{' '}
+                    <span className="text-[#CE9178]">'vscode'</span>;
+                  </div>
+                  <div className="text-white/40 pt-1">// VS Code Extension API activation</div>
+                  <div>
+                    <span className="text-[#569CD6]">export function</span>{' '}
+                    <span className="text-[#DCDCAA]">activate</span>(context: vscode.ExtensionContext) &#123;
+                  </div>
+                  <div className="pl-4 text-emerald-400">
+                    console.log('Delanki Extension Suite Active');
                   </div>
                   <div className="pl-4">
-                    <span className="text-[#9CDCFE]">const</span> <span className="text-[#4FC1FF]">copilot</span> ={' '}
-                    <span className="text-[#C586C0]">new</span> <span className="text-[#4EC9B0]">DelankiASTInspector</span>();
-                  </div>
-                  <div className="pl-4">
-                    <span className="text-[#9CDCFE]">context</span>.subscriptions.<span className="text-[#DCDCAA]">push</span>(
+                    context.subscriptions.<span className="text-[#DCDCAA]">push</span>(
                   </div>
                   <div className="pl-8">
                     vscode.commands.<span className="text-[#DCDCAA]">registerCommand</span>(

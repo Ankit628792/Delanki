@@ -136,12 +136,10 @@ export const ModernCaseStudySections: React.FC<MarkdownContentProps> = ({ markdo
       </p>
     ),
     h3: ({ children }: any) => (
-      <div className="flex items-center gap-3 mt-8 mb-4 pt-2">
+      <h3 className="flex items-center gap-3 font-display font-bold text-xl sm:text-2xl text-white tracking-tight uppercase mt-8 mb-4 pt-2">
         <span className="w-2 h-2 rounded-full bg-[#F22952] shrink-0" />
-        <h3 className="font-display font-bold text-xl sm:text-2xl text-white tracking-tight uppercase">
-          {children}
-        </h3>
-      </div>
+        <span>{children}</span>
+      </h3>
     ),
     h4: ({ children }: any) => (
       <h4 className="font-mono text-sm uppercase tracking-wider text-[#F22952] font-bold mt-5 mb-2 flex items-center gap-2">
@@ -168,22 +166,21 @@ export const ModernCaseStudySections: React.FC<MarkdownContentProps> = ({ markdo
       </li>
     ),
     blockquote: ({ children }: any) => (
-      <div className="my-6 p-6 sm:p-7 rounded-2xl bg-gradient-to-r from-[#F22952]/10 via-white/[0.03] to-transparent border-l-4 border-[#F22952] border-y border-r border-white/5 relative overflow-hidden">
+      <blockquote className="my-6 p-6 sm:p-7 rounded-2xl bg-gradient-to-r from-[#F22952]/10 via-white/[0.03] to-transparent border-l-4 border-[#F22952] border-y border-r border-white/5 relative overflow-hidden">
         <Quote className="w-8 h-8 text-[#F22952]/30 absolute top-4 right-4 pointer-events-none" />
         <div className="italic text-white text-base sm:text-lg leading-relaxed relative z-10 font-sans">
           {children}
         </div>
-      </div>
+      </blockquote>
     ),
-    code: ({ inline, children }: any) => {
-      const codeString = String(children).replace(/\n$/, '');
-      if (inline) {
-        return (
-          <code className="font-mono text-xs px-2 py-0.5 rounded bg-white/10 text-[#ff4b6e] border border-white/10">
-            {children}
-          </code>
-        );
+    pre: ({ children }: any) => {
+      let codeText = '';
+      if (children && children.props && children.props.children) {
+        codeText = String(children.props.children).replace(/\n$/, '');
+      } else if (typeof children === 'string') {
+        codeText = children.replace(/\n$/, '');
       }
+
       return (
         <div className="relative group my-5 rounded-2xl overflow-hidden border border-white/15 bg-[#090909]">
           <div className="flex items-center justify-between px-4 py-2.5 bg-white/5 border-b border-white/10 font-mono text-xs text-white/60">
@@ -191,22 +188,25 @@ export const ModernCaseStudySections: React.FC<MarkdownContentProps> = ({ markdo
               <Code2 className="w-3.5 h-3.5 text-[#F22952]" />
               <span>CODE PREVIEW</span>
             </span>
-            <button
-              onClick={() => handleCopyCode(codeString)}
-              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-white/10 hover:bg-white/20 text-white/80 hover:text-white transition-colors"
-            >
-              {copiedCode === codeString ? (
-                <>
-                  <Check className="w-3 h-3 text-emerald-400" />
-                  <span className="text-[11px] text-emerald-400">COPIED</span>
-                </>
-              ) : (
-                <>
-                  <Copy className="w-3 h-3" />
-                  <span className="text-[11px]">COPY</span>
-                </>
-              )}
-            </button>
+            {codeText && (
+              <button
+                type="button"
+                onClick={() => handleCopyCode(codeText)}
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-white/10 hover:bg-white/20 text-white/80 hover:text-white transition-colors"
+              >
+                {copiedCode === codeText ? (
+                  <>
+                    <Check className="w-3 h-3 text-emerald-400" />
+                    <span className="text-[11px] text-emerald-400">COPIED</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-3 h-3" />
+                    <span className="text-[11px]">COPY</span>
+                  </>
+                )}
+              </button>
+            )}
           </div>
           <pre className="p-4 sm:p-5 font-mono text-xs sm:text-sm text-emerald-300 overflow-x-auto leading-relaxed bg-[#080808]">
             {children}
@@ -214,11 +214,26 @@ export const ModernCaseStudySections: React.FC<MarkdownContentProps> = ({ markdo
         </div>
       );
     },
+    code: ({ node, className, children, ...props }: any) => {
+      const isBlock = Boolean(className) || (typeof children === 'string' && children.includes('\n'));
+      if (!isBlock) {
+        return (
+          <code className="font-mono text-xs px-1.5 py-0.5 rounded bg-white/10 text-[#ff4b6e] border border-white/10 font-normal inline" {...props}>
+            {children}
+          </code>
+        );
+      }
+      return (
+        <code className={className} {...props}>
+          {children}
+        </code>
+      );
+    },
     strong: ({ children }: any) => (
       <strong className="text-white font-semibold">{children}</strong>
     ),
     hr: () => (
-      <div className="my-8 border-t border-white/10" />
+      <hr className="my-8 border-t border-white/10" />
     ),
   };
 
