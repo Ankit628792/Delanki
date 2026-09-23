@@ -384,6 +384,78 @@ export const getRespiraPrivacyPolicySEO = (): SEOConfig => {
 };
 
 /**
+ * 4c. Love Alarm 2.0 Privacy Policy SEO (/products/love-alarm/privacy-policy)
+ */
+export const getLoveAlarmPrivacyPolicySEO = (): SEOConfig => {
+  const origin = getSiteOrigin();
+  return {
+    title: 'Love Alarm 2.0 Privacy Policy — High-Precision Geolocation & Proximity Standards | Delanki',
+    description:
+      'Official privacy policy for Love Alarm 2.0. Ephemeral 10-meter proximity processing, socket synchronization, no location selling, and end-to-end user data controls.',
+    keywords: [
+      'Love Alarm Privacy Policy',
+      'Proximity Location Privacy',
+      '10-Meter Location Accuracy',
+      'Socket IO Ephemeral Data',
+      'Mobile App Location Security',
+      'Delanki Studio',
+    ],
+    canonicalPath: '/products/love-alarm/privacy-policy',
+    ogType: 'article',
+    ogImage: `${origin}/da-black.svg`,
+    twitterCard: 'summary_large_image',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Love Alarm 2.0 Privacy Policy & Geolocation Standards',
+      url: `${origin}/products/love-alarm/privacy-policy`,
+      description:
+        'Official privacy policy for Love Alarm 2.0 proximity app. High precision location engine standards and strict non-monetization of location data.',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Delanki',
+      },
+    },
+  };
+};
+
+/**
+ * 4d. AirBeam-Share Privacy Policy SEO (/products/airbeam-share/privacy-policy)
+ */
+export const getAirBeamSharePrivacyPolicySEO = (): SEOConfig => {
+  const origin = getSiteOrigin();
+  return {
+    title: 'AirBeam-Share Privacy Policy — Zero-Network Optical Transfer & Camera Safety | Delanki',
+    description:
+      'Official privacy policy for AirBeam-Share. 100% offline air-gapped file sharing, local optical QR stream scanning, zero network permissions, and private Room storage.',
+    keywords: [
+      'AirBeam Share Privacy Policy',
+      'Air-gapped File Sharing Privacy',
+      'Zero Network Transfer Safety',
+      'Optical QR Stream Camera Privacy',
+      'Offline Android Sandbox',
+      'Delanki Studio',
+    ],
+    canonicalPath: '/products/airbeam-share/privacy-policy',
+    ogType: 'article',
+    ogImage: `${origin}/da-black.svg`,
+    twitterCard: 'summary_large_image',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'AirBeam-Share Privacy Policy & Air-gapped Optical Standards',
+      url: `${origin}/products/airbeam-share/privacy-policy`,
+      description:
+        'Official privacy policy for AirBeam-Share offline file transfer app. Zero network communication, local optical QR scanning, and local sandbox data safety.',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Delanki',
+      },
+    },
+  };
+};
+
+/**
  * 5. Not Found / 404 Page SEO
  */
 export const getNotFoundSEO = (): SEOConfig => {

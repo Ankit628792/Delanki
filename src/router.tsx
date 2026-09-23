@@ -11,6 +11,8 @@ import { NotFoundPage } from './pages/NotFoundPage';
 import { ProductDetailPage } from './pages/product/ProductDetailPage';
 import { EarlyLearnerPrivacyPolicyPage } from './pages/product/early-learner/EarlyLearnerPrivacyPolicyPage';
 import { RespiraPrivacyPolicyPage } from './pages/product/respira/RespiraPrivacyPolicyPage';
+import { LoveAlarmPrivacyPolicyPage } from './pages/product/love-alarm/LoveAlarmPrivacyPolicyPage';
+import { AirBeamSharePrivacyPolicyPage } from './pages/product/airbeam-share/AirBeamSharePrivacyPolicyPage';
 
 const FallbackComponent = () => {
   return <NotFoundPage />;
@@ -45,6 +47,18 @@ const respiraPrivacyPolicyRoute = createRoute({
   component: RespiraPrivacyPolicyPage,
 });
 
+const loveAlarmPrivacyPolicyRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/products/love-alarm/privacy-policy',
+  component: LoveAlarmPrivacyPolicyPage,
+});
+
+const airBeamSharePrivacyPolicyRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/products/airbeam-share/privacy-policy',
+  component: AirBeamSharePrivacyPolicyPage,
+});
+
 // Also support singular /product/ alias
 const earlyLearnerPrivacyPolicyAliasRoute = createRoute({
   getParentRoute: () => rootRoute,
@@ -56,6 +70,18 @@ const respiraPrivacyPolicyAliasRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/product/respira/privacy-policy',
   component: RespiraPrivacyPolicyPage,
+});
+
+const loveAlarmPrivacyPolicyAliasRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/product/love-alarm/privacy-policy',
+  component: LoveAlarmPrivacyPolicyPage,
+});
+
+const airBeamSharePrivacyPolicyAliasRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/product/airbeam-share/privacy-policy',
+  component: AirBeamSharePrivacyPolicyPage,
 });
 
 const productDetailRoute = createRoute({
@@ -75,8 +101,12 @@ const routeTree = rootRoute.addChildren([
   productsRoute,
   earlyLearnerPrivacyPolicyRoute,
   respiraPrivacyPolicyRoute,
+  loveAlarmPrivacyPolicyRoute,
+  airBeamSharePrivacyPolicyRoute,
   earlyLearnerPrivacyPolicyAliasRoute,
   respiraPrivacyPolicyAliasRoute,
+  loveAlarmPrivacyPolicyAliasRoute,
+  airBeamSharePrivacyPolicyAliasRoute,
   productDetailRoute,
   privacyPolicyRoute,
 ]);
