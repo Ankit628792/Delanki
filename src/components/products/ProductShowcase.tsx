@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { PRODUCTS_DATA } from '../../data/siteData';
-import { ProductItem } from '../../types';
 import {
   ArrowUpRight,
   Github,
   ExternalLink,
   Check,
-  X,
   Layers,
   Terminal,
   Sparkles,
@@ -22,8 +20,6 @@ interface ProductShowcaseProps {
 }
 
 export const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onOpenInquiry }) => {
-  const [selectedProduct, setSelectedProduct] = useState<ProductItem | null>(null);
-
   // Interactive mock states for the visual widgets
   const [activeSvgIcon, setActiveSvgIcon] = useState<'layers' | 'cpu' | 'terminal' | 'sparkles'>('layers');
   const [activeLetter, setActiveLetter] = useState<'क' | 'A' | '3' | 'अ'>('क');
@@ -543,95 +539,6 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onOpenInquiry 
         </div>
 
       </div>
-
-      {/* Product Details Modal */}
-      {selectedProduct && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md">
-          <div className="bg-[#121212] border border-white/20 rounded-3xl p-6 sm:p-8 max-w-xl w-full space-y-6 relative shadow-2xl max-h-[90vh] overflow-y-auto">
-            <button
-              onClick={() => setSelectedProduct(null)}
-              className="absolute top-5 right-5 sm:top-6 sm:right-6 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            <div className="space-y-2 pr-8">
-              <span className="font-mono text-xs text-[#F22952] uppercase tracking-wider">
-                {selectedProduct.category} // {selectedProduct.year}
-              </span>
-              <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-white uppercase">
-                <Link
-                  to="/product/$slug"
-                  params={{ slug: selectedProduct.slug }}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    triggerPageTransition(`/product/${selectedProduct.slug}`);
-                  }}
-                  className="hover:text-[#F22952] transition-colors"
-                >
-                  {selectedProduct.title}
-                </Link>
-              </h3>
-              <p className="text-sm text-[#B7B7B7]">{selectedProduct.tagline}</p>
-            </div>
-
-            <p className="text-sm text-white/90 leading-relaxed border-t border-b border-white/10 py-4">
-              {selectedProduct.description}
-            </p>
-
-            <div className="space-y-3">
-              <span className="font-mono text-xs text-[#B7B7B7] uppercase block">TECHNOLOGY STACK:</span>
-              <div className="flex flex-wrap gap-2">
-                {selectedProduct.technologies.map((t) => (
-                  <span key={t} className="font-mono text-xs px-3 py-1 rounded bg-white/5 border border-white/10 text-white">
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="pt-4 flex flex-wrap items-center justify-between gap-3">
-              <div className="flex items-center gap-2">
-                {selectedProduct.liveUrl && (
-                  <a
-                    href={selectedProduct.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-3.5 sm:px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-mono text-xs uppercase transition-colors flex items-center gap-1.5"
-                  >
-                    <span className="sm:hidden">{selectedProduct.category === 'VS Code Extension' ? 'INSTALL' : selectedProduct.liveUrl.includes('play.google.com') ? 'DOWNLOAD' : 'VISIT'}</span>
-                    <span className="hidden sm:inline">{selectedProduct.category === 'VS Code Extension' ? 'INSTALL EXTENSION' : selectedProduct.liveUrl.includes('play.google.com') ? 'DOWNLOAD NOW' : 'VISIT LIVE SITE'}</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
-                )}
-                {selectedProduct.githubUrl && !selectedProduct.liveUrl && (
-                  <a
-                    href={selectedProduct.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-3.5 sm:px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-mono text-xs uppercase transition-colors flex items-center gap-1.5"
-                  >
-                    <Github className="w-3.5 h-3.5" />
-                    <span className="sm:hidden">CODE</span>
-                    <span className="hidden sm:inline">GITHUB CODE</span>
-                  </a>
-                )}
-              </div>
-
-              <button
-                onClick={() => {
-                  setSelectedProduct(null);
-                  onOpenInquiry('build');
-                }}
-                className="px-4 sm:px-6 py-2 rounded-xl bg-[#F22952] text-white font-mono text-xs font-bold uppercase shadow-lg shadow-[#F22952]/30 hover:bg-[#ff305c] transition-colors"
-              >
-                <span className="sm:hidden">DISCUSS →</span>
-                <span className="hidden sm:inline">DISCUSS SIMILAR PRODUCT →</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 };

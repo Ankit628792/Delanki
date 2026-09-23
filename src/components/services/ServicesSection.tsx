@@ -11,7 +11,6 @@ import {
   Play,
   Tablet,
   FileCode2,
-  Sparkles,
   Copy,
   Check,
 } from 'lucide-react';
