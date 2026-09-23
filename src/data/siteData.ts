@@ -170,9 +170,10 @@ export const PRODUCTS_DATA: ProductItem[] = [
     category: 'Mobile App',
     description:
       'A fun educational app that helps young kids learn Hindi Varnamala, English Alphabets, and Numbers through tracing, native audio sounds, and visual games.',
-    status: 'Open Source',
+    status: 'Live',
     featured: true,
     technologies: ['React Native', 'Android', 'Material 3', 'SQLite Database', 'Kotlin'],
+    liveUrl: 'https://play.google.com/store/apps/details?id=com.delanki.earlylearner',
     githubUrl: 'https://github.com/Ankit628792/Early-Learner',
     highlights: [
       'Handwriting tracing canvas for letters',
@@ -225,8 +226,9 @@ export const PRODUCTS_DATA: ProductItem[] = [
     category: 'Mobile App',
     description:
       'A simple breathing app with custom timers, visual guides, and gentle feedback to help you relax, focus, and improve lung capacity.',
-    status: 'Open Source',
+    status: 'Live',
     technologies: ['Android', 'Jetpack Compose', 'Room Database', 'Kotlin', 'Audio Engine'],
+    liveUrl: 'https://play.google.com/store/apps/details?id=com.delanki.respira',
     githubUrl: 'https://github.com/Ankit628792/Respira',
     highlights: [
       'Custom breathing timers and paces',

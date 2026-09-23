@@ -133,11 +133,17 @@ export const ProductCaseStudyLayout: React.FC<ProductCaseStudyLayoutProps> = ({
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#F22952] hover:bg-[#ff305c] text-white font-mono text-xs font-bold uppercase transition-all shadow-lg shadow-[#F22952]/20"
               >
-                <span>{product.category === 'VS Code Extension' ? 'INSTALL EXTENSION' : 'VISIT LIVE SITE'}</span>
+                <span>
+                  {product.category === 'VS Code Extension'
+                    ? 'INSTALL EXTENSION'
+                    : product.liveUrl.includes('play.google.com')
+                    ? 'DOWNLOAD NOW'
+                    : 'VISIT LIVE SITE'}
+                </span>
                 <ExternalLink className="w-4 h-4" />
               </a>
             )}
-            {product.githubUrl && (
+            {product.githubUrl && !product.liveUrl && (
               <a
                 href={product.githubUrl}
                 target="_blank"

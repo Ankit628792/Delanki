@@ -458,7 +458,19 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onOpenInquiry 
                 </Link>
 
                 <div className="flex items-center gap-2">
-                  {earlyLearner.githubUrl && (
+                  {earlyLearner.liveUrl && (
+                    <a
+                      href={earlyLearner.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-mono text-xs px-3 sm:px-3.5 py-2 rounded-lg bg-white/10 hover:bg-[#F22952] text-white border border-white/20 hover:border-[#F22952] transition-all flex items-center gap-1.5 font-bold"
+                    >
+                      <span className="sm:hidden">DOWNLOAD</span>
+                      <span className="hidden sm:inline">DOWNLOAD NOW</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  )}
+                  {earlyLearner.githubUrl && !earlyLearner.liveUrl && (
                     <a
                       href={earlyLearner.githubUrl}
                       target="_blank"
@@ -547,12 +559,12 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onOpenInquiry 
                     rel="noopener noreferrer"
                     className="px-3.5 sm:px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-mono text-xs uppercase transition-colors flex items-center gap-1.5"
                   >
-                    <span className="sm:hidden">{selectedProduct.category === 'VS Code Extension' ? 'INSTALL' : 'VISIT'}</span>
-                    <span className="hidden sm:inline">{selectedProduct.category === 'VS Code Extension' ? 'INSTALL EXTENSION' : 'VISIT LIVE SITE'}</span>
+                    <span className="sm:hidden">{selectedProduct.category === 'VS Code Extension' ? 'INSTALL' : selectedProduct.liveUrl.includes('play.google.com') ? 'DOWNLOAD' : 'VISIT'}</span>
+                    <span className="hidden sm:inline">{selectedProduct.category === 'VS Code Extension' ? 'INSTALL EXTENSION' : selectedProduct.liveUrl.includes('play.google.com') ? 'DOWNLOAD NOW' : 'VISIT LIVE SITE'}</span>
                     <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 )}
-                {selectedProduct.githubUrl && (
+                {selectedProduct.githubUrl && !selectedProduct.liveUrl && (
                   <a
                     href={selectedProduct.githubUrl}
                     target="_blank"
