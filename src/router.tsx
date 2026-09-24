@@ -96,6 +96,19 @@ const privacyPolicyRoute = createRoute({
   component: PrivacyPolicyPage,
 });
 
+const notFoundRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/404',
+  component: NotFoundPage,
+});
+
+// Splat catch-all route for any undefined paths (e.g. /signin, /login, etc.)
+const catchAllRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '$',
+  component: NotFoundPage,
+});
+
 const routeTree = rootRoute.addChildren([
   indexRoute,
   productsRoute,
@@ -109,6 +122,8 @@ const routeTree = rootRoute.addChildren([
   airBeamSharePrivacyPolicyAliasRoute,
   productDetailRoute,
   privacyPolicyRoute,
+  notFoundRoute,
+  catchAllRoute,
 ]);
 
 export const router = createRouter({
@@ -116,6 +131,7 @@ export const router = createRouter({
   defaultPreload: 'intent',
   scrollRestoration: true,
   trailingSlash: 'never',
+  notFoundMode: 'root',
   defaultNotFoundComponent: FallbackComponent,
 });
 

@@ -568,12 +568,334 @@ function getRouteMetadata(routePath) {
     }
   }
 
+  // 9. 404 Not Found Page (/404)
+  if (routePath === '/404') {
+    return {
+      title: '404 Page Not Found — Delanki Product Studio',
+      description: 'The requested page or case study could not be located in Delanki studio’s registry. Return to home or explore our product directory.',
+      canonical: `${siteOrigin}/404`,
+      noindex: true,
+      ogType: 'website',
+      schema: {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: '404 Page Not Found — Delanki',
+        url: `${siteOrigin}/404`,
+        description: 'The page you are looking for has either been moved, decommissioned, or does not exist.',
+      },
+      semanticHtml: `
+        <header>
+          <h1>404 // Route Not Found</h1>
+          <h2>Lost in Cyberspace?</h2>
+          <p>The page you are looking for has either been moved, decommissioned, or does not exist in our production registry.</p>
+        </header>
+        <main>
+          <nav aria-label="Recovery navigation">
+            <p><a href="/">Return to Studio Home &rarr;</a></p>
+            <p><a href="/products">Browse Software Products &rarr;</a></p>
+          </nav>
+        </main>
+      `,
+    };
+  }
+
+  return null;
+}
+
+const FAQS_DATA = [
+  {
+    question: 'What kind of projects does Delanki build?',
+    answer: 'We build web apps, cross-platform mobile apps (React Native & Expo), Chrome Extensions (Manifest V3), and VS Code developer extensions.',
+  },
+  {
+    question: 'Can I hire a dedicated developer instead of building an entire product?',
+    answer: 'Yes. Through our "Hire Talent" track, you can embed experienced Delanki engineers into your team for focused sprints or ongoing engineering support.',
+  },
+  {
+    question: 'Can you take an idea from zero to a live, shipped product?',
+    answer: 'Yes. Our "Build Your Product" track covers discovery, UI/UX design, architecture, full-stack engineering, testing, and deployment.',
+  },
+  {
+    question: 'Do you build Chrome Extensions and VS Code Extensions?',
+    answer: 'Yes. Browser and developer extensions are our core specialty. We build MV3-compliant Chrome extensions and feature-rich VS Code extensions.',
+  },
+  {
+    question: 'What technologies do you work with?',
+    answer: 'Our primary stack includes React, Next.js, React Native, TypeScript, Expo, Node.js, PostgreSQL, Firebase, GSAP, Three.js, and Extension APIs.',
+  },
+  {
+    question: 'Do you work with early-stage startups and founders?',
+    answer: 'Yes. We move fast, communicate clearly without agency bloat, and prioritize shipping high-quality products to market.',
+  },
+  {
+    question: 'How do you structure pricing and timelines?',
+    answer: 'We offer fixed-price milestone contracts for product builds and sprint engagements for dedicated talent. Timelines range from 2–4 weeks for MVPs/extensions to 8–12 weeks for complex platforms.',
+  },
+];
+
+function getAeoGeoForRoute(routePath, meta) {
+  const canonicalUrl = meta.canonical;
+  
+  if (routePath === '/') {
+    const questions = FAQS_DATA;
+    const keyFacts = [
+      'Delanki is a digital product development studio founded by Ankit.',
+      'Over 25+ products and developer tools built.',
+      'Specializes in React, Next.js, TypeScript, React Native, and Browser Extension APIs.',
+      'Delivers two engagement models: "Build Your Product" (end-to-end) and "Hire Talent" (dedicated sprint engineers).',
+    ];
+    const directAnswer =
+      'Delanki is a digital product development studio founded by Ankit. Delanki designs and ships resilient web applications, mobile platforms, Chrome extensions, and VS Code developer tools.';
+
+    const complementarySchemas = [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        '@id': `${canonicalUrl}#faq`,
+        url: canonicalUrl,
+        mainEntity: questions.map((qa) => ({
+          '@type': 'Question',
+          name: qa.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: qa.answer,
+          },
+        })),
+      },
+    ];
+
+    return {
+      directAnswer,
+      primaryEntity: { name: 'Delanki', type: 'Organization' },
+      questions,
+      keyFacts,
+      complementarySchemas,
+    };
+  }
+
+  if (routePath === '/products') {
+    const questions = [
+      {
+        question: 'What types of software does Delanki build?',
+        answer: 'Delanki builds full-stack web applications, cross-platform mobile apps (React Native), Manifest V3 Chrome extensions, and Visual Studio Code developer tools.',
+      },
+      {
+        question: 'Are Delanki products publicly accessible?',
+        answer: 'Yes, our products feature live demos, web application URLs, and public GitHub source repositories for transparent review.',
+      },
+      {
+        question: 'Can I hire Delanki to build a similar software product?',
+        answer: 'Yes. Delanki partners with founders and engineering teams through full product builds or dedicated engineering sprint contracts.',
+      },
+    ];
+    const keyFacts = [
+      `Directory contains ${PRODUCTS.length} active software products.`,
+      'Covers 4 specialized platforms: Web Applications, Mobile Apps, Chrome Extensions, and VS Code Extensions.',
+      'All listed products feature verified production demos or open-source GitHub codebases.',
+    ];
+    const directAnswer = `The Delanki Products Directory showcases ${PRODUCTS.length} production applications, mobile platforms, and developer extensions engineered by Delanki, including Vectofi, AirBeam-Share, Early Learner, and Respira.`;
+
+    const complementarySchemas = [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        '@id': `${canonicalUrl}#breadcrumbs`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: siteOrigin },
+          { '@type': 'ListItem', position: 2, name: 'Products', item: canonicalUrl },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        '@id': `${canonicalUrl}#faq`,
+        url: canonicalUrl,
+        mainEntity: questions.map((qa) => ({
+          '@type': 'Question',
+          name: qa.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: qa.answer,
+          },
+        })),
+      },
+    ];
+
+    return {
+      directAnswer,
+      primaryEntity: { name: 'Delanki Software Portfolio', type: 'CollectionPage' },
+      questions,
+      keyFacts,
+      complementarySchemas,
+    };
+  }
+
+  if (routePath.startsWith('/product/')) {
+    const slug = routePath.replace(/^\/product\//, '').replace(/\/+$/, '');
+    const product = PRODUCTS.find((p) => p.slug === slug);
+    if (!product) return null;
+
+    let appType = 'SoftwareApplication';
+    if (product.category === 'Web App') appType = 'WebApplication';
+    else if (product.category === 'Mobile App') appType = 'MobileApplication';
+    else if (product.category.includes('Extension')) appType = 'DeveloperApplication';
+
+    const directAnswer = `${product.title} is a ${product.category.toLowerCase()} engineered by Delanki. ${product.tagline} Built using ${product.technologies.slice(0, 3).join(', ')}, it delivers ${product.highlights[0] || 'high-performance execution'}.`;
+
+    const questions = [
+      {
+        question: `What is ${product.title}?`,
+        answer: `${product.title} is a ${product.category.toLowerCase()} developed by Delanki. ${product.description || product.tagline}`,
+      },
+      {
+        question: `What technologies are used in ${product.title}?`,
+        answer: `${product.title} is built with ${product.technologies.join(', ')}.`,
+      },
+      {
+        question: `What are the key features of ${product.title}?`,
+        answer: `${product.title} highlights include: ${product.highlights.join('; ')}.`,
+      },
+    ];
+
+    if (product.liveUrl) {
+      questions.push({
+        question: `Where can I use or download ${product.title}?`,
+        answer: `You can access ${product.title} directly at ${product.liveUrl}.`,
+      });
+    }
+    if (product.githubUrl) {
+      questions.push({
+        question: `Is ${product.title} open source?`,
+        answer: `Yes, the source code for ${product.title} is hosted on GitHub at ${product.githubUrl}.`,
+      });
+    }
+
+    const keyFacts = [
+      `${product.title} is classified as a ${product.category}.`,
+      `Engineered with ${product.technologies.slice(0, 3).join(', ')}.`,
+      `Primary capability: ${product.highlights[0] || product.tagline}`,
+      `Engineered and maintained by Delanki Product Studio.`,
+    ];
+
+    const complementarySchemas = [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        '@id': `${canonicalUrl}#faq`,
+        url: canonicalUrl,
+        mainEntity: questions.map((qa) => ({
+          '@type': 'Question',
+          name: qa.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: qa.answer,
+          },
+        })),
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        '@id': `${canonicalUrl}#case-study`,
+        headline: `${product.title} Architecture & Engineering Breakdown`,
+        description: product.description || product.tagline,
+        url: canonicalUrl,
+        datePublished: product.year ? `${product.year}-01-01` : '2026-01-01',
+        author: {
+          '@type': 'Person',
+          name: 'Ankit',
+          url: 'https://www.linkedin.com/in/ankit628792',
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'Delanki',
+          url: siteOrigin,
+        },
+        about: {
+          '@type': appType,
+          name: product.title,
+        },
+      },
+    ];
+
+    return {
+      directAnswer,
+      primaryEntity: { name: product.title, type: appType },
+      questions,
+      keyFacts,
+      complementarySchemas,
+    };
+  }
+
+  // Privacy Policy Routes
+  if (routePath.includes('privacy-policy')) {
+    const directAnswer =
+      'Delanki adheres to strict offline-first, zero-telemetry data standards. Our consumer products operate locally on user devices without tracking, third-party advertising, or unauthorized data transmission.';
+
+    const questions = [
+      {
+        question: 'Does Delanki collect personal identifiable information (PII)?',
+        answer: 'No. Delanki apps and mobile utilities are designed with an offline-first architecture, storing user preferences locally on the client device without telemetry tracking.',
+      },
+      {
+        question: 'Are Delanki apps compliant with children’s privacy standards (COPPA)?',
+        answer: 'Yes. Apps such as Early Learner strictly comply with COPPA, GDPR-Kids, and Google Play Families requirements with zero third-party ads and zero biometric telemetry.',
+      },
+      {
+        question: 'How is code and proprietary product data protected during client engagements?',
+        answer: 'Delanki adheres to strict non-disclosure agreements (NDAs) and confidentiality standards. All intellectual property, source repositories, and deployment pipelines belong 100% to the client.',
+      },
+    ];
+
+    const keyFacts = [
+      '100% offline-first local data storage where applicable.',
+      'Zero unauthorized tracking or advertising SDKs.',
+      'Full compliance with COPPA, GDPR, and Google Play Families guidelines.',
+      'Explicit client IP and repository confidentiality on all custom software engagements.',
+    ];
+
+    const complementarySchemas = [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        '@id': `${canonicalUrl}#breadcrumbs`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: siteOrigin },
+          { '@type': 'ListItem', position: 2, name: 'Privacy Policy', item: canonicalUrl },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        '@id': `${canonicalUrl}#faq`,
+        url: canonicalUrl,
+        mainEntity: questions.map((qa) => ({
+          '@type': 'Question',
+          name: qa.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: qa.answer,
+          },
+        })),
+      },
+    ];
+
+    return {
+      directAnswer,
+      primaryEntity: { name: 'Delanki Privacy & Data Standards', type: 'DigitalDocument' },
+      questions,
+      keyFacts,
+      complementarySchemas,
+    };
+  }
+
   return null;
 }
 
 function prerenderPage(templateHtml, routePath) {
   const meta = getRouteMetadata(routePath);
   if (!meta) return null;
+
+  const aeoGeo = getAeoGeoForRoute(routePath, meta);
 
   let html = templateHtml;
 
@@ -626,17 +948,68 @@ function prerenderPage(templateHtml, routePath) {
     `<meta name="twitter:url" content="${meta.canonical}" />`
   );
 
-  // 6. Inject JSON-LD Structured Data
+  // Robots meta tag
+  if (meta.noindex) {
+    if (/<meta\s+name=["']robots["'].*?\/?>/i.test(html)) {
+      html = html.replace(/<meta\s+name=["']robots["'].*?\/?>/i, '<meta name="robots" content="noindex, nofollow" />');
+    } else {
+      html = html.replace('</head>', '  <meta name="robots" content="noindex, nofollow" />\n</head>');
+    }
+  }
+
+  // 6. Inject Base JSON-LD Structured Data
   if (meta.schema) {
     const jsonLdTag = `<script type="application/ld+json" id="delanki-schema-ldjson">\n${JSON.stringify(meta.schema, null, 2)}\n    </script>`;
     html = html.replace('</head>', `  ${jsonLdTag}\n</head>`);
   }
 
-  // 7. Inject Semantic Content inside <div id="root">
+  // 7. Inject AEO & GEO Signals (Meta Tags & Complementary JSON-LD)
+  if (aeoGeo) {
+    const aeoMetaTags = `
+    <!-- Delanki Dynamic AEO & GEO Layer -->
+    <meta name="ai-content-declaration" content="human-engineered-verified" />
+    <meta name="chatgpt-fts" content="index, follow" />
+    <meta name="entity:primary" content="${escapeHtml(aeoGeo.primaryEntity.name)}" />
+    <meta name="entity:type" content="${escapeHtml(aeoGeo.primaryEntity.type)}" />
+    <meta name="direct-answer" content="${escapeHtml(aeoGeo.directAnswer)}" />
+    <script type="application/ld+json" id="delanki-aeo-geo-ldjson">\n${JSON.stringify(aeoGeo.complementarySchemas, null, 2)}\n    </script>
+    `;
+    html = html.replace('</head>', `${aeoMetaTags}\n</head>`);
+  }
+
+  // 8. Inject Semantic Content inside <div id="root">
   // When a search engine or curl fetches the page, it gets full HTML content.
   // When React client hydrates in a real browser, createRoot replaces this container.
   if (meta.semanticHtml) {
-    const semanticContainer = `\n      <!-- Pre-rendered Static SEO Content (Hydrated by React on mount) -->\n      <div id="delanki-prerender-content" style="contain: content;">\n${meta.semanticHtml}\n      </div>\n    `;
+    let semanticBody = meta.semanticHtml;
+
+    if (aeoGeo) {
+      semanticBody += `
+        <!-- Semantic AEO & GEO Micro-Content -->
+        <section class="sr-only" aria-hidden="true" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0);">
+          <h2>Direct Answer &amp; Verified Context</h2>
+          <p>${escapeHtml(aeoGeo.directAnswer)}</p>
+          ${
+            aeoGeo.questions.length > 0
+              ? `<h3>Verified Questions &amp; Answers</h3>
+                 <dl>
+                   ${aeoGeo.questions.map((q) => `<dt>${escapeHtml(q.question)}</dt><dd>${escapeHtml(q.answer)}</dd>`).join('')}
+                 </dl>`
+              : ''
+          }
+          ${
+            aeoGeo.keyFacts.length > 0
+              ? `<h3>Verified Key Facts</h3>
+                 <ul>
+                   ${aeoGeo.keyFacts.map((f) => `<li>${escapeHtml(f)}</li>`).join('')}
+                 </ul>`
+              : ''
+          }
+        </section>
+      `;
+    }
+
+    const semanticContainer = `\n      <!-- Pre-rendered Static SEO & AEO/GEO Content (Hydrated by React on mount) -->\n      <div id="delanki-prerender-content" style="contain: content;">\n${semanticBody}\n      </div>\n    `;
     html = html.replace('<div id="root"></div>', `<div id="root">${semanticContainer}</div>`);
   }
 
@@ -670,6 +1043,7 @@ function runPrerender() {
     '/products/love-alarm/privacy-policy',
     '/products/airbeam-share/privacy-policy',
     ...PRODUCTS.map((p) => `/product/${p.slug}`),
+    '/404',
   ];
 
   console.log(`[PRERENDER] Found ${routes.length} routes to pre-render for search engines:`);
@@ -686,6 +1060,18 @@ function runPrerender() {
       // Overwrite the root dist/index.html with rich metadata and homepage semantic content
       fs.writeFileSync(baseHtmlPath, renderedHtml, 'utf8');
       console.log(`  ✓ [200] / -> dist/index.html`);
+      count++;
+      continue;
+    }
+
+    if (routePath === '/404') {
+      // Generate static dist/404.html for web hosts (Vercel, Netlify, GitHub Pages, Firebase)
+      const notFoundPath = path.join(distDir, '404.html');
+      fs.writeFileSync(notFoundPath, renderedHtml, 'utf8');
+      const notFoundDir = path.join(distDir, '404');
+      if (!fs.existsSync(notFoundDir)) fs.mkdirSync(notFoundDir, { recursive: true });
+      fs.writeFileSync(path.join(notFoundDir, 'index.html'), renderedHtml, 'utf8');
+      console.log(`  ✓ [404] /404 -> dist/404.html & dist/404/index.html`);
       count++;
       continue;
     }

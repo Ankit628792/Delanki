@@ -1,8 +1,8 @@
 {
   "generator": "Delanki SEO Build Tool",
-  "updatedAt": "2026-09-18T17:31:44.746Z",
+  "updatedAt": "2026-09-24T17:08:40.758Z",
   "siteUrl": "https://www.delanki.com",
-  "totalIndexedRoutes": 13,
+  "totalIndexedRoutes": 17,
   "routes": [
     {
       "path": "/",
@@ -21,6 +21,30 @@
       "priority": 0.3,
       "type": "legal",
       "title": "Privacy Policy"
+    },
+    {
+      "path": "/products/early-learner/privacy-policy",
+      "priority": 0.5,
+      "type": "legal",
+      "title": "Early Learner Privacy Policy"
+    },
+    {
+      "path": "/products/respira/privacy-policy",
+      "priority": 0.5,
+      "type": "legal",
+      "title": "Respira Privacy Policy"
+    },
+    {
+      "path": "/products/love-alarm/privacy-policy",
+      "priority": 0.5,
+      "type": "legal",
+      "title": "Love Alarm 2.0 Privacy Policy"
+    },
+    {
+      "path": "/products/airbeam-share/privacy-policy",
+      "priority": 0.5,
+      "type": "legal",
+      "title": "AirBeam-Share Privacy Policy"
     },
     {
       "path": "/product/vectofi",

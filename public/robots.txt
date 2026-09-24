@@ -1,6 +1,6 @@
 # ==============================================================================
 # Robots.txt — Delanki Digital Product Development Studio
-# Automated Build Generation: 2026-09-18T17:31:44.746Z
+# Automated Build Generation: 2026-09-24T17:08:40.757Z
 # ==============================================================================
 
 User-agent: *

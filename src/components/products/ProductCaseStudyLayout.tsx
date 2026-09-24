@@ -54,7 +54,7 @@ export const ProductCaseStudyLayout: React.FC<ProductCaseStudyLayoutProps> = ({
 
   return (
     <div className="min-h-screen bg-[#070707] text-white pt-24 pb-20 selection:bg-[#F22952] selection:text-white">
-      <SEO {...getProductSEO(product)} />
+      <SEO {...getProductSEO(product)} product={product} />
       {/* Background Ambience Grid */}
       <div className="fixed inset-0 pointer-events-none opacity-20 bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] -z-10" />
 

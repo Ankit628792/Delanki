@@ -6,6 +6,7 @@ import { triggerPageTransition } from '../../lib/pageTransition';
 import { ArrowLeft, AlertCircle } from 'lucide-react';
 import { SEO } from '../../components/common/SEO';
 import { getNotFoundSEO } from '../../lib/seo';
+import { NotFoundPage } from '../NotFoundPage';
 
 // Import individual product pages from their respective product folders
 import { VectofiCaseStudyPage } from './vectofi/CaseStudyPage';
@@ -28,33 +29,7 @@ export const ProductDetailPage: React.FC = () => {
   );
 
   if (!matchedProduct) {
-    return (
-      <div className="min-h-screen bg-[#070707] text-white flex items-center justify-center px-6 pt-24">
-        <SEO {...getNotFoundSEO()} />
-        <div className="max-w-md w-full bg-[#111] border border-white/10 rounded-2xl p-8 text-center space-y-6">
-          <div className="w-12 h-12 rounded-full bg-[#F22952]/10 text-[#F22952] mx-auto flex items-center justify-center">
-            <AlertCircle className="w-6 h-6" />
-          </div>
-          <div className="space-y-2">
-            <h1 className="font-display font-bold text-2xl uppercase tracking-tight">Product Not Found</h1>
-            <p className="text-sm text-[#B7B7B7]">
-              The requested product case study could not be located or may have moved.
-            </p>
-          </div>
-          <Link
-            to="/products"
-            onClick={(e) => {
-              e.preventDefault();
-              triggerPageTransition('/products');
-            }}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#F22952] text-white text-xs font-mono font-bold uppercase transition-all"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            <span>RETURN TO PRODUCTS</span>
-          </Link>
-        </div>
-      </div>
-    );
+    return <NotFoundPage />;
   }
 
   // Dispatch to the specific product case study page from its dedicated folder
