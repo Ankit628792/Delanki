@@ -29,7 +29,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenInquiry }) => {
     <footer className="bg-[#060606] text-white border-t border-white/10 pt-16 pb-16 md:pb-24 px-6 md:px-10 relative overflow-x-clip">
       
       {/* Top Footer Navigation Columns */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-16 border-b border-white/10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 pb-16 border-b border-white/10">
         
         {/* Col 1: Studio Brand & Summary */}
         <div className="sm:col-span-2 lg:col-span-2 space-y-4">
@@ -78,15 +78,102 @@ export const Footer: React.FC<FooterProps> = ({ onOpenInquiry }) => {
           </ul>
         </div>
 
-        {/* Col 3: Navigation */}
+        {/* Col 3: Products & Tools */}
+        <div className="space-y-3 font-mono text-xs">
+          <span className="text-[#F22952] uppercase font-bold tracking-wider block">
+            // PRODUCTS
+          </span>
+          <ul className="space-y-2 text-[#B7B7B7]">
+            <li>
+              <Link
+                to="/products"
+                onClick={(e) => {
+                  e.preventDefault();
+                  triggerPageTransition('/products');
+                }}
+                className="text-white font-semibold hover:text-[#F22952] transition-colors flex items-center gap-1"
+              >
+                <span>All Products Directory</span>
+                <span className="text-[10px] text-[#F22952]">→</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/product/$slug"
+                params={{ slug: 'vectofi' }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  triggerPageTransition('/product/vectofi');
+                }}
+                className="hover:text-white transition-colors"
+              >
+                Vectofi (Web)
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/product/$slug"
+                params={{ slug: 'sticky-notes' }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  triggerPageTransition('/product/sticky-notes');
+                }}
+                className="hover:text-white transition-colors"
+              >
+                Sticky Notes (VS Code)
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/product/$slug"
+                params={{ slug: 'early-learner' }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  triggerPageTransition('/product/early-learner');
+                }}
+                className="hover:text-white transition-colors"
+              >
+                Early Learner (Android)
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/product/$slug"
+                params={{ slug: 'respira' }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  triggerPageTransition('/product/respira');
+                }}
+                className="hover:text-white transition-colors"
+              >
+                Respira (Mobile)
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/product/$slug"
+                params={{ slug: 'airbeam-share' }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  triggerPageTransition('/product/airbeam-share');
+                }}
+                className="hover:text-white transition-colors"
+              >
+                AirBeam-Share (Android)
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Col 4: Navigation & Legal */}
         <div className="space-y-3 font-mono text-xs">
           <span className="text-[#F22952] uppercase font-bold tracking-wider block">
             // NAVIGATION
           </span>
           <ul className="space-y-2 text-[#B7B7B7]">
             <li>
-              <a href="#products" onClick={(e) => handleSectionClick(e, '#products')} className="hover:text-white transition-colors">
-                Products & Showcase
+              <a href="#services" onClick={(e) => handleSectionClick(e, '#services')} className="hover:text-white transition-colors">
+                Studio Services
               </a>
             </li>
             <li>

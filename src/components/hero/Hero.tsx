@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion, Variants } from 'motion/react';
 import { HeroScene } from '../three/HeroScene';
 import { scrollToElement } from '../../lib/lenis';
 import { ArrowDown, ArrowUpRight, Terminal, Cpu, Layers } from 'lucide-react';
@@ -6,6 +7,19 @@ import { ArrowDown, ArrowUpRight, Terminal, Cpu, Layers } from 'lucide-react';
 interface HeroProps {
   onOpenInquiry: (initialMode?: 'build' | 'hire') => void;
 }
+
+const fadeUpVariant: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (delay: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: [0.22, 1, 0.36, 1] as const,
+      delay,
+    },
+  }),
+};
 
 export const Hero: React.FC<HeroProps> = ({ onOpenInquiry }) => {
   return (
@@ -19,7 +33,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry }) => {
       <div className="absolute bottom-10 -right-32 w-96 h-96 bg-[#FFFFFF]/5 rounded-full blur-[140px] pointer-events-none" />
 
       {/* Hero Top Metadata Row */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-4">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        custom={0.1}
+        variants={fadeUpVariant}
+        className="relative z-10 max-w-7xl mx-auto w-full flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-4"
+      >
         <div className="flex items-center gap-3 font-mono text-xs text-[#B7B7B7]">
           <span className="inline-flex items-center justify-center w-5 h-5 rounded bg-[#F22952]/10 border border-[#F22952]/30 text-[#F22952]">
             <Terminal className="w-3 h-3" />
@@ -40,7 +60,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry }) => {
             <span className="text-emerald-400">SYS_READY</span>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Main Hero Center Composition: Typography + 3D Object */}
       <div className="relative z-10 max-w-7xl mx-auto w-full my-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-center py-6">
@@ -49,15 +69,27 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry }) => {
         <div className="lg:col-span-7 flex flex-col justify-center space-y-6 md:space-y-8">
           
           {/* Micro Tag */}
-          <div className="inline-flex items-center gap-2 border border-subtle-pink bg-[#F22952]/5 rounded-full px-3.5 py-1 w-fit">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            custom={0.2}
+            variants={fadeUpVariant}
+            className="inline-flex items-center gap-2 border border-subtle-pink bg-[#F22952]/5 rounded-full px-3.5 py-1 w-fit"
+          >
             <span className="w-2 h-2 rounded-full bg-[#F22952] animate-pulse" />
             <span className="font-mono text-[11px] font-semibold tracking-widest text-[#F22952] uppercase">
               STUDIO & TALENT COLLECTIVE
             </span>
-          </div>
+          </motion.div>
 
           {/* Huge Main Headline */}
-          <h1 className="font-display font-extrabold text-4xl sm:text-6xl md:text-7xl xl:text-8xl leading-[0.92] tracking-[-0.035em] text-white uppercase select-none">
+          <motion.h1
+            initial="hidden"
+            animate="visible"
+            custom={0.3}
+            variants={fadeUpVariant}
+            className="font-display font-extrabold text-4xl sm:text-6xl md:text-7xl xl:text-8xl leading-[0.92] tracking-[-0.035em] text-white uppercase select-none"
+          >
             WE TURN <br />
             <span className="text-chrome">IDEAS INTO</span> <br />
             <span className="relative inline-block text-white">
@@ -65,15 +97,27 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry }) => {
               <span className="text-[#F22952]"> PRODUCTS</span>
               <span className="text-[#F22952]">.</span>
             </span>
-          </h1>
+          </motion.h1>
 
           {/* Concise Supporting Copy */}
-          <p className="text-base sm:text-lg md:text-xl text-[#B7B7B7] max-w-xl font-normal leading-relaxed">
+          <motion.p
+            initial="hidden"
+            animate="visible"
+            custom={0.4}
+            variants={fadeUpVariant}
+            className="text-base sm:text-lg md:text-xl text-[#B7B7B7] max-w-xl font-normal leading-relaxed"
+          >
             We design, build, and ship high-performance digital products across Web, Mobile, Chrome, and VS Code.
-          </p>
+          </motion.p>
 
           {/* Dual Action CTAs */}
-          <div className="flex flex-wrap items-center gap-4 pt-2">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            custom={0.5}
+            variants={fadeUpVariant}
+            className="flex flex-wrap items-center gap-4 pt-2"
+          >
             <button
               onClick={() => onOpenInquiry('build')}
               className="group relative inline-flex items-center gap-3 bg-[#F22952] hover:bg-[#ff305c] text-white font-mono text-xs md:text-sm uppercase tracking-wider font-bold px-7 py-4 rounded-full transition-all duration-300 shadow-[0_0_25px_rgba(242,41,82,0.4)] hover:shadow-[0_0_40px_rgba(242,41,82,0.7)] hover:-translate-y-0.5 active:translate-y-0"
@@ -91,10 +135,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry }) => {
               <span>HIRE TALENT</span>
               <span className="text-[#F22952] group-hover:translate-x-1 transition-transform">→</span>
             </button>
-          </div>
+          </motion.div>
 
           {/* Metadata Badges */}
-          <div className="grid grid-cols-3 gap-3 pt-4 border-t border-white/10 max-w-lg">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            custom={0.6}
+            variants={fadeUpVariant}
+            className="grid grid-cols-3 gap-3 pt-4 border-t border-white/10 max-w-lg"
+          >
             <div>
               <div className="font-mono text-[10px] text-[#B7B7B7] uppercase tracking-wider">PLATFORMS</div>
               <div className="font-sans text-xs font-semibold text-white mt-0.5">Web • Mobile • Ext</div>
@@ -107,11 +157,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry }) => {
               <div className="font-mono text-[10px] text-[#B7B7B7] uppercase tracking-wider">CORE TECH</div>
               <div className="font-sans text-xs font-semibold text-[#F22952] mt-0.5">Next • RN • TS</div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Right Column: Interactive Kinetic Hologram Matrix */}
-        <div className="lg:col-span-5 h-[380px] sm:h-[450px] lg:h-[580px] w-full relative flex items-center justify-center">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          custom={0.4}
+          variants={fadeUpVariant}
+          className="lg:col-span-5 h-[380px] sm:h-[450px] lg:h-[580px] w-full relative flex items-center justify-center"
+        >
           <div className="w-full h-full relative">
             <HeroScene />
           </div>
@@ -124,11 +180,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry }) => {
             </div>
             <span className="text-[9px] text-[#B7B7B7]">POINTER PARALLAX • REAL-TIME TELEMETRY</span>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Hero Bottom Bar & Scroll Down Indicator */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full flex items-center justify-between pt-6 border-t border-white/10 font-mono text-xs text-[#B7B7B7]">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        custom={0.7}
+        variants={fadeUpVariant}
+        className="relative z-10 max-w-7xl mx-auto w-full flex items-center justify-between pt-6 border-t border-white/10 font-mono text-xs text-[#B7B7B7]"
+      >
         <div className="hidden sm:flex items-center gap-4">
           <span className="text-white">SINCE 2023</span>
           <span className="text-white/20">/</span>
@@ -147,7 +209,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry }) => {
             <ArrowDown className="w-3 h-3 text-white group-hover:text-[#F22952]" />
           </span>
         </button>
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -127,6 +127,20 @@ function generateSitemapXml(products) {
       lastmod: TODAY_ISO,
       title: 'Respira Privacy Policy & Health Data Standards — Delanki',
     },
+    {
+      loc: `${SITE_URL}/products/love-alarm/privacy-policy`,
+      changefreq: 'monthly',
+      priority: '0.5',
+      lastmod: TODAY_ISO,
+      title: 'Love Alarm 2.0 Privacy Policy & Geolocation Standards — Delanki',
+    },
+    {
+      loc: `${SITE_URL}/products/airbeam-share/privacy-policy`,
+      changefreq: 'monthly',
+      priority: '0.5',
+      lastmod: TODAY_ISO,
+      title: 'AirBeam-Share Privacy Policy & Air-gapped Optical Standards — Delanki',
+    },
   ];
 
   const productRoutes = products.map((product) => ({
@@ -242,6 +256,8 @@ function generateSeoRoutesJson(products) {
     { path: '/privacy-policy', priority: 0.3, type: 'legal', title: 'Privacy Policy' },
     { path: '/products/early-learner/privacy-policy', priority: 0.5, type: 'legal', title: 'Early Learner Privacy Policy' },
     { path: '/products/respira/privacy-policy', priority: 0.5, type: 'legal', title: 'Respira Privacy Policy' },
+    { path: '/products/love-alarm/privacy-policy', priority: 0.5, type: 'legal', title: 'Love Alarm 2.0 Privacy Policy' },
+    { path: '/products/airbeam-share/privacy-policy', priority: 0.5, type: 'legal', title: 'AirBeam-Share Privacy Policy' },
     ...products.map((p) => ({
       path: `/product/${p.slug}`,
       slug: p.slug,
