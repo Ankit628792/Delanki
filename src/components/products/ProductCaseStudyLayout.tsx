@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { ProductItem } from '../../types';
 import { PRODUCTS_DATA } from '../../data/siteData';
 import { SEO } from '../common/SEO';
+import { Breadcrumbs } from '../common/Breadcrumbs';
 import { getProductSEO } from '../../lib/seo';
 import {
   ArrowLeft,
@@ -12,8 +13,6 @@ import {
   Sparkles,
   Layers,
   ChevronRight,
-  Share2,
-  Check,
   MessageSquare,
   ShieldCheck,
 } from 'lucide-react';
@@ -33,7 +32,6 @@ export const ProductCaseStudyLayout: React.FC<ProductCaseStudyLayoutProps> = ({
   markdownContent,
 }) => {
   const { openInquiry } = useInquiry();
-  const [copied, setCopied] = React.useState(false);
 
   useEffect(() => {
     resetScrollImmediate();
@@ -44,14 +42,6 @@ export const ProductCaseStudyLayout: React.FC<ProductCaseStudyLayoutProps> = ({
   const prevProduct = currentIndex > 0 ? PRODUCTS_DATA[currentIndex - 1] : PRODUCTS_DATA[PRODUCTS_DATA.length - 1];
   const nextProduct = currentIndex < PRODUCTS_DATA.length - 1 ? PRODUCTS_DATA[currentIndex + 1] : PRODUCTS_DATA[0];
 
-  const handleShare = () => {
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(window.location.href);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    }
-  };
-
   return (
     <div className="min-h-screen bg-[#070707] text-white pt-24 pb-20 selection:bg-[#F22952] selection:text-white">
       <SEO {...getProductSEO(product)} product={product} />
@@ -59,37 +49,20 @@ export const ProductCaseStudyLayout: React.FC<ProductCaseStudyLayoutProps> = ({
       <div className="fixed inset-0 pointer-events-none opacity-20 bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] -z-10" />
 
       <div className="max-w-5xl mx-auto px-6 sm:px-8 space-y-12">
-        {/* Navigation Breadcrumb Bar */}
-        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-6">
-          <div className="flex items-center gap-3">
-            <Link
-              to="/products"
-              onClick={(e) => {
-                e.preventDefault();
-                triggerPageTransition('/products');
-              }}
-              className="inline-flex items-center gap-2 text-xs sm:text-sm font-mono text-[#B7B7B7] hover:text-[#F22952] transition-colors py-1 px-2.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10"
-            >
-              <ArrowLeft className="w-3.5 h-3.5" />
-              <span>ALL PRODUCTS</span>
-            </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-white/30" />
-            <span className="font-mono text-xs sm:text-sm text-white/70 truncate max-w-[200px] sm:max-w-none">
-              {product.title}
-            </span>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <button
-              onClick={handleShare}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-mono text-[#B7B7B7] hover:text-white transition-colors"
-              title="Copy Case Study Link"
-            >
-              {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Share2 className="w-3.5 h-3.5" />}
-              <span>{copied ? 'COPIED!' : 'SHARE'}</span>
-            </button>
-          </div>
-        </div>
+        {/* Navigation Breadcrumbs Bar (Shared with Privacy Policy pages) */}
+        <Breadcrumbs
+          items={[
+            { label: 'DELANKI STUDIO', to: '/' },
+            { label: 'PRODUCTS', to: '/products' },
+            { label: product.title, isCurrent: true },
+          ]}
+          badge={{
+            icon: <Sparkles className="w-3.5 h-3.5 text-[#F22952]" />,
+            label: `${product.category.toUpperCase()} // CASE STUDY`,
+            variant: 'red',
+          }}
+          showShare={true}
+        />
 
         {/* Hero Header */}
         <header className="space-y-6 pt-2">
@@ -154,15 +127,17 @@ export const ProductCaseStudyLayout: React.FC<ProductCaseStudyLayoutProps> = ({
                 <span>GITHUB REPO</span>
               </a>
             )}
-            {['early-learner', 'respira', 'love-alarm', 'airbeam-share'].includes(product.slug) && (
-              <Link
-                to={`/products/${product.slug}/privacy-policy` as any}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 font-mono text-xs font-bold uppercase transition-all border border-emerald-500/30"
-              >
-                <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                <span>PRIVACY POLICY</span>
-              </Link>
-            )}
+            <Link
+              to={`/products/${product.slug}/privacy-policy` as any}
+              onClick={(e) => {
+                e.preventDefault();
+                triggerPageTransition(`/products/${product.slug}/privacy-policy`);
+              }}
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 font-mono text-xs font-bold uppercase transition-all border border-emerald-500/30"
+            >
+              <ShieldCheck className="w-4 h-4 text-emerald-400" />
+              <span>PRIVACY POLICY</span>
+            </Link>
             <button
               onClick={() => openInquiry('build')}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-white/90 hover:text-white font-mono text-xs uppercase transition-all border border-white/10 ml-auto"

@@ -1,8 +1,8 @@
 {
   "generator": "Delanki SEO Build Tool",
-  "updatedAt": "2026-09-24T17:08:40.758Z",
+  "updatedAt": "2026-10-03T06:20:43.483Z",
   "siteUrl": "https://www.delanki.com",
-  "totalIndexedRoutes": 17,
+  "totalIndexedRoutes": 23,
   "routes": [
     {
       "path": "/",
@@ -45,6 +45,42 @@
       "priority": 0.5,
       "type": "legal",
       "title": "AirBeam-Share Privacy Policy"
+    },
+    {
+      "path": "/products/vectofi/privacy-policy",
+      "priority": 0.5,
+      "type": "legal",
+      "title": "Vectofi Privacy Policy"
+    },
+    {
+      "path": "/products/kurush-yarn/privacy-policy",
+      "priority": 0.5,
+      "type": "legal",
+      "title": "Kurush-Yarn Privacy Policy"
+    },
+    {
+      "path": "/products/qrazy/privacy-policy",
+      "priority": 0.5,
+      "type": "legal",
+      "title": "Qrazy Privacy Policy"
+    },
+    {
+      "path": "/products/sticky-notes/privacy-policy",
+      "priority": 0.5,
+      "type": "legal",
+      "title": "Sticky Notes VS Code Privacy Policy"
+    },
+    {
+      "path": "/products/jira-github-linker/privacy-policy",
+      "priority": 0.5,
+      "type": "legal",
+      "title": "Jira & GitHub Linker Privacy Policy"
+    },
+    {
+      "path": "/products/syntax-storyteller/privacy-policy",
+      "priority": 0.5,
+      "type": "legal",
+      "title": "Syntax Storyteller Privacy Policy"
     },
     {
       "path": "/product/vectofi",

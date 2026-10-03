@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from '@tanstack/react-router';
 import { SEO } from '../../../components/common/SEO';
+import { Breadcrumbs } from '../../../components/common/Breadcrumbs';
 import { getEarlyLearnerPrivacyPolicySEO } from '../../../lib/seo';
 import {
   ArrowLeft,
@@ -85,50 +86,20 @@ export const EarlyLearnerPrivacyPolicyPage: React.FC = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Navigation Breadcrumbs & Top Actions */}
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-white/10">
-          <div className="flex items-center flex-wrap gap-2 font-mono text-xs text-[#B7B7B7]">
-            <Link
-              to="/"
-              className="hover:text-white transition-colors flex items-center gap-1.5"
-            >
-              <ArrowLeft className="w-3.5 h-3.5 text-[#F22952]" />
-              <span>DELANKI STUDIO</span>
-            </Link>
-            <span className="text-white/20">/</span>
-            <Link to="/products" className="hover:text-white transition-colors">
-              PRODUCTS
-            </Link>
-            <span className="text-white/20">/</span>
-            <Link
-              to="/product/$slug"
-              params={{ slug: 'early-learner' }}
-              className="hover:text-white transition-colors text-white/80"
-            >
-              EARLY LEARNER
-            </Link>
-            <span className="text-white/20">/</span>
-            <span className="text-[#F22952] font-bold">PRIVACY POLICY</span>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/25 font-mono text-[11px] text-emerald-400">
-              <Baby className="w-3.5 h-3.5" />
-              <span>COPPA & FAMILIES VERIFIED</span>
-            </span>
-            <button
-              onClick={handleShareLink}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#121212] border border-white/15 hover:border-white/30 text-xs font-mono text-[#B7B7B7] hover:text-white transition-all"
-              title="Share Policy URL"
-            >
-              {copiedShare ? (
-                <Check className="w-3 h-3 text-emerald-400" />
-              ) : (
-                <Share2 className="w-3 h-3" />
-              )}
-              <span>{copiedShare ? 'LINK COPIED' : 'SHARE'}</span>
-            </button>
-          </div>
-        </div>
+        <Breadcrumbs
+          items={[
+            { label: 'DELANKI STUDIO', to: '/' },
+            { label: 'PRODUCTS', to: '/products' },
+            { label: 'EARLY LEARNER', to: '/product/$slug', params: { slug: 'early-learner' } },
+            { label: 'PRIVACY POLICY', isCurrent: true },
+          ]}
+          badge={{
+            icon: <Baby className="w-3.5 h-3.5" />,
+            label: 'COPPA & FAMILIES VERIFIED',
+            variant: 'emerald',
+          }}
+          showShare={true}
+        />
 
         {/* Header Hero */}
         <header className="mb-12">

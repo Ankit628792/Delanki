@@ -456,6 +456,220 @@ export const getAirBeamSharePrivacyPolicySEO = (): SEOConfig => {
 };
 
 /**
+ * 4e. Vectofi Privacy Policy SEO (/products/vectofi/privacy-policy)
+ */
+export const getVectofiPrivacyPolicySEO = (): SEOConfig => {
+  const origin = getSiteOrigin();
+  return {
+    title: 'Vectofi Privacy Policy — Client-Side Vector Engine & Asset Safety | Delanki',
+    description:
+      'Official privacy policy for Vectofi. 100% in-browser client-side vector processing, local browser storage, zero remote asset uploading, and strict SVG security.',
+    keywords: [
+      'Vectofi Privacy Policy',
+      'SVG Editor Privacy',
+      'Client-Side Vector Engine',
+      'Browser Asset Security',
+      'Zero Cloud Storage SVG',
+      'Delanki Studio',
+    ],
+    canonicalPath: '/products/vectofi/privacy-policy',
+    ogType: 'article',
+    ogImage: `${origin}/da-black.svg`,
+    twitterCard: 'summary_large_image',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Vectofi Privacy Policy & Client-Side Asset Safety',
+      url: `${origin}/products/vectofi/privacy-policy`,
+      description:
+        'Official privacy policy for Vectofi SVG icon laboratory. Client-side vector processing, local browser storage, zero asset telemetry.',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Delanki',
+      },
+    },
+  };
+};
+
+/**
+ * 4f. Kurush-Yarn Privacy Policy SEO (/products/kurush-yarn/privacy-policy)
+ */
+export const getKurushYarnPrivacyPolicySEO = (): SEOConfig => {
+  const origin = getSiteOrigin();
+  return {
+    title: 'Kurush-Yarn Privacy Policy — Tactile Art Exhibition & PWA Privacy | Delanki',
+    description:
+      'Official privacy policy for Kurush-Yarn. PWA offline caching, zero personal data collection, zero third-party trackers, and private WebGL interactive showcase.',
+    keywords: [
+      'Kurush Yarn Privacy Policy',
+      'Textile Art Exhibition Privacy',
+      'PWA Offline Data Privacy',
+      'Zero Telemetry Web Gallery',
+      'Delanki Studio',
+    ],
+    canonicalPath: '/products/kurush-yarn/privacy-policy',
+    ogType: 'article',
+    ogImage: `${origin}/da-black.svg`,
+    twitterCard: 'summary_large_image',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Kurush-Yarn Privacy Policy & Digital Gallery Data Standards',
+      url: `${origin}/products/kurush-yarn/privacy-policy`,
+      description:
+        'Official privacy policy for Kurush-Yarn digital exhibition. Zero tracking, local PWA service worker caching, and complete viewer privacy.',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Delanki',
+      },
+    },
+  };
+};
+
+/**
+ * 4g. Qrazy Privacy Policy SEO (/products/qrazy/privacy-policy)
+ */
+export const getQrazyPrivacyPolicySEO = (): SEOConfig => {
+  const origin = getSiteOrigin();
+  return {
+    title: 'Qrazy Privacy Policy — Camera Verification & Anti-Counterfeit Safety | Delanki',
+    description:
+      'Official privacy policy for Qrazy. In-memory camera QR verification, opt-in privacy-preserving incident reporting, zero camera feed transmission, and brand safety.',
+    keywords: [
+      'Qrazy Privacy Policy',
+      'QR Verification Privacy',
+      'Camera API Data Safety',
+      'Anti-Counterfeit Protection Privacy',
+      'Delanki Studio',
+    ],
+    canonicalPath: '/products/qrazy/privacy-policy',
+    ogType: 'article',
+    ogImage: `${origin}/da-black.svg`,
+    twitterCard: 'summary_large_image',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Qrazy Privacy Policy & QR Verification Data Standards',
+      url: `${origin}/products/qrazy/privacy-policy`,
+      description:
+        'Official privacy policy for Qrazy verification system. Ephemeral in-memory QR decoding, secure incident reporting, zero raw video storage.',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Delanki',
+      },
+    },
+  };
+};
+
+/**
+ * 4h. Sticky Notes for VS Code Privacy Policy SEO (/products/sticky-notes/privacy-policy)
+ */
+export const getStickyNotesPrivacyPolicySEO = (): SEOConfig => {
+  const origin = getSiteOrigin();
+  return {
+    title: 'Sticky Notes VS Code Privacy Policy — 100% Local Workspace Privacy | Delanki',
+    description:
+      'Official privacy policy for Sticky Notes for VS Code. 100% offline, local workspace state storage, zero network access, zero code telemetry, and complete developer privacy.',
+    keywords: [
+      'Sticky Notes VS Code Privacy Policy',
+      'VS Code Extension Privacy',
+      'Local Workspace Security',
+      'Offline Developer Tool Privacy',
+      'Zero Code Telemetry',
+      'Delanki Studio',
+    ],
+    canonicalPath: '/products/sticky-notes/privacy-policy',
+    ogType: 'article',
+    ogImage: `${origin}/da-black.svg`,
+    twitterCard: 'summary_large_image',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Sticky Notes for VS Code Privacy Policy & Code Confidentiality',
+      url: `${origin}/products/sticky-notes/privacy-policy`,
+      description:
+        'Official privacy policy for Sticky Notes VS Code extension. Local workspaceState storage, zero network activity, zero analytics.',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Delanki',
+      },
+    },
+  };
+};
+
+/**
+ * 4i. Jira & GitHub Linker Privacy Policy SEO (/products/jira-github-linker/privacy-policy)
+ */
+export const getJiraGitHubLinkerPrivacyPolicySEO = (): SEOConfig => {
+  const origin = getSiteOrigin();
+  return {
+    title: 'Jira & GitHub Linker Privacy Policy — Secure Token Storage & Enterprise Privacy | Delanki',
+    description:
+      'Official privacy policy for Jira & GitHub Linker. Local regex parsing, VS Code SecretStorage for access tokens, direct client-to-API requests, and zero intermediary servers.',
+    keywords: [
+      'Jira GitHub Linker Privacy Policy',
+      'VS Code Extension Security',
+      'SecretStorage Access Token Privacy',
+      'Direct API Client Privacy',
+      'Enterprise Code Confidentiality',
+      'Delanki Studio',
+    ],
+    canonicalPath: '/products/jira-github-linker/privacy-policy',
+    ogType: 'article',
+    ogImage: `${origin}/da-black.svg`,
+    twitterCard: 'summary_large_image',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Jira & GitHub Linker Privacy Policy & SecretStorage Standards',
+      url: `${origin}/products/jira-github-linker/privacy-policy`,
+      description:
+        'Official privacy policy for Jira & GitHub Linker VS Code extension. Local regex buffer parsing, SecretStorage encryption, zero telemetry.',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Delanki',
+      },
+    },
+  };
+};
+
+/**
+ * 4j. Syntax Storyteller Privacy Policy SEO (/products/syntax-storyteller/privacy-policy)
+ */
+export const getSyntaxStorytellerPrivacyPolicySEO = (): SEOConfig => {
+  const origin = getSiteOrigin();
+  return {
+    title: 'Syntax Storyteller Privacy Policy — Local AST & Direct LLM Privacy | Delanki',
+    description:
+      'Official privacy policy for Syntax Storyteller. Local AST code parsing, user-managed SecretStorage API keys, direct client-to-provider LLM requests, and zero code retention.',
+    keywords: [
+      'Syntax Storyteller Privacy Policy',
+      'AI Code Extension Privacy',
+      'Direct LLM API Privacy',
+      'SecretStorage API Key Protection',
+      'Zero Code Retention',
+      'Delanki Studio',
+    ],
+    canonicalPath: '/products/syntax-storyteller/privacy-policy',
+    ogType: 'article',
+    ogImage: `${origin}/da-black.svg`,
+    twitterCard: 'summary_large_image',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Syntax Storyteller Privacy Policy & AI Code Confidentiality',
+      url: `${origin}/products/syntax-storyteller/privacy-policy`,
+      description:
+        'Official privacy policy for Syntax Storyteller VS Code extension. Local AST parsing, direct user-owned API requests, zero prompt or code logging.',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Delanki',
+      },
+    },
+  };
+};
+
+/**
  * 5. Not Found / 404 Page SEO
  */
 export const getNotFoundSEO = (): SEOConfig => {

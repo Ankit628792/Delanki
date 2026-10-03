@@ -2,28 +2,26 @@ import React, { useState, useEffect } from 'react';
 import { Link } from '@tanstack/react-router';
 import { SEO } from '../../../components/common/SEO';
 import { Breadcrumbs } from '../../../components/common/Breadcrumbs';
-import { getAirBeamSharePrivacyPolicySEO } from '../../../lib/seo';
+import { getKurushYarnPrivacyPolicySEO } from '../../../lib/seo';
 import {
   ArrowLeft,
   ShieldCheck,
-  Lock,
   CheckCircle2,
   Copy,
   Check,
   FileText,
-  Camera,
-  WifiOff,
+  EyeOff,
   Share2,
   ChevronRight,
+  Palette,
+  WifiOff,
+  Globe,
   Database,
-  QrCode,
-  HardDrive,
-  EyeOff,
 } from 'lucide-react';
 import { COMPANY_DATA } from '../../../data/siteData';
 import { scrollToElement, scrollToTop } from '../../../lib/lenis';
 
-export const AirBeamSharePrivacyPolicyPage: React.FC = () => {
+export const KurushYarnPrivacyPolicyPage: React.FC = () => {
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [copiedShare, setCopiedShare] = useState(false);
   const [activeSection, setActiveSection] = useState<string>('introduction');
@@ -33,15 +31,14 @@ export const AirBeamSharePrivacyPolicyPage: React.FC = () => {
   }, []);
 
   const navItems = [
-    { id: 'introduction', label: '1. Introduction & Offline Scope' },
-    { id: 'airgapped-architecture', label: '2. Air-Gapped Zero-Network Protocol' },
-    { id: 'camera-optical-scan', label: '3. Camera API & Animated QR Stream' },
-    { id: 'local-room-db', label: '4. Local Room Database Sandbox' },
-    { id: 'system-permissions', label: '5. Android System Permissions' },
-    { id: 'no-third-party', label: '6. Zero Ads, Analytics & Trackers' },
-    { id: 'data-deletion', label: '7. Local Transfer Log Wipe & Deletion' },
-    { id: 'global-compliance', label: '8. GDPR & CCPA Compliance' },
-    { id: 'contact-desk', label: '9. Policy Updates & Contact Desk' },
+    { id: 'introduction', label: '1. Introduction & Exhibition Scope' },
+    { id: 'pwa-caching', label: '2. PWA Offline Caching' },
+    { id: 'zero-collection', label: '3. Zero Personal Data & Cookies' },
+    { id: 'webgl-rendering', label: '4. WebGL Canvas Acceleration' },
+    { id: 'no-third-party', label: '5. Zero Ads & Analytics' },
+    { id: 'cache-management', label: '6. Clearing Service Worker Cache' },
+    { id: 'global-compliance', label: '7. GDPR & Global Rights' },
+    { id: 'contact-desk', label: '8. Policy Updates & Contact Desk' },
   ];
 
   useEffect(() => {
@@ -79,7 +76,7 @@ export const AirBeamSharePrivacyPolicyPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#090909] text-white pt-28 pb-20 px-4 sm:px-6 lg:px-8">
-      <SEO {...getAirBeamSharePrivacyPolicySEO()} />
+      <SEO {...getKurushYarnPrivacyPolicySEO()} />
 
       {/* Decorative Technical Grid Background */}
       <div className="fixed inset-0 bg-tech-grid opacity-30 pointer-events-none" />
@@ -90,13 +87,13 @@ export const AirBeamSharePrivacyPolicyPage: React.FC = () => {
           items={[
             { label: 'DELANKI STUDIO', to: '/' },
             { label: 'PRODUCTS', to: '/products' },
-            { label: 'AIRBEAM-SHARE', to: '/product/$slug', params: { slug: 'airbeam-share' } },
+            { label: 'KURUSH-YARN', to: '/product/$slug', params: { slug: 'kurush-yarn' } },
             { label: 'PRIVACY POLICY', isCurrent: true },
           ]}
           badge={{
-            icon: <WifiOff className="w-3.5 h-3.5" />,
-            label: 'AIR-GAPPED OPTICAL SANCTUARY',
-            variant: 'cyan',
+            icon: <Palette className="w-3.5 h-3.5" />,
+            label: 'TACTILE ART EXHIBITION',
+            variant: 'rose',
           }}
           showShare={true}
         />
@@ -106,76 +103,76 @@ export const AirBeamSharePrivacyPolicyPage: React.FC = () => {
           <div className="flex flex-wrap items-center gap-3 mb-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F22952]/10 border border-[#F22952]/30 text-[#F22952] font-mono text-xs uppercase tracking-widest font-semibold">
               <FileText className="w-3.5 h-3.5" />
-              <span>AIRBEAM-SHARE // APP PRIVACY POLICY</span>
+              <span>KURUSH-YARN // EXHIBITION PRIVACY POLICY</span>
             </div>
           </div>
 
           <h1 className="font-display font-black text-3xl sm:text-5xl md:text-6xl uppercase tracking-tight text-white mb-4">
-            AIRBEAM-SHARE PRIVACY POLICY<span className="text-[#F22952]">.</span>
+            KURUSH-YARN PRIVACY POLICY<span className="text-[#F22952]">.</span>
           </h1>
 
           <p className="text-base sm:text-lg text-[#B7B7B7] max-w-3xl leading-relaxed">
-            AirBeam-Share is an air-gapped, zero-network file transfer application engineered to move files between devices using high-speed animated QR code streams. It operates with zero internet permissions, zero cloud servers, and complete device isolation.
+            Kurush-Yarn is engineered as a peaceful, offline-capable digital exhibition showcasing handcrafted textile art. We operate on a strict zero-surveillance philosophy: no user accounts, no tracking cookies, no advertising SDKs, and zero collection of personal information.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 mt-6 font-mono text-xs text-[#B7B7B7]">
-            <span className="text-cyan-400 font-bold">STATUS: ACTIVE &amp; AIR-GAPPED</span>
+            <span className="text-emerald-400 font-bold">STATUS: ACTIVE &amp; PWA SECURE</span>
             <span className="text-white/20">•</span>
-            <span>EFFECTIVE DATE: SEPTEMBER 2026</span>
+            <span>EFFECTIVE DATE: JANUARY 2026</span>
             <span className="text-white/20">•</span>
             <span>LAST REVIEWED: OCTOBER 2026</span>
             <span className="text-white/20">•</span>
-            <span>STORAGE: 100% ON-DEVICE ROOM DB</span>
+            <span>STORAGE: LOCAL BROWSER CACHE ONLY</span>
           </div>
         </header>
 
         {/* Core Guarantees Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
           <div className="p-5 rounded-2xl bg-[#121212] border border-white/10">
-            <div className="w-9 h-9 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-3">
+            <div className="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-3">
               <WifiOff className="w-4 h-4" />
             </div>
             <h2 className="font-mono text-sm font-bold text-white uppercase tracking-wider mb-1">
-              Zero Network
+              PWA Offline
             </h2>
             <p className="text-xs text-[#B7B7B7] leading-relaxed">
-              Zero internet permissions requested. The app physically cannot transmit bytes outside your device screen.
+              Service workers cache visual assets locally so you can browse the art gallery fully offline with zero network latency.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-[#121212] border border-white/10">
+            <div className="w-9 h-9 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400 mb-3">
+              <EyeOff className="w-4 h-4" />
+            </div>
+            <h2 className="font-mono text-sm font-bold text-white uppercase tracking-wider mb-1">
+              Zero Accounts
+            </h2>
+            <p className="text-xs text-[#B7B7B7] leading-relaxed">
+              No signups, no emails, no passwords, and no user profiles. Your exhibition viewing remains completely anonymous.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-[#121212] border border-white/10">
+            <div className="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-3">
+              <ShieldCheck className="w-4 h-4" />
+            </div>
+            <h2 className="font-mono text-sm font-bold text-white uppercase tracking-wider mb-1">
+              Cookie-Free
+            </h2>
+            <p className="text-xs text-[#B7B7B7] leading-relaxed">
+              Zero behavioral advertising cookies, zero analytics beacons, and no marketing tags used on the domain.
             </p>
           </div>
 
           <div className="p-5 rounded-2xl bg-[#121212] border border-white/10">
             <div className="w-9 h-9 rounded-xl bg-[#F22952]/10 border border-[#F22952]/30 flex items-center justify-center text-[#F22952] mb-3">
-              <Camera className="w-4 h-4" />
+              <Globe className="w-4 h-4" />
             </div>
             <h2 className="font-mono text-sm font-bold text-white uppercase tracking-wider mb-1">
-              Optical Scan Only
+              Pure Exhibition
             </h2>
             <p className="text-xs text-[#B7B7B7] leading-relaxed">
-              Camera is strictly utilized in real-time RAM to decode QR chunks. Zero photos or videos are stored.
-            </p>
-          </div>
-
-          <div className="p-5 rounded-2xl bg-[#121212] border border-white/10">
-            <div className="w-9 h-9 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-3">
-              <Database className="w-4 h-4" />
-            </div>
-            <h2 className="font-mono text-sm font-bold text-white uppercase tracking-wider mb-1">
-              Local Room DB
-            </h2>
-            <p className="text-xs text-[#B7B7B7] leading-relaxed">
-              Transfer logs and metadata reside strictly within the encrypted Android application sandbox.
-            </p>
-          </div>
-
-          <div className="p-5 rounded-2xl bg-[#121212] border border-white/10">
-            <div className="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-3">
-              <ShieldCheck className="w-4 h-4" />
-            </div>
-            <h2 className="font-mono text-sm font-bold text-white uppercase tracking-wider mb-1">
-              Zero Trackers
-            </h2>
-            <p className="text-xs text-[#B7B7B7] leading-relaxed">
-              Zero advertising SDKs, zero remote analytics, and zero crash reporting beacons embedded.
+              A serene digital space dedicated strictly to textile art, handcrafted kurush stitches, and visual presentation.
             </p>
           </div>
         </div>
@@ -216,7 +213,7 @@ export const AirBeamSharePrivacyPolicyPage: React.FC = () => {
             <div className="mt-6 pt-5 border-t border-white/10 space-y-3">
               <Link
                 to="/product/$slug"
-                params={{ slug: 'airbeam-share' }}
+                params={{ slug: 'kurush-yarn' }}
                 className="w-full py-2 px-3 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-white font-mono text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-1.5"
               >
                 <span>VIEW CASE STUDY</span>
@@ -235,219 +232,201 @@ export const AirBeamSharePrivacyPolicyPage: React.FC = () => {
               <div className="flex items-center gap-2 font-mono text-xs text-[#F22952] uppercase font-semibold mb-2">
                 <span>01</span>
                 <span className="text-white/20">/</span>
-                <span>ZERO-NETWORK SCOPE</span>
+                <span>EXHIBITION SCOPE</span>
               </div>
               <h2 className="font-display font-black text-2xl sm:text-3xl text-white uppercase mb-4">
-                1. Introduction &amp; Offline Scope
+                1. Introduction &amp; Exhibition Scope
               </h2>
               <div className="space-y-4">
                 <p>
-                  Delanki Studio presents <strong>AirBeam-Share</strong>, an offline optical file sharing app built with Jetpack Compose.
+                  Delanki (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;the Studio&rdquo;) presents <strong>Kurush-Yarn</strong>, a digital gallery celebrating handcrafted kurush and textile art objects.
                 </p>
                 <p>
-                  AirBeam-Share converts files, photos, and documents into an animated stream of QR codes on the sender&apos;s screen. The receiver&apos;s camera scans this optical stream to reconstruct the original data—completely offline without requiring Wi-Fi networks, Bluetooth pairing, cellular data, or cloud servers.
+                  Our gallery philosophy emphasizes mindful, distraction-free art exploration. We do not gather viewer analytics, build audience behavioral graphs, or display commercial marketing units.
+                </p>
+                <p>
+                  This Privacy Policy applies to all visitors accessing Kurush-Yarn on the web or installed as a PWA.
                 </p>
               </div>
             </section>
 
             {/* Section 2 */}
             <section
-              id="airgapped-architecture"
+              id="pwa-caching"
               className="p-6 sm:p-8 rounded-2xl bg-[#121212]/50 border border-white/10 scroll-mt-32"
             >
               <div className="flex items-center gap-2 font-mono text-xs text-[#F22952] uppercase font-semibold mb-2">
                 <span>02</span>
                 <span className="text-white/20">/</span>
-                <span>ZERO-NETWORK PROTOCOL</span>
+                <span>OFFLINE ARCHITECTURE</span>
               </div>
               <h2 className="font-display font-black text-2xl sm:text-3xl text-white uppercase mb-4">
-                2. Air-Gapped Zero-Network Protocol
+                2. Progressive Web App (PWA) Offline Caching
               </h2>
               <div className="space-y-4">
                 <p>
-                  AirBeam-Share is engineered around a strict air-gapped security model. By transmitting data entirely through optical visual frames, it bypasses the physical attack surfaces associated with wireless radio protocols.
+                  Kurush-Yarn employs a client-side Service Worker to cache exhibition assets locally on your device:
                 </p>
-                <div className="p-4 rounded-xl bg-cyan-500/10 border border-cyan-500/25 flex items-start gap-3">
-                  <WifiOff className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-                  <p className="text-xs text-cyan-200">
-                    <strong>Zero Network Permissions:</strong> AirBeam-Share does not request Android <code className="font-mono bg-white/10 px-1 py-0.5 rounded">INTERNET</code> or network state permissions. It is physically impossible for the app to send data to external remote servers.
-                  </p>
-                </div>
+                <ul className="space-y-2 list-disc list-inside text-white/90">
+                  <li><strong>Static Asset Cache:</strong> 3D geometry, high-resolution photography, and fonts are stored in your device’s Cache Storage for instant offline loading.</li>
+                  <li><strong>No Network Logging:</strong> The service worker intercepts asset requests solely to fulfill them from local storage, without sending telemetry to our studio.</li>
+                  <li><strong>Standalone Sandbox:</strong> Installing the PWA to your home screen or desktop runs within standard browser sandboxing with no elevated system permissions.</li>
+                </ul>
               </div>
             </section>
 
             {/* Section 3 */}
             <section
-              id="camera-optical-scan"
+              id="zero-collection"
               className="p-6 sm:p-8 rounded-2xl bg-[#121212]/50 border border-white/10 scroll-mt-32"
             >
               <div className="flex items-center gap-2 font-mono text-xs text-[#F22952] uppercase font-semibold mb-2">
                 <span>03</span>
                 <span className="text-white/20">/</span>
-                <span>CAMERA PERMISSIONS</span>
+                <span>DATA EXCLUSION</span>
               </div>
               <h2 className="font-display font-black text-2xl sm:text-3xl text-white uppercase mb-4">
-                3. Camera API &amp; Animated QR Stream
+                3. Zero Personal Data &amp; Zero Cookies
               </h2>
               <div className="space-y-4">
                 <p>
-                  To read incoming QR code streams, AirBeam-Share requests access to your device camera:
+                  Kurush-Yarn operates on a strict non-collection standard:
                 </p>
-                <ul className="list-disc list-inside space-y-2 text-white/90">
-                  <li><strong>Optical Scanning Only:</strong> The camera feed is processed live in memory purely to decode QR stream frames.</li>
-                  <li><strong>No Photo/Video Recording:</strong> AirBeam-Share does not save photo captures or video files from your camera to storage.</li>
-                  <li><strong>Local Frame Processing:</strong> Every scanned frame is decoded instantly and discarded once chunk bytes are parsed.</li>
-                </ul>
-              </div>
-            </section>
-
-            {/* Section 4 */}
-            <section
-              id="local-room-db"
-              className="p-6 sm:p-8 rounded-2xl bg-[#121212]/50 border border-white/10 scroll-mt-32"
-            >
-              <div className="flex items-center gap-2 font-mono text-xs text-[#F22952] uppercase font-semibold mb-2">
-                <span>04</span>
-                <span className="text-white/20">/</span>
-                <span>LOCAL ROOM DB</span>
-              </div>
-              <h2 className="font-display font-black text-2xl sm:text-3xl text-white uppercase mb-4">
-                4. Local Room Database Sandbox
-              </h2>
-              <div className="space-y-4">
-                <p>
-                  Transfer logs, file metadata, and transfer timestamps are saved inside an Android Jetpack <strong>Room Database</strong> in your private application sandbox storage. This database remains exclusively on your device.
-                </p>
-                <p>
-                  Delanki Studio has no backdoor, remote syncing API, or analytical telemetry to read the files or transfer history stored in your local database.
-                </p>
-              </div>
-            </section>
-
-            {/* Section 5 */}
-            <section
-              id="system-permissions"
-              className="p-6 sm:p-8 rounded-2xl bg-[#121212]/50 border border-white/10 scroll-mt-32"
-            >
-              <div className="flex items-center gap-2 font-mono text-xs text-[#F22952] uppercase font-semibold mb-2">
-                <span>05</span>
-                <span className="text-white/20">/</span>
-                <span>SYSTEM PERMISSIONS</span>
-              </div>
-              <h2 className="font-display font-black text-2xl sm:text-3xl text-white uppercase mb-4">
-                5. Android System Permissions
-              </h2>
-              <div className="space-y-4">
-                <p>
-                  AirBeam-Share limits system permission requests to the bare minimum required for optical data reception and local file writing:
-                </p>
-                <div className="p-4 rounded-xl bg-[#090909] border border-white/10 space-y-3 font-mono text-xs">
-                  <div className="p-3 bg-white/5 rounded-lg border border-white/10 flex items-center justify-between">
-                    <span className="text-white font-bold">CAMERA</span>
-                    <span className="text-emerald-400">Scan Optical QR Stream</span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                  <div className="p-3 rounded-lg bg-[#090909] border border-white/10 font-mono text-xs text-white/90 flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    <span>No names, emails, or phone numbers</span>
                   </div>
-                  <div className="p-3 bg-white/5 rounded-lg border border-white/10 flex items-center justify-between">
-                    <span className="text-white font-bold">READ / WRITE STORAGE</span>
-                    <span className="text-emerald-400">Save Transferred Files Locally</span>
+                  <div className="p-3 rounded-lg bg-[#090909] border border-white/10 font-mono text-xs text-white/90 flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    <span>No location or GPS coordinates</span>
+                  </div>
+                  <div className="p-3 rounded-lg bg-[#090909] border border-white/10 font-mono text-xs text-white/90 flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    <span>No IP logging or telemetry</span>
+                  </div>
+                  <div className="p-3 rounded-lg bg-[#090909] border border-white/10 font-mono text-xs text-white/90 flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    <span>No marketing or profiling cookies</span>
                   </div>
                 </div>
               </div>
             </section>
 
-            {/* Section 6 */}
+            {/* Section 4 */}
+            <section
+              id="webgl-rendering"
+              className="p-6 sm:p-8 rounded-2xl bg-[#121212]/50 border border-white/10 scroll-mt-32"
+            >
+              <div className="flex items-center gap-2 font-mono text-xs text-[#F22952] uppercase font-semibold mb-2">
+                <span>04</span>
+                <span className="text-white/20">/</span>
+                <span>GRAPHICS SAFETY</span>
+              </div>
+              <h2 className="font-display font-black text-2xl sm:text-3xl text-white uppercase mb-4">
+                4. WebGL Canvas Acceleration
+              </h2>
+              <div className="space-y-4">
+                <p>
+                  Interactive textile objects are rendered using HTML5 Canvas and local WebGL shaders:
+                </p>
+                <ul className="space-y-2 list-disc list-inside text-white/90">
+                  <li>Texture shading and yarn lighting compute entirely in your local graphics hardware.</li>
+                  <li>No device fingerprinting or persistent hardware identifiers are captured.</li>
+                </ul>
+              </div>
+            </section>
+
+            {/* Section 5 */}
             <section
               id="no-third-party"
               className="p-6 sm:p-8 rounded-2xl bg-[#121212]/50 border border-white/10 scroll-mt-32"
             >
               <div className="flex items-center gap-2 font-mono text-xs text-[#F22952] uppercase font-semibold mb-2">
-                <span>06</span>
+                <span>05</span>
                 <span className="text-white/20">/</span>
-                <span>ZERO TRACKERS</span>
+                <span>ZERO ADVERTISING</span>
               </div>
               <h2 className="font-display font-black text-2xl sm:text-3xl text-white uppercase mb-4">
-                6. Zero Ads, Analytics &amp; Trackers
+                5. Zero Ads &amp; Analytics
               </h2>
               <div className="space-y-4">
                 <p>
-                  AirBeam-Share contains zero advertisement SDKs (no AdMob, Meta, Unity), zero telemetry trackers (no Firebase Analytics or Mixpanel), and zero crash reporting beacons.
+                  The exhibition contains zero third-party commercial SDKs, ad networks, or user tracking tags.
                 </p>
+              </div>
+            </section>
+
+            {/* Section 6 */}
+            <section
+              id="cache-management"
+              className="p-6 sm:p-8 rounded-2xl bg-[#121212]/50 border border-white/10 scroll-mt-32"
+            >
+              <div className="flex items-center gap-2 font-mono text-xs text-[#F22952] uppercase font-semibold mb-2">
+                <span>06</span>
+                <span className="text-white/20">/</span>
+                <span>USER CONTROL</span>
+              </div>
+              <h2 className="font-display font-black text-2xl sm:text-3xl text-white uppercase mb-4">
+                6. Clearing Service Worker Cache
+              </h2>
+              <div className="space-y-4">
                 <p>
-                  Your file transfer sessions, file names, file sizes, and contact interactions remain confidential and immune to third-party data broker profiling.
+                  You can purge all cached artwork files and unregister the service worker at any time:
                 </p>
+                <ol className="space-y-2 list-decimal list-inside text-white/90">
+                  <li>Open your browser settings and navigate to <strong className="text-white">Site Settings / Storage</strong>.</li>
+                  <li>Find <strong className="text-white">kurush-yarn.vercel.app</strong> or <strong className="text-white">delanki.com</strong>.</li>
+                  <li>Click <strong className="text-white">Clear data and unregister</strong>.</li>
+                </ol>
               </div>
             </section>
 
             {/* Section 7 */}
             <section
-              id="data-deletion"
+              id="global-compliance"
               className="p-6 sm:p-8 rounded-2xl bg-[#121212]/50 border border-white/10 scroll-mt-32"
             >
               <div className="flex items-center gap-2 font-mono text-xs text-[#F22952] uppercase font-semibold mb-2">
                 <span>07</span>
                 <span className="text-white/20">/</span>
-                <span>DATA SOVEREIGNTY</span>
+                <span>REGULATORY COMPLIANCE</span>
               </div>
               <h2 className="font-display font-black text-2xl sm:text-3xl text-white uppercase mb-4">
-                7. Local Transfer Log Wipe &amp; Deletion
+                7. GDPR &amp; Global Rights
               </h2>
               <div className="space-y-4">
                 <p>
-                  You hold complete sovereignty over your transfer records. You can clear your transfer history instantly by selecting &quot;Clear Transfer History&quot; inside settings or going to Android Settings &gt; Apps &gt; AirBeam-Share &gt; Storage &gt; Clear Data.
-                </p>
-                <p>
-                  Uninstalling the application immediately eradicates the SQLite database and cached QR stream segments permanently from your device.
+                  Because Kurush-Yarn collects zero personal data, your rights under GDPR (EU), CCPA (California), and international frameworks are naturally respected.
                 </p>
               </div>
             </section>
 
-            {/* Section 8 */}
-            <section
-              id="global-compliance"
-              className="p-6 sm:p-8 rounded-2xl bg-[#121212]/50 border border-white/10 scroll-mt-32"
-            >
-              <div className="flex items-center gap-2 font-mono text-xs text-[#F22952] uppercase font-semibold mb-2">
-                <span>08</span>
-                <span className="text-white/20">/</span>
-                <span>GLOBAL COMPLIANCE</span>
-              </div>
-              <h2 className="font-display font-black text-2xl sm:text-3xl text-white uppercase mb-4">
-                8. GDPR &amp; CCPA Compliance
-              </h2>
-              <div className="space-y-4">
-                <p>
-                  Because AirBeam-Share transmits zero user data to remote servers, users automatically retain 100% data sovereignty under global regulations including GDPR, UK Data Protection Act, and CCPA/CPRA.
-                </p>
-                <p>
-                  No consent management platforms or cookie banners are required because no telemetry or tracking cookies exist within the codebase.
-                </p>
-              </div>
-            </section>
-
-            {/* Section 9: Policy Updates & Developer Contact Desk */}
+            {/* Section 8: Contact Desk */}
             <section
               id="contact-desk"
               className="p-6 sm:p-8 rounded-2xl bg-[#121212] border border-[#F22952]/40 scroll-mt-32"
             >
               <div className="flex items-center gap-2 font-mono text-xs text-[#F22952] uppercase font-semibold mb-2">
-                <span>09</span>
+                <span>08</span>
                 <span className="text-white/20">/</span>
                 <span>CONTACT DESK</span>
               </div>
               <h2 className="font-display font-black text-2xl sm:text-3xl text-white uppercase mb-4">
-                9. Policy Updates &amp; Contact Desk
+                8. Policy Updates &amp; Contact Desk
               </h2>
               <div className="space-y-4">
                 <p>
-                  For inquiries regarding AirBeam-Share&apos;s optical file transfer architecture, security model, or privacy safeguards, contact Delanki Studio directly:
+                  We may periodically review and update this Privacy Policy. Any revisions will be published directly to this URL:
                 </p>
                 <p className="font-mono text-xs text-[#F22952]">
-                  https://www.delanki.com/products/airbeam-share/privacy-policy
+                  https://www.delanki.com/products/kurush-yarn/privacy-policy
                 </p>
 
                 <div className="p-4 rounded-xl bg-[#090909] border border-white/15 flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-6">
                   <div>
                     <span className="font-mono text-xs text-[#B7B7B7] block mb-1">
-                      AIRBEAM-SHARE PRIVACY INQUIRIES &amp; SUPPORT
+                      KURUSH-YARN CURATORIAL &amp; PRIVACY INQUIRIES
                     </span>
                     <span className="font-mono text-sm sm:text-base text-white font-bold">
                       {COMPANY_DATA.email}
@@ -466,7 +445,7 @@ export const AirBeamSharePrivacyPolicyPage: React.FC = () => {
                       <span>{copiedEmail ? 'COPIED' : 'COPY EMAIL'}</span>
                     </button>
                     <a
-                      href={`mailto:${COMPANY_DATA.email}?subject=${encodeURIComponent('AirBeam-Share Privacy Inquiry')}`}
+                      href={`mailto:${COMPANY_DATA.email}?subject=${encodeURIComponent('Kurush-Yarn Privacy Inquiry')}`}
                       className="px-4 py-2 rounded-lg bg-[#F22952] hover:bg-[#ff3b63] text-white font-mono text-xs font-bold uppercase transition-colors"
                     >
                       COMPOSE EMAIL →
@@ -475,11 +454,11 @@ export const AirBeamSharePrivacyPolicyPage: React.FC = () => {
                 </div>
 
                 <div className="flex flex-wrap items-center justify-between pt-4 border-t border-white/10 gap-3 font-mono text-xs text-[#B7B7B7]">
-                  <span>DELANKI STUDIO // PRODUCT: AIRBEAM-SHARE</span>
+                  <span>DELANKI STUDIO // PRODUCT: KURUSH-YARN</span>
                   <div className="flex items-center gap-4">
                     <Link
                       to="/product/$slug"
-                      params={{ slug: 'airbeam-share' }}
+                      params={{ slug: 'kurush-yarn' }}
                       className="text-white hover:text-[#F22952] transition-colors"
                     >
                       CASE STUDY

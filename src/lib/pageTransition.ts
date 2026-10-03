@@ -43,7 +43,21 @@ export const TRANSITION_EVENT = 'delanki:page-transition';
 export function resolveTransitionData(to: string, customData?: Partial<TransitionData>): TransitionData {
   let baseData = DEFAULT_STUDIO_DATA;
 
-  if (to.startsWith('/product/') || to === '/product') {
+  if (to.includes('privacy-policy') || to.endsWith('/privacy-policy')) {
+    const slug = to
+      .replace(/^\/products?\//, '')
+      .replace(/\/privacy-policy.*$/, '')
+      .split(/[?#/]/)[0];
+    const product = PRODUCTS_DATA.find((p) => p.slug === slug || p.id === slug);
+
+    baseData = {
+      title: 'PRIVACY',
+      tag: product ? `03 // ${product.title.toUpperCase()} COMPLIANCE` : DEFAULT_PRIVACY_DATA.tag,
+      description: product
+        ? `${product.title} data privacy policy, terms of service and compliance standards.`
+        : DEFAULT_PRIVACY_DATA.description,
+    };
+  } else if (to.startsWith('/product/') || to === '/product') {
     const slug = to.replace(/^\/product\//, '').split(/[?#/]/)[0];
     const product = PRODUCTS_DATA.find((p) => p.slug === slug || p.id === slug);
     baseData = {
@@ -53,8 +67,6 @@ export function resolveTransitionData(to: string, customData?: Partial<Transitio
     };
   } else if (to.startsWith('/products')) {
     baseData = DEFAULT_PRODUCTS_DATA;
-  } else if (to.startsWith('/privacy-policy')) {
-    baseData = DEFAULT_PRIVACY_DATA;
   } else if (to === '/' || to === '') {
     baseData = DEFAULT_STUDIO_DATA;
   }

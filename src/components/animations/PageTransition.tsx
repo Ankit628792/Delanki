@@ -142,8 +142,9 @@ export const PageTransition: React.FC = () => {
     const curr = location.pathname;
     prevPathnameRef.current = curr;
 
-    // Distinguish major route families: home ('/'), products catalogue ('/products'), product case studies ('/product/*'), or other
+    // Distinguish major route families: home ('/'), products catalogue ('/products'), product case studies ('/product/*'), privacy policy ('*privacy-policy*'), or other
     const getRouteFamily = (path: string) => {
+      if (path.includes('privacy-policy')) return 'privacy';
       if (path.startsWith('/product/')) return 'case-study';
       if (path.startsWith('/products')) return 'products';
       if (path === '/') return 'home';

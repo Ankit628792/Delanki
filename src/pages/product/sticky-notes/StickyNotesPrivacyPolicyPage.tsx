@@ -2,28 +2,27 @@ import React, { useState, useEffect } from 'react';
 import { Link } from '@tanstack/react-router';
 import { SEO } from '../../../components/common/SEO';
 import { Breadcrumbs } from '../../../components/common/Breadcrumbs';
-import { getAirBeamSharePrivacyPolicySEO } from '../../../lib/seo';
+import { getStickyNotesPrivacyPolicySEO } from '../../../lib/seo';
 import {
   ArrowLeft,
   ShieldCheck,
-  Lock,
   CheckCircle2,
   Copy,
   Check,
   FileText,
-  Camera,
-  WifiOff,
+  EyeOff,
+  Database,
   Share2,
   ChevronRight,
-  Database,
-  QrCode,
-  HardDrive,
-  EyeOff,
+  Code2,
+  Lock,
+  WifiOff,
+  Terminal,
 } from 'lucide-react';
 import { COMPANY_DATA } from '../../../data/siteData';
 import { scrollToElement, scrollToTop } from '../../../lib/lenis';
 
-export const AirBeamSharePrivacyPolicyPage: React.FC = () => {
+export const StickyNotesPrivacyPolicyPage: React.FC = () => {
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [copiedShare, setCopiedShare] = useState(false);
   const [activeSection, setActiveSection] = useState<string>('introduction');
@@ -33,14 +32,14 @@ export const AirBeamSharePrivacyPolicyPage: React.FC = () => {
   }, []);
 
   const navItems = [
-    { id: 'introduction', label: '1. Introduction & Offline Scope' },
-    { id: 'airgapped-architecture', label: '2. Air-Gapped Zero-Network Protocol' },
-    { id: 'camera-optical-scan', label: '3. Camera API & Animated QR Stream' },
-    { id: 'local-room-db', label: '4. Local Room Database Sandbox' },
-    { id: 'system-permissions', label: '5. Android System Permissions' },
-    { id: 'no-third-party', label: '6. Zero Ads, Analytics & Trackers' },
-    { id: 'data-deletion', label: '7. Local Transfer Log Wipe & Deletion' },
-    { id: 'global-compliance', label: '8. GDPR & CCPA Compliance' },
+    { id: 'introduction', label: '1. Introduction & Extension Scope' },
+    { id: 'local-workspace-storage', label: '2. Local workspaceState Sandbox' },
+    { id: 'zero-network-activity', label: '3. 100% Offline Network Guarantee' },
+    { id: 'source-code-privacy', label: '4. Source Code Confidentiality' },
+    { id: 'no-telemetry', label: '5. Zero Analytics & No Trackers' },
+    { id: 'vscode-permissions', label: '6. VS Code Extension Sandbox' },
+    { id: 'data-deletion', label: '7. Notes Deletion & Cleanup' },
+    { id: 'enterprise-compliance', label: '8. Enterprise Security & NDAs' },
     { id: 'contact-desk', label: '9. Policy Updates & Contact Desk' },
   ];
 
@@ -79,7 +78,7 @@ export const AirBeamSharePrivacyPolicyPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#090909] text-white pt-28 pb-20 px-4 sm:px-6 lg:px-8">
-      <SEO {...getAirBeamSharePrivacyPolicySEO()} />
+      <SEO {...getStickyNotesPrivacyPolicySEO()} />
 
       {/* Decorative Technical Grid Background */}
       <div className="fixed inset-0 bg-tech-grid opacity-30 pointer-events-none" />
@@ -90,13 +89,13 @@ export const AirBeamSharePrivacyPolicyPage: React.FC = () => {
           items={[
             { label: 'DELANKI STUDIO', to: '/' },
             { label: 'PRODUCTS', to: '/products' },
-            { label: 'AIRBEAM-SHARE', to: '/product/$slug', params: { slug: 'airbeam-share' } },
+            { label: 'STICKY NOTES', to: '/product/$slug', params: { slug: 'sticky-notes' } },
             { label: 'PRIVACY POLICY', isCurrent: true },
           ]}
           badge={{
-            icon: <WifiOff className="w-3.5 h-3.5" />,
-            label: 'AIR-GAPPED OPTICAL SANCTUARY',
-            variant: 'cyan',
+            icon: <Terminal className="w-3.5 h-3.5" />,
+            label: 'VS CODE EXTENSION',
+            variant: 'emerald',
           }}
           showShare={true}
         />
@@ -106,76 +105,76 @@ export const AirBeamSharePrivacyPolicyPage: React.FC = () => {
           <div className="flex flex-wrap items-center gap-3 mb-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F22952]/10 border border-[#F22952]/30 text-[#F22952] font-mono text-xs uppercase tracking-widest font-semibold">
               <FileText className="w-3.5 h-3.5" />
-              <span>AIRBEAM-SHARE // APP PRIVACY POLICY</span>
+              <span>STICKY NOTES // EXTENSION PRIVACY POLICY</span>
             </div>
           </div>
 
           <h1 className="font-display font-black text-3xl sm:text-5xl md:text-6xl uppercase tracking-tight text-white mb-4">
-            AIRBEAM-SHARE PRIVACY POLICY<span className="text-[#F22952]">.</span>
+            STICKY NOTES PRIVACY POLICY<span className="text-[#F22952]">.</span>
           </h1>
 
           <p className="text-base sm:text-lg text-[#B7B7B7] max-w-3xl leading-relaxed">
-            AirBeam-Share is an air-gapped, zero-network file transfer application engineered to move files between devices using high-speed animated QR code streams. It operates with zero internet permissions, zero cloud servers, and complete device isolation.
+            Delanki is committed to absolute code confidentiality and developer privacy. Sticky Notes for VS Code is engineered as a 100% offline editor extension: your workspace notes, comments, and file contents never leave your workstation.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 mt-6 font-mono text-xs text-[#B7B7B7]">
-            <span className="text-cyan-400 font-bold">STATUS: ACTIVE &amp; AIR-GAPPED</span>
+            <span className="text-emerald-400 font-bold">STATUS: VERIFIED &amp; 100% OFFLINE</span>
             <span className="text-white/20">•</span>
-            <span>EFFECTIVE DATE: SEPTEMBER 2026</span>
+            <span>EFFECTIVE DATE: JANUARY 2025</span>
             <span className="text-white/20">•</span>
             <span>LAST REVIEWED: OCTOBER 2026</span>
             <span className="text-white/20">•</span>
-            <span>STORAGE: 100% ON-DEVICE ROOM DB</span>
+            <span>STORAGE: LOCAL WORKSPACE STATE</span>
           </div>
         </header>
 
         {/* Core Guarantees Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
           <div className="p-5 rounded-2xl bg-[#121212] border border-white/10">
-            <div className="w-9 h-9 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-3">
+            <div className="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-3">
               <WifiOff className="w-4 h-4" />
             </div>
             <h2 className="font-mono text-sm font-bold text-white uppercase tracking-wider mb-1">
-              Zero Network
+              100% Offline
             </h2>
             <p className="text-xs text-[#B7B7B7] leading-relaxed">
-              Zero internet permissions requested. The app physically cannot transmit bytes outside your device screen.
+              Zero network requests. Safe for air-gapped workstations, classified codebases, and financial enterprise environments.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-[#121212] border border-white/10">
+            <div className="w-9 h-9 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-3">
+              <Database className="w-4 h-4" />
+            </div>
+            <h2 className="font-mono text-sm font-bold text-white uppercase tracking-wider mb-1">
+              Local Workspace
+            </h2>
+            <p className="text-xs text-[#B7B7B7] leading-relaxed">
+              Notes are scoped to your local editor workspaceState and never synced to remote clouds or third-party servers.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-[#121212] border border-white/10">
+            <div className="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-3">
+              <Lock className="w-4 h-4" />
+            </div>
+            <h2 className="font-mono text-sm font-bold text-white uppercase tracking-wider mb-1">
+              Code Confidential
+            </h2>
+            <p className="text-xs text-[#B7B7B7] leading-relaxed">
+              The extension parses comments in memory without reading external files or transmitting intellectual property.
             </p>
           </div>
 
           <div className="p-5 rounded-2xl bg-[#121212] border border-white/10">
             <div className="w-9 h-9 rounded-xl bg-[#F22952]/10 border border-[#F22952]/30 flex items-center justify-center text-[#F22952] mb-3">
-              <Camera className="w-4 h-4" />
+              <EyeOff className="w-4 h-4" />
             </div>
             <h2 className="font-mono text-sm font-bold text-white uppercase tracking-wider mb-1">
-              Optical Scan Only
+              Zero Telemetry
             </h2>
             <p className="text-xs text-[#B7B7B7] leading-relaxed">
-              Camera is strictly utilized in real-time RAM to decode QR chunks. Zero photos or videos are stored.
-            </p>
-          </div>
-
-          <div className="p-5 rounded-2xl bg-[#121212] border border-white/10">
-            <div className="w-9 h-9 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-3">
-              <Database className="w-4 h-4" />
-            </div>
-            <h2 className="font-mono text-sm font-bold text-white uppercase tracking-wider mb-1">
-              Local Room DB
-            </h2>
-            <p className="text-xs text-[#B7B7B7] leading-relaxed">
-              Transfer logs and metadata reside strictly within the encrypted Android application sandbox.
-            </p>
-          </div>
-
-          <div className="p-5 rounded-2xl bg-[#121212] border border-white/10">
-            <div className="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-3">
-              <ShieldCheck className="w-4 h-4" />
-            </div>
-            <h2 className="font-mono text-sm font-bold text-white uppercase tracking-wider mb-1">
-              Zero Trackers
-            </h2>
-            <p className="text-xs text-[#B7B7B7] leading-relaxed">
-              Zero advertising SDKs, zero remote analytics, and zero crash reporting beacons embedded.
+              No Application Insights, no Sentry crash beacons, and no usage analytics pings sent to Delanki.
             </p>
           </div>
         </div>
@@ -216,7 +215,7 @@ export const AirBeamSharePrivacyPolicyPage: React.FC = () => {
             <div className="mt-6 pt-5 border-t border-white/10 space-y-3">
               <Link
                 to="/product/$slug"
-                params={{ slug: 'airbeam-share' }}
+                params={{ slug: 'sticky-notes' }}
                 className="w-full py-2 px-3 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-white font-mono text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-1.5"
               >
                 <span>VIEW CASE STUDY</span>
@@ -235,145 +234,139 @@ export const AirBeamSharePrivacyPolicyPage: React.FC = () => {
               <div className="flex items-center gap-2 font-mono text-xs text-[#F22952] uppercase font-semibold mb-2">
                 <span>01</span>
                 <span className="text-white/20">/</span>
-                <span>ZERO-NETWORK SCOPE</span>
+                <span>DEVELOPER TOOLING SCOPE</span>
               </div>
               <h2 className="font-display font-black text-2xl sm:text-3xl text-white uppercase mb-4">
-                1. Introduction &amp; Offline Scope
+                1. Introduction &amp; Extension Scope
               </h2>
               <div className="space-y-4">
                 <p>
-                  Delanki Studio presents <strong>AirBeam-Share</strong>, an offline optical file sharing app built with Jetpack Compose.
+                  Delanki (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;the Studio&rdquo;) is the author of <strong>Sticky Notes for VS Code</strong>, an editor extension that lets software engineers manage inline sticky notes and TODO tags across their active codebase.
                 </p>
                 <p>
-                  AirBeam-Share converts files, photos, and documents into an animated stream of QR codes on the sender&apos;s screen. The receiver&apos;s camera scans this optical stream to reconstruct the original data—completely offline without requiring Wi-Fi networks, Bluetooth pairing, cellular data, or cloud servers.
+                  We recognize that developer workstations host proprietary intellectual property, trade secrets, and client repositories. Sticky Notes for VS Code was constructed with zero external connectivity.
+                </p>
+                <p>
+                  This Privacy Policy applies to the official extension package distributed through the Visual Studio Code Marketplace and Open VSX Registry.
                 </p>
               </div>
             </section>
 
             {/* Section 2 */}
             <section
-              id="airgapped-architecture"
+              id="local-workspace-storage"
               className="p-6 sm:p-8 rounded-2xl bg-[#121212]/50 border border-white/10 scroll-mt-32"
             >
               <div className="flex items-center gap-2 font-mono text-xs text-[#F22952] uppercase font-semibold mb-2">
                 <span>02</span>
                 <span className="text-white/20">/</span>
-                <span>ZERO-NETWORK PROTOCOL</span>
+                <span>WORKSPACE STORAGE</span>
               </div>
               <h2 className="font-display font-black text-2xl sm:text-3xl text-white uppercase mb-4">
-                2. Air-Gapped Zero-Network Protocol
+                2. Local workspaceState Sandbox
               </h2>
               <div className="space-y-4">
                 <p>
-                  AirBeam-Share is engineered around a strict air-gapped security model. By transmitting data entirely through optical visual frames, it bypasses the physical attack surfaces associated with wireless radio protocols.
+                  When you create a sticky note or tag an inline comment:
                 </p>
-                <div className="p-4 rounded-xl bg-cyan-500/10 border border-cyan-500/25 flex items-start gap-3">
-                  <WifiOff className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-                  <p className="text-xs text-cyan-200">
-                    <strong>Zero Network Permissions:</strong> AirBeam-Share does not request Android <code className="font-mono bg-white/10 px-1 py-0.5 rounded">INTERNET</code> or network state permissions. It is physically impossible for the app to send data to external remote servers.
-                  </p>
-                </div>
+                <ul className="space-y-2 list-disc list-inside text-white/90">
+                  <li>Notes are saved into VS Code’s internal <code className="text-[#F22952] font-mono text-xs">ExtensionContext.workspaceState</code> storage mechanism on your local disk.</li>
+                  <li>Notes are isolated strictly to that project folder and are not uploaded to remote servers.</li>
+                  <li>Deleting or closing the workspace isolates the state on your machine.</li>
+                </ul>
               </div>
             </section>
 
             {/* Section 3 */}
             <section
-              id="camera-optical-scan"
+              id="zero-network-activity"
               className="p-6 sm:p-8 rounded-2xl bg-[#121212]/50 border border-white/10 scroll-mt-32"
             >
               <div className="flex items-center gap-2 font-mono text-xs text-[#F22952] uppercase font-semibold mb-2">
                 <span>03</span>
                 <span className="text-white/20">/</span>
-                <span>CAMERA PERMISSIONS</span>
+                <span>OFFLINE GUARANTEE</span>
               </div>
               <h2 className="font-display font-black text-2xl sm:text-3xl text-white uppercase mb-4">
-                3. Camera API &amp; Animated QR Stream
+                3. 100% Offline Network Guarantee
               </h2>
               <div className="space-y-4">
                 <p>
-                  To read incoming QR code streams, AirBeam-Share requests access to your device camera:
+                  The extension codebase contains zero network communication modules:
                 </p>
-                <ul className="list-disc list-inside space-y-2 text-white/90">
-                  <li><strong>Optical Scanning Only:</strong> The camera feed is processed live in memory purely to decode QR stream frames.</li>
-                  <li><strong>No Photo/Video Recording:</strong> AirBeam-Share does not save photo captures or video files from your camera to storage.</li>
-                  <li><strong>Local Frame Processing:</strong> Every scanned frame is decoded instantly and discarded once chunk bytes are parsed.</li>
+                <ul className="space-y-2 list-disc list-inside text-white/90">
+                  <li>No imports of Node.js <code className="text-[#F22952] font-mono text-xs">http</code>, <code className="text-[#F22952] font-mono text-xs">https</code>, or <code className="text-[#F22952] font-mono text-xs">fetch</code> modules.</li>
+                  <li>Fully compatible with air-gapped workstations, offline lab systems, and secured corporate intranets.</li>
                 </ul>
               </div>
             </section>
 
             {/* Section 4 */}
             <section
-              id="local-room-db"
+              id="source-code-privacy"
               className="p-6 sm:p-8 rounded-2xl bg-[#121212]/50 border border-white/10 scroll-mt-32"
             >
               <div className="flex items-center gap-2 font-mono text-xs text-[#F22952] uppercase font-semibold mb-2">
                 <span>04</span>
                 <span className="text-white/20">/</span>
-                <span>LOCAL ROOM DB</span>
+                <span>CODE CONFIDENTIALITY</span>
               </div>
               <h2 className="font-display font-black text-2xl sm:text-3xl text-white uppercase mb-4">
-                4. Local Room Database Sandbox
+                4. Source Code Confidentiality
               </h2>
               <div className="space-y-4">
                 <p>
-                  Transfer logs, file metadata, and transfer timestamps are saved inside an Android Jetpack <strong>Room Database</strong> in your private application sandbox storage. This database remains exclusively on your device.
+                  The extension inspects active editor text lines solely to render gutter badges and sidebar navigation:
                 </p>
-                <p>
-                  Delanki Studio has no backdoor, remote syncing API, or analytical telemetry to read the files or transfer history stored in your local database.
-                </p>
+                <ul className="space-y-2 list-disc list-inside text-white/90">
+                  <li>Regex comment scanning runs in volatile memory only while files are actively opened in the editor.</li>
+                  <li>No code snippets, file paths, or git repository names are ever permanently cached or transmitted.</li>
+                </ul>
               </div>
             </section>
 
             {/* Section 5 */}
             <section
-              id="system-permissions"
+              id="no-telemetry"
               className="p-6 sm:p-8 rounded-2xl bg-[#121212]/50 border border-white/10 scroll-mt-32"
             >
               <div className="flex items-center gap-2 font-mono text-xs text-[#F22952] uppercase font-semibold mb-2">
                 <span>05</span>
                 <span className="text-white/20">/</span>
-                <span>SYSTEM PERMISSIONS</span>
+                <span>ZERO TELEMETRY</span>
               </div>
               <h2 className="font-display font-black text-2xl sm:text-3xl text-white uppercase mb-4">
-                5. Android System Permissions
+                5. Zero Analytics &amp; No Trackers
               </h2>
               <div className="space-y-4">
                 <p>
-                  AirBeam-Share limits system permission requests to the bare minimum required for optical data reception and local file writing:
+                  Delanki does not include Microsoft Application Insights, Sentry, or custom telemetry probes in Sticky Notes for VS Code.
                 </p>
-                <div className="p-4 rounded-xl bg-[#090909] border border-white/10 space-y-3 font-mono text-xs">
-                  <div className="p-3 bg-white/5 rounded-lg border border-white/10 flex items-center justify-between">
-                    <span className="text-white font-bold">CAMERA</span>
-                    <span className="text-emerald-400">Scan Optical QR Stream</span>
-                  </div>
-                  <div className="p-3 bg-white/5 rounded-lg border border-white/10 flex items-center justify-between">
-                    <span className="text-white font-bold">READ / WRITE STORAGE</span>
-                    <span className="text-emerald-400">Save Transferred Files Locally</span>
-                  </div>
-                </div>
               </div>
             </section>
 
             {/* Section 6 */}
             <section
-              id="no-third-party"
+              id="vscode-permissions"
               className="p-6 sm:p-8 rounded-2xl bg-[#121212]/50 border border-white/10 scroll-mt-32"
             >
               <div className="flex items-center gap-2 font-mono text-xs text-[#F22952] uppercase font-semibold mb-2">
                 <span>06</span>
                 <span className="text-white/20">/</span>
-                <span>ZERO TRACKERS</span>
+                <span>EXTENSION SANDBOX</span>
               </div>
               <h2 className="font-display font-black text-2xl sm:text-3xl text-white uppercase mb-4">
-                6. Zero Ads, Analytics &amp; Trackers
+                6. VS Code Extension Sandbox
               </h2>
               <div className="space-y-4">
                 <p>
-                  AirBeam-Share contains zero advertisement SDKs (no AdMob, Meta, Unity), zero telemetry trackers (no Firebase Analytics or Mixpanel), and zero crash reporting beacons.
+                  The extension executes inside the standard VS Code extension host process with minimal privileges:
                 </p>
-                <p>
-                  Your file transfer sessions, file names, file sizes, and contact interactions remain confidential and immune to third-party data broker profiling.
-                </p>
+                <div className="p-4 rounded-xl bg-[#090909] border border-white/15 space-y-2 font-mono text-xs text-[#B7B7B7]">
+                  <div>• <span className="text-emerald-400 font-bold">window.createTextEditorDecorationType:</span> Gutter badge highlights.</div>
+                  <div>• <span className="text-emerald-400 font-bold">window.registerTreeDataProvider:</span> Sidebar notes tree view.</div>
+                  <div>• <span className="text-emerald-400 font-bold">commands.registerCommand:</span> Shortcut keystrokes for adding/clearing notes.</div>
+                </div>
               </div>
             </section>
 
@@ -385,45 +378,42 @@ export const AirBeamSharePrivacyPolicyPage: React.FC = () => {
               <div className="flex items-center gap-2 font-mono text-xs text-[#F22952] uppercase font-semibold mb-2">
                 <span>07</span>
                 <span className="text-white/20">/</span>
-                <span>DATA SOVEREIGNTY</span>
+                <span>USER CONTROL</span>
               </div>
               <h2 className="font-display font-black text-2xl sm:text-3xl text-white uppercase mb-4">
-                7. Local Transfer Log Wipe &amp; Deletion
+                7. Notes Deletion &amp; Cleanup
               </h2>
               <div className="space-y-4">
                 <p>
-                  You hold complete sovereignty over your transfer records. You can clear your transfer history instantly by selecting &quot;Clear Transfer History&quot; inside settings or going to Android Settings &gt; Apps &gt; AirBeam-Share &gt; Storage &gt; Clear Data.
+                  You can delete notes individually in the sidebar tree view or execute <code className="text-[#F22952] font-mono text-xs">Sticky Notes: Clear All Workspace Notes</code> from the Command Palette (<kbd className="bg-white/10 px-1.5 py-0.5 rounded text-xs">Ctrl+Shift+P</kbd> / <kbd className="bg-white/10 px-1.5 py-0.5 rounded text-xs">Cmd+Shift+P</kbd>).
                 </p>
-                <p>
-                  Uninstalling the application immediately eradicates the SQLite database and cached QR stream segments permanently from your device.
+                <p className="text-xs text-[#888888]">
+                  Uninstalling the extension from VS Code immediately clears all registered decorations and listeners.
                 </p>
               </div>
             </section>
 
             {/* Section 8 */}
             <section
-              id="global-compliance"
+              id="enterprise-compliance"
               className="p-6 sm:p-8 rounded-2xl bg-[#121212]/50 border border-white/10 scroll-mt-32"
             >
               <div className="flex items-center gap-2 font-mono text-xs text-[#F22952] uppercase font-semibold mb-2">
                 <span>08</span>
                 <span className="text-white/20">/</span>
-                <span>GLOBAL COMPLIANCE</span>
+                <span>ENTERPRISE SECURITY</span>
               </div>
               <h2 className="font-display font-black text-2xl sm:text-3xl text-white uppercase mb-4">
-                8. GDPR &amp; CCPA Compliance
+                8. Enterprise Security &amp; NDAs
               </h2>
               <div className="space-y-4">
                 <p>
-                  Because AirBeam-Share transmits zero user data to remote servers, users automatically retain 100% data sovereignty under global regulations including GDPR, UK Data Protection Act, and CCPA/CPRA.
-                </p>
-                <p>
-                  No consent management platforms or cookie banners are required because no telemetry or tracking cookies exist within the codebase.
+                  Because Sticky Notes for VS Code contains zero network activity, it adheres to enterprise SOC 2, HIPAA code workstation guidelines, and bilateral Non-Disclosure Agreements (NDAs).
                 </p>
               </div>
             </section>
 
-            {/* Section 9: Policy Updates & Developer Contact Desk */}
+            {/* Section 9: Contact Desk */}
             <section
               id="contact-desk"
               className="p-6 sm:p-8 rounded-2xl bg-[#121212] border border-[#F22952]/40 scroll-mt-32"
@@ -438,16 +428,16 @@ export const AirBeamSharePrivacyPolicyPage: React.FC = () => {
               </h2>
               <div className="space-y-4">
                 <p>
-                  For inquiries regarding AirBeam-Share&apos;s optical file transfer architecture, security model, or privacy safeguards, contact Delanki Studio directly:
+                  We may periodically review and update this Privacy Policy. Any revisions will be published directly to this URL:
                 </p>
                 <p className="font-mono text-xs text-[#F22952]">
-                  https://www.delanki.com/products/airbeam-share/privacy-policy
+                  https://www.delanki.com/products/sticky-notes/privacy-policy
                 </p>
 
                 <div className="p-4 rounded-xl bg-[#090909] border border-white/15 flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-6">
                   <div>
                     <span className="font-mono text-xs text-[#B7B7B7] block mb-1">
-                      AIRBEAM-SHARE PRIVACY INQUIRIES &amp; SUPPORT
+                      STICKY NOTES DEVELOPER PRIVACY INQUIRIES
                     </span>
                     <span className="font-mono text-sm sm:text-base text-white font-bold">
                       {COMPANY_DATA.email}
@@ -466,7 +456,7 @@ export const AirBeamSharePrivacyPolicyPage: React.FC = () => {
                       <span>{copiedEmail ? 'COPIED' : 'COPY EMAIL'}</span>
                     </button>
                     <a
-                      href={`mailto:${COMPANY_DATA.email}?subject=${encodeURIComponent('AirBeam-Share Privacy Inquiry')}`}
+                      href={`mailto:${COMPANY_DATA.email}?subject=${encodeURIComponent('Sticky Notes Privacy Inquiry')}`}
                       className="px-4 py-2 rounded-lg bg-[#F22952] hover:bg-[#ff3b63] text-white font-mono text-xs font-bold uppercase transition-colors"
                     >
                       COMPOSE EMAIL →
@@ -475,11 +465,11 @@ export const AirBeamSharePrivacyPolicyPage: React.FC = () => {
                 </div>
 
                 <div className="flex flex-wrap items-center justify-between pt-4 border-t border-white/10 gap-3 font-mono text-xs text-[#B7B7B7]">
-                  <span>DELANKI STUDIO // PRODUCT: AIRBEAM-SHARE</span>
+                  <span>DELANKI STUDIO // PRODUCT: STICKY NOTES FOR VS CODE</span>
                   <div className="flex items-center gap-4">
                     <Link
                       to="/product/$slug"
-                      params={{ slug: 'airbeam-share' }}
+                      params={{ slug: 'sticky-notes' }}
                       className="text-white hover:text-[#F22952] transition-colors"
                     >
                       CASE STUDY

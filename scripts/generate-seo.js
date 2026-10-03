@@ -141,6 +141,48 @@ function generateSitemapXml(products) {
       lastmod: TODAY_ISO,
       title: 'AirBeam-Share Privacy Policy & Air-gapped Optical Standards — Delanki',
     },
+    {
+      loc: `${SITE_URL}/products/vectofi/privacy-policy`,
+      changefreq: 'monthly',
+      priority: '0.5',
+      lastmod: TODAY_ISO,
+      title: 'Vectofi Privacy Policy & Client-Side Vector Safety — Delanki',
+    },
+    {
+      loc: `${SITE_URL}/products/kurush-yarn/privacy-policy`,
+      changefreq: 'monthly',
+      priority: '0.5',
+      lastmod: TODAY_ISO,
+      title: 'Kurush-Yarn Privacy Policy & Digital Gallery Standards — Delanki',
+    },
+    {
+      loc: `${SITE_URL}/products/qrazy/privacy-policy`,
+      changefreq: 'monthly',
+      priority: '0.5',
+      lastmod: TODAY_ISO,
+      title: 'Qrazy Privacy Policy & Camera Verification Security — Delanki',
+    },
+    {
+      loc: `${SITE_URL}/products/sticky-notes/privacy-policy`,
+      changefreq: 'monthly',
+      priority: '0.5',
+      lastmod: TODAY_ISO,
+      title: 'Sticky Notes VS Code Privacy Policy & Local Workspace Safety — Delanki',
+    },
+    {
+      loc: `${SITE_URL}/products/jira-github-linker/privacy-policy`,
+      changefreq: 'monthly',
+      priority: '0.5',
+      lastmod: TODAY_ISO,
+      title: 'Jira & GitHub Linker Privacy Policy & Token Security — Delanki',
+    },
+    {
+      loc: `${SITE_URL}/products/syntax-storyteller/privacy-policy`,
+      changefreq: 'monthly',
+      priority: '0.5',
+      lastmod: TODAY_ISO,
+      title: 'Syntax Storyteller Privacy Policy & AI Code Safety — Delanki',
+    },
   ];
 
   const productRoutes = products.map((product) => ({
@@ -258,6 +300,12 @@ function generateSeoRoutesJson(products) {
     { path: '/products/respira/privacy-policy', priority: 0.5, type: 'legal', title: 'Respira Privacy Policy' },
     { path: '/products/love-alarm/privacy-policy', priority: 0.5, type: 'legal', title: 'Love Alarm 2.0 Privacy Policy' },
     { path: '/products/airbeam-share/privacy-policy', priority: 0.5, type: 'legal', title: 'AirBeam-Share Privacy Policy' },
+    { path: '/products/vectofi/privacy-policy', priority: 0.5, type: 'legal', title: 'Vectofi Privacy Policy' },
+    { path: '/products/kurush-yarn/privacy-policy', priority: 0.5, type: 'legal', title: 'Kurush-Yarn Privacy Policy' },
+    { path: '/products/qrazy/privacy-policy', priority: 0.5, type: 'legal', title: 'Qrazy Privacy Policy' },
+    { path: '/products/sticky-notes/privacy-policy', priority: 0.5, type: 'legal', title: 'Sticky Notes VS Code Privacy Policy' },
+    { path: '/products/jira-github-linker/privacy-policy', priority: 0.5, type: 'legal', title: 'Jira & GitHub Linker Privacy Policy' },
+    { path: '/products/syntax-storyteller/privacy-policy', priority: 0.5, type: 'legal', title: 'Syntax Storyteller Privacy Policy' },
     ...products.map((p) => ({
       path: `/product/${p.slug}`,
       slug: p.slug,

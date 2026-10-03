@@ -453,6 +453,180 @@ function getRouteMetadata(routePath) {
     };
   }
 
+  // 7b. Vectofi Privacy Policy
+  if (routePath === '/products/vectofi/privacy-policy') {
+    return {
+      title: 'Vectofi Privacy Policy — Client-Side Vector Engine & Asset Safety | Delanki',
+      description: 'Official privacy policy for Vectofi. 100% in-browser client-side vector processing, local browser storage, zero remote asset uploading, and strict SVG security.',
+      canonical: `${siteOrigin}/products/vectofi/privacy-policy`,
+      ogType: 'article',
+      schema: {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: 'Vectofi Privacy Policy & Client-Side Asset Safety',
+        url: `${siteOrigin}/products/vectofi/privacy-policy`,
+      },
+      semanticHtml: `
+        <header>
+          <nav aria-label="Breadcrumb"><a href="/">Home</a> &gt; <a href="/product/vectofi">Vectofi</a> &gt; <span>Privacy Policy</span></nav>
+          <h1>Vectofi Privacy Policy</h1>
+          <p>Client-Side Vector Engine &amp; Asset Isolation</p>
+        </header>
+        <main>
+          <section>
+            <h2>Zero Cloud Storage Architecture</h2>
+            <p>Vectofi executes 100% in-browser on client devices. SVG designs, Bezier paths, and color palettes are stored solely in local browser storage and never uploaded to remote servers.</p>
+          </section>
+        </main>
+      `,
+    };
+  }
+
+  // 7c. Kurush-Yarn Privacy Policy
+  if (routePath === '/products/kurush-yarn/privacy-policy') {
+    return {
+      title: 'Kurush-Yarn Privacy Policy — Tactile Art Exhibition & PWA Privacy | Delanki',
+      description: 'Official privacy policy for Kurush-Yarn. PWA offline caching, zero personal data collection, zero third-party trackers, and private WebGL interactive showcase.',
+      canonical: `${siteOrigin}/products/kurush-yarn/privacy-policy`,
+      ogType: 'article',
+      schema: {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: 'Kurush-Yarn Privacy Policy & Digital Gallery Data Standards',
+        url: `${siteOrigin}/products/kurush-yarn/privacy-policy`,
+      },
+      semanticHtml: `
+        <header>
+          <nav aria-label="Breadcrumb"><a href="/">Home</a> &gt; <a href="/product/kurush-yarn">Kurush-Yarn</a> &gt; <span>Privacy Policy</span></nav>
+          <h1>Kurush-Yarn Privacy Policy</h1>
+          <p>Tactile Art Exhibition &amp; PWA Offline Safety</p>
+        </header>
+        <main>
+          <section>
+            <h2>Zero Personal Data &amp; PWA Offline Caching</h2>
+            <p>Kurush-Yarn requires zero user accounts or telemetry. Service workers cache static 3D exhibition assets locally in browser memory for seamless offline viewing.</p>
+          </section>
+        </main>
+      `,
+    };
+  }
+
+  // 7d. Qrazy Privacy Policy
+  if (routePath === '/products/qrazy/privacy-policy') {
+    return {
+      title: 'Qrazy Privacy Policy — Camera Verification & Anti-Counterfeit Safety | Delanki',
+      description: 'Official privacy policy for Qrazy. In-memory camera QR verification, opt-in privacy-preserving incident reporting, zero camera feed transmission, and brand safety.',
+      canonical: `${siteOrigin}/products/qrazy/privacy-policy`,
+      ogType: 'article',
+      schema: {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: 'Qrazy Privacy Policy & QR Verification Data Standards',
+        url: `${siteOrigin}/products/qrazy/privacy-policy`,
+      },
+      semanticHtml: `
+        <header>
+          <nav aria-label="Breadcrumb"><a href="/">Home</a> &gt; <a href="/product/qrazy">Qrazy</a> &gt; <span>Privacy Policy</span></nav>
+          <h1>Qrazy Privacy Policy</h1>
+          <p>Camera Verification &amp; Anti-Counterfeit Safety</p>
+        </header>
+        <main>
+          <section>
+            <h2>In-Memory QR Decoding</h2>
+            <p>Camera video frames are decoded in volatile device memory and discarded immediately. No raw video streams or photos are transmitted to servers.</p>
+          </section>
+        </main>
+      `,
+    };
+  }
+
+  // 7e. Sticky Notes for VS Code Privacy Policy
+  if (routePath === '/products/sticky-notes/privacy-policy') {
+    return {
+      title: 'Sticky Notes VS Code Privacy Policy — 100% Local Workspace Privacy | Delanki',
+      description: 'Official privacy policy for Sticky Notes for VS Code. 100% offline, local workspace state storage, zero network access, zero code telemetry, and complete developer privacy.',
+      canonical: `${siteOrigin}/products/sticky-notes/privacy-policy`,
+      ogType: 'article',
+      schema: {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: 'Sticky Notes for VS Code Privacy Policy & Code Confidentiality',
+        url: `${siteOrigin}/products/sticky-notes/privacy-policy`,
+      },
+      semanticHtml: `
+        <header>
+          <nav aria-label="Breadcrumb"><a href="/">Home</a> &gt; <a href="/product/sticky-notes">Sticky Notes</a> &gt; <span>Privacy Policy</span></nav>
+          <h1>Sticky Notes for VS Code Privacy Policy</h1>
+          <p>100% Local Workspace Privacy &amp; Code Confidentiality</p>
+        </header>
+        <main>
+          <section>
+            <h2>Zero Network Activity</h2>
+            <p>Notes are stored strictly in local workspaceState inside the code editor. The extension contains zero network calls and zero telemetry beacons.</p>
+          </section>
+        </main>
+      `,
+    };
+  }
+
+  // 7f. Jira & GitHub Linker Privacy Policy
+  if (routePath === '/products/jira-github-linker/privacy-policy') {
+    return {
+      title: 'Jira & GitHub Linker Privacy Policy — Secure Token Storage & Enterprise Privacy | Delanki',
+      description: 'Official privacy policy for Jira & GitHub Linker. Local regex parsing, VS Code SecretStorage for access tokens, direct client-to-API requests, and zero intermediary servers.',
+      canonical: `${siteOrigin}/products/jira-github-linker/privacy-policy`,
+      ogType: 'article',
+      schema: {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: 'Jira & GitHub Linker Privacy Policy & SecretStorage Standards',
+        url: `${siteOrigin}/products/jira-github-linker/privacy-policy`,
+      },
+      semanticHtml: `
+        <header>
+          <nav aria-label="Breadcrumb"><a href="/">Home</a> &gt; <a href="/product/jira-github-linker">Jira &amp; GitHub Linker</a> &gt; <span>Privacy Policy</span></nav>
+          <h1>Jira &amp; GitHub Linker Privacy Policy</h1>
+          <p>Direct API Connections &amp; Hardware SecretStorage Vault</p>
+        </header>
+        <main>
+          <section>
+            <h2>Direct Client-to-API Connections</h2>
+            <p>All API queries connect directly between your workstation and Atlassian/GitHub. Delanki operates zero middleman servers and stores no access tokens.</p>
+          </section>
+        </main>
+      `,
+    };
+  }
+
+  // 7g. Syntax Storyteller Privacy Policy
+  if (routePath === '/products/syntax-storyteller/privacy-policy') {
+    return {
+      title: 'Syntax Storyteller Privacy Policy — Local AST & Direct LLM Privacy | Delanki',
+      description: 'Official privacy policy for Syntax Storyteller. Local AST code parsing, user-managed SecretStorage API keys, direct client-to-provider LLM requests, and zero code retention.',
+      canonical: `${siteOrigin}/products/syntax-storyteller/privacy-policy`,
+      ogType: 'article',
+      schema: {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: 'Syntax Storyteller Privacy Policy & AI Code Confidentiality',
+        url: `${siteOrigin}/products/syntax-storyteller/privacy-policy`,
+      },
+      semanticHtml: `
+        <header>
+          <nav aria-label="Breadcrumb"><a href="/">Home</a> &gt; <a href="/product/syntax-storyteller">Syntax Storyteller</a> &gt; <span>Privacy Policy</span></nav>
+          <h1>Syntax Storyteller Privacy Policy</h1>
+          <p>Local AST Code Parsing &amp; Direct Model Security</p>
+        </header>
+        <main>
+          <section>
+            <h2>Zero Code Retention</h2>
+            <p>Syntax Storyteller uses an in-memory local AST parser and user-owned API keys. Code snippets are never retained by Delanki or used to train public models.</p>
+          </section>
+        </main>
+      `,
+    };
+  }
+
   // 8. Individual Product Case Studies (/product/:slug)
   const productMatch = routePath.match(/^\/product\/([a-z0-9-]+)$/);
   if (productMatch) {
@@ -1042,6 +1216,12 @@ function runPrerender() {
     '/products/respira/privacy-policy',
     '/products/love-alarm/privacy-policy',
     '/products/airbeam-share/privacy-policy',
+    '/products/vectofi/privacy-policy',
+    '/products/kurush-yarn/privacy-policy',
+    '/products/qrazy/privacy-policy',
+    '/products/sticky-notes/privacy-policy',
+    '/products/jira-github-linker/privacy-policy',
+    '/products/syntax-storyteller/privacy-policy',
     ...PRODUCTS.map((p) => `/product/${p.slug}`),
     '/404',
   ];

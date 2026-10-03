@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from '@tanstack/react-router';
 import { SEO } from '../components/common/SEO';
+import { Breadcrumbs } from '../components/common/Breadcrumbs';
 import { getPrivacyPolicySEO } from '../lib/seo';
 import { 
   ArrowLeft, 
@@ -88,36 +89,20 @@ export const PrivacyPolicyPage: React.FC = () => {
       <div className="fixed inset-0 bg-tech-grid opacity-30 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Navigation Breadcrumbs & Back Action */}
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-white/10">
-          <div className="flex items-center gap-2 font-mono text-xs text-[#B7B7B7]">
-            <Link 
-              to="/" 
-              className="hover:text-white transition-colors flex items-center gap-1.5"
-            >
-              <ArrowLeft className="w-3.5 h-3.5 text-[#F22952]" />
-              <span>DELANKI STUDIO</span>
-            </Link>
-            <span className="text-white/20">/</span>
-            <span className="text-white/60">LEGAL COMPLIANCE</span>
-            <span className="text-white/20">/</span>
-            <span className="text-[#F22952] font-bold">PRIVACY POLICY</span>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 font-mono text-[11px] text-[#B7B7B7]">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              STATUS: ACTIVE (SINCE 2023)
-            </span>
-            <Link
-              to="/"
-              className="hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#121212] border border-white/15 hover:border-white/30 text-xs font-mono text-white transition-all hover:bg-white/5"
-            >
-              <ArrowLeft className="w-3 h-3" />
-              BACK TO STUDIO
-            </Link>
-          </div>
-        </div>
+        {/* Navigation Breadcrumbs & Top Actions */}
+        <Breadcrumbs
+          items={[
+            { label: 'DELANKI STUDIO', to: '/' },
+            { label: 'LEGAL COMPLIANCE', isCurrent: false },
+            { label: 'PRIVACY POLICY', isCurrent: true },
+          ]}
+          badge={{
+            icon: <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />,
+            label: 'STATUS: ACTIVE (SINCE 2023)',
+            variant: 'neutral',
+          }}
+          showShare={true}
+        />
 
         {/* Header Hero */}
         <header className="mb-12">
