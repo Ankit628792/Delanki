@@ -13,6 +13,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { generateSitemap } from './generate-sitemap.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -354,14 +355,12 @@ function main() {
   products.forEach((p) => console.log(`  - /product/${p.slug} (${p.title})`));
 
   const robots = generateRobotsTxt();
-  const sitemap = generateSitemapXml(products);
   const manifest = generateWebManifest();
   const openSearch = generateOpenSearchXml();
   const seoRoutes = generateSeoRoutesJson(products);
 
   const files = [
     { name: 'robots.txt', content: robots },
-    { name: 'sitemap.xml', content: sitemap },
     { name: 'site.webmanifest', content: manifest },
     { name: 'opensearch.xml', content: openSearch },
     { name: 'seo-routes.json', content: seoRoutes },
@@ -380,6 +379,9 @@ function main() {
       console.log(`[SEO-GEN] ✓ Synced to dist/${file.name}`);
     }
   }
+
+  // 3. Delegate dynamic sitemap generation to generate-sitemap.js
+  generateSitemap();
 
   console.log(`[SEO-GEN] SEO assets successfully generated!\n`);
 }

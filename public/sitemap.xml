@@ -1,234 +1,204 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://www.delanki.com/</loc>
     <lastmod>2026-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://www.delanki.com/da-black.svg</image:loc>
-      <image:title>Delanki — Digital Product Development Studio</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://www.delanki.com/products</loc>
     <lastmod>2026-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://www.delanki.com/da-black.svg</image:loc>
-      <image:title>Products &amp; Developer Tools Directory — Delanki</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.delanki.com/privacy-policy</loc>
-    <lastmod>2026-10-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-    <image:image>
-      <image:loc>https://www.delanki.com/da-black.svg</image:loc>
-      <image:title>Privacy Policy &amp; Data Security — Delanki</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://www.delanki.com/products/early-learner/privacy-policy</loc>
     <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <image:image>
-      <image:loc>https://www.delanki.com/da-black.svg</image:loc>
-      <image:title>Early Learner Privacy Policy &amp; COPPA Compliance — Delanki</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://www.delanki.com/products/respira/privacy-policy</loc>
     <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <image:image>
-      <image:loc>https://www.delanki.com/da-black.svg</image:loc>
-      <image:title>Respira Privacy Policy &amp; Health Data Standards — Delanki</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://www.delanki.com/products/love-alarm/privacy-policy</loc>
     <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <image:image>
-      <image:loc>https://www.delanki.com/da-black.svg</image:loc>
-      <image:title>Love Alarm 2.0 Privacy Policy &amp; Geolocation Standards — Delanki</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://www.delanki.com/products/airbeam-share/privacy-policy</loc>
     <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <image:image>
-      <image:loc>https://www.delanki.com/da-black.svg</image:loc>
-      <image:title>AirBeam-Share Privacy Policy &amp; Air-gapped Optical Standards — Delanki</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://www.delanki.com/products/vectofi/privacy-policy</loc>
     <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <image:image>
-      <image:loc>https://www.delanki.com/da-black.svg</image:loc>
-      <image:title>Vectofi Privacy Policy &amp; Client-Side Vector Safety — Delanki</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://www.delanki.com/products/kurush-yarn/privacy-policy</loc>
     <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <image:image>
-      <image:loc>https://www.delanki.com/da-black.svg</image:loc>
-      <image:title>Kurush-Yarn Privacy Policy &amp; Digital Gallery Standards — Delanki</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://www.delanki.com/products/qrazy/privacy-policy</loc>
     <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <image:image>
-      <image:loc>https://www.delanki.com/da-black.svg</image:loc>
-      <image:title>Qrazy Privacy Policy &amp; Camera Verification Security — Delanki</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://www.delanki.com/products/sticky-notes/privacy-policy</loc>
     <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <image:image>
-      <image:loc>https://www.delanki.com/da-black.svg</image:loc>
-      <image:title>Sticky Notes VS Code Privacy Policy &amp; Local Workspace Safety — Delanki</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://www.delanki.com/products/jira-github-linker/privacy-policy</loc>
     <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <image:image>
-      <image:loc>https://www.delanki.com/da-black.svg</image:loc>
-      <image:title>Jira &amp; GitHub Linker Privacy Policy &amp; Token Security — Delanki</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://www.delanki.com/products/syntax-storyteller/privacy-policy</loc>
     <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <image:image>
-      <image:loc>https://www.delanki.com/da-black.svg</image:loc>
-      <image:title>Syntax Storyteller Privacy Policy &amp; AI Code Safety — Delanki</image:title>
-    </image:image>
+  </url>
+  <url>
+    <loc>https://www.delanki.com/product/early-learner/privacy-policy</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.delanki.com/product/respira/privacy-policy</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.delanki.com/product/love-alarm/privacy-policy</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.delanki.com/product/airbeam-share/privacy-policy</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.delanki.com/product/vectofi/privacy-policy</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.delanki.com/product/kurush-yarn/privacy-policy</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.delanki.com/product/qrazy/privacy-policy</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.delanki.com/product/sticky-notes/privacy-policy</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.delanki.com/product/jira-github-linker/privacy-policy</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.delanki.com/product/syntax-storyteller/privacy-policy</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.delanki.com/privacy-policy</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.delanki.com/product/vectofi</loc>
     <lastmod>2026-10-03</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.delanki.com/da-black.svg</image:loc>
-      <image:title>Vectofi — Web App Case Study</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://www.delanki.com/product/kurush-yarn</loc>
     <lastmod>2026-10-03</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.delanki.com/da-black.svg</image:loc>
-      <image:title>Kurush-Yarn — Web App Case Study</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://www.delanki.com/product/qrazy</loc>
     <lastmod>2026-10-03</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.delanki.com/da-black.svg</image:loc>
-      <image:title>Qrazy (Prototype) — Web App Case Study</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://www.delanki.com/product/early-learner</loc>
     <lastmod>2026-10-03</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.delanki.com/da-black.svg</image:loc>
-      <image:title>Early Learner — Mobile App Case Study</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://www.delanki.com/product/love-alarm</loc>
     <lastmod>2026-10-03</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.delanki.com/da-black.svg</image:loc>
-      <image:title>Love Alarm 2.0 — Mobile App Case Study</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://www.delanki.com/product/airbeam-share</loc>
     <lastmod>2026-10-03</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.delanki.com/da-black.svg</image:loc>
-      <image:title>AirBeam-Share — Mobile App Case Study</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://www.delanki.com/product/respira</loc>
     <lastmod>2026-10-03</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.delanki.com/da-black.svg</image:loc>
-      <image:title>Respira — Mobile App Case Study</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://www.delanki.com/product/sticky-notes</loc>
     <lastmod>2026-10-03</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.delanki.com/da-black.svg</image:loc>
-      <image:title>Sticky Notes for VS Code — VS Code Extension Case Study</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://www.delanki.com/product/jira-github-linker</loc>
     <lastmod>2026-10-03</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.delanki.com/da-black.svg</image:loc>
-      <image:title>Jira &amp; GitHub Linker — VS Code Extension Case Study</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://www.delanki.com/product/syntax-storyteller</loc>
     <lastmod>2026-10-03</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.delanki.com/da-black.svg</image:loc>
-      <image:title>Syntax Storyteller — VS Code Extension Case Study</image:title>
-    </image:image>
   </url>
 </urlset>

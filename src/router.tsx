@@ -217,14 +217,19 @@ const routeTree = rootRoute.addChildren([
   catchAllRoute,
 ]);
 
-export const router = createRouter({
-  routeTree,
-  defaultPreload: 'intent',
-  scrollRestoration: true,
-  trailingSlash: 'never',
-  notFoundMode: 'root',
-  defaultNotFoundComponent: FallbackComponent,
-});
+export function createAppRouter(history?: any) {
+  return createRouter({
+    routeTree,
+    history,
+    defaultPreload: 'intent',
+    scrollRestoration: true,
+    trailingSlash: 'never',
+    notFoundMode: 'root',
+    defaultNotFoundComponent: FallbackComponent,
+  });
+}
+
+export const router = createAppRouter();
 
 declare module '@tanstack/react-router' {
   interface Register {

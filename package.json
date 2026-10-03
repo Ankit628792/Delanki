@@ -3,7 +3,8 @@
   "private": true,
   "version": "3.2.0",
   "description": "Delanki — Digital Product Development Studio building web applications, mobile apps, extensions, and software products.",
-  "author": "Delanki Studio",
+  "license": "UNLICENSED",
+  "author": "Delanki Studio & Ankit",
   "keywords": [
     "delanki",
     "product-studio",
@@ -20,10 +21,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
+    "start": "vite preview --port=3000 --host=0.0.0.0",
     "generate:seo": "node scripts/generate-seo.js",
+    "generate:sitemap": "node scripts/generate-sitemap.js",
+    "build:client": "vite build",
+    "build:server": "vite build --ssr src/entry-server.tsx --outDir dist/server",
     "prerender": "node scripts/prerender.js",
-    "build": "node scripts/generate-seo.js && vite build && node scripts/prerender.js",
+    "build": "node scripts/generate-seo.js && node scripts/generate-sitemap.js && vite build && vite build --ssr src/entry-server.tsx --outDir dist/server && node scripts/prerender.js",
     "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
     "lint": "tsc --noEmit"
   },
   "dependencies": {

@@ -15,7 +15,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -1065,7 +1065,7 @@ function getAeoGeoForRoute(routePath, meta) {
   return null;
 }
 
-function prerenderPage(templateHtml, routePath) {
+function prerenderPage(templateHtml, routePath, renderedAppHtml = null) {
   const meta = getRouteMetadata(routePath);
   if (!meta) return null;
 
@@ -1151,10 +1151,13 @@ function prerenderPage(templateHtml, routePath) {
     html = html.replace('</head>', `${aeoMetaTags}\n</head>`);
   }
 
-  // 8. Inject Semantic Content inside <div id="root">
-  // When a search engine or curl fetches the page, it gets full HTML content.
-  // When React client hydrates in a real browser, createRoot replaces this container.
-  if (meta.semanticHtml) {
+  // 8. Inject Pre-rendered Content inside <div id="root">
+  if (renderedAppHtml) {
+    html = html.replace(
+      /<div id="root">[\s\S]*?<\/div>/,
+      `<div id="root">${renderedAppHtml}</div>`
+    );
+  } else if (meta.semanticHtml) {
     let semanticBody = meta.semanticHtml;
 
     if (aeoGeo) {
@@ -1184,13 +1187,13 @@ function prerenderPage(templateHtml, routePath) {
     }
 
     const semanticContainer = `\n      <!-- Pre-rendered Static SEO & AEO/GEO Content (Hydrated by React on mount) -->\n      <div id="delanki-prerender-content" style="contain: content;">\n${semanticBody}\n      </div>\n    `;
-    html = html.replace('<div id="root"></div>', `<div id="root">${semanticContainer}</div>`);
+    html = html.replace(/<div id="root">[\s\S]*?<\/div>/, `<div id="root">${semanticContainer}</div>`);
   }
 
   return html;
 }
 
-function runPrerender() {
+async function runPrerender() {
   console.log(`\n======================================================`);
   console.log(`[PRERENDER] Generating Pre-rendered Static HTML Pages`);
   console.log(`======================================================`);
@@ -1207,6 +1210,21 @@ function runPrerender() {
   }
 
   const templateHtml = fs.readFileSync(baseHtmlPath, 'utf8');
+
+  // Load server entry if compiled by Vite SSR bundle
+  let serverRender = null;
+  const serverEntryPath = path.join(distDir, 'server', 'entry-server.js');
+  if (fs.existsSync(serverEntryPath)) {
+    try {
+      const serverModule = await import(pathToFileURL(serverEntryPath).href);
+      if (typeof serverModule.render === 'function') {
+        serverRender = serverModule.render;
+        console.log(`[PRERENDER] Successfully loaded SSR server bundle (${serverEntryPath})`);
+      }
+    } catch (e) {
+      console.warn(`[PRERENDER] Could not initialize SSR server bundle, falling back to static markup generator:`, e.message);
+    }
+  }
 
   const routes = [
     '/',
@@ -1230,7 +1248,19 @@ function runPrerender() {
 
   let count = 0;
   for (const routePath of routes) {
-    const renderedHtml = prerenderPage(templateHtml, routePath);
+    let renderedAppHtml = null;
+    if (serverRender) {
+      try {
+        const renderResult = await serverRender(routePath);
+        if (renderResult && renderResult.appHtml) {
+          renderedAppHtml = renderResult.appHtml;
+        }
+      } catch (renderErr) {
+        console.warn(`[PRERENDER] SSR render failed for ${routePath}, using fallback markup:`, renderErr.message);
+      }
+    }
+
+    const renderedHtml = prerenderPage(templateHtml, routePath, renderedAppHtml);
     if (!renderedHtml) {
       console.warn(`[PRERENDER] Skipping unhandled route: ${routePath}`);
       continue;
